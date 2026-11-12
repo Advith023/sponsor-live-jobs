@@ -36,7 +36,7 @@ site/data/jobs.json  ──►  static site on GitHub Pages
   - The current search is saved in the page link, so it can be shared.
   - Light and dark mode, and works on mobile.
 - **`site/config.js`**: site settings. Paste a form endpoint into `alertFormAction` to turn on email job alerts, and a link into `featureContactUrl` to turn on "Feature a role".
-- **`.github/workflows/update.yml`**: runs every day at 05:17 UTC, commits the new data and deploys the site to GitHub Pages. It can also be run by hand from the Actions tab.
+- **`180869546+Advith023@users.noreply.github.com`**: runs every day at 05:17 UTC, commits the new data and deploys the site to GitHub Pages. It can also be run by hand from the Actions tab.
 
 ## Run locally
 
