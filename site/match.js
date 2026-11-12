@@ -1,3 +1,4 @@
+// SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 // CV matching, done entirely in the browser. The CV file is read locally and never sent anywhere.
 // PDF/Word reading uses pdf.js and mammoth, loaded from a CDN only as code; the CV itself stays on the device.
 window.CVMatch = (() => {

@@ -1,3 +1,4 @@
+/* SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE. */
 *{box-sizing:border-box}
 body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#f4f6f5;color:#14231d}
 header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px max(4vw,16px);background:#0f2e22;color:#fff}
