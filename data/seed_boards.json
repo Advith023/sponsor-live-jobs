@@ -1,0 +1,17 @@
+{
+  "_note": "Optional hints: sponsor name (as on the register, or its start) -> job boards to try first. Every hint is validated automatically; wrong ones are ignored. Add companies here to get them listed faster.",
+  "Monzo Bank": [{"ats": "greenhouse", "token": "monzo"}],
+  "Spotify": [{"ats": "lever", "token": "spotify"}],
+  "Deliveroo": [{"ats": "greenhouse", "token": "deliveroo"}],
+  "Wise Payments": [{"ats": "greenhouse", "token": "wise"}],
+  "Trainline": [{"ats": "greenhouse", "token": "trainline"}],
+  "Teya Services": [{"ats": "greenhouse", "token": "teya"}],
+  "Kpler": [{"ats": "greenhouse", "token": "kpler"}],
+  "Funding Circle": [{"ats": "greenhouse", "token": "fundingcircle"}],
+  "iwoca": [{"ats": "greenhouse", "token": "iwoca"}],
+  "GoCardless": [{"ats": "greenhouse", "token": "gocardless"}],
+  "Checkout": [{"ats": "greenhouse", "token": "checkoutcom"}],
+  "Cleo AI": [{"ats": "ashby", "token": "cleo"}],
+  "Synthesia": [{"ats": "ashby", "token": "synthesia"}],
+  "Octopus Energy": [{"ats": "ashby", "token": "octopus-energy"}]
+}
