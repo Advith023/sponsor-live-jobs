@@ -116,7 +116,7 @@
       det.textContent = parts.join(" · ");
       box.appendChild(det);
     }
-    n.querySelector(".badge").title = `${j.sp} — on the Home Office register (Skilled Worker${j.rt ? ", " + j.rt : ""}). Sponsorship for this role is the employer's decision: ask the recruiter.`;
+    n.querySelector(".badge").title = `${j.sp} is on the Home Office register (Skilled Worker${j.rt ? ", " + j.rt : ""}). Sponsorship for this role is the employer's decision: ask the recruiter.`;
     return n;
   }
 
@@ -130,7 +130,7 @@
     $("#moreBtn").hidden = filtered.length <= state.shown;
     const empty = $("#empty");
     empty.hidden = filtered.length > 0;
-    if (!filtered.length) empty.textContent = jobs.length ? "No jobs match those filters. Try a broader search." : "The first daily refresh hasn't finished yet — check back soon.";
+    if (!filtered.length) empty.textContent = jobs.length ? "No jobs match those filters. Try a broader search." : "The first daily refresh hasn't finished yet. Check back soon.";
     $("#alertSearch").value = location.search;
   }
 
@@ -261,5 +261,5 @@
       $("#stats").textContent = `${(d.count || 0).toLocaleString("en-GB")} live roles · ${(d.companies || 0).toLocaleString("en-GB")} licensed sponsors · updated ${upd}`;
       apply();
     })
-    .catch(() => { $("#stats").textContent = "Couldn't load jobs right now — please refresh."; apply(); });
+    .catch(() => { $("#stats").textContent = "Couldn't load jobs right now. Please refresh."; apply(); });
 })();

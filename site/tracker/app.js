@@ -67,12 +67,12 @@ function persist(next){
  rows=next;
  render();
 }
-const filterSpec=[['search','Search'],['sponsor','Sponsorship',sponsors],['stage','Stage',stages],['deadline','Deadline',['Next 7 days','Overdue','Unknown']],['fit','Fit',['80–100','60–79','0–59','Unscored']],['blocker','Blocker',blockers],['market','Market',['UK','Overseas','Unknown']]];
+const filterSpec=[['search','Search'],['sponsor','Sponsorship',sponsors],['stage','Stage',stages],['deadline','Deadline',['Next 7 days','Overdue','Unknown']],['fit','Fit',['80 to 100','60 to 79','0 to 59','Unscored']],['blocker','Blocker',blockers],['market','Market',['UK','Overseas','Unknown']]];
 $('filters').innerHTML=filterSpec.map(([id,label,values])=>'<label>'+label+(values?'<select id="f-'+id+'"><option value="">All</option>'+options(values)+'</select>':'<input id="f-search" type="search" placeholder="Employer, role or contact">')+'</label>').join('');
 $('filters').addEventListener('input',render);
 function visible(row){
  const f=id=>$('f-'+id).value;
- const fit=row.fit===''?'Unscored':+row.fit>=80?'80–100':+row.fit>=60?'60–79':'0–59';
+ const fit=row.fit===''?'Unscored':+row.fit>=80?'80 to 100':+row.fit>=60?'60 to 79':'0 to 59';
  const end = new Date(Date.now()+7*86400000).toISOString().slice(0,10);
  const deadline=!row.deadline?'Unknown':row.deadline<today()?'Overdue':row.deadline<=end?'Next 7 days':'Later';
  return [row.employer,row.title,row.contact,row.ref,row.location].join(' ').toLowerCase().includes(f('search').toLowerCase()) &&
@@ -93,7 +93,7 @@ function render(){
  }
  $('results').innerHTML='<div class="table"><table><thead><tr>'+['Compare','Opportunity','Sponsorship','Stage','Deadline / follow-up','Fit','Next action'].map(v=>'<th scope="col">'+v+'</th>').join('')+'</tr></thead><tbody>'+shown.map(r=>{
   const flags=[closed(r)?'Stale or past deadline':'',r.flag==='Possible duplicate'||duplicates(r).length?'Possible duplicate':'',r.blocker!==blockers[0]?r.blocker:''].filter(Boolean).join(' · ');
-  return '<tr><td><input type="checkbox" aria-label="Compare '+esc(r.title)+'" data-select="'+esc(r.id)+'" '+(selected.has(r.id)?'checked':'')+'></td><td><button class="role" data-edit="'+esc(r.id)+'">'+esc(r.title)+'</button><span class="muted">'+esc(r.employer)+' · '+esc(r.location||'Location unknown')+'</span><span class="muted">'+esc(r.salary||'Salary unknown')+'</span><button data-attachments="'+esc(r.id)+'">Attachments</button></td><td><span class="pill '+(eligible(r)?'yes':r.sponsor===sponsors[3]?'no':'')+'">'+esc(r.sponsor)+'</span></td><td>'+esc(r.stage)+'<span class="muted">'+esc(r.approval)+'</span></td><td>'+date(r.deadline)+'<span class="muted">Follow-up '+date(r.follow)+'</span></td><td>'+esc(r.fit===''?'Unscored':r.fit+'/100')+'</td><td>'+esc(r.next||'—')+'<span class="muted">'+esc(flags)+'</span></td></tr>';
+  return '<tr><td><input type="checkbox" aria-label="Compare '+esc(r.title)+'" data-select="'+esc(r.id)+'" '+(selected.has(r.id)?'checked':'')+'></td><td><button class="role" data-edit="'+esc(r.id)+'">'+esc(r.title)+'</button><span class="muted">'+esc(r.employer)+' · '+esc(r.location||'Location unknown')+'</span><span class="muted">'+esc(r.salary||'Salary unknown')+'</span><button data-attachments="'+esc(r.id)+'">Attachments</button></td><td><span class="pill '+(eligible(r)?'yes':r.sponsor===sponsors[3]?'no':'')+'">'+esc(r.sponsor)+'</span></td><td>'+esc(r.stage)+'<span class="muted">'+esc(r.approval)+'</span></td><td>'+date(r.deadline)+'<span class="muted">Follow-up '+date(r.follow)+'</span></td><td>'+esc(r.fit===''?'Unscored':r.fit+'/100')+'</td><td>'+esc(r.next||'None')+'<span class="muted">'+esc(flags)+'</span></td></tr>';
  }).join('')+'</tbody></table></div>';
 }
 function openEditor(id, draft){

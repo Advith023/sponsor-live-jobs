@@ -1,4 +1,4 @@
-// Site settings — edit these, no code changes needed.
+// Site settings. Edit these, no code changes needed.
 window.SPONSORLIVE_CONFIG = {
   siteName: "SponsorLive",
   // Job-alert sign-up: paste a form endpoint (e.g. Formspree, Buttondown, Google Form link).
