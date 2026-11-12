@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SponsorLive — live UK jobs at licensed visa sponsors</title>
+<meta name="description" content="Live UK job openings pulled straight from company career pages, only at employers holding a Skilled Worker sponsor licence. No ghost listings.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%2316a34a'/><circle cx='16' cy='16' r='5' fill='white'/></svg>">
+<link rel="stylesheet" href="style.css">
+<script src="config.js"></script>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span><span id="siteName">SponsorLive</span></div>
+    <h1>Live UK jobs at companies that can sponsor visas</h1>
+    <p class="lede">Every role comes straight from the company's own careers page, and every company is on the Home Office register of licensed Skilled Worker sponsors. No reposts, no ghost listings.</p>
+    <div class="search">
+      <input id="q" type="search" placeholder="Job title, company or skill — e.g. data analyst, Monzo" autocomplete="off" aria-label="Search jobs">
+      <input id="loc" type="search" placeholder="Location — e.g. London" autocomplete="off" aria-label="Location" list="locList">
+      <datalist id="locList"></datalist>
+    </div>
+    <div class="stats" id="stats">Loading live jobs…</div>
+  </div>
+</header>
+
+<main class="wrap layout">
+  <aside class="filters" aria-label="Filters">
+    <section>
+      <h3>Posted</h3>
+      <div class="seg" id="age">
+        <button data-v="0" class="on">Any</button><button data-v="1">24h</button><button data-v="7">7 days</button><button data-v="30">30 days</button>
+      </div>
+    </section>
+    <section>
+      <h3>Work type</h3>
+      <label class="chk"><input type="checkbox" id="remote"> Remote-friendly only</label>
+    </section>
+    <section>
+      <h3>Category</h3>
+      <div id="cats" class="chips"></div>
+    </section>
+    <section>
+      <h3>Sort</h3>
+      <select id="sort">
+        <option value="new">Newest first</option>
+        <option value="company">Company A–Z</option>
+        <option value="title">Job title A–Z</option>
+      </select>
+    </section>
+    <button id="reset" class="link">Clear all filters</button>
+
+    <section class="promo" id="alertBox" hidden>
+      <h3>Get new roles by email</h3>
+      <form id="alertForm" method="POST" target="_blank">
+        <input type="email" name="email" required placeholder="you@example.com" aria-label="Email">
+        <input type="hidden" name="search" id="alertSearch">
+        <button type="submit">Notify me</button>
+      </form>
+    </section>
+    <section class="promo" id="featureBox" hidden>
+      <h3>Hiring?</h3>
+      <p>Put your role at the top for sponsored candidates.</p>
+      <a id="featureLink" class="btn ghost" target="_blank" rel="noopener">Feature a role</a>
+    </section>
+  </aside>
+
+  <section class="results">
+    <div class="notice">
+      <strong>What we can tell you:</strong> the role is live on the company's site and the company holds a Skilled Worker sponsor licence.
+      Sponsorship for a specific role is the employer's decision — <strong>ask the recruiter</strong> before you apply.
+    </div>
+    <div class="bar"><span id="count"></span><button id="share" class="link">Copy link to this search</button></div>
+    <ol id="list" class="list"></ol>
+    <div class="more"><button id="moreBtn" hidden>Show more jobs</button></div>
+    <div id="empty" class="empty" hidden></div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p><strong>Not immigration advice.</strong> Check your own eligibility on <a href="https://www.gov.uk/skilled-worker-visa" target="_blank" rel="noopener">gov.uk</a>. Jobs are refreshed daily from public company job boards; listings may close at any time.</p>
+  <p>Sponsor data: <a id="regLink" href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers" target="_blank" rel="noopener">Register of licensed sponsors: workers</a>. Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener">Open Government Licence v3.0</a>.</p>
+  <p>© <span id="yr"></span> Advith Ashok</p>
+</footer>
+
+<template id="tpl">
+  <li class="job">
+    <div class="main">
+      <a class="title" target="_blank" rel="noopener"></a>
+      <div class="co"></div>
+      <div class="meta"></div>
+    </div>
+    <div class="side">
+      <span class="badge ok" title="On the Home Office register of licensed sponsors (Skilled Worker route)">✓ Licensed sponsor</span>
+      <a class="btn apply" target="_blank" rel="noopener">Apply on company site →</a>
+    </div>
+  </li>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>
