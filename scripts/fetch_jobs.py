@@ -37,7 +37,7 @@ STATS_PATH = ROOT / "site" / "data" / "stats.json"
 REGISTER_API = "https://www.gov.uk/api/content/government/publications/register-of-licensed-sponsors-workers"
 REGISTER_PAGE = "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers"
 
-UA = "SponsorLiveBot/1.0 (+https://github.com/advith23/sponsor-live-jobs)"
+UA = "SponsorLiveBot/1.0 (+https://github.com/Advith023/sponsor-live-jobs)"
 TIMEOUT = 20
 WORKERS = int(os.environ.get("WORKERS", "32"))
 DISCOVERY_BATCH = int(os.environ.get("DISCOVERY_BATCH", "8000"))
