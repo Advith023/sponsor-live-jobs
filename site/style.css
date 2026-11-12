@@ -99,3 +99,6 @@ select{width:100%;padding:8px;border-radius:10px;border:1px solid var(--line);ba
 .fbdlg h3{margin:0 0 4px}
 .fbdlg textarea{width:100%;margin:8px 0;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
 .fbacts{display:flex;justify-content:flex-end;gap:14px;align-items:center}
+#fbStars{display:flex;gap:4px;margin:4px 0 2px}
+#fbStars button{border:0;background:none;font-size:28px;line-height:1;cursor:pointer;color:#c9d2ce;padding:0 2px}
+#fbStars button.on{color:#f5a524}

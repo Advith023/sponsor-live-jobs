@@ -228,28 +228,38 @@
       if (!prefill) return null;
       const u = new URL(prefill);
       if (!/docs\.google\.com$/.test(u.hostname) || !/\/forms\//.test(u.pathname)) return null;
-      let company, link, feedback;
+      let company, link, feedback, rating;
       for (const [k, v] of u.searchParams) {
-        if (/^COMPANY$/i.test(v)) company = k; if (/^LINK$/i.test(v)) link = k; if (/^FEEDBACK$/i.test(v)) feedback = k;
+        if (/^COMPANY$/i.test(v)) company = k; if (/^LINK$/i.test(v)) link = k; if (/^FEEDBACK$/i.test(v)) feedback = k; if (/^RATING$/i.test(v)) rating = k;
       }
       if (!company || !link) return null;
-      return { action: u.origin + u.pathname.replace(/\/viewform.*$/, "/formResponse"), company, link, feedback };
+      return { action: u.origin + u.pathname.replace(/\/viewform.*$/, "/formResponse"), company, link, feedback, rating };
     } catch { return null; }
   }
   // ---------- anonymous feedback (only shown once the Google Form has a FEEDBACK question)
   const gfb = googleForm(cfg.suggestGoogleFormPrefill);
   if (gfb && gfb.feedback) {
     $("#fbOpen").hidden = false;
+    let stars = 0;
+    const paint = () => document.querySelectorAll("#fbStars button").forEach((b) => b.classList.toggle("on", +b.dataset.v <= stars));
+    if (gfb.rating) {
+      $("#fbStarsRow").hidden = false;
+      document.querySelectorAll("#fbStars button").forEach((b) => (b.onclick = () => { stars = stars === +b.dataset.v ? 0 : +b.dataset.v; paint(); }));
+    }
+    $("#fbText").required = false;
     $("#fbOpen").onclick = () => { $("#fbMsg").textContent = ""; $("#fbDialog").showModal(); };
     $("#fbCancel").onclick = () => $("#fbDialog").close();
     $("#fbForm").addEventListener("submit", async (e) => {
       e.preventDefault();
       const text = $("#fbText").value.trim();
-      if (!text) return;
+      if (!text && !stars) { $("#fbMsg").textContent = "Add a rating or a comment first."; return; }
       $("#fbSend").disabled = true;
       try {
-        await fetch(gfb.action, { method: "POST", mode: "no-cors", body: new URLSearchParams({ [gfb.feedback]: text }) });
-        $("#fbText").value = ""; $("#fbMsg").textContent = "Thank you! Sent.";
+        const fields = {};
+        if (text) fields[gfb.feedback] = text;
+        if (stars && gfb.rating) fields[gfb.rating] = String(stars);
+        await fetch(gfb.action, { method: "POST", mode: "no-cors", body: new URLSearchParams(fields) });
+        $("#fbText").value = ""; stars = 0; paint(); $("#fbMsg").textContent = "Thank you! Sent.";
         setTimeout(() => $("#fbDialog").close(), 1200);
       } catch { $("#fbMsg").textContent = "Couldn't send that just now. Please try again later."; }
       finally { $("#fbSend").disabled = false; }

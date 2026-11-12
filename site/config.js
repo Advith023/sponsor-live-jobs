@@ -10,6 +10,6 @@ window.SPONSORLIVE_CONFIG = {
   "featureContactUrl": "",
   "suggestEndpoint": "",
   "githubRepo": "Advith023/sponsor-live-jobs",
-  "suggestGoogleFormPrefill": "https://docs.google.com/forms/d/e/1FAIpQLSczC3XRJowUfsR_Y3cks59gPQpH8kd0xMVxXpVWke85iqehUg/viewform?usp=pp_url&entry.505698376=COMPANY&entry.1476431749=LINK&entry.320662032=FEEDBACK",
+  "suggestGoogleFormPrefill": "https://docs.google.com/forms/d/e/1FAIpQLSczC3XRJowUfsR_Y3cks59gPQpH8kd0xMVxXpVWke85iqehUg/viewform?usp=pp_url&entry.505698376=COMPANY&entry.1476431749=LINK&entry.320662032=FEEDBACK&entry.1558330735=RATING",
   "suggestionsCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTtlEFKccqEP69OH3eL0-ZO0E3CI_lltgEqOFVoLvQr3BXiTuZuEDqZXmILSYfU8SE-YP7LbOZod5F5/pub?gid=1787683854&single=true&output=csv"
 };

@@ -207,18 +207,22 @@
     const body = $("fbs"); body.replaceChildren();
     if (!sheet) { $("fbCount").textContent = "Set up the form in Site settings"; return; }
     const fi = sheet.head.findIndex((h) => /feedback/.test(h));
+    const ri = sheet.head.findIndex((h) => /rating/.test(h));
     const hidden = new Set(JSON.parse(localStorage.getItem("sponsorlive-hidden-feedback") || "[]"));
     const items = [];
     for (const r of sheet.rows) {
       const text = fi >= 0 ? (r[fi] || "").trim() : "";
+      const rating = ri >= 0 ? parseInt(r[ri], 10) || 0 : 0;
       const date = (r.find(isDate) || "").trim();
-      if (text && !hidden.has(date + text)) items.push({ date, text });
+      if ((text || rating) && !hidden.has(date + text + rating)) items.push({ date, text, rating });
     }
-    $("fbCount").textContent = items.length ? items.length + " notes" : "None yet";
+    const rated = items.filter((x) => x.rating);
+    const avg = rated.length ? (rated.reduce((s, x) => s + x.rating, 0) / rated.length).toFixed(1) : null;
+    $("fbCount").textContent = items.length ? items.length + " notes" + (avg ? ` · average rating ${avg} / 5 from ${rated.length}` : "") : "None yet";
     if (!items.length) { body.append(row(["", "Nothing yet.", ""])); return; }
     for (const it of items.reverse()) {
-      body.append(row([it.date, it.text, btn("Hide", (ev) => {
-        hidden.add(it.date + it.text);
+      body.append(row([it.date, (it.rating ? "★".repeat(it.rating) + "☆".repeat(5 - it.rating) + "  " : "") + (it.text || ""), btn("Hide", (ev) => {
+        hidden.add(it.date + it.text + it.rating);
         localStorage.setItem("sponsorlive-hidden-feedback", JSON.stringify([...hidden]));
         ev.target.closest("tr").remove();
       })]));
