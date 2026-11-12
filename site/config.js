@@ -9,5 +9,7 @@ window.SPONSORLIVE_CONFIG = {
   "alertFormAction": "",
   "featureContactUrl": "",
   "suggestEndpoint": "",
-  "githubRepo": "Advith023/sponsor-live-jobs"
+  "githubRepo": "Advith023/sponsor-live-jobs",
+  "suggestGoogleFormPrefill": "",
+  "suggestionsCsvUrl": ""
 };

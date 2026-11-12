@@ -164,6 +164,14 @@
     catch (err) { $("seedMsg").textContent = err.message; }
   };
 
+  async function addRejected(link) {
+    const data = await readSeeds();
+    const list = data._rejected || [];
+    if (!list.includes(link)) list.push(link);
+    data._rejected = list;
+    await writeSeeds(data, "Reject a suggested job board");
+  }
+
   // ---------- suggestions
   function parseIssue(i) {
     const body = i.body || "";
@@ -172,11 +180,48 @@
     const link = (body.match(/https?:\/\/[^\s)>\]]+/) || [""])[0];
     return { company, link };
   }
+  // Suggestions sent through the Google Form (published sheet). Already-added or rejected links are hidden.
+  function parseCsv(text) {
+    const rows = []; let row = [], cell = "", q = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) { if (c === '"' && text[i + 1] === '"') { cell += '"'; i++; } else if (c === '"') q = false; else cell += c; }
+      else if (c === '"') q = true; else if (c === ",") { row.push(cell); cell = ""; }
+      else if (c === "\n") { row.push(cell); rows.push(row); row = []; cell = ""; } else if (c !== "\r") cell += c;
+    }
+    if (cell || row.length) { row.push(cell); rows.push(row); }
+    return rows;
+  }
+  async function loadSheetSuggestions(body) {
+    const url = configData && configData.suggestionsCsvUrl;
+    if (!url) return 0;
+    let rows;
+    try { rows = parseCsv(await (await fetch(url, { cache: "no-store" })).text()).slice(1); }
+    catch { body.append(row(["Couldn't read the suggestions sheet from here. Each refresh still reads it.", "", "", "", ""])); return 0; }
+    const data = seedFile ? seedFile.data : await readSeeds();
+    const known = new Set([...(data._rejected || []), ...Object.values(data).flat().map((b) => b && b.url).filter(Boolean)].map((x) => String(x).toLowerCase()));
+    let n = 0;
+    for (const r of rows) {
+      const link = r.find((c) => /^https?:\/\//i.test(c.trim())), company = (r.filter((c) => c.trim() && !/^https?:\/\//i.test(c.trim()) && !/^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(c.trim())).pop() || "").trim();
+      if (!link || !company || known.has(link.trim().toLowerCase())) continue;
+      known.add(link.trim().toLowerCase()); n++;
+      const a = el("a", new URL(link.trim()).hostname); a.href = link.trim(); a.target = "_blank"; a.rel = "noopener";
+      const actions = el("span");
+      actions.append(
+        btn("Approve", async (ev) => { ev.target.disabled = true; try { await addSeed(company, link.trim()); loadSuggestions(); loadSeeds(); } catch (err) { alert(err.message); ev.target.disabled = false; } }, "primary"), " ",
+        btn("Reject", async (ev) => { if (!confirm(`Reject the suggestion for ${company}?`)) return; ev.target.disabled = true; try { await addRejected(link.trim()); loadSuggestions(); } catch (err) { alert(err.message); ev.target.disabled = false; } }, "danger"));
+      body.append(row([company + " (form)", a, platformOf(link), refreshStatus(company), actions]));
+    }
+    return n;
+  }
+
   async function loadSuggestions() {
     const list = await gh("/issues?labels=board-suggestion&state=open&per_page=100");
     const body = $("sugs"); body.replaceChildren();
-    $("sugCount").textContent = list.length ? list.length + " waiting" : "None waiting";
-    if (!list.length) { body.append(row(["Nothing to review.", "", "", "", ""])); return; }
+    const sheet = await loadSheetSuggestions(body);
+    const total = list.length + sheet;
+    $("sugCount").textContent = total ? total + " waiting" : "None waiting";
+    if (!total) { body.append(row(["Nothing to review.", "", "", "", ""])); return; }
     for (const i of list) {
       const { company, link } = parseIssue(i);
       const a = el("a", link ? new URL(link).hostname : "(no link)"); if (link) { a.href = link; a.target = "_blank"; a.rel = "noopener"; }
@@ -199,7 +244,7 @@
         btn("Reject", async (ev) => {
           if (!confirm(`Reject the suggestion for ${company}?`)) return;
           ev.target.disabled = true;
-          try { await close("not_planned", "Thanks for the suggestion. We won't be adding this one."); loadSuggestions(); }
+          try { if (link) await addRejected(link); await close("not_planned", "Thanks for the suggestion. We won't be adding this one."); loadSuggestions(); }
           catch (err) { alert(err.message); ev.target.disabled = false; }
         }, "danger"));
       body.append(row([company, a, link ? platformOf(link) : "", refreshStatus(company), actions]));
@@ -222,7 +267,7 @@
     const form = e.target, msg = $("setMsg");
     const next = { ...configData };
     for (const el2 of form.elements) if (el2.name) next[el2.name] = el2.value.trim();
-    for (const k of ["alertFormAction", "featureContactUrl", "suggestEndpoint"])
+    for (const k of ["alertFormAction", "featureContactUrl", "suggestEndpoint", "suggestGoogleFormPrefill", "suggestionsCsvUrl"])
       if (next[k] && !/^(https:\/\/|mailto:)/i.test(next[k])) { msg.textContent = "Links must start with https:// (or mailto: for the contact link)."; return; }
     msg.textContent = "Publishing…";
     try {
@@ -241,7 +286,8 @@
       const me = await gh("https://api.github.com/user").catch(() => null);
       $("who").textContent = me ? `Signed in as ${me.login}` : "Signed in";
       await loadStats();
-      await Promise.all([loadRuns(), loadSuggestions(), loadSeeds(), loadSettings()]);
+      await Promise.all([loadRuns(), loadSeeds(), loadSettings()]);
+      await loadSuggestions();
     } catch (err) { if (token) $("who").textContent = "Something went wrong: " + err.message; }
   }
   $("reloadAll").onclick = start;
