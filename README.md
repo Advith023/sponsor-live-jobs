@@ -42,6 +42,7 @@ site/data/jobs.json  ──►  static site on GitHub Pages
 - **`site/`**: the website, in plain HTML, CSS and JS with no build step.
   - Search, location, "posted within", remote-only, UK region chips, category chips and sort.
   - **CV matcher** (`site/match.js`): reads a PDF, Word or pasted CV **in the browser only** (never uploaded or stored), finds skills and scores each job by keyword overlap with its description plus job-title words. Shows the %, the skills found and missing, and a caution that it's a keyword match, not a hiring prediction. Title-only matches are capped below "strong".
+  - **Experience:** estimates years from the job dates on the CV (education lines are skipped, overlapping jobs are merged, a "6+ years of experience" line is used if there are no dates). The person can correct the number. Each job's minimum (`y`, e.g. "3+ years") is read from its description during the refresh, or a typical level is used from the title (`lv`: Entry, Senior, Lead, Director). The score only drops when the CV clearly falls short.
   - **"+ Track"** on every job opens the application tracker with the role pre-filled (and the match % as the fit score).
 - **`site/tracker/`**: the application tracker (originally Career Pipeline). Records live in the browser's local storage; JSON export/import for backups.
   - Each role can hold the exact CV and cover letter sent. In Chrome/Edge on a computer you can pick a folder: files are saved to `<folder>/<Company - Role>/<original name>`, so every application keeps its own copy without renaming. Elsewhere (phones, Safari, Firefox) files stay in the browser's own storage. Nothing is uploaded.
@@ -70,7 +71,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 - Workday and in-house careers sites can't be found from a company name, so they only appear once someone suggests the link. Taleo, iCIMS and SuccessFactors aren't supported yet.
 - A full discovery pass of all ~120k sponsors takes several weeks of daily runs (about 6,000 sponsors fit in the 100-minute budget).
-- The CV match is keyword-based. It doesn't understand seniority or years of experience.
+- The CV match is keyword-based. Years of experience are a rough estimate from CV dates and can be wrong for unusual layouts, which is why people can edit the number.
 - Board discovery is name-based. It could occasionally link a sponsor to the wrong company with the same name; the UK-location filter and company-name checks reduce this.
 - Salary only appears where the job board publishes it.
 
@@ -78,6 +79,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 | Date | Work |
 |---|---|
+| 2026-11-12 | Added years-of-experience matching (CV estimate the person can edit, job minimums from descriptions, seniority from titles). Added an all-rights-reserved LICENSE. Removed long dashes from site text. |
 | 2026-11-12 | First run with the new sources (1,500 sponsors probed): 623 UK jobs from 52 sponsors, up from 267 from 10. Every platform returned jobs; 581 of 623 jobs have skills from their description. |
 | 2026-11-12 | Added six more job platforms (Recruitee, Personio, Breezy, Teamtailor, Pinpoint, BambooHR), Workday and general careers-page reading via links; "Missing a company?" suggestions; UK region filter; skills tagging; in-browser CV matcher; application tracker with save-to-folder for CVs and cover letters; tests run before each refresh. |
 | 2026-11-12 | Fixed repo links and workflow commit email to the Advith023 account. |
@@ -95,4 +97,4 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 Sponsor data: [Register of licensed sponsors: workers](https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers). Contains public sector information licensed under the Open Government Licence v3.0.
 
-© Advith Ashok
+© Advith Ashok. All rights reserved, see [LICENSE](LICENSE).

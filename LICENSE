@@ -1,0 +1,20 @@
+Copyright (c) 2026 Advith Ashok. All rights reserved.
+
+This repository is public so that people can read the code and see how
+SponsorLive works. That is the only permission given.
+
+You may not copy, modify, publish, distribute, sublicense, sell, host or
+otherwise use this code or the site's design, in whole or in part, for any
+purpose, commercial or not, without written permission from the copyright
+holder. Viewing the repository and forking it on GitHub are allowed only to
+the extent GitHub's Terms of Service require.
+
+Third-party material keeps its own terms:
+- Sponsor data comes from the Home Office Register of licensed sponsors
+  (workers) and is used under the Open Government Licence v3.0.
+- Job listings belong to the employers who publish them. SponsorLive only
+  links to them.
+- pdf.js (Apache 2.0) and mammoth.js (BSD 2-Clause) are loaded from a CDN
+  and are not part of this repository.
+
+For permission requests, open an issue on this repository.

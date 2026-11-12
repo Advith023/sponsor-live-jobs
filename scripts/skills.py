@@ -115,3 +115,47 @@ def export(path: Path):
 def strip_html(html: str) -> str:
     import html as h
     return h.unescape(re.sub(r"<[^>]+>", " ", h.unescape(html or "")))
+
+
+# ---------------------------------------------------------------- Experience
+
+_NUM = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10}
+_YEARS_RE = re.compile(
+    r"(?:at\s+least|minimum(?:\s+of)?|min\.?|over|more\s+than|\b)\s*"
+    r"(\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten)\s*(?:\+|plus)?\s*"
+    r"(?:(?:-|to|–|—)\s*\d{1,2}\s*\+?\s*)?"
+    r"(?:\(\d{1,2}\)\s*)?(?:years?|yrs?)['’]?\s*(?:of\s+)?(?:[\w&/+#-]+\s+){0,6}?(?:experience|exp\b|in\s+a\s+similar)", re.I)
+_YEARS_AFTER_RE = re.compile(r"experience[^.;\n]{0,40}?\(?\s*(\d{1,2})\s*(?:\+|plus)?\s*(?:(?:-|to|\u2013)\s*\d{1,2}\s*)?(?:years?|yrs?)\b", re.I)
+_YEARS_NOT = re.compile(r"years?\s+old|anniversar|founded|in business|been around", re.I)
+
+
+def min_years(text: str) -> int | None:
+    """Smallest 'N+ years ... experience' requirement found in a job description, or None."""
+    found = []
+    for m in _YEARS_RE.finditer(text or ""):
+        if _YEARS_NOT.search(text[max(0, m.start() - 25):m.end() + 30]) and not re.search(r"experience", text[m.start():m.end()], re.I):
+            continue
+        raw = m.group(1).lower()
+        n = _NUM.get(raw) or (int(raw) if raw.isdigit() else 0)
+        if 1 <= n <= 20:
+            found.append(n)
+    for m in _YEARS_AFTER_RE.finditer(text or ""):
+        n = int(m.group(1))
+        if 1 <= n <= 20:
+            found.append(n)
+    return min(found) if found else None
+
+
+_LEVELS = [
+    ("Entry", r"\b(intern(ship)?|graduate|grad|junior|jnr|entry[- ]level|apprentice|trainee|placement|associate)\b"),
+    ("Director", r"\b(director|vp|vice president|head of|chief|cto|cfo|ceo|coo)\b"),
+    ("Lead", r"\b(staff|principal|lead|manager)\b"),
+    ("Senior", r"\b(senior|snr|sr\.?)\b"),
+]
+
+
+def level(title: str) -> str | None:
+    for name, pat in _LEVELS:
+        if re.search(pat, title or "", re.I):
+            return name
+    return None
