@@ -1,20 +1,20 @@
 {
- "generated": "2026-11-12T14:57:36.485994+00:00",
+ "generated": "2026-11-12T17:29:56.229322+00:00",
  "sponsors": 120259,
- "sponsors_checked": 2987,
- "boards": 99,
- "jobs": 623,
- "companies": 52,
+ "sponsors_checked": 3273,
+ "boards": 114,
+ "jobs": 685,
+ "companies": 60,
  "sources": {
-  "Ashby": 222,
+  "Ashby": 273,
   "BambooHR": 4,
   "Breezy": 7,
-  "Greenhouse": 242,
+  "Greenhouse": 243,
   "Lever": 92,
   "Personio": 2,
-  "Pinpoint": 14,
+  "Pinpoint": 16,
   "SmartRecruiters": 31,
-  "Teamtailor": 9
+  "Teamtailor": 17
  },
  "suggestions_unmatched": []
 }
