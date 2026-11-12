@@ -69,7 +69,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 ## Known limits
 
 - Workday and in-house careers sites can't be found from a company name, so they only appear once someone suggests the link. Taleo, iCIMS and SuccessFactors aren't supported yet.
-- Recruitee, Personio, Breezy, Teamtailor and Workday were checked against live responses. Pinpoint and BambooHR are built from their documented formats and should be watched in the first runs.
+- A full discovery pass of all ~120k sponsors takes several weeks of daily runs (about 6,000 sponsors fit in the 100-minute budget).
 - The CV match is keyword-based. It doesn't understand seniority or years of experience.
 - Board discovery is name-based. It could occasionally link a sponsor to the wrong company with the same name; the UK-location filter and company-name checks reduce this.
 - Salary only appears where the job board publishes it.
@@ -78,6 +78,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 | Date | Work |
 |---|---|
+| 2026-11-12 | First run with the new sources (1,500 sponsors probed): 623 UK jobs from 52 sponsors, up from 267 from 10. Every platform returned jobs; 581 of 623 jobs have skills from their description. |
 | 2026-11-12 | Added six more job platforms (Recruitee, Personio, Breezy, Teamtailor, Pinpoint, BambooHR), Workday and general careers-page reading via links; "Missing a company?" suggestions; UK region filter; skills tagging; in-browser CV matcher; application tracker with save-to-folder for CVs and cover letters; tests run before each refresh. |
 | 2026-11-12 | Fixed repo links and workflow commit email to the Advith023 account. |
 | 2026-11-12 | Went live at https://advith023.github.io/sponsor-live-jobs/. First run: 267 roles from 10 sponsors (1,500 of 120,259 sponsors checked). Discovery now does the likeliest sponsors first, with a batch of 8,000 a day. |
@@ -85,7 +86,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 **Next steps**
 - Watch the first runs and tune the discovery batch size and match rules.
-- Check the first run's `sources` counts in `stats.json`, especially Pinpoint and BambooHR.
+- Collect company suggestions to add Workday and in-house careers sites.
 - Other countries' sponsor lists (US H-1B data, Netherlands IND register, Canada LMIA list, Ireland permits): on hold until the UK baseline is strong.
 - Set up the alert form provider and a custom domain.
 - Add "report wrong match" and job-closed feedback.
