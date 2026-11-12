@@ -10,7 +10,7 @@ on:
         default: "8000"
   push:
     branches: [main]
-    paths: ["site/**"]
+    paths: ["site/**", ".github/workflows/**"]
 
 permissions:
   contents: write
@@ -18,13 +18,12 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: refresh
-  cancel-in-progress: false
-
 jobs:
   refresh:
     if: github.event_name != 'push'
+    concurrency:              # one data refresh at a time; site edits are never blocked by it
+      group: refresh
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
@@ -54,6 +53,9 @@ jobs:
 
   deploy:
     needs: [refresh]
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     if: always() && (needs.refresh.result == 'success' || needs.refresh.result == 'skipped')
     runs-on: ubuntu-latest
     environment:
