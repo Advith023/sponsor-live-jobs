@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SponsorLive control centre</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%2316a34a'/><circle cx='16' cy='16' r='5' fill='white'/></svg>">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header>
+  <strong>SponsorLive control centre</strong>
+  <nav><a href="../">Site</a><a href="../tracker/">Tracker</a><button id="signout" class="link" hidden>Sign out</button></nav>
+</header>
+
+<main>
+  <!-- sign in -->
+  <section id="login" class="card" hidden>
+    <h1>Sign in</h1>
+    <p>This page works directly with your GitHub repo. Paste a GitHub access token that only you have. It is kept in this browser and sent only to GitHub.</p>
+    <form id="loginForm">
+      <label>GitHub token<input id="token" type="password" autocomplete="off" required placeholder="github_pat_…"></label>
+      <label class="chk"><input type="checkbox" id="remember" checked> Remember on this device</label>
+      <button class="primary">Sign in</button>
+      <p id="loginMsg" class="err" role="alert"></p>
+    </form>
+    <details>
+      <summary>How to get a token (2 minutes, once)</summary>
+      <ol>
+        <li>On GitHub, click your picture (top right), then <b>Settings</b>.</li>
+        <li>At the bottom of the left menu, click <b>Developer settings</b>, then <b>Personal access tokens</b>, then <b>Fine-grained tokens</b>.</li>
+        <li>Click <b>Generate new token</b>. Name it "SponsorLive admin" and pick an expiry (90 days is sensible).</li>
+        <li>Under <b>Repository access</b>, choose <b>Only select repositories</b> and pick <b>sponsor-live-jobs</b>.</li>
+        <li>Under <b>Permissions</b>, set <b>Actions</b>, <b>Contents</b> and <b>Issues</b> to <b>Read and write</b>.</li>
+        <li>Click <b>Generate token</b>, copy it and paste it above. Don't share it or save it anywhere public.</li>
+      </ol>
+    </details>
+  </section>
+
+  <div id="app" hidden>
+    <p id="who" class="muted"></p>
+
+    <!-- overview -->
+    <section class="card">
+      <div class="bar"><h2>Overview</h2><button id="reloadAll">Reload</button></div>
+      <div id="stats" class="stats"></div>
+      <div id="sources" class="chips"></div>
+    </section>
+
+    <!-- refresh -->
+    <section class="card">
+      <div class="bar"><h2>Refresh jobs</h2></div>
+      <p class="muted">Runs automatically every day at 05:17 UK time. Run it now if you've added companies or want fresh jobs.</p>
+      <div class="row">
+        <label>How many new sponsors to check
+          <select id="batch">
+            <option value="300">Quick: 300 new sponsors (about 10 min)</option>
+            <option value="1500">Medium: 1,500 (about 25 min)</option>
+            <option value="8000" selected>Full: up to 8,000 (about 2 hours)</option>
+          </select>
+        </label>
+        <button id="runNow" class="primary">Run refresh now</button>
+      </div>
+      <p class="muted small">Every run re-fetches all known job boards, so jobs from added companies appear even on a quick run.</p>
+      <p id="runMsg" role="status"></p>
+      <table class="tbl"><thead><tr><th>Started</th><th>Type</th><th>Status</th><th>Took</th><th></th></tr></thead><tbody id="runs"></tbody></table>
+    </section>
+
+    <!-- suggestions -->
+    <section class="card">
+      <div class="bar"><h2>Suggestions from visitors</h2><span id="sugCount" class="muted"></span></div>
+      <p class="muted">Open suggestions are already tried on every refresh. <b>Approve</b> keeps the company permanently and closes the suggestion. <b>Reject</b> just closes it.</p>
+      <table class="tbl"><thead><tr><th>Company</th><th>Link</th><th>Platform</th><th>Last refresh</th><th></th></tr></thead><tbody id="sugs"></tbody></table>
+    </section>
+
+    <!-- companies -->
+    <section class="card">
+      <div class="bar"><h2>Companies you've added</h2><span id="seedCount" class="muted"></span></div>
+      <form id="addSeed" class="row">
+        <label>Company name<input name="company" required placeholder="As on the sponsor register, e.g. Monzo Bank"></label>
+        <label>Careers or job board link<input name="link" type="url" required placeholder="https://…"></label>
+        <button class="primary">Add</button>
+      </form>
+      <p id="seedMsg" role="status"></p>
+      <table class="tbl"><thead><tr><th>Company</th><th>Board</th><th>Last refresh</th><th></th></tr></thead><tbody id="seeds"></tbody></table>
+    </section>
+  </div>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>
