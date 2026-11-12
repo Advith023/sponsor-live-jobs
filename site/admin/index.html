@@ -74,6 +74,24 @@
       <table class="tbl"><thead><tr><th>Company</th><th>Link</th><th>Platform</th><th>Last refresh</th><th></th></tr></thead><tbody id="sugs"></tbody></table>
     </section>
 
+    <!-- settings -->
+    <section class="card">
+      <div class="bar"><h2>Site settings</h2><a href="../" target="_blank" rel="noopener">Open site</a></div>
+      <p class="muted">Change the wording, colour and links on the public site. Saving publishes the change; it's live in about a minute.</p>
+      <form id="settings" class="grid">
+        <label>Site name<input name="siteName" maxlength="40"></label>
+        <label>Owner name (footer)<input name="ownerName" maxlength="60"></label>
+        <label class="wide">Headline<input name="headline" maxlength="120"></label>
+        <label class="wide">Intro text<textarea name="intro" rows="3" maxlength="400"></textarea></label>
+        <label class="wide">Notice above the jobs<textarea name="notice" rows="3" maxlength="400"></textarea></label>
+        <label>Brand colour<input name="brandColor" type="color"></label>
+        <label>Job alerts form link (leave empty to hide)<input name="alertFormAction" type="url" placeholder="https://formspree.io/f/…"></label>
+        <label>"Feature a role" contact link (leave empty to hide)<input name="featureContactUrl" placeholder="mailto:you@example.com or https://…"></label>
+        <label>Suggestion form link (empty = GitHub)<input name="suggestEndpoint" type="url" placeholder="https://formspree.io/f/…"></label>
+        <div class="wide row"><button class="primary">Save and publish</button><span id="setMsg" role="status"></span></div>
+      </form>
+    </section>
+
     <!-- companies -->
     <section class="card">
       <div class="bar"><h2>Companies you've added</h2><span id="seedCount" class="muted"></span></div>

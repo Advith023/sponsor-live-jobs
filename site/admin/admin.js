@@ -206,6 +206,34 @@
     }
   }
 
+  // ---------- site settings (site/config.js)
+  const CONFIG_PATH = "site/config.js";
+  let configSha = null, configData = null;
+  async function loadSettings() {
+    const f = await gh(`/contents/${CONFIG_PATH}?ref=main`);
+    configSha = f.sha;
+    const text = b64decode(f.content);
+    configData = JSON.parse(text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1));
+    const form = $("settings");
+    for (const el2 of form.elements) if (el2.name && el2.name in configData) el2.value = configData[el2.name] || (el2.type === "color" ? "#16a34a" : "");
+  }
+  $("settings").onsubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target, msg = $("setMsg");
+    const next = { ...configData };
+    for (const el2 of form.elements) if (el2.name) next[el2.name] = el2.value.trim();
+    for (const k of ["alertFormAction", "featureContactUrl", "suggestEndpoint"])
+      if (next[k] && !/^(https:\/\/|mailto:)/i.test(next[k])) { msg.textContent = "Links must start with https:// (or mailto: for the contact link)."; return; }
+    msg.textContent = "Publishing…";
+    try {
+      const text = "// Site settings. Easiest to change from the control centre (/admin), which keeps this file valid.\nwindow.SPONSORLIVE_CONFIG = " + JSON.stringify(next, null, 2) + ";\n";
+      const r = await gh(`/contents/${CONFIG_PATH}`, { method: "PUT", body: JSON.stringify({ message: "Update site settings", content: b64encode(text), sha: configSha, branch: "main" }) });
+      configSha = r.content.sha; configData = next;
+      msg.textContent = "Saved. Live in about a minute (refresh the site to see it).";
+      setTimeout(loadRuns, 5000);
+    } catch (err) { msg.textContent = err.message; }
+  };
+
   // ---------- start
   async function start() {
     $("login").hidden = true; $("app").hidden = false; $("signout").hidden = false;
@@ -213,7 +241,7 @@
       const me = await gh("https://api.github.com/user").catch(() => null);
       $("who").textContent = me ? `Signed in as ${me.login}` : "Signed in";
       await loadStats();
-      await Promise.all([loadRuns(), loadSuggestions(), loadSeeds()]);
+      await Promise.all([loadRuns(), loadSuggestions(), loadSeeds(), loadSettings()]);
     } catch (err) { if (token) $("who").textContent = "Something went wrong: " + err.message; }
   }
   $("reloadAll").onclick = start;

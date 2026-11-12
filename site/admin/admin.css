@@ -32,3 +32,7 @@ details{margin-top:8px}summary{cursor:pointer;font-weight:600}
 .tag{display:inline-block;border-radius:6px;padding:1px 7px;font-size:12px;font-weight:700}
 .ok{background:#dcf5e7;color:#14633b}.warn{background:#fff1d6;color:#7a4b00}.bad{background:#fde3e1;color:#8f1d14}.run{background:#e1ecff;color:#1d4ed8}
 @media (max-width:700px){.tbl thead{display:none}.tbl tr{display:block;border-bottom:1px solid #e6ede9;padding:6px 0}.tbl td{display:block;border:0;padding:3px 0;text-align:left!important}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.grid .wide{grid-column:1/-1}
+textarea{font:inherit;padding:8px 10px;border:1px solid #c3d2cb;border-radius:8px;resize:vertical}
+input[type=color]{height:40px;padding:4px;width:80px}

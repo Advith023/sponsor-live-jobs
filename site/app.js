@@ -2,12 +2,18 @@
   const cfg = window.SPONSORLIVE_CONFIG || {};
   const $ = (s) => document.querySelector(s);
   const PAGE = 40;
-  const state = { q: "", loc: "", age: 0, remote: false, cats: new Set(), rg: new Set(), sort: "new", shown: PAGE };
+  const state = { q: "", loc: "", age: 0, remote: false, cats: new Set(), rg: new Set(), src: new Set(), sort: "new", shown: PAGE };
   let cv = null; // in-memory only, never stored
   let jobs = [], filtered = [];
 
   // ---------- setup
   $("#siteName").textContent = cfg.siteName || "SponsorLive";
+  if (cfg.siteName) document.title = document.title.replace("SponsorLive", cfg.siteName);
+  if (cfg.headline) $("#headline").textContent = cfg.headline;
+  if (cfg.intro) $("#intro").textContent = cfg.intro;
+  if (cfg.notice) $("#noticeText").textContent = cfg.notice;
+  if (cfg.ownerName) $("#owner").textContent = cfg.ownerName;
+  if (/^#[0-9a-f]{6}$/i.test(cfg.brandColor || "")) document.documentElement.style.setProperty("--brand", cfg.brandColor);
   $("#yr").textContent = new Date().getFullYear();
   if (cfg.alertFormAction) { $("#alertBox").hidden = false; $("#alertForm").action = cfg.alertFormAction; }
   if (cfg.featureContactUrl) { $("#featureBox").hidden = false; $("#featureLink").href = cfg.featureContactUrl; }
@@ -31,6 +37,7 @@
     state.sort = p.get("sort") || "new";
     state.cats = new Set((p.get("cat") || "").split("|").filter(Boolean));
     state.rg = new Set((p.get("rg") || "").split("|").filter(Boolean));
+    state.src = new Set((p.get("src") || "").split("|").filter(Boolean));
     if (state.sort === "match") state.sort = "new";
   }
   function writeUrl() {
@@ -42,6 +49,7 @@
     if (state.sort !== "new") p.set("sort", state.sort);
     if (state.cats.size) p.set("cat", [...state.cats].join("|"));
     if (state.rg.size) p.set("rg", [...state.rg].join("|"));
+    if (state.src.size) p.set("src", [...state.src].join("|"));
     history.replaceState(null, "", p.toString() ? `?${p}` : location.pathname);
   }
 
@@ -54,6 +62,7 @@
     if (state.remote && !j.r) return false;
     if (skip !== "cat" && state.cats.size && !state.cats.has(j.cat)) return false;
     if (skip !== "rg" && state.rg.size && !j._rg.some((r) => state.rg.has(r))) return false;
+    if (skip !== "src" && state.src.size && !state.src.has(j.src)) return false;
     if (cutoff && (!j._t || j._t < cutoff)) return false;
     if (terms.length && !terms.every((t) => j._hay.includes(t))) return false;
     if (lterms.length && !lterms.every((t) => j._loc.includes(t))) return false;
@@ -73,6 +82,7 @@
     render();
     renderChips("#cats", "cat", (j) => [j.cat], state.cats);
     renderChips("#regions", "rg", (j) => j._rg, state.rg, REGION_ORDER);
+    renderChips("#srcs", "src", (j) => [j.src], state.src);
   }
   const REGION_ORDER = ["London", "South East", "East of England", "South West", "Midlands", "North West",
     "Yorkshire & North East", "Scotland", "Wales", "Northern Ireland", "Remote", "UK (other / unspecified)"];
@@ -242,7 +252,7 @@
   });
   $("#moreBtn").addEventListener("click", () => { state.shown += PAGE; render(); });
   $("#reset").addEventListener("click", () => {
-    Object.assign(state, { q: "", loc: "", age: 0, remote: false, sort: cv ? "match" : "new" }); state.cats.clear(); state.rg.clear();
+    Object.assign(state, { q: "", loc: "", age: 0, remote: false, sort: cv ? "match" : "new" }); state.cats.clear(); state.rg.clear(); state.src.clear();
     syncControls(); apply();
   });
   $("#share").addEventListener("click", async () => {

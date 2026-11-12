@@ -13,8 +13,8 @@
 <header class="hero">
   <div class="wrap">
     <div class="brand"><span class="dot"></span><span id="siteName">SponsorLive</span><a class="navlink" href="tracker/">My applications →</a></div>
-    <h1>Live UK jobs at companies that can sponsor visas</h1>
-    <p class="lede">Every role comes straight from the company's own careers page, and every company is on the Home Office register of licensed Skilled Worker sponsors. No reposts, no ghost listings.</p>
+    <h1 id="headline">Live UK jobs at companies that can sponsor visas</h1>
+    <p class="lede" id="intro">Every role comes straight from the company's own careers page, and every company is on the Home Office register of licensed Skilled Worker sponsors. No reposts, no ghost listings.</p>
     <div class="search">
       <input id="q" type="search" placeholder="Job title, company or skill, e.g. data analyst, Monzo" autocomplete="off" aria-label="Search jobs">
       <input id="loc" type="search" placeholder="Location, e.g. London" autocomplete="off" aria-label="Location" list="locList">
@@ -39,6 +39,10 @@
     <section>
       <h3>Region</h3>
       <div id="regions" class="chips"></div>
+    </section>
+    <section>
+      <h3>Job board</h3>
+      <div id="srcs" class="chips"></div>
     </section>
     <section>
       <h3>Category</h3>
@@ -82,7 +86,7 @@
   </aside>
 
   <section class="results">
-    <div class="notice">
+    <div class="notice" id="noticeText">
       <strong>What we can tell you:</strong> the role is live on the company's site and the company holds a Skilled Worker sponsor licence.
       Sponsorship for a specific role is the employer's decision, so <strong>ask the recruiter</strong> before you apply.
     </div>
@@ -114,7 +118,7 @@
   <p><strong>Not immigration advice.</strong> Check your own eligibility on <a href="https://www.gov.uk/skilled-worker-visa" target="_blank" rel="noopener">gov.uk</a>. Jobs are refreshed daily from public company job boards; listings may close at any time.</p>
   <p>Sponsor data: <a id="regLink" href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers" target="_blank" rel="noopener">Register of licensed sponsors: workers</a>. Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener">Open Government Licence v3.0</a>.</p>
   <p><a href="tracker/">Application tracker</a> · Your CV and tracker data stay on your device; nothing is sent to us.</p>
-  <p>© <span id="yr"></span> Advith Ashok</p>
+  <p>© <span id="yr"></span> <span id="owner">Advith Ashok</span></p>
 </footer>
 
 <template id="tpl">
