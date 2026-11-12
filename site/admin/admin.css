@@ -36,3 +36,7 @@ details{margin-top:8px}summary{cursor:pointer;font-weight:600}
 .grid .wide{grid-column:1/-1}
 textarea{font:inherit;padding:8px 10px;border:1px solid #c3d2cb;border-radius:8px;resize:vertical}
 input[type=color]{height:40px;padding:4px;width:80px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;position:sticky;top:0;background:#f4f6f5;padding:8px 0;z-index:5}
+.jump a{border:1px solid #c3d2cb;border-radius:999px;padding:5px 12px;background:#fff;color:#14231d;text-decoration:none;font-weight:600;font-size:14px}
+.jump a:hover{background:#eef5f1}
+.card{scroll-margin-top:60px}

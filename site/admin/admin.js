@@ -192,17 +192,41 @@
     if (cell || row.length) { row.push(cell); rows.push(row); }
     return rows;
   }
+  // Feedback rows: no link, just free text (the longest non-date cell)
+  function renderFeedback(rows) {
+    const body = $("fbs"); body.replaceChildren();
+    const hidden = new Set(JSON.parse(localStorage.getItem("sponsorlive-hidden-feedback") || "[]"));
+    const items = [];
+    for (const r of rows) {
+      if (r.some((c) => /^https?:\/\//i.test(c.trim()))) continue;
+      const cells = r.map((c) => c.trim()).filter(Boolean);
+      const date = cells.find((c) => /^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(c)) || "";
+      const text = cells.filter((c) => c !== date).sort((a, b) => b.length - a.length)[0];
+      if (text && text.length > 2 && !hidden.has(date + text)) items.push({ date, text });
+    }
+    $("fbCount").textContent = items.length ? items.length + " notes" : "None yet";
+    if (!items.length) { body.append(row(["", "Nothing yet.", ""])); return; }
+    for (const it of items.reverse()) {
+      body.append(row([it.date, it.text, btn("Hide", (ev) => {
+        hidden.add(it.date + it.text);
+        localStorage.setItem("sponsorlive-hidden-feedback", JSON.stringify([...hidden]));
+        ev.target.closest("tr").remove();
+      })]));
+    }
+  }
+
   async function loadSheetSuggestions(body) {
     const url = configData && configData.suggestionsCsvUrl;
-    if (!url) return 0;
+    if (!url) { $("fbCount").textContent = "Set up the form in Site settings"; return 0; }
     let rows;
     try { rows = parseCsv(await (await fetch(url, { cache: "no-store" })).text()).slice(1); }
     catch { body.append(row(["Couldn't read the suggestions sheet from here. Each refresh still reads it.", "", "", "", ""])); return 0; }
     const data = seedFile ? seedFile.data : await readSeeds();
     const known = new Set([...(data._rejected || []), ...Object.values(data).flat().map((b) => b && b.url).filter(Boolean)].map((x) => String(x).toLowerCase()));
     let n = 0;
+    renderFeedback(rows);
     for (const r of rows) {
-      const link = r.find((c) => /^https?:\/\//i.test(c.trim())), company = (r.filter((c) => c.trim() && !/^https?:\/\//i.test(c.trim()) && !/^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(c.trim())).pop() || "").trim();
+      const link = r.find((c) => /^https?:\/\//i.test(c.trim())), company = (r.filter((c) => c.trim() && !/^https?:\/\//i.test(c.trim()) && !/^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(c.trim()))[0] || "").trim();
       if (!link || !company || known.has(link.trim().toLowerCase())) continue;
       known.add(link.trim().toLowerCase()); n++;
       const a = el("a", new URL(link.trim()).hostname); a.href = link.trim(); a.target = "_blank"; a.rel = "noopener";

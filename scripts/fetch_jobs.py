@@ -897,7 +897,7 @@ def load_suggestions() -> list[tuple[str, str]]:
             links = [c for c in row if re.match(r"https?://", c.strip())]
             names = [c for c in row if c.strip() and not re.match(r"https?://", c.strip()) and not re.match(r"\d{1,2}/\d{1,2}/\d{2,4}", c.strip())]
             if links and names:
-                out.append((names[-1].strip(), links[0].strip()))
+                out.append((names[0].strip(), links[0].strip()))  # company is the first text answer
     return out
 
 

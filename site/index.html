@@ -122,6 +122,17 @@
   <p>© <span id="yr"></span> <span id="owner">Advith Ashok</span></p>
 </footer>
 
+<button id="fbOpen" class="fbbtn" hidden>💬 Feedback</button>
+<dialog id="fbDialog" class="fbdlg">
+  <form id="fbForm" method="dialog">
+    <h3>How can we make this better?</h3>
+    <p class="small">Anonymous. Please don't include your name or contact details.</p>
+    <textarea id="fbText" rows="5" maxlength="1500" required placeholder="What's missing, confusing or broken?"></textarea>
+    <div class="fbacts"><button type="button" class="link" id="fbCancel">Cancel</button><button class="btn" id="fbSend">Send</button></div>
+    <p id="fbMsg" class="small" role="status"></p>
+  </form>
+</dialog>
+
 <template id="tpl">
   <li class="job">
     <div class="main">

@@ -40,16 +40,17 @@
 
   <div id="app" hidden>
     <p id="who" class="muted"></p>
+    <nav class="jump"><a href="#sec-overview">Overview</a><a href="#sec-refresh">Refresh</a><a href="#sec-suggestions">Suggestions</a><a href="#sec-feedback">Feedback</a><a href="#sec-settings">Site settings</a><a href="#sec-companies">Companies</a></nav>
 
     <!-- overview -->
-    <section class="card">
+    <section class="card" id="sec-overview">
       <div class="bar"><h2>Overview</h2><button id="reloadAll">Reload</button></div>
       <div id="stats" class="stats"></div>
       <div id="sources" class="chips"></div>
     </section>
 
     <!-- refresh -->
-    <section class="card">
+    <section class="card" id="sec-refresh">
       <div class="bar"><h2>Refresh jobs</h2></div>
       <p class="muted">Runs automatically every day at 05:17 UK time. Run it now if you've added companies or want fresh jobs.</p>
       <div class="row">
@@ -68,14 +69,21 @@
     </section>
 
     <!-- suggestions -->
-    <section class="card">
+    <section class="card" id="sec-suggestions">
       <div class="bar"><h2>Suggestions from visitors</h2><span id="sugCount" class="muted"></span></div>
       <p class="muted">Open suggestions are already tried on every refresh. <b>Approve</b> keeps the company permanently and closes the suggestion. <b>Reject</b> just closes it.</p>
       <table class="tbl"><thead><tr><th>Company</th><th>Link</th><th>Platform</th><th>Last refresh</th><th></th></tr></thead><tbody id="sugs"></tbody></table>
     </section>
 
+    <!-- feedback -->
+    <section class="card" id="sec-feedback">
+      <div class="bar"><h2>Feedback from visitors</h2><span id="fbCount" class="muted"></span></div>
+      <p class="muted">Anonymous notes sent from the site's "Feedback" button. Hiding one only hides it on this device.</p>
+      <table class="tbl"><thead><tr><th>Sent</th><th>Feedback</th><th></th></tr></thead><tbody id="fbs"></tbody></table>
+    </section>
+
     <!-- settings -->
-    <section class="card">
+    <section class="card" id="sec-settings">
       <div class="bar"><h2>Site settings</h2><a href="../" target="_blank" rel="noopener">Open site</a></div>
       <p class="muted">Change the wording, colour and links on the public site. Saving publishes the change; it's live in about a minute.</p>
       <form id="settings" class="grid">
@@ -87,17 +95,17 @@
         <label>Brand colour<input name="brandColor" type="color"></label>
         <label>Job alerts form link (leave empty to hide)<input name="alertFormAction" type="url" placeholder="https://formspree.io/f/…"></label>
         <label>"Feature a role" contact link (leave empty to hide)<input name="featureContactUrl" placeholder="mailto:you@example.com or https://…"></label>
-        <label class="wide">Google Form pre-filled link for suggestions (see "Set up the suggestion form" below)<input name="suggestGoogleFormPrefill" type="url" placeholder="https://docs.google.com/forms/d/e/…/viewform?usp=pp_url&entry.…=COMPANY&entry.…=LINK"></label>
+        <label class="wide">Google Form pre-filled link (suggestions and feedback) (see "Set up the suggestion form" below)<input name="suggestGoogleFormPrefill" type="url" placeholder="https://docs.google.com/forms/d/e/…/viewform?usp=pp_url&entry.…=COMPANY&entry.…=LINK&entry.…=FEEDBACK"></label>
         <label class="wide">Suggestions sheet, published as CSV<input name="suggestionsCsvUrl" type="url" placeholder="https://docs.google.com/spreadsheets/d/e/…/pub?output=csv"></label>
         <input type="hidden" name="suggestEndpoint">
         <div class="wide row"><button class="primary">Save and publish</button><span id="setMsg" role="status"></span></div>
       </form>
       <details>
-        <summary>Set up the suggestion form (once, about 5 minutes, no login needed for visitors)</summary>
+        <summary>Set up the suggestion and feedback form (once, about 5 minutes, no login needed for visitors)</summary>
         <ol>
           <li>Go to <b>forms.google.com</b> and create a blank form called "Suggest a company".</li>
-          <li>Add two <b>Short answer</b> questions, in this order: <b>Company name</b> and <b>Careers page link</b>.</li>
-          <li>Click the <b>⋮</b> menu (top right), then <b>Get pre-filled link</b>. Type <b>COMPANY</b> in the first answer and <b>LINK</b> in the second, click <b>Get link</b>, then <b>Copy link</b>. Paste it in the first box above.</li>
+          <li>Add three questions, in this order: <b>Company name</b> (Short answer), <b>Careers page link</b> (Short answer) and <b>Feedback</b> (Paragraph). Leave all three <b>not required</b>, and in <b>Settings</b> make sure <b>Collect email addresses</b> is off.</li>
+          <li>Click the <b>⋮</b> menu (top right), then <b>Get pre-filled link</b>. Type <b>COMPANY</b>, <b>LINK</b> and <b>FEEDBACK</b> in the three answers, click <b>Get link</b>, then <b>Copy link</b>. Paste it in the first box above.</li>
           <li>In the form's <b>Responses</b> tab, click <b>Link to Sheets</b> and create a new sheet.</li>
           <li>In that sheet: <b>File</b>, <b>Share</b>, <b>Publish to web</b>. Choose the responses tab and <b>Comma-separated values (.csv)</b>, click <b>Publish</b>, and copy the link. Paste it in the second box above.</li>
           <li>Click <b>Save and publish</b>. The site's "Missing a company?" box now sends to your form, and every refresh reads the sheet.</li>
@@ -106,7 +114,7 @@
     </section>
 
     <!-- companies -->
-    <section class="card">
+    <section class="card" id="sec-companies">
       <div class="bar"><h2>Companies you've added</h2><span id="seedCount" class="muted"></span></div>
       <form id="addSeed" class="row">
         <label>Company name<input name="company" required placeholder="As on the sponsor register, e.g. Monzo Bank"></label>

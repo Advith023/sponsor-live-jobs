@@ -228,11 +228,32 @@
       if (!prefill) return null;
       const u = new URL(prefill);
       if (!/docs\.google\.com$/.test(u.hostname) || !/\/forms\//.test(u.pathname)) return null;
-      let company, link;
-      for (const [k, v] of u.searchParams) { if (/^COMPANY$/i.test(v)) company = k; if (/^LINK$/i.test(v)) link = k; }
+      let company, link, feedback;
+      for (const [k, v] of u.searchParams) {
+        if (/^COMPANY$/i.test(v)) company = k; if (/^LINK$/i.test(v)) link = k; if (/^FEEDBACK$/i.test(v)) feedback = k;
+      }
       if (!company || !link) return null;
-      return { action: u.origin + u.pathname.replace(/\/viewform.*$/, "/formResponse"), company, link };
+      return { action: u.origin + u.pathname.replace(/\/viewform.*$/, "/formResponse"), company, link, feedback };
     } catch { return null; }
+  }
+  // ---------- anonymous feedback (only shown once the Google Form has a FEEDBACK question)
+  const gfb = googleForm(cfg.suggestGoogleFormPrefill);
+  if (gfb && gfb.feedback) {
+    $("#fbOpen").hidden = false;
+    $("#fbOpen").onclick = () => { $("#fbMsg").textContent = ""; $("#fbDialog").showModal(); };
+    $("#fbCancel").onclick = () => $("#fbDialog").close();
+    $("#fbForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const text = $("#fbText").value.trim();
+      if (!text) return;
+      $("#fbSend").disabled = true;
+      try {
+        await fetch(gfb.action, { method: "POST", mode: "no-cors", body: new URLSearchParams({ [gfb.feedback]: text }) });
+        $("#fbText").value = ""; $("#fbMsg").textContent = "Thank you! Sent.";
+        setTimeout(() => $("#fbDialog").close(), 1200);
+      } catch { $("#fbMsg").textContent = "Couldn't send that just now. Please try again later."; }
+      finally { $("#fbSend").disabled = false; }
+    });
   }
   if (!googleForm(cfg.suggestGoogleFormPrefill) && !cfg.suggestEndpoint) {
     $("#suggestBtn").textContent = "Suggest via GitHub";

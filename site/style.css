@@ -93,3 +93,9 @@ select{width:100%;padding:8px;border-radius:10px;border:1px solid var(--line);ba
 #suggestBox input{width:100%}
 @media (max-width:860px){.match{text-align:left;max-width:none}.acts{justify-content:flex-start}.side{flex-wrap:wrap}}
 .yrs input{width:80px;margin-left:6px;padding:4px 6px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.fbbtn{position:fixed;right:18px;bottom:18px;z-index:20;border:0;border-radius:999px;padding:11px 16px;font:inherit;font-weight:700;background:var(--brand);color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}
+.fbdlg{border:1px solid var(--line);border-radius:var(--radius);padding:18px;width:min(460px,92vw);background:var(--card);color:var(--ink)}
+.fbdlg::backdrop{background:rgba(0,0,0,.45)}
+.fbdlg h3{margin:0 0 4px}
+.fbdlg textarea{width:100%;margin:8px 0;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.fbacts{display:flex;justify-content:flex-end;gap:14px;align-items:center}
