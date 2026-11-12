@@ -53,7 +53,8 @@ UA = "SponsorLiveBot/1.0 (+https://github.com/Advith023/sponsor-live-jobs)"
 TIMEOUT = 20
 WORKERS = int(os.environ.get("WORKERS", "32"))
 DISCOVERY_BATCH = int(os.environ.get("DISCOVERY_BATCH", "8000"))
-DISCOVERY_MINUTES = float(os.environ.get("DISCOVERY_MINUTES", "100"))  # stop probing new sponsors after this
+DISCOVERY_MINUTES = float(os.environ.get("DISCOVERY_MINUTES", "100"))
+WD_CATCHUP_MINUTES = float(os.environ.get("WD_CATCHUP_MINUTES", "20"))  # Workday check for already-known sponsors  # stop probing new sponsors after this
 SUGGESTIONS_CSV_URL = os.environ.get("SUGGESTIONS_CSV_URL", "")
 GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY", "")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
@@ -586,6 +587,69 @@ def workday_probe(t):
     return None if isinstance(d, dict) and "jobPostings" in d else False
 
 
+# Automatic Workday discovery: each tenant publishes its career-site names in robots.txt, and unknown
+# tenants return an error, so a company-name guess can be checked cheaply on the common Workday hosts.
+WD_HOSTS = ["wd3", "wd1", "wd5", "wd12", "wd103", "wd105", "wd10", "wd101", "wd108"]
+WD_RESOLVED: dict[str, tuple[str, str | None]] = {}
+GENERIC_FIRST = {"british", "london", "global", "national", "international", "united", "general", "capital", "royal",
+                 "first", "north", "south", "east", "west", "great", "advanced", "smart", "digital", "premier", "health"}
+
+
+GENERIC_WORDS = GENERIC_FIRST | {"bank", "banking", "services", "solutions", "systems", "technology", "technologies", "consulting",
+                                 "partners", "management", "limited", "group", "care", "healthcare", "trust", "foundation"}
+
+
+def workday_find(tenant: str) -> str | None:
+    for wd in WD_HOSTS:
+        txt = safe_text(f"https://{tenant}.{wd}.myworkdayjobs.com/robots.txt")
+        if not txt or "Sitemap:" not in txt:
+            continue
+        sites = re.findall(r"Sitemap:\s*https://[^/\s]+/([^/\s]+)/siteMap\.xml", txt)
+        sites = [x for x in sites if not re.search(r"internal|private|employee|alumni", x, re.I)]
+        if sites:
+            return f"https://{tenant}.{wd}.myworkdayjobs.com/{sites[0]}"
+    return None
+
+
+def workday_org(url: str) -> str | None:
+    tenant, wd, site = WD_RE.match(url).groups()
+    api = f"https://{tenant}.{wd}.myworkdayjobs.com/wday/cxs/{tenant}/{site}"
+    d = safe_get(api + "/jobs", body={"appliedFacets": {}, "limit": 1, "offset": 0, "searchText": ""}) or {}
+    posts = d.get("jobPostings") or []
+    if not posts:
+        return None
+    det = safe_get(api + posts[0].get("externalPath", "")) or {}
+    return (det.get("hiringOrganization") or {}).get("name")
+
+
+def workday_tenants(name: str) -> list[str]:
+    out = []
+    for n in filter(None, [trading_name(name), name]):
+        words = norm_name(n).split()
+        if not words:
+            continue
+        out.append("".join(words))
+        if len(words) > 1 and len(words[0]) >= 5 and words[0] not in GENERIC_FIRST:
+            out.append(words[0])
+    return [t for i, t in enumerate(out) if len(t) >= 4 and t not in out[:i]][:3]
+
+
+def workday_matches(sponsor_name: str, tenant: str, org: str | None) -> bool:
+    if not org:
+        return tenant == "".join(norm_name(sponsor_name).split())  # exact full-name tenant only
+    o = re.sub(r"[^a-z0-9]", "", org.lower())
+    words = [w for w in norm_name(sponsor_name).split() if len(w) >= 4 and w not in GENERIC_WORDS]
+    return tenant in o or any(w in o for w in words)
+
+
+def workday_discover(sponsor_name: str) -> dict | None:
+    for t in workday_tenants(sponsor_name):
+        url = workday_find(t)
+        if url and workday_matches(sponsor_name, t, workday_org(url)):
+            return {"ats": "workday", "token": url}
+    return None
+
+
 def workday_jobs(t):
     m = WD_RE.match(t)
     if not m:
@@ -770,6 +834,10 @@ def discover(sponsor_name: str, extra_tokens: list[tuple[str, str]] | None = Non
             continue
         found.append({"ats": ats, "token": tok})
         seen_ats.add(ats)
+    if "workday" not in seen_ats:
+        wd = workday_discover(sponsor_name)
+        if wd:
+            found.append(wd)
     return found
 
 
@@ -891,6 +959,36 @@ def run():
     batch = todo[:DISCOVERY_BATCH]
     print(f"Discovery batch: {len(batch):,} of {len(todo):,} pending")
 
+    # Catch-up: sponsors checked before Workday discovery existed get a Workday-only check, likeliest first
+    wd_todo = [k for k, c in cache.items() if k in sponsors and not c.get("wd")]
+    wd_todo.sort(key=lambda k: -priority(sponsors[k]))
+    wd_deadline = time.time() + WD_CATCHUP_MINUTES * 60
+    if wd_todo:
+        print(f"Workday catch-up: {len(wd_todo):,} sponsors pending")
+
+        def wd_timed(k):
+            if time.time() > wd_deadline:
+                return None
+            return workday_discover(sponsors[k]["name"]) or False
+
+        found_wd = 0
+        with ThreadPoolExecutor(WORKERS) as ex:
+            futs = {ex.submit(wd_timed, k): k for k in wd_todo}
+            for f in as_completed(futs):
+                k = futs[f]
+                try:
+                    res = f.result()
+                except Exception:
+                    continue
+                if res is None:
+                    continue
+                cache[k]["wd"] = 1
+                if res:
+                    cache[k].setdefault("boards", []).append(res)
+                    found_wd += 1
+        print(f"  Workday boards found: {found_wd}")
+
+
     deadline = t0 + DISCOVERY_MINUTES * 60
 
     def discover_timed(k):
@@ -906,7 +1004,7 @@ def run():
                 res = f.result()
                 if res is not None:
                     prev = [b for b in cache.get(k, {}).get("boards", []) if b["ats"] in LINK_ONLY]
-                    cache[k] = {"checked": NOW.isoformat(), "boards": res + [b for b in prev if b not in res]}
+                    cache[k] = {"checked": NOW.isoformat(), "boards": res + [b for b in prev if b not in res], "wd": 1}
             except Exception as e:
                 print(f"  discover error {k}: {e}", file=sys.stderr)
             if i % 500 == 0:

@@ -19,7 +19,7 @@ gov.uk sponsor register (CSV, daily)
         ▼
 Discovery: find each sponsor's public job board  ──► data/ats_cache.json
         │  by name: Greenhouse · Lever · Ashby · Workable · SmartRecruiters ·
-        │           Recruitee · Personio · Breezy · Teamtailor · Pinpoint · BambooHR
+        │           Recruitee · Personio · Breezy · Teamtailor · Pinpoint · BambooHR · Workday
         │  by link: all of the above + Workday + any careers page with
         │           schema.org JobPosting data (seed file, GitHub suggestions, CSV)
         ▼
@@ -70,7 +70,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 ## Known limits
 
-- Workday and in-house careers sites can't be found from a company name, so they only appear once someone suggests the link. Taleo, iCIMS and SuccessFactors aren't supported yet.
+- Workday sites are found from the company name by reading each Workday host's robots.txt (which lists the company's career sites) and checking the hiring company's name; a 20-minute catch-up each run covers sponsors checked before this existed. In-house careers sites still need a suggested link. Taleo, iCIMS and SuccessFactors aren't supported yet.
 - A full discovery pass of all ~120k sponsors takes several weeks of daily runs (about 6,000 sponsors fit in the 100-minute budget).
 - The CV match is keyword-based. Years of experience are a rough estimate from CV dates and can be wrong for unusual layouts, which is why people can edit the number.
 - Board discovery is name-based. It could occasionally link a sponsor to the wrong company with the same name; the UK-location filter and company-name checks reduce this.
@@ -80,6 +80,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 | Date | Work |
 |---|---|
+| 2026-11-12 | Workday companies are now found automatically (e.g. Barclays), with a name check to avoid wrong matches. |
 | 2026-11-12 | Added a job board filter. Site wording, colour and links now live in `site/config.js` and can be edited from the control centre. Refresh runs now rebase before pushing so they never lose results. |
 | 2026-11-12 | Added the admin control centre at /admin: stats, run or stop refreshes, approve or reject suggestions, manage added companies. |
 | 2026-11-12 | Added years-of-experience matching (CV estimate the person can edit, job minimums from descriptions, seniority from titles). Added an all-rights-reserved LICENSE. Removed long dashes from site text. |

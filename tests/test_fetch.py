@@ -119,3 +119,17 @@ def test_experience_parsing():
     assert skills.level("Graduate Analyst") == "Entry"
     assert skills.level("Head of Data") == "Director"
     assert skills.level("Data Analyst") is None
+
+
+def test_workday_discovery(monkeypatch):
+    robots = {"https://barclays.wd3.myworkdayjobs.com/robots.txt":
+              "Sitemap: https://barclays.wd3.myworkdayjobs.com/External_Career_Site_Barclays/siteMap.xml\nUser-agent: *\n"}
+    monkeypatch.setattr(fj, "safe_text", lambda url: robots.get(url))
+    monkeypatch.setattr(fj, "workday_org", lambda url: "2755 Barclays Services Corpor")
+    assert fj.workday_tenants("BARCLAYS BANK UK PLC") == ["barclaysbank", "barclays"]
+    assert fj.workday_discover("BARCLAYS BANK UK PLC") == {
+        "ats": "workday", "token": "https://barclays.wd3.myworkdayjobs.com/External_Career_Site_Barclays"}
+    # a different company that happens to share the tenant guess is rejected
+    monkeypatch.setattr(fj, "workday_org", lambda url: "Something Else Ltd")
+    assert fj.workday_discover("Barclays Bank UK PLC") is None
+    assert fj.workday_discover("Unknown Widgets Ltd") is None
