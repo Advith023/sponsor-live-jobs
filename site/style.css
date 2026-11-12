@@ -70,3 +70,25 @@ select{width:100%;padding:8px;border-radius:10px;border:1px solid var(--line);ba
   .job{flex-direction:column}
   .side{flex-direction:row;align-items:center;min-width:0}
 }
+
+/* nav, CV matcher, match badges, tracker link, suggestions */
+.brand .navlink{margin-left:auto;color:#d1fae5;font-weight:600;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px}
+.brand .navlink:hover{background:rgba(255,255,255,.1)}
+.small{font-size:13px;color:var(--muted);margin:4px 0 0}
+.cvbox{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:14px;box-shadow:var(--shadow)}
+.cvhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.cvactions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.cvbox textarea{width:100%;margin:10px 0 8px;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:14px}
+#cvResult p{margin:8px 0 4px}
+.caution{background:#fff7ed;border:1px solid #fdba74;color:#7c2d12;border-radius:10px;padding:8px 10px}
+@media (prefers-color-scheme:dark){.caution{background:#2a1708;border-color:#9a3412;color:#fed7aa}}
+.match{font-size:12.5px;text-align:right;max-width:260px;border-radius:10px;padding:6px 8px;border:1px solid var(--line)}
+.match strong{display:block;font-size:13.5px}
+.match .why{color:var(--muted);margin-top:2px}
+.match.hi{border-color:#16a34a;background:var(--brand-soft)}
+.match.mid{border-color:#ca8a04}
+.match.lo{opacity:.85}
+.acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.btn.track{padding:10px 12px;white-space:nowrap}
+#suggestBox input{width:100%}
+@media (max-width:860px){.match{text-align:left;max-width:none}.acts{justify-content:flex-start}.side{flex-wrap:wrap}}

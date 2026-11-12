@@ -1,0 +1,22 @@
+name: Suggest a company's job board
+description: Add a company's careers page or job board to SponsorLive.
+title: "Suggest: "
+labels: ["board-suggestion"]
+body:
+  - type: input
+    id: company
+    attributes:
+      label: Company name
+      description: As it appears on the Home Office sponsor register if you know it.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Careers page or job board link
+      placeholder: https://...
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: The daily refresh picks this up automatically. Companies that aren't licensed sponsors are skipped.
