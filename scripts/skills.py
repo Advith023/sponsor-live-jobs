@@ -149,7 +149,7 @@ def min_years(text: str) -> int | None:
 _LEVELS = [
     ("Entry", r"\b(intern(ship)?|graduate|grad|junior|jnr|entry[- ]level|apprentice|trainee|placement|associate)\b"),
     ("Director", r"\b(director|vp|vice president|head of|chief|cto|cfo|ceo|coo)\b"),
-    ("Lead", r"\b(staff|principal|lead|manager)\b"),
+    ("Lead", r"\b(staff|principal|lead)\b"),
     ("Senior", r"\b(senior|snr|sr\.?)\b"),
 ]
 
