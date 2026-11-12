@@ -1,8 +1,20 @@
 {
- "generated": "2026-11-12T13:07:01.126867+00:00",
+ "generated": "2026-11-12T14:57:36.485994+00:00",
  "sponsors": 120259,
- "sponsors_checked": 1500,
- "boards": 13,
- "jobs": 267,
- "companies": 10
+ "sponsors_checked": 2987,
+ "boards": 99,
+ "jobs": 623,
+ "companies": 52,
+ "sources": {
+  "Ashby": 222,
+  "BambooHR": 4,
+  "Breezy": 7,
+  "Greenhouse": 242,
+  "Lever": 92,
+  "Personio": 2,
+  "Pinpoint": 14,
+  "SmartRecruiters": 31,
+  "Teamtailor": 9
+ },
+ "suggestions_unmatched": []
 }
