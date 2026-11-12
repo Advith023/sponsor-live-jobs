@@ -53,7 +53,7 @@ SKILLS = [
     ("Communication", "presentation skills", "communication skills"), ("Consulting", "management consulting"),
     # Engineering / health / education
     ("CAD", "autocad", "solidworks"), ("Mechanical engineering",), ("Electrical engineering",), ("Civil engineering",),
-    ("Embedded systems", "embedded", "firmware"), ("Nursing", "nmc", "registered nurse"), ("Clinical", "nhs"), ("Pharmacy",),
+    ("Embedded systems", "firmware", "embedded software", "embedded c"), ("Nursing", "nmc", "registered nurse"), ("Clinical", "nhs"), ("Pharmacy",),
     ("Teaching", "qts"), ("Research", "phd"),
     # Languages
     ("French",), ("German",), ("Spanish",), ("Italian",), ("Dutch",), ("Portuguese",), ("Mandarin", "chinese"), ("Arabic",), ("Hindi",), ("Japanese",),
@@ -100,6 +100,11 @@ def extract(text: str) -> list[int]:
     return found
 
 
+GENERIC = {"Recruitment", "Customer service", "Social media", "Leadership", "Communication", "HR", "Legal", "Research",
+           "Operations", "Sales", "Marketing", "Consulting", "Account management", "CRM", "Negotiation", "Customer success",
+           "Agile", "Jira", "Stakeholder management", "Project management", "Teaching", "Clinical"}
+
+
 def export(path: Path):
     """Write the vocabulary for the browser. Patterns are JS RegExp-compatible."""
     out = []
@@ -109,6 +114,8 @@ def export(path: Path):
             out.append({"n": name, "cs": cs, "ci": ci})
         else:
             out.append({"n": name, "ci": p})
+        if name in GENERIC:
+            out[-1]["g"] = 1
     path.write_text(json.dumps({"v": 1, "skills": out}, separators=(",", ":")))
 
 

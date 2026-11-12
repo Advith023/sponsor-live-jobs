@@ -13,7 +13,7 @@ window.CVMatch = (() => {
   async function loadSkills(url = "data/skills.json") {
     if (vocab) return vocab;
     const d = await fetch(url, { cache: "no-cache" }).then((r) => r.json());
-    vocab = d.skills.map((s) => ({ n: s.n, cs: s.cs ? new RegExp(s.cs) : null, ci: s.ci ? new RegExp(s.ci) : null }));
+    vocab = d.skills.map((s) => ({ n: s.n, g: !!s.g, cs: s.cs ? new RegExp(s.cs) : null, ci: s.ci ? new RegExp(s.ci) : null }));
     return vocab;
   }
 
@@ -114,7 +114,8 @@ window.CVMatch = (() => {
 
   // Keyword overlap only: share of the job's listed skills found on the CV, plus job-title words found on the CV.
   function score(job, cv) {
-    const J = job.k || [];
+    // generic skills (often from company boilerplate) count when you have them, never against you
+    const J = (job.k || []).filter((i) => vocab[i] && (!vocab[i].g || cv.skills.has(i)));
     const have = J.filter((i) => cv.skills.has(i));
     const missing = J.filter((i) => !cv.skills.has(i));
     const tw = [...new Set(words(job.t))];
