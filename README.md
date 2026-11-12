@@ -28,7 +28,7 @@ site/data/jobs.json  ──►  static site on GitHub Pages
 - **`scripts/fetch_jobs.py`**: the whole data pipeline, written in Python using only the standard library.
   - Downloads the latest sponsor register from gov.uk.
   - Tries likely board names for each sponsor and checks the company name where the job board reports it.
-  - Probes a rotating batch of sponsors each day (`DISCOVERY_BATCH`, default 4,000), caching the results, so coverage grows daily. Sponsors with no board found are rechecked after 90 days.
+  - Probes a rotating batch of sponsors each day (`DISCOVERY_BATCH`, default 8,000; likeliest tech, finance and London-area sponsors first), caching the results, so coverage grows daily. Sponsors with no board found are rechecked after 90 days.
   - Keeps only UK-based roles and de-duplicates them by apply link.
 - **`data/seed_boards.json`**: optional hints of the form "sponsor name → job board". Add a company here to get it listed faster; wrong hints are ignored automatically.
 - **`site/`**: the website, in plain HTML, CSS and JS with no build step.
@@ -64,6 +64,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 | Date | Work |
 |---|---|
+| 2026-11-12 | Went live at https://advith23.github.io/sponsor-live-jobs/. First run: 267 roles from 10 sponsors (1,500 of 120,259 sponsors checked). Discovery now does the likeliest sponsors first, with a batch of 8,000 a day. |
 | 2026-11-12 | First version: gov.uk register parser; five job-board integrations (Greenhouse, Lever (US and EU), Ashby, Workable, SmartRecruiters); UK location filter; categories; daily GitHub Action; GitHub Pages site with search and filters; slots for alert sign-up and featured roles. |
 
 **Next steps**
