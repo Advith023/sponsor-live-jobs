@@ -85,7 +85,8 @@ def find_register_csv_url() -> str:
         elif isinstance(o, list):
             for v in o:
                 walk(v)
-        elif isinstance(o, str) and o.lower().split("?")[0].endswith(".csv"):
+        elif (isinstance(o, str) and o.lower().split("?")[0].endswith(".csv")
+              and (o.startswith("http") or o.startswith("/"))):  # skip bare filenames
             urls.append(o)
 
     if data:
@@ -95,6 +96,7 @@ def find_register_csv_url() -> str:
         urls = re.findall(r'href="([^"]+\.csv)"', html)
     if not urls:
         raise RuntimeError("Could not locate sponsor register CSV on gov.uk")
+    urls.sort(key=lambda u: ("assets.publishing.service.gov.uk" not in u, not u.startswith("http")))
     url = urls[0]
     return url if url.startswith("http") else "https://www.gov.uk" + url
 
