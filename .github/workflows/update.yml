@@ -48,6 +48,8 @@ jobs:
           git config user.email "180869546+Advith023@users.noreply.github.com"
           git add data site/data
           git diff --cached --quiet || git commit -m "Daily job refresh"
+          # main may have moved while this ran (e.g. admin page edits); replay our data on top, keeping our data on conflict
+          git pull --rebase -X theirs origin main
           git push
 
   deploy:
