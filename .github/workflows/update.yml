@@ -38,7 +38,7 @@ jobs:
       - name: Commit data
         run: |
           git config user.name "Advith Ashok"
-          git config user.email "85840533+advith23@users.noreply.github.com"
+          git config user.email "180869546+Advith023@users.noreply.github.com"
           git add data site/data
           git diff --cached --quiet || git commit -m "Daily job refresh"
           git push
