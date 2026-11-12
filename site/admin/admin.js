@@ -295,6 +295,9 @@
       if (next[k] && !/^(https:\/\/|mailto:)/i.test(next[k])) { msg.textContent = "Links must start with https:// (or mailto: for the contact link)."; return; }
     msg.textContent = "Publishing…";
     try {
+      // fetch the latest copy first, so a change made elsewhere never blocks the save
+      const latest = await gh(`/contents/${CONFIG_PATH}?ref=main`);
+      configSha = latest.sha;
       const text = "// Site settings. Easiest to change from the control centre (/admin), which keeps this file valid.\nwindow.SPONSORLIVE_CONFIG = " + JSON.stringify(next, null, 2) + ";\n";
       const r = await gh(`/contents/${CONFIG_PATH}`, { method: "PUT", body: JSON.stringify({ message: "Update site settings", content: b64encode(text), sha: configSha, branch: "main" }) });
       configSha = r.content.sha; configData = next;
