@@ -38,7 +38,7 @@ site/data/jobs.json  ──►  static site on GitHub Pages
   - Respects `robots.txt` on ordinary careers sites and fetches them slowly.
 - **`scripts/skills.py`**: the skills vocabulary (~160 skills with aliases), used for job descriptions and exported for CV matching so both sides match the same way.
 - **`data/seed_boards.json`**: hints of the form `"Sponsor name": [{"url": "https://..."}]` (or `{"ats": ..., "token": ...}`). Any job-board or careers link works; the platform is detected from the link.
-- **Suggestions**: the site's "Missing a company?" box opens a pre-filled GitHub issue (label `board-suggestion`). Open issues with that label are read on every run. Companies not on the sponsor register are skipped and listed in `stats.json` → `suggestions_unmatched`. Optional: set a repo variable `SUGGESTIONS_CSV_URL` (e.g. a Google Form's response sheet published as CSV) or `suggestEndpoint` in `site/config.js` (e.g. Formspree) for people without a GitHub account.
+- **Suggestions**: the site's "Missing a company?" box posts to a Google Form (no login for visitors) once its pre-filled link is saved in the control centre; each refresh reads the form's responses sheet (published as CSV, `suggestionsCsvUrl` in `site/config.js`). Until then it falls back to a pre-filled GitHub issue (label `board-suggestion`), which needs a GitHub account. Rejected links are kept in `data/seed_boards.json` → `_rejected` and skipped. Companies not on the sponsor register are skipped and listed in `stats.json` → `suggestions_unmatched`.
 - **`site/`**: the website, in plain HTML, CSS and JS with no build step.
   - Search, location, "posted within", remote-only, UK region, job board and category chips, and sort.
   - **CV matcher** (`site/match.js`): reads a PDF, Word or pasted CV **in the browser only** (never uploaded or stored), finds skills and scores each job by keyword overlap with its description plus job-title words. Shows the %, the skills found and missing, and a caution that it's a keyword match, not a hiring prediction. Title-only matches are capped below "strong".
@@ -80,6 +80,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 | Date | Work |
 |---|---|
+| 2026-11-12 | Suggestions can go through a Google Form so visitors don't need GitHub; approve or reject them in the control centre. Noted: SLB's careers site loads jobs from a private search service, so it can't be read yet. |
 | 2026-11-12 | Workday companies are now found automatically (e.g. Barclays), with a name check to avoid wrong matches. |
 | 2026-11-12 | Added a job board filter. Site wording, colour and links now live in `site/config.js` and can be edited from the control centre. Refresh runs now rebase before pushing so they never lose results. |
 | 2026-11-12 | Added the admin control centre at /admin: stats, run or stop refreshes, approve or reject suggestions, manage added companies. |

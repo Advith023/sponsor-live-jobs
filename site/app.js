@@ -222,9 +222,34 @@
   $("#cvUseText").addEventListener("click", () => { const t = $("#cvText").value.trim(); if (t) useCv(t); });
 
   // ---------- suggest a company
+  // Google Form "pre-filled link" made with COMPANY and LINK as the answers -> where to post and which fields
+  function googleForm(prefill) {
+    try {
+      if (!prefill) return null;
+      const u = new URL(prefill);
+      if (!/docs\.google\.com$/.test(u.hostname) || !/\/forms\//.test(u.pathname)) return null;
+      let company, link;
+      for (const [k, v] of u.searchParams) { if (/^COMPANY$/i.test(v)) company = k; if (/^LINK$/i.test(v)) link = k; }
+      if (!company || !link) return null;
+      return { action: u.origin + u.pathname.replace(/\/viewform.*$/, "/formResponse"), company, link };
+    } catch { return null; }
+  }
+  if (!googleForm(cfg.suggestGoogleFormPrefill) && !cfg.suggestEndpoint) {
+    $("#suggestBtn").textContent = "Suggest via GitHub";
+    $("#suggestNote").textContent = "Needs a free GitHub account for now.";
+  }
   $("#suggestForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const f = e.target, company = f.company.value.trim(), link = f.link.value.trim(), msg = $("#suggestMsg");
+    const gf = googleForm(cfg.suggestGoogleFormPrefill);
+    if (gf) {
+      try {
+        const body = new URLSearchParams({ [gf.company]: company, [gf.link]: link });
+        await fetch(gf.action, { method: "POST", mode: "no-cors", body });
+        msg.textContent = "Thanks! We'll check it on the next daily refresh."; f.reset();
+      } catch { msg.textContent = "Couldn't send that just now. Please try again later."; }
+      return;
+    }
     if (cfg.suggestEndpoint) {
       try {
         const r = await fetch(cfg.suggestEndpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },

@@ -890,14 +890,23 @@ def load_suggestions() -> list[tuple[str, str]]:
                     out += [(company, l) for l in links[:3]]
         except Exception as e:
             print(f"  could not read suggestion issues: {e}", file=sys.stderr)
-    if SUGGESTIONS_CSV_URL:
-        text = safe_text(SUGGESTIONS_CSV_URL) or ""
+    csv_url = SUGGESTIONS_CSV_URL or site_config().get("suggestionsCsvUrl", "")
+    if csv_url:
+        text = safe_text(csv_url) or ""
         for row in csv.reader(io.StringIO(text)):
             links = [c for c in row if re.match(r"https?://", c.strip())]
             names = [c for c in row if c.strip() and not re.match(r"https?://", c.strip()) and not re.match(r"\d{1,2}/\d{1,2}/\d{2,4}", c.strip())]
             if links and names:
                 out.append((names[-1].strip(), links[0].strip()))
     return out
+
+
+def site_config() -> dict:
+    try:
+        t = (ROOT / "site" / "config.js").read_text()
+        return json.loads(t[t.index("{"):t.rindex("}") + 1])
+    except Exception:
+        return {}
 
 
 def match_sponsor(name: str, sponsors: dict) -> str | None:
@@ -926,8 +935,9 @@ def run():
     seed_jobs: dict[str, list] = {}
     unmatched = []
     seed_names: dict[str, str | None] = {}  # name as suggested -> register key (None if not a sponsor)
+    rejected = {x.strip().lower() for x in seeds.get("_rejected", [])}
     pairs = [(n, b) for n, bs in seeds.items() if not n.startswith("_") for b in bs] + \
-            [(n, {"url": l}) for n, l in load_suggestions()]
+            [(n, {"url": l}) for n, l in load_suggestions() if l.strip().lower() not in rejected and n.strip().lower() not in rejected]
     for sname, b in pairs:
         board = board_from_link(b["url"]) if "url" in b else b
         key = match_sponsor(sname, sponsors)  # allow "Monzo" to match "Monzo Bank Limited"

@@ -87,9 +87,22 @@
         <label>Brand colour<input name="brandColor" type="color"></label>
         <label>Job alerts form link (leave empty to hide)<input name="alertFormAction" type="url" placeholder="https://formspree.io/f/…"></label>
         <label>"Feature a role" contact link (leave empty to hide)<input name="featureContactUrl" placeholder="mailto:you@example.com or https://…"></label>
-        <label>Suggestion form link (empty = GitHub)<input name="suggestEndpoint" type="url" placeholder="https://formspree.io/f/…"></label>
+        <label class="wide">Google Form pre-filled link for suggestions (see "Set up the suggestion form" below)<input name="suggestGoogleFormPrefill" type="url" placeholder="https://docs.google.com/forms/d/e/…/viewform?usp=pp_url&entry.…=COMPANY&entry.…=LINK"></label>
+        <label class="wide">Suggestions sheet, published as CSV<input name="suggestionsCsvUrl" type="url" placeholder="https://docs.google.com/spreadsheets/d/e/…/pub?output=csv"></label>
+        <input type="hidden" name="suggestEndpoint">
         <div class="wide row"><button class="primary">Save and publish</button><span id="setMsg" role="status"></span></div>
       </form>
+      <details>
+        <summary>Set up the suggestion form (once, about 5 minutes, no login needed for visitors)</summary>
+        <ol>
+          <li>Go to <b>forms.google.com</b> and create a blank form called "Suggest a company".</li>
+          <li>Add two <b>Short answer</b> questions, in this order: <b>Company name</b> and <b>Careers page link</b>.</li>
+          <li>Click the <b>⋮</b> menu (top right), then <b>Get pre-filled link</b>. Type <b>COMPANY</b> in the first answer and <b>LINK</b> in the second, click <b>Get link</b>, then <b>Copy link</b>. Paste it in the first box above.</li>
+          <li>In the form's <b>Responses</b> tab, click <b>Link to Sheets</b> and create a new sheet.</li>
+          <li>In that sheet: <b>File</b>, <b>Share</b>, <b>Publish to web</b>. Choose the responses tab and <b>Comma-separated values (.csv)</b>, click <b>Publish</b>, and copy the link. Paste it in the second box above.</li>
+          <li>Click <b>Save and publish</b>. The site's "Missing a company?" box now sends to your form, and every refresh reads the sheet.</li>
+        </ol>
+      </details>
     </section>
 
     <!-- companies -->
