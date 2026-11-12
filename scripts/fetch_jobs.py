@@ -857,11 +857,13 @@ def run():
     # Seeds: map to register keys and probe explicitly
     seed_jobs: dict[str, list] = {}
     unmatched = []
+    seed_names: dict[str, str | None] = {}  # name as suggested -> register key (None if not a sponsor)
     pairs = [(n, b) for n, bs in seeds.items() if not n.startswith("_") for b in bs] + \
             [(n, {"url": l}) for n, l in load_suggestions()]
     for sname, b in pairs:
         board = board_from_link(b["url"]) if "url" in b else b
         key = match_sponsor(sname, sponsors)  # allow "Monzo" to match "Monzo Bank Limited"
+        seed_names[sname] = key
         if key and board:
             seed_jobs.setdefault(key, [])
             if (board["ats"], board["token"]) not in seed_jobs[key]:
@@ -996,6 +998,10 @@ def run():
         "boards": len(boards), "jobs": len(jobs), "companies": payload["companies"],
         "sources": dict(sorted({src: sum(1 for j in jobs if j["src"] == src) for src in {j["src"] for j in jobs}}.items())),
         "suggestions_unmatched": sorted(set(unmatched))[:200],
+        "seeds": {n: {"sponsor": sponsors[k]["name"] if k else None,
+                      "boards": len(cache.get(k, {}).get("boards", [])) if k else 0,
+                      "jobs": sum(1 for j in jobs if k and j["sp"] == sponsors[k]["name"])}
+                  for n, k in sorted(seed_names.items())},
     }, indent=1))
     skills.export(SKILLS_PATH)
     CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
