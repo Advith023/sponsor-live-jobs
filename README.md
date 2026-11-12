@@ -64,7 +64,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 | Date | Work |
 |---|---|
-| 2026-11-12 | Went live at https://advith23.github.io/sponsor-live-jobs/. First run: 267 roles from 10 sponsors (1,500 of 120,259 sponsors checked). Discovery now does the likeliest sponsors first, with a batch of 8,000 a day. |
+| 2026-11-12 | Went live at https://advith023.github.io/sponsor-live-jobs/. First run: 267 roles from 10 sponsors (1,500 of 120,259 sponsors checked). Discovery now does the likeliest sponsors first, with a batch of 8,000 a day. |
 | 2026-11-12 | First version: gov.uk register parser; five job-board integrations (Greenhouse, Lever (US and EU), Ashby, Workable, SmartRecruiters); UK location filter; categories; daily GitHub Action; GitHub Pages site with search and filters; slots for alert sign-up and featured roles. |
 
 **Next steps**
