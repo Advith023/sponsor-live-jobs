@@ -7,7 +7,7 @@ on:
     inputs:
       batch:
         description: "Sponsors to probe this run"
-        default: "4000"
+        default: "8000"
   push:
     branches: [main]
     paths: ["site/**"]
@@ -25,7 +25,7 @@ jobs:
   refresh:
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -33,7 +33,7 @@ jobs:
           python-version: "3.12"
       - name: Fetch live jobs
         env:
-          DISCOVERY_BATCH: ${{ github.event.inputs.batch || '4000' }}
+          DISCOVERY_BATCH: ${{ github.event.inputs.batch || '8000' }}
         run: python scripts/fetch_jobs.py
       - name: Commit data
         run: |

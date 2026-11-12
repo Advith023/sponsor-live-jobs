@@ -40,7 +40,7 @@ REGISTER_PAGE = "https://www.gov.uk/government/publications/register-of-licensed
 UA = "SponsorLiveBot/1.0 (+https://github.com/advith23/sponsor-live-jobs)"
 TIMEOUT = 20
 WORKERS = int(os.environ.get("WORKERS", "32"))
-DISCOVERY_BATCH = int(os.environ.get("DISCOVERY_BATCH", "4000"))
+DISCOVERY_BATCH = int(os.environ.get("DISCOVERY_BATCH", "8000"))
 RECHECK_NEGATIVE_DAYS = int(os.environ.get("RECHECK_NEGATIVE_DAYS", "90"))
 NOW = datetime.now(timezone.utc)
 
@@ -385,6 +385,19 @@ def discover(sponsor_name: str, extra_tokens: list[tuple[str, str]] | None = Non
     return found
 
 
+HUB_TOWNS = re.compile(r"london|manchester|edinburgh|cambridge|oxford|bristol|leeds|glasgow|birmingham|reading|brighton", re.I)
+LIKELY = re.compile(r"tech|software|digital|data|ai\b|labs?\b|analytics|cloud|fintech|capital|bank|pay|energy|health|bio|"
+                    r"therapeutics|games|studio|media|robotics|security|systems|platform|ventures|markets|io\b", re.I)
+UNLIKELY = re.compile(r"care|nursing|home|restaurant|takeaway|cafe|kebab|pizza|curry|grill|food|pharmacy|dental|"
+                      r"church|mosque|temple|school|academy|trust|construction|builders|cleaning|garage|motors|"
+                      r"farm|salon|barber|hotel|spice|tandoori|supermarket|stores?\b|trading", re.I)
+
+
+def priority(s: dict) -> int:
+    n = s["name"]
+    return (2 if HUB_TOWNS.search(s.get("town", "")) else 0) + (2 if LIKELY.search(n) else 0) - (3 if UNLIKELY.search(n) else 0)
+
+
 def load_json(path: Path, default):
     try:
         return json.loads(path.read_text())
@@ -421,8 +434,8 @@ def run():
         return NOW - checked > timedelta(days=RECHECK_NEGATIVE_DAYS)
 
     todo = [k for k in sponsors if needs_check(k)]
-    # never-checked first, then oldest negative
-    todo.sort(key=lambda k: (k in cache, cache.get(k, {}).get("checked", "")))
+    # never-checked first, likeliest to use a modern job board first, then oldest negative
+    todo.sort(key=lambda k: (k in cache, -priority(sponsors[k]), cache.get(k, {}).get("checked", "")))
     todo = [k for k in todo if k in seed_jobs] + [k for k in todo if k not in seed_jobs]
     batch = todo[:DISCOVERY_BATCH]
     print(f"Discovery batch: {len(batch):,} of {len(todo):,} pending")
@@ -477,7 +490,8 @@ def run():
                     "u": j["url"],
                     "p": j.get("posted"),
                     "r": bool(j.get("remote")),
-                    "ty": j.get("type"),
+                    "ty": {"FullTime": "Full-time", "PartTime": "Part-time", "Contract": "Contract",
+                           "Intern": "Internship", "Temporary": "Temporary"}.get(j.get("type"), j.get("type")),
                     "d": j.get("dept"),
                     "s": j.get("salary"),
                 })
