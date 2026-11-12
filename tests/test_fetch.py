@@ -105,3 +105,17 @@ def test_skills_export_is_valid_json(tmp_path):
     data = json.loads(p.read_text())
     assert len(data["skills"]) == len(skills.SKILLS)
     assert all(s.get("ci") or s.get("cs") for s in data["skills"])
+
+
+def test_experience_parsing():
+    assert skills.min_years("You will have 3+ years of experience in SQL") == 3
+    assert skills.min_years("Minimum of five years\u2019 experience in a similar role") == 5
+    assert skills.min_years("2-4 years commercial experience with Python") == 2
+    assert skills.min_years("Experience: 3 to 5 years in analytics") == 3
+    assert skills.min_years("We have been in business for 20 years. 3 years experience required") == 3
+    assert skills.min_years("A company founded 10 years ago") is None
+    assert skills.min_years("experience working with 3 stakeholders") is None
+    assert skills.level("Senior Data Analyst") == "Senior"
+    assert skills.level("Graduate Analyst") == "Entry"
+    assert skills.level("Head of Data") == "Director"
+    assert skills.level("Data Analyst") is None

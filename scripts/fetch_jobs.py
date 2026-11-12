@@ -956,6 +956,8 @@ def run():
                     "rg": regions(j["loc"], bool(j.get("remote"))),
                     "k": kw,
                     "kd": bool(j.get("desc")),
+                    "y": skills.min_years(j.get("desc") or ""),
+                    "lv": skills.level(j["title"]),
                 })
 
     # Boards that returned nothing twice in a row get rechecked later

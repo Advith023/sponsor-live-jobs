@@ -92,3 +92,4 @@ select{width:100%;padding:8px;border-radius:10px;border:1px solid var(--line);ba
 .btn.track{padding:10px 12px;white-space:nowrap}
 #suggestBox input{width:100%}
 @media (max-width:860px){.match{text-align:left;max-width:none}.acts{justify-content:flex-start}.side{flex-wrap:wrap}}
+.yrs input{width:80px;margin-left:6px;padding:4px 6px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}

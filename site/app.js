@@ -111,6 +111,9 @@
       const parts = [];
       if (m.have.length) parts.push("On your CV: " + m.have.slice(0, 8).join(", "));
       if (m.missing.length) parts.push("Not found on your CV: " + m.missing.slice(0, 6).join(", "));
+      if (m.exp && m.exp.short) parts.push(m.exp.fromTitle ? `${j.lv} role, usually ${m.exp.need}+ years. Your CV: about ${cv.years}` : `Asks for ${m.exp.need}+ years. Your CV: about ${cv.years}`);
+      else if (m.exp && m.exp.need) parts.push(`Experience fits (${m.exp.fromTitle ? "typical for a " + j.lv.toLowerCase() + " role" : m.exp.need + "+ years asked"})`);
+      else if (m.exp && m.exp.entry) parts.push("Entry-level role, you may be over-qualified");
       if (m.basis === "title") parts.push("Based on the job title only");
       else if (m.basis === "limited") parts.push("Limited job details");
       det.textContent = parts.join(" · ");
@@ -166,18 +169,31 @@
       const names = [...cv.skills].map(CVMatch.skillName);
       const strong = jobs.filter((j) => j._m.pct >= 70).length;
       out.innerHTML = "";
+      const yrs = document.createElement("p");
+      yrs.className = "yrs";
+      const lab = document.createElement("label");
+      lab.append(cv.years == null ? "We couldn't work out your years of experience. Enter them to factor it in: " :
+        `Experience on your CV: about ${cv.years} years (estimated from your ${cv.yearsFrom === "dates" ? "job dates, not counting education" : "summary"}). Not right? Change it: `);
+      const inp = document.createElement("input");
+      inp.type = "number"; inp.min = "0"; inp.max = "50"; inp.step = "0.5"; inp.value = cv.years ?? ""; inp.ariaLabel = "Years of experience";
+      inp.addEventListener("change", () => {
+        const v = inp.value === "" ? null : Math.max(0, Math.min(50, +inp.value));
+        cv.years = v; jobs.forEach((j) => (j._m = CVMatch.score(j, cv))); apply();
+      });
+      lab.append(inp);
+      yrs.append(lab);
       const p = document.createElement("p");
       p.textContent = names.length
         ? `Found ${names.length} skills on your CV: ${names.slice(0, 25).join(", ")}${names.length > 25 ? "…" : ""}. ${strong} jobs look like a strong keyword fit.`
         : "We couldn't spot any skills we recognise. Try pasting the text of your CV instead.";
       const warn = document.createElement("p");
       warn.className = "caution";
-      warn.textContent = "The match % only compares keywords. It is not a hiring prediction. For strong fits, read the full requirements and ask the recruiter about visa sponsorship before you apply.";
+      warn.textContent = "The match % compares keywords and a rough estimate of experience. It is not a hiring prediction. For strong fits, read the full requirements and ask the recruiter about visa sponsorship before you apply.";
       const clear = document.createElement("button");
       clear.className = "link"; clear.type = "button"; clear.textContent = "Clear my CV";
       clear.onclick = () => { cv = null; jobs.forEach((j) => delete j._m); out.textContent = ""; $("#sortMatch").disabled = true;
         if (state.sort === "match") state.sort = "new"; $("#cvFile").value = ""; $("#cvText").value = ""; syncControls(); apply(); };
-      out.append(p, warn, clear);
+      out.append(p, yrs, warn, clear);
       $("#sortMatch").disabled = false;
       state.sort = "match";
       syncControls();
