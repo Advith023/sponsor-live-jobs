@@ -6,5 +6,9 @@ window.SPONSORLIVE_CONFIG = {
   alertFormAction: "",
   // "Feature your role" contact for employers/recruiters. Leave empty to hide.
   featureContactUrl: "",
+  // "Missing a company?" box. Leave suggestEndpoint empty to send suggestions as GitHub issues
+  // (needs a GitHub account). Or paste a form endpoint that accepts POST (e.g. Formspree).
+  suggestEndpoint: "",
+  githubRepo: "Advith023/sponsor-live-jobs",
   // Optional Google Analytics / Plausible etc. can be added in index.html.
 };

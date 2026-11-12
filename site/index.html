@@ -12,7 +12,7 @@
 <body>
 <header class="hero">
   <div class="wrap">
-    <div class="brand"><span class="dot"></span><span id="siteName">SponsorLive</span></div>
+    <div class="brand"><span class="dot"></span><span id="siteName">SponsorLive</span><a class="navlink" href="tracker/">My applications →</a></div>
     <h1>Live UK jobs at companies that can sponsor visas</h1>
     <p class="lede">Every role comes straight from the company's own careers page, and every company is on the Home Office register of licensed Skilled Worker sponsors. No reposts, no ghost listings.</p>
     <div class="search">
@@ -37,6 +37,10 @@
       <label class="chk"><input type="checkbox" id="remote"> Remote-friendly only</label>
     </section>
     <section>
+      <h3>Region</h3>
+      <div id="regions" class="chips"></div>
+    </section>
+    <section>
       <h3>Category</h3>
       <div id="cats" class="chips"></div>
     </section>
@@ -46,9 +50,21 @@
         <option value="new">Newest first</option>
         <option value="company">Company A–Z</option>
         <option value="title">Job title A–Z</option>
+        <option value="match" id="sortMatch" disabled>Best CV match</option>
       </select>
     </section>
     <button id="reset" class="link">Clear all filters</button>
+
+    <section class="promo" id="suggestBox">
+      <h3>Missing a company?</h3>
+      <p>Paste its careers page or job board link. If it's a licensed sponsor, its jobs get added automatically.</p>
+      <form id="suggestForm">
+        <input name="company" required placeholder="Company name" aria-label="Company name">
+        <input name="link" type="url" required placeholder="https://…/careers" aria-label="Careers page link">
+        <button type="submit">Suggest</button>
+      </form>
+      <p id="suggestMsg" class="small" role="status"></p>
+    </section>
 
     <section class="promo" id="alertBox" hidden>
       <h3>Get new roles by email</h3>
@@ -70,6 +86,23 @@
       <strong>What we can tell you:</strong> the role is live on the company's site and the company holds a Skilled Worker sponsor licence.
       Sponsorship for a specific role is the employer's decision — <strong>ask the recruiter</strong> before you apply.
     </div>
+    <section class="cvbox" id="cvBox">
+      <div class="cvhead">
+        <div>
+          <strong>Match jobs to your CV</strong>
+          <p class="small">Your CV is read <b>on this device only</b>. It is never uploaded or saved, and it's gone when you close the tab.</p>
+        </div>
+        <div class="cvactions">
+          <label class="btn">Choose CV (PDF, Word or text)<input type="file" id="cvFile" accept=".pdf,.docx,.txt,.md" hidden></label>
+          <button class="link" id="cvPasteBtn" type="button">or paste text</button>
+        </div>
+      </div>
+      <div id="cvPaste" hidden>
+        <textarea id="cvText" rows="6" placeholder="Paste your CV text here"></textarea>
+        <button class="btn" id="cvUseText" type="button">Match</button>
+      </div>
+      <div id="cvResult" class="small" role="status"></div>
+    </section>
     <div class="bar"><span id="count"></span><button id="share" class="link">Copy link to this search</button></div>
     <ol id="list" class="list"></ol>
     <div class="more"><button id="moreBtn" hidden>Show more jobs</button></div>
@@ -80,6 +113,7 @@
 <footer class="wrap foot">
   <p><strong>Not immigration advice.</strong> Check your own eligibility on <a href="https://www.gov.uk/skilled-worker-visa" target="_blank" rel="noopener">gov.uk</a>. Jobs are refreshed daily from public company job boards; listings may close at any time.</p>
   <p>Sponsor data: <a id="regLink" href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers" target="_blank" rel="noopener">Register of licensed sponsors: workers</a>. Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener">Open Government Licence v3.0</a>.</p>
+  <p><a href="tracker/">Application tracker</a> · Your CV and tracker data stay on your device; nothing is sent to us.</p>
   <p>© <span id="yr"></span> Advith Ashok</p>
 </footer>
 
@@ -92,11 +126,16 @@
     </div>
     <div class="side">
       <span class="badge ok" title="On the Home Office register of licensed sponsors (Skilled Worker route)">✓ Licensed sponsor</span>
-      <a class="btn apply" target="_blank" rel="noopener">Apply on company site →</a>
+      <div class="match" hidden></div>
+      <div class="acts">
+        <a class="btn ghost track" target="_blank" rel="noopener" title="Add this job to your application tracker">+ Track</a>
+        <a class="btn apply" target="_blank" rel="noopener">Apply on company site →</a>
+      </div>
     </div>
   </li>
 </template>
 
+<script src="match.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
