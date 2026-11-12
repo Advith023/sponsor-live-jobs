@@ -133,3 +133,11 @@ def test_workday_discovery(monkeypatch):
     monkeypatch.setattr(fj, "workday_org", lambda url: "Something Else Ltd")
     assert fj.workday_discover("Barclays Bank UK PLC") is None
     assert fj.workday_discover("Unknown Widgets Ltd") is None
+
+
+def test_match_sponsor_and_sheet_links():
+    sp = {fj.norm_name(n): {"name": n} for n in ["SAINSBURYS SUPERMARKETS LIMITED", "Monzo Bank Limited"]}
+    assert fj.match_sponsor("Sainsbury\u2019s", sp) == "sainsburys supermarkets"
+    assert fj.match_sponsor("Monzo", sp) == "monzo bank"
+    assert fj.match_sponsor("Nobody", sp) is None
+    assert fj.sheet_csv_url("https://docs.google.com/spreadsheets/d/e/X/pubhtml?gid=1&single=true").endswith("/pub?gid=1&single=true&output=csv")

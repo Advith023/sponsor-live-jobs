@@ -891,6 +891,7 @@ def load_suggestions() -> list[tuple[str, str]]:
         except Exception as e:
             print(f"  could not read suggestion issues: {e}", file=sys.stderr)
     csv_url = SUGGESTIONS_CSV_URL or site_config().get("suggestionsCsvUrl", "")
+    csv_url = sheet_csv_url(csv_url)
     if csv_url:
         text = safe_text(csv_url) or ""
         for row in csv.reader(io.StringIO(text)):
@@ -899,6 +900,17 @@ def load_suggestions() -> list[tuple[str, str]]:
             if links and names:
                 out.append((names[0].strip(), links[0].strip()))  # company is the first text answer
     return out
+
+
+def sheet_csv_url(url: str) -> str:
+    """Accept a Google Sheet 'Publish to web' link in either format and return the CSV version."""
+    if not url or "docs.google.com/spreadsheets" not in url:
+        return url
+    url = re.sub(r"/pubhtml(\?|$)", r"/pub\1", url)
+    if "output=csv" not in url:
+        url = re.sub(r"[?&]output=\w+", "", url)
+        url += ("&" if "?" in url else "?") + "output=csv"
+    return url
 
 
 def site_config() -> dict:
@@ -922,7 +934,10 @@ def match_sponsor(name: str, sponsors: dict) -> str | None:
         tn = trading_name(s["name"])
         if tn and norm_name(tn) == key:
             return k
-    return None
+    # ignore spaces and apostrophes: "Sainsbury's" vs "SAINSBURYS SUPERMARKETS LIMITED"
+    compact = key.replace(" ", "")
+    hits = sorted((k for k in sponsors if k.replace(" ", "").startswith(compact)), key=len)
+    return hits[0] if hits else None
 
 
 def run():
