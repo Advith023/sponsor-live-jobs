@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SponsorLive — live UK jobs at licensed visa sponsors</title>
+<title>SponsorLive: live UK jobs at licensed visa sponsors</title>
 <meta name="description" content="Live UK job openings pulled straight from company career pages, only at employers holding a Skilled Worker sponsor licence. No ghost listings.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%2316a34a'/><circle cx='16' cy='16' r='5' fill='white'/></svg>">
 <link rel="stylesheet" href="style.css">
@@ -16,8 +16,8 @@
     <h1>Live UK jobs at companies that can sponsor visas</h1>
     <p class="lede">Every role comes straight from the company's own careers page, and every company is on the Home Office register of licensed Skilled Worker sponsors. No reposts, no ghost listings.</p>
     <div class="search">
-      <input id="q" type="search" placeholder="Job title, company or skill — e.g. data analyst, Monzo" autocomplete="off" aria-label="Search jobs">
-      <input id="loc" type="search" placeholder="Location — e.g. London" autocomplete="off" aria-label="Location" list="locList">
+      <input id="q" type="search" placeholder="Job title, company or skill, e.g. data analyst, Monzo" autocomplete="off" aria-label="Search jobs">
+      <input id="loc" type="search" placeholder="Location, e.g. London" autocomplete="off" aria-label="Location" list="locList">
       <datalist id="locList"></datalist>
     </div>
     <div class="stats" id="stats">Loading live jobs…</div>
@@ -48,8 +48,8 @@
       <h3>Sort</h3>
       <select id="sort">
         <option value="new">Newest first</option>
-        <option value="company">Company A–Z</option>
-        <option value="title">Job title A–Z</option>
+        <option value="company">Company A to Z</option>
+        <option value="title">Job title A to Z</option>
         <option value="match" id="sortMatch" disabled>Best CV match</option>
       </select>
     </section>
@@ -84,7 +84,7 @@
   <section class="results">
     <div class="notice">
       <strong>What we can tell you:</strong> the role is live on the company's site and the company holds a Skilled Worker sponsor licence.
-      Sponsorship for a specific role is the employer's decision — <strong>ask the recruiter</strong> before you apply.
+      Sponsorship for a specific role is the employer's decision, so <strong>ask the recruiter</strong> before you apply.
     </div>
     <section class="cvbox" id="cvBox">
       <div class="cvhead">
