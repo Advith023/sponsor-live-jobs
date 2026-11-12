@@ -1,3 +1,4 @@
+// SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 // Per-role CV / cover letter storage. Nothing leaves the device:
 // - If the person picks a folder (Chrome/Edge on a computer), files are written to
 //   <folder>/<Company - Role>/<original file name> and the tracker only remembers where.

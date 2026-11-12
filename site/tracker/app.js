@@ -1,3 +1,4 @@
+// SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 const $ = id => document.getElementById(id);
 const stages = ['Researching','Ready for approval','Submitted','Receipt verified','Rejected','Withdrawn','Skipped'];
 const sponsors = ['Unknown','Tentative','Confirmed for this role','Unavailable'];

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 """
 SponsorLive data refresh.
 
@@ -1108,6 +1109,7 @@ def run():
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
+        "owner": "SponsorLive by Advith Ashok, github.com/Advith023/sponsor-live-jobs",
         "generated": NOW.isoformat(),
         "register": register_url,
         "count": len(jobs),

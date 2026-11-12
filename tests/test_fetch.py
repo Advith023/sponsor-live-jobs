@@ -1,3 +1,4 @@
+# SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 """Offline tests for the scraper: parsing uses response shapes captured from the live platforms."""
 import json
 import sys

@@ -1,3 +1,4 @@
+# SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 """Skills vocabulary shared by the scraper (job descriptions) and the website (CVs).
 
 Each entry: canonical name, then optional aliases. Matching is case-insensitive

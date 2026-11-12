@@ -1,3 +1,4 @@
+// SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 (() => {
   const cfg = window.SPONSORLIVE_CONFIG || {};
   const $ = (s) => document.querySelector(s);
