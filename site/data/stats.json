@@ -1,20 +1,93 @@
 {
- "generated": "2026-11-12T17:29:56.229322+00:00",
+ "generated": "2026-11-12T19:06:33.955237+00:00",
  "sponsors": 120259,
- "sponsors_checked": 3273,
- "boards": 114,
- "jobs": 685,
- "companies": 60,
+ "sponsors_checked": 9501,
+ "boards": 392,
+ "jobs": 2189,
+ "companies": 227,
  "sources": {
-  "Ashby": 273,
-  "BambooHR": 4,
-  "Breezy": 7,
-  "Greenhouse": 243,
-  "Lever": 92,
-  "Personio": 2,
-  "Pinpoint": 16,
-  "SmartRecruiters": 31,
-  "Teamtailor": 17
+  "Ashby": 561,
+  "BambooHR": 41,
+  "Breezy": 10,
+  "Greenhouse": 923,
+  "Lever": 186,
+  "Personio": 21,
+  "Pinpoint": 95,
+  "Recruitee": 18,
+  "SmartRecruiters": 193,
+  "Teamtailor": 141
  },
- "suggestions_unmatched": []
+ "suggestions_unmatched": [],
+ "seeds": {
+  "Checkout": {
+   "sponsor": "CHECKOUT (WIMBLEDON) LIMITED",
+   "boards": 0,
+   "jobs": 0
+  },
+  "Cleo AI": {
+   "sponsor": "Cleo AI Ltd",
+   "boards": 0,
+   "jobs": 0
+  },
+  "Deliveroo": {
+   "sponsor": "Roofoods Ltd t/a Deliveroo",
+   "boards": 2,
+   "jobs": 131
+  },
+  "Funding Circle": {
+   "sponsor": "FUNDING CIRCLE LTD",
+   "boards": 2,
+   "jobs": 25
+  },
+  "GoCardless": {
+   "sponsor": "GoCardless Limited",
+   "boards": 1,
+   "jobs": 8
+  },
+  "Kpler": {
+   "sponsor": "Kpler Limited",
+   "boards": 1,
+   "jobs": 39
+  },
+  "Monzo Bank": {
+   "sponsor": "Monzo Bank Ltd",
+   "boards": 1,
+   "jobs": 49
+  },
+  "Octopus Energy": {
+   "sponsor": "Octopus Energy Limited",
+   "boards": 0,
+   "jobs": 0
+  },
+  "Spotify": {
+   "sponsor": "Spotify Limited",
+   "boards": 1,
+   "jobs": 38
+  },
+  "Synthesia": {
+   "sponsor": "Synthesia Limited",
+   "boards": 2,
+   "jobs": 24
+  },
+  "Teya Services": {
+   "sponsor": "Teya Europe Ltd",
+   "boards": 2,
+   "jobs": 62
+  },
+  "Trainline": {
+   "sponsor": "Trainline.com Ltd",
+   "boards": 0,
+   "jobs": 0
+  },
+  "Wise Payments": {
+   "sponsor": "Wise Payments Limited",
+   "boards": 1,
+   "jobs": 0
+  },
+  "iwoca": {
+   "sponsor": "iwoca Limited",
+   "boards": 0,
+   "jobs": 0
+  }
+ }
 }
