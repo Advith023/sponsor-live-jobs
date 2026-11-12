@@ -80,6 +80,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 | Date | Work |
 |---|---|
+| 2026-11-12 | Anonymous feedback button on the site (via the same Google Form, no names or emails); feedback list and quick links in the control centre. |
 | 2026-11-12 | Suggestions can go through a Google Form so visitors don't need GitHub; approve or reject them in the control centre. Noted: SLB's careers site loads jobs from a private search service, so it can't be read yet. |
 | 2026-11-12 | Workday companies are now found automatically (e.g. Barclays), with a name check to avoid wrong matches. |
 | 2026-11-12 | Added a job board filter. Site wording, colour and links now live in `site/config.js` and can be edited from the control centre. Refresh runs now rebase before pushing so they never lose results. |
