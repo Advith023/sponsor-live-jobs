@@ -172,15 +172,7 @@
     await writeSeeds(data, "Reject a suggested job board");
   }
 
-  // ---------- suggestions
-  function parseIssue(i) {
-    const body = i.body || "";
-    const m = body.match(/###\s*Company name\s*\n+([^\n]+)/i);
-    const company = (m ? m[1] : i.title.replace(/^\s*suggest(ion)?:?\s*/i, "")).trim();
-    const link = (body.match(/https?:\/\/[^\s)>\]]+/) || [""])[0];
-    return { company, link };
-  }
-  // Suggestions sent through the Google Form (published sheet). Already-added or rejected links are hidden.
+  // Suggestions: from the Google Form sheet and from GitHub issues. Everything stays listed with its status.
   function parseCsv(text) {
     const rows = []; let row = [], cell = "", q = false;
     for (let i = 0; i < text.length; i++) {
@@ -192,17 +184,35 @@
     if (cell || row.length) { row.push(cell); rows.push(row); }
     return rows;
   }
-  // Feedback rows: no link, just free text (the longest non-date cell)
-  function renderFeedback(rows) {
+  const sheetCsvUrl = (url) => {
+    if (!url || !/docs\.google\.com\/spreadsheets/.test(url)) return url;
+    url = url.replace(/\/pubhtml(\?|$)/, "/pub$1");
+    if (!/output=csv/.test(url)) url = url.replace(/[?&]output=\w+/, "") + (url.includes("?") ? "&" : "?") + "output=csv";
+    return url;
+  };
+  const isLink = (c) => /^https?:\/\//i.test((c || "").trim());
+  const isDate = (c) => /^\d{1,2}\/\d{1,2}\/\d{2,4}/.test((c || "").trim());
+
+  async function sheetRows() {
+    const url = configData && configData.suggestionsCsvUrl;
+    if (!url) return null;
+    const text = await (await fetch(sheetCsvUrl(url), { cache: "no-store" })).text();
+    if (/^\s*</.test(text)) throw new Error("The sheet link gives a web page, not CSV. Re-publish it as Comma-separated values (.csv).");
+    const rows = parseCsv(text);
+    const head = (rows.shift() || []).map((h) => h.trim().toLowerCase());
+    return { rows, head };
+  }
+
+  function renderFeedback(sheet) {
     const body = $("fbs"); body.replaceChildren();
+    if (!sheet) { $("fbCount").textContent = "Set up the form in Site settings"; return; }
+    const fi = sheet.head.findIndex((h) => /feedback/.test(h));
     const hidden = new Set(JSON.parse(localStorage.getItem("sponsorlive-hidden-feedback") || "[]"));
     const items = [];
-    for (const r of rows) {
-      if (r.some((c) => /^https?:\/\//i.test(c.trim()))) continue;
-      const cells = r.map((c) => c.trim()).filter(Boolean);
-      const date = cells.find((c) => /^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(c)) || "";
-      const text = cells.filter((c) => c !== date).sort((a, b) => b.length - a.length)[0];
-      if (text && text.length > 2 && !hidden.has(date + text)) items.push({ date, text });
+    for (const r of sheet.rows) {
+      const text = fi >= 0 ? (r[fi] || "").trim() : "";
+      const date = (r.find(isDate) || "").trim();
+      if (text && !hidden.has(date + text)) items.push({ date, text });
     }
     $("fbCount").textContent = items.length ? items.length + " notes" : "None yet";
     if (!items.length) { body.append(row(["", "Nothing yet.", ""])); return; }
@@ -215,64 +225,92 @@
     }
   }
 
-  async function loadSheetSuggestions(body) {
-    const url = configData && configData.suggestionsCsvUrl;
-    if (!url) { $("fbCount").textContent = "Set up the form in Site settings"; return 0; }
-    let rows;
-    try { rows = parseCsv(await (await fetch(url, { cache: "no-store" })).text()).slice(1); }
-    catch { body.append(row(["Couldn't read the suggestions sheet from here. Each refresh still reads it.", "", "", "", ""])); return 0; }
-    const data = seedFile ? seedFile.data : await readSeeds();
-    const known = new Set([...(data._rejected || []), ...Object.values(data).flat().map((b) => b && b.url).filter(Boolean)].map((x) => String(x).toLowerCase()));
-    let n = 0;
-    renderFeedback(rows);
-    for (const r of rows) {
-      const link = r.find((c) => /^https?:\/\//i.test(c.trim())), company = (r.filter((c) => c.trim() && !/^https?:\/\//i.test(c.trim()) && !/^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(c.trim()))[0] || "").trim();
-      if (!link || !company || known.has(link.trim().toLowerCase())) continue;
-      known.add(link.trim().toLowerCase()); n++;
-      const a = el("a", new URL(link.trim()).hostname); a.href = link.trim(); a.target = "_blank"; a.rel = "noopener";
-      const actions = el("span");
-      actions.append(
-        btn("Approve", async (ev) => { ev.target.disabled = true; try { await addSeed(company, link.trim()); loadSuggestions(); loadSeeds(); } catch (err) { alert(err.message); ev.target.disabled = false; } }, "primary"), " ",
-        btn("Reject", async (ev) => { if (!confirm(`Reject the suggestion for ${company}?`)) return; ev.target.disabled = true; try { await addRejected(link.trim()); loadSuggestions(); } catch (err) { alert(err.message); ev.target.disabled = false; } }, "danger"));
-      body.append(row([company + " (form)", a, platformOf(link), refreshStatus(company), actions]));
+  function parseIssue(i) {
+    const body = i.body || "";
+    const m = body.match(/###\s*Company name\s*\n+([^\n]+)/i);
+    const company = (m ? m[1] : i.title.replace(/^\s*suggest(ion)?:?\s*/i, "")).trim();
+    const link = (body.match(/https?:\/\/[^\s)>\]]+/) || [""])[0];
+    return { company, link };
+  }
+
+  async function removeSeedLink(company, link) {
+    const d = await readSeeds();
+    for (const k of Object.keys(d)) {
+      if (k.startsWith("_") || !Array.isArray(d[k])) continue;
+      d[k] = d[k].filter((b) => (b.url || "").toLowerCase() !== link.toLowerCase());
+      if (!d[k].length) delete d[k];
     }
-    return n;
+    await writeSeeds(d, `Undo approval for ${company}`);
+  }
+  async function removeRejected(link) {
+    const d = await readSeeds();
+    d._rejected = (d._rejected || []).filter((x) => x.toLowerCase() !== link.toLowerCase());
+    await writeSeeds(d, "Undo a rejected suggestion");
   }
 
   async function loadSuggestions() {
-    const list = await gh("/issues?labels=board-suggestion&state=open&per_page=100");
     const body = $("sugs"); body.replaceChildren();
-    const sheet = await loadSheetSuggestions(body);
-    const total = list.length + sheet;
-    $("sugCount").textContent = total ? total + " waiting" : "None waiting";
-    if (!total) { body.append(row(["Nothing to review.", "", "", "", ""])); return; }
-    for (const i of list) {
-      const { company, link } = parseIssue(i);
-      const a = el("a", link ? new URL(link).hostname : "(no link)"); if (link) { a.href = link; a.target = "_blank"; a.rel = "noopener"; }
-      const close = async (reason, comment) => {
-        await gh(`/issues/${i.number}/comments`, { method: "POST", body: JSON.stringify({ body: comment }) });
-        await gh(`/issues/${i.number}`, { method: "PATCH", body: JSON.stringify({ state: "closed", state_reason: reason }) });
-      };
-      const actions = el("span");
-      actions.append(
-        btn("Approve", async (ev) => {
-          ev.target.disabled = true;
-          try {
-            if (!link) throw new Error("This suggestion has no link.");
-            await addSeed(company, link);
-            await close("completed", "Thanks! Added. Its jobs will appear after the next refresh if it's a licensed sponsor.");
-            loadSuggestions(); loadSeeds();
-          } catch (err) { alert(err.message); ev.target.disabled = false; }
-        }, "primary"),
-        " ",
-        btn("Reject", async (ev) => {
-          if (!confirm(`Reject the suggestion for ${company}?`)) return;
-          ev.target.disabled = true;
-          try { if (link) await addRejected(link); await close("not_planned", "Thanks for the suggestion. We won't be adding this one."); loadSuggestions(); }
-          catch (err) { alert(err.message); ev.target.disabled = false; }
-        }, "danger"));
-      body.append(row([company, a, link ? platformOf(link) : "", refreshStatus(company), actions]));
+    const data = await readSeeds();
+    const approved = new Set(Object.entries(data).filter(([k]) => !k.startsWith("_")).flatMap(([, v]) => v).map((b) => (b.url || "").toLowerCase()).filter(Boolean));
+    const rejected = new Set((data._rejected || []).map((x) => x.toLowerCase()));
+    const items = [];
+
+    let sheet = null;
+    try { sheet = await sheetRows(); } catch (err) { body.append(row([err.message, "", "", "", ""])); }
+    renderFeedback(sheet);
+    if (sheet) {
+      const ci = sheet.head.findIndex((h) => /company/.test(h)), li = sheet.head.findIndex((h) => /link|url|careers/.test(h));
+      for (const r of sheet.rows) {
+        const link = ((li >= 0 ? r[li] : r.find(isLink)) || "").trim();
+        const company = ((ci >= 0 ? r[ci] : "") || "").trim();
+        if (company && link) items.push({ company, link, source: "form", date: (r.find(isDate) || "").trim() });
+      }
     }
+    const issues = await gh("/issues?labels=board-suggestion&state=all&per_page=100");
+    for (const i of issues) {
+      const { company, link } = parseIssue(i);
+      if (link) items.push({ company, link, source: "GitHub", issue: i });
+    }
+
+    const seen = new Set();
+    let waiting = 0;
+    for (const it of items.reverse()) {
+      const key = it.link.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const status = approved.has(key) ? "approved" : rejected.has(key) ? "rejected" : "new";
+      if (status === "new") waiting++;
+      const a = el("a", (() => { try { return new URL(it.link).hostname; } catch { return it.link; } })());
+      if (isLink(it.link)) { a.href = it.link; a.target = "_blank"; a.rel = "noopener"; }
+      const statusCell = el("span");
+      statusCell.append(status === "approved" ? tag("Approved", "ok") : status === "rejected" ? tag("Rejected", "bad") : tag("New", "run"), " ", refreshStatus(it.company));
+      const actions = el("span");
+      const act = (label, fn, cls) => btn(label, async (ev) => {
+        ev.target.disabled = true;
+        try { await fn(); await loadSuggestions(); loadSeeds(); } catch (err) { alert(err.message); ev.target.disabled = false; }
+      }, cls);
+      if (status === "new") {
+        actions.append(
+          act("Approve", async () => {
+            await addSeed(it.company, it.link);
+            if (it.issue) await gh(`/issues/${it.issue.number}/comments`, { method: "POST", body: JSON.stringify({ body: "Thanks! Added. Its jobs will appear after the next refresh if it's a licensed sponsor and its careers site can be read." }) });
+          }, "primary"), " ",
+          act("Reject", async () => {
+            await addRejected(it.link);
+            if (it.issue && it.issue.state === "open") await gh(`/issues/${it.issue.number}`, { method: "PATCH", body: JSON.stringify({ state: "closed", state_reason: "not_planned" }) });
+          }, "danger"));
+      } else if (status === "approved") {
+        actions.append(act("Undo", () => removeSeedLink(it.company, it.link)));
+      } else {
+        actions.append(act("Undo", async () => {
+          await removeRejected(it.link);
+          if (it.issue && it.issue.state === "closed") await gh(`/issues/${it.issue.number}`, { method: "PATCH", body: JSON.stringify({ state: "open" }) });
+        }));
+      }
+      body.append(row([`${it.company} (${it.source})`, a, platformOf(it.link), statusCell, actions]));
+    }
+    $("sugCount").textContent = waiting ? waiting + " waiting" : "None waiting";
+    if (!seen.size) body.append(row(["Nothing yet.", "", "", "", ""]));
   }
 
   // ---------- site settings (site/config.js)
@@ -291,6 +329,7 @@
     const form = e.target, msg = $("setMsg");
     const next = { ...configData };
     for (const el2 of form.elements) if (el2.name) next[el2.name] = el2.value.trim();
+    next.suggestionsCsvUrl = sheetCsvUrl(next.suggestionsCsvUrl);
     for (const k of ["alertFormAction", "featureContactUrl", "suggestEndpoint", "suggestGoogleFormPrefill", "suggestionsCsvUrl"])
       if (next[k] && !/^(https:\/\/|mailto:)/i.test(next[k])) { msg.textContent = "Links must start with https:// (or mailto: for the contact link)."; return; }
     msg.textContent = "Publishing…";
