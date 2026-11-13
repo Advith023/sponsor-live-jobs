@@ -35,14 +35,14 @@
   const row = (cells) => { const tr = document.createElement("tr"); cells.forEach((c) => { const td = document.createElement("td"); c instanceof Node ? td.append(c) : (td.textContent = c ?? ""); tr.append(td); }); return tr; };
 
   const PLATFORMS = [
-    ["Workday", /\.wd\d+\.myworkdayjobs\.com/i], ["Greenhouse", /greenhouse\.io/i], ["Lever", /lever\.co/i], ["Ashby", /ashbyhq\.com/i],
+    ["Workday", /\.wd\d+\.myworkdayjobs\.com/i], ["Oracle", /oraclecloud\.com\/hcmUI/i], ["Greenhouse", /greenhouse\.io/i], ["Lever", /lever\.co/i], ["Ashby", /ashbyhq\.com/i],
     ["Workable", /workable\.com/i], ["SmartRecruiters", /smartrecruiters\.com/i], ["Recruitee", /recruitee\.com/i],
     ["Personio", /jobs\.personio\./i], ["Breezy", /breezy\.hr/i], ["Teamtailor", /teamtailor\.com/i], ["Pinpoint", /pinpointhq\.com/i],
     ["BambooHR", /bamboohr\.com/i],
   ];
   const platformOf = (url) => (PLATFORMS.find(([, rx]) => rx.test(url)) || ["Company careers site"])[0];
   const ATS_NAMES = { greenhouse: "Greenhouse", lever: "Lever", lever_eu: "Lever", ashby: "Ashby", workable: "Workable", smartrecruiters: "SmartRecruiters",
-    recruitee: "Recruitee", personio: "Personio", breezy: "Breezy", teamtailor: "Teamtailor", pinpoint: "Pinpoint", bamboohr: "BambooHR", workday: "Workday", jsonld: "Careers site" };
+    recruitee: "Recruitee", personio: "Personio", breezy: "Breezy", teamtailor: "Teamtailor", pinpoint: "Pinpoint", bamboohr: "BambooHR", workday: "Workday", oracle: "Oracle", jsonld: "Careers site" };
 
   function refreshStatus(name) {
     const s = stats && stats.seeds && stats.seeds[name];

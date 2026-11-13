@@ -690,6 +690,113 @@ def workday_jobs(t):
     return out
 
 
+# ---- Oracle Recruiting Cloud (public candidate-experience API; link-only)
+OR_RE = re.compile(r"https://([a-z0-9-]+\.fa\.[a-z0-9-]+\.oraclecloud\.com)/hcmUI/CandidateExperience/[a-z-]+/sites/([A-Za-z0-9_]+)", re.I)
+OR_MAX_DETAILS = 150
+
+
+def _oracle(t):
+    m = OR_RE.search(t)
+    return (m.group(1), m.group(2)) if m else (None, None)
+
+
+def _oracle_reqs(host, site, extra):
+    q = (f"https://{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true"
+         f"&expand=requisitionList.secondaryLocations,locationsFacet&finder=findReqs;siteNumber={site},{extra}")
+    d = safe_get(q) or {}
+    return (d.get("items") or [{}])[0]
+
+
+def oracle_probe(t):
+    host, site = _oracle(t)
+    if not host:
+        return False
+    item = _oracle_reqs(host, site, "facetsList=LOCATIONS,limit=1")
+    return None if "TotalJobsCount" in item else False
+
+
+def oracle_jobs(t):
+    host, site = _oracle(t)
+    if not host:
+        return []
+    facets = _oracle_reqs(host, site, "facetsList=LOCATIONS,limit=1").get("locationsFacet") or []
+    uk = [f for f in facets if re.fullmatch(r"\s*(united kingdom|uk|great britain)\s*", f.get("Name", ""), re.I)] or \
+         [f for f in facets if UK_COUNTRY.search(f.get("Name", ""))]
+    loc_filter = f"selectedLocationsFacet={uk[0]['Id']}," if uk else "keyword=%22United%20Kingdom%22,"
+    reqs, offset = [], 0
+    while offset < 1000:
+        item = _oracle_reqs(host, site, f"{loc_filter}limit=25,offset={offset},sortBy=POSTING_DATES_DESC")
+        page = item.get("requisitionList") or []
+        reqs += page
+        offset += 25
+        if not page or offset >= (item.get("TotalJobsCount") or 0):
+            break
+    out = []
+    for i, r in enumerate(reqs):
+        locs = [r.get("PrimaryLocation") or ""] + [x.get("Name", "") for x in r.get("secondaryLocations") or []]
+        loc = " / ".join(dict.fromkeys(x for x in locs if x))
+        desc = r.get("ShortDescriptionStr") or ""
+        if i < OR_MAX_DETAILS:
+            det = safe_get(f"https://{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitionDetails?expand=all&onlyData=true"
+                           f"&finder=ById;Id=%22{r.get('Id')}%22,siteNumber={site}") or {}
+            d = (det.get("items") or [{}])[0]
+            desc = " ".join(str(d.get(k) or "") for k in ("ExternalDescriptionStr", "ExternalResponsibilitiesStr", "ExternalQualificationsStr")) or desc
+        out.append(_job(r.get("Title"), loc, f"https://{host}/hcmUI/CandidateExperience/en/sites/{site}/job/{r.get('Id')}",
+                        _iso(r.get("PostedDate")), "remote" in (r.get("WorkplaceType") or "").lower() or "remote" in loc.lower(),
+                        dept=r.get("JobFamily"), desc=desc))
+    return out
+
+
+# ---- Careers-page sniffer: find which hiring system sits behind an ordinary careers page
+SNIFF_PATTERNS = [
+    ("workday", WD_RE),
+    ("oracle", OR_RE),
+    ("greenhouse", re.compile(r"https://(?:boards|job-boards)(?:\.eu)?\.greenhouse\.io/[\w-]+", re.I)),
+    ("lever", re.compile(r"https://jobs(?:\.eu)?\.lever\.co/[\w.-]+", re.I)),
+    ("ashby", re.compile(r"https://jobs\.ashbyhq\.com/[\w.%-]+", re.I)),
+    ("workable", re.compile(r"https://apply\.workable\.com/[\w-]+", re.I)),
+    ("smartrecruiters", re.compile(r"https://(?:careers|jobs)\.smartrecruiters\.com/[\w-]+", re.I)),
+    ("recruitee", re.compile(r"https://[\w-]+\.recruitee\.com", re.I)),
+    ("personio", re.compile(r"https://[\w-]+\.jobs\.personio\.(?:de|com)", re.I)),
+    ("breezy", re.compile(r"https://[\w-]+\.breezy\.hr", re.I)),
+    ("teamtailor", re.compile(r"https://[\w-]+\.teamtailor\.com", re.I)),
+    ("pinpoint", re.compile(r"https://[\w-]+\.pinpointhq\.com", re.I)),
+    ("bamboohr", re.compile(r"https://[\w-]+\.bamboohr\.com", re.I)),
+]
+
+
+def _sniff_html(html):
+    for ats, rx in SNIFF_PATTERNS:
+        m = rx.search(html or "")
+        if m:
+            b = board_from_link(m.group(0).rstrip("/\\\"'"))
+            if b and b["ats"] != "jsonld":
+                return b
+    return None
+
+
+def sniff_board(url: str, max_follow: int = 3) -> dict | None:
+    """Look at a careers page (and up to a few of its job pages) for a known hiring system."""
+    if not allowed(url):
+        return None
+    html = safe_text(url) or ""
+    b = _sniff_html(html)
+    if b:
+        return b
+    host = urllib.parse.urlsplit(url).netloc
+    links = []
+    for h in JOBLINK_RE.findall(html):
+        u = urllib.parse.urljoin(url, h)
+        if urllib.parse.urlsplit(u).netloc == host and JOBISH.search(urllib.parse.urlsplit(u).path) and u not in links and u != url:
+            links.append(u)
+    for u in links[:max_follow]:
+        if allowed(u):
+            b = _sniff_html(safe_text(u) or "")
+            if b:
+                return b
+    return None
+
+
 LD_RE = re.compile(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', re.I | re.S)
 JOBLINK_RE = re.compile(r'href=["\']([^"\'#]+)["\']', re.I)
 JOBISH = re.compile(r"/(jobs?|careers?|vacanc(y|ies)|positions?|openings?|roles?|opportunit(y|ies))/[^/?]+", re.I)
@@ -788,9 +895,10 @@ ATS = {
     "bamboohr": (bamboo_probe, bamboo_jobs, "BambooHR"),
     # link-only
     "workday": (workday_probe, workday_jobs, "Workday"),
+    "oracle": (oracle_probe, oracle_jobs, "Oracle"),
     "jsonld": (jsonld_probe, jsonld_jobs, "Company careers site"),
 }
-LINK_ONLY = {"workday", "jsonld"}
+LINK_ONLY = {"workday", "oracle", "jsonld"}
 
 # Recognise a pasted careers link -> (ats, token)
 LINK_PATTERNS = [
@@ -816,6 +924,9 @@ def board_from_link(url: str) -> dict | None:
     m = WD_RE.match(url)
     if m:
         return {"ats": "workday", "token": m.group(0)}
+    m = OR_RE.search(url)
+    if m:
+        return {"ats": "oracle", "token": m.group(0)}
     for ats, pat in LINK_PATTERNS:
         m = re.search(pat, url, re.I)
         if m and m.group(1).lower() not in ("www", "api", "app", "jobs", "careers"):
@@ -964,6 +1075,8 @@ def run():
             [(n, {"url": l}) for n, l in load_suggestions() if l.strip().lower() not in rejected and n.strip().lower() not in rejected]
     for sname, b in pairs:
         board = board_from_link(b["url"]) if "url" in b else b
+        if board and board["ats"] == "jsonld":
+            board = sniff_board(board["token"]) or board
         key = match_sponsor(sname, sponsors)  # allow "Monzo" to match "Monzo Bank Limited"
         seed_names[sname] = key
         if key and board:
