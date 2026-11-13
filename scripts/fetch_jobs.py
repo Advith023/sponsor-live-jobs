@@ -54,8 +54,8 @@ UA = "SponsorLiveBot/1.0 (+https://github.com/Advith023/sponsor-live-jobs)"
 TIMEOUT = 20
 WORKERS = int(os.environ.get("WORKERS", "32"))
 DISCOVERY_BATCH = int(os.environ.get("DISCOVERY_BATCH", "8000"))
-DISCOVERY_MINUTES = float(os.environ.get("DISCOVERY_MINUTES", "100"))
-WD_CATCHUP_MINUTES = float(os.environ.get("WD_CATCHUP_MINUTES", "20"))  # Workday check for already-known sponsors  # stop probing new sponsors after this
+DISCOVERY_MINUTES = float(os.environ.get("DISCOVERY_MINUTES", "100"))  # stop probing new sponsors after this
+WD_CATCHUP_MINUTES = float(os.environ.get("WD_CATCHUP_MINUTES", "20"))  # Workday check for already-known sponsors
 SUGGESTIONS_CSV_URL = os.environ.get("SUGGESTIONS_CSV_URL", "")
 GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY", "")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
@@ -76,8 +76,8 @@ def http_get(url: str, *, as_json: bool = True, retries: int = 2, body: dict | N
                 headers["Content-Type"] = "application/json"
             req = urllib.request.Request(url, data=data, headers=headers)
             with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
-                body = r.read()
-            text = body.decode("utf-8-sig", errors="replace")
+                raw = r.read()  # don't reuse `body`: a retry must send the original request again
+            text = raw.decode("utf-8-sig", errors="replace")
             return json.loads(text) if as_json else text
         except urllib.error.HTTPError as e:
             if e.code in (400, 401, 403, 404, 410, 422):
