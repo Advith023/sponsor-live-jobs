@@ -1,22 +1,22 @@
 {
- "generated": "2026-11-13T10:01:26.455414+00:00",
+ "generated": "2026-11-13T13:10:25.766083+00:00",
  "sponsors": 120259,
- "sponsors_checked": 12736,
- "boards": 634,
- "jobs": 3528,
- "companies": 366,
+ "sponsors_checked": 16094,
+ "boards": 817,
+ "jobs": 4261,
+ "companies": 485,
  "sources": {
-  "Ashby": 625,
-  "BambooHR": 82,
-  "Breezy": 25,
-  "Greenhouse": 1214,
-  "Lever": 212,
-  "Personio": 29,
-  "Pinpoint": 143,
+  "Ashby": 736,
+  "BambooHR": 100,
+  "Breezy": 26,
+  "Greenhouse": 1393,
+  "Lever": 252,
+  "Personio": 36,
+  "Pinpoint": 248,
   "Recruitee": 35,
-  "SmartRecruiters": 684,
-  "Teamtailor": 213,
-  "Workday": 266
+  "SmartRecruiters": 735,
+  "Teamtailor": 298,
+  "Workday": 402
  },
  "suggestions_unmatched": [
   "SLB",
@@ -37,7 +37,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 130
+   "jobs": 126
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -57,7 +57,7 @@
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 48
+   "jobs": 49
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
@@ -77,7 +77,7 @@
   "Spotify": {
    "sponsor": "Spotify Limited",
    "boards": 1,
-   "jobs": 38
+   "jobs": 40
   },
   "Synthesia": {
    "sponsor": "Synthesia Limited",
