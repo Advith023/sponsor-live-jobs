@@ -1,6 +1,6 @@
 # SponsorLive
 
-> **New here?** Read **[How SponsorLive works](docs/HOW_IT_WORKS.md)**: a guide from the simple version to the technical deep dive, with diagrams, screenshots and charts.
+> **New here?** Read **[How SponsorLive works](docs/HOW_IT_WORKS.md)**: a guide from the simple version to the technical deep dive, with diagrams, screenshots and charts ([PDF version](docs/How-SponsorLive-works.pdf)).
 
 **Live UK jobs at companies that can sponsor visas, taken straight from each company's careers page.**
 
