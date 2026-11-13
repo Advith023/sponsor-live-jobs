@@ -48,7 +48,7 @@ SKILLS = [
     ("Sales", "business development", "new business"), ("Account management",), ("Salesforce",), ("HubSpot",), ("CRM",),
     ("SaaS",), ("Negotiation",), ("Customer success",), ("Marketing", "digital marketing"), ("SEO",), ("PPC", "paid search", "google ads"),
     ("Content marketing", "copywriting"), ("Social media",), ("Operations", "operational excellence"), ("Supply chain", "logistics", "procurement"),
-    ("Demand planning", "s&op", "sales and operations planning", "capacity planning"), ("Lean", "six sigma", "continuous improvement"),
+    ("Demand planning", "s&op", "sales and operations planning", "capacity planning"), ("Lean", "lean six sigma", "lean manufacturing", "lean methodology", "six sigma", "continuous improvement", "kaizen"),
     ("Recruitment", "talent acquisition"), ("HR", "human resources", "employee relations"), ("Legal", "contract law", "commercial contracts"),
     ("Customer service", "customer support"), ("Leadership", "people management", "line management", "team lead"),
     ("Communication", "presentation skills", "communication skills"), ("Consulting", "management consulting"),
