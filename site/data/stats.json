@@ -1,23 +1,28 @@
 {
- "generated": "2026-11-12T19:06:33.955237+00:00",
+ "generated": "2026-11-13T10:01:26.455414+00:00",
  "sponsors": 120259,
- "sponsors_checked": 9501,
- "boards": 392,
- "jobs": 2189,
- "companies": 227,
+ "sponsors_checked": 12736,
+ "boards": 634,
+ "jobs": 3528,
+ "companies": 366,
  "sources": {
-  "Ashby": 561,
-  "BambooHR": 41,
-  "Breezy": 10,
-  "Greenhouse": 923,
-  "Lever": 186,
-  "Personio": 21,
-  "Pinpoint": 95,
-  "Recruitee": 18,
-  "SmartRecruiters": 193,
-  "Teamtailor": 141
+  "Ashby": 625,
+  "BambooHR": 82,
+  "Breezy": 25,
+  "Greenhouse": 1214,
+  "Lever": 212,
+  "Personio": 29,
+  "Pinpoint": 143,
+  "Recruitee": 35,
+  "SmartRecruiters": 684,
+  "Teamtailor": 213,
+  "Workday": 266
  },
- "suggestions_unmatched": [],
+ "suggestions_unmatched": [
+  "SLB",
+  "Sainsbury\u2019s",
+  "TEST please ignore"
+ ],
  "seeds": {
   "Checkout": {
    "sponsor": "CHECKOUT (WIMBLEDON) LIMITED",
@@ -32,7 +37,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 131
+   "jobs": 130
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -47,15 +52,25 @@
   "Kpler": {
    "sponsor": "Kpler Limited",
    "boards": 1,
-   "jobs": 39
+   "jobs": 40
   },
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 49
+   "jobs": 48
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
+   "boards": 0,
+   "jobs": 0
+  },
+  "SLB": {
+   "sponsor": null,
+   "boards": 0,
+   "jobs": 0
+  },
+  "Sainsbury\u2019s": {
+   "sponsor": null,
    "boards": 0,
    "jobs": 0
   },
@@ -68,6 +83,11 @@
    "sponsor": "Synthesia Limited",
    "boards": 2,
    "jobs": 24
+  },
+  "TEST please ignore": {
+   "sponsor": null,
+   "boards": 0,
+   "jobs": 0
   },
   "Teya Services": {
    "sponsor": "Teya Europe Ltd",
