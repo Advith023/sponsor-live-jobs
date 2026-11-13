@@ -14,7 +14,6 @@
   "Cleo AI": [{"ats": "ashby", "token": "cleo"}],
   "Synthesia": [{"ats": "ashby", "token": "synthesia"}],
   "Octopus Energy": [{"ats": "ashby", "token": "octopus-energy"}],
-  "Sainsbury's Supermarkets": [{"url": "https://hdhe.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX"}],
   "JPMorgan Chase Bank": [{"url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001"}],
-  "J.P. Morgan Securities": [{"url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001"}]
+  "J Sainsbury Plc": [{"url": "https://hdhe.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX"}]
 }
