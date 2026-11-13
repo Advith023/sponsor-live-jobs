@@ -103,3 +103,9 @@ select{width:100%;padding:8px;border-radius:10px;border:1px solid var(--line);ba
 #fbStars{display:flex;gap:4px;margin:4px 0 2px}
 #fbStars button{border:0;background:none;font-size:28px;line-height:1;cursor:pointer;color:#c9d2ce;padding:0 2px}
 #fbStars button.on{color:#f5a524}
+/* visa fit */
+.meta .tag.info{border-color:#9cc3e6;background:#eef5fc;color:#1d4f7a}
+.meta .tag.warn{border-color:#e6c08a;background:#fdf5e9;color:#7a4b10}
+.filters .hint{font-size:.8rem;line-height:1.4;color:var(--muted,#666);margin:.4rem 0 0}
+#hiddenNote{margin-left:.6rem;font-size:.85rem;color:var(--muted,#666)}
+@media (prefers-color-scheme:dark){.meta .tag.info{background:#10243a;color:#9cc8f0;border-color:#24496e}.meta .tag.warn{background:#2e2110;color:#f0c98a;border-color:#6b4a1d}}

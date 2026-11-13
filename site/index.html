@@ -40,6 +40,11 @@
       <label class="chk"><input type="checkbox" id="remote"> Remote-friendly only</label>
     </section>
     <section>
+      <h3>Visa fit</h3>
+      <label class="chk"><input type="checkbox" id="showAll"> Include roles unlikely to qualify</label>
+      <p class="hint">Some roles at licensed sponsors are below the skill level the Skilled Worker visa needs, such as customer assistants, drivers and cleaners. We hide these by matching job titles against the <a href="https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-skilled-occupations" target="_blank" rel="noopener">Home Office list of eligible occupations</a>. It's a guide, not immigration advice: the employer chooses the occupation and decides on sponsorship.</p>
+    </section>
+    <section>
       <h3>Region</h3>
       <div id="regions" class="chips"></div>
     </section>
@@ -111,7 +116,7 @@
       </div>
       <div id="cvResult" class="small" role="status"></div>
     </section>
-    <div class="bar"><span id="count"></span><button id="share" class="link">Copy link to this search</button></div>
+    <div class="bar"><span id="count"></span><span id="hiddenNote" class="muted" hidden></span><button id="share" class="link">Copy link to this search</button></div>
     <ol id="list" class="list"></ol>
     <div class="more"><button id="moreBtn" hidden>Show more jobs</button></div>
     <div id="empty" class="empty" hidden></div>

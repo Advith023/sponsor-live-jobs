@@ -78,11 +78,13 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 - The CV match is keyword-based. Years of experience are a rough estimate from CV dates and can be wrong for unusual layouts, which is why people can edit the number.
 - Board discovery is name-based. It could occasionally link a sponsor to the wrong company with the same name; the UK-location filter and company-name checks reduce this.
 - Salary only appears where the job board publishes it.
+- The visa fit check reads job titles only. It does not check salary, and the employer chooses the occupation code, so it is a guide rather than advice. Titles it cannot place confidently stay visible.
 
 ## Progress log
 
 | Date | Work |
 |---|---|
+| 2026-11-13 | Visa fit check: every job title is matched against the Home Office occupation tables (Appendix Skilled Occupations and the Temporary Shortage List), read from GOV.UK on each refresh. Roles below the skill level, such as customer assistants, drivers and cleaners, are hidden by default with a toggle to show them; shortage list roles get a note. Only exact official titles or curated phrases at the end of a title can hide a job, and occupation codes are never published. First pass: 765 of 5,520 jobs hidden, 1,425 matched eligible, 94 shortage list. |
 | 2026-11-13 | Added docs/HOW_IT_WORKS.md: layered guide (simple, walkthrough, deep dive) with Mermaid diagrams, screenshots and charts from live data. |
 | 2026-11-13 | Oracle live: 614 JPMorgan UK jobs. Sainsbury's is on the register as J Sainsbury Plc (found via the closest-names feature) and is now seeded under that name. Total 5,095 jobs from 514 sponsors. |
 | 2026-11-13 | Added Oracle Recruiting Cloud (public candidate API, UK location filter, descriptions for skills) and a careers-page sniffer that spots the hiring system behind a company's own site (found Sainsbury's runs on Oracle). Seeded Sainsbury's and JPMorgan. Suggestions that don't match the register now list the closest register names in the control centre. SLB not added: its job list is only available through a private search service. |
