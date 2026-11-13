@@ -80,6 +80,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 | Date | Work |
 |---|---|
+| 2026-11-13 | First run with Workday: 3,528 jobs from 366 sponsors (12,736 checked). Stricter Workday name check after a wrong match (Baxter Games matched to Baxter healthcare); existing Workday boards are re-checked once. Added a second daily refresh at 13:43 UTC because GitHub skipped the 05:17 schedule. |
 | 2026-11-12 | Ownership marks: copyright notice at the top of every code file, author tags on every page, and an owner field in the published data. Star rating added to the feedback box. |
 | 2026-11-12 | Suggestions stay listed after approve or reject, with Undo. Sheet links published as a web page are converted to CSV automatically. Company names now match the register ignoring apostrophes and spaces (Sainsbury's). Noted: Sainsbury's careers site has no standard job data, so it may show 0 jobs. |
 | 2026-11-12 | Anonymous feedback button on the site (via the same Google Form, no names or emails); feedback list and quick links in the control centre. |
