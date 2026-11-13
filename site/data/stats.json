@@ -1,23 +1,29 @@
 {
- "generated": "2026-11-13T16:17:51.352805+00:00",
+ "generated": "2026-11-13T20:39:07.690664+00:00",
  "sponsors": 120259,
- "sponsors_checked": 16449,
- "boards": 791,
- "jobs": 5520,
- "companies": 519,
+ "sponsors_checked": 19657,
+ "boards": 939,
+ "jobs": 5958,
+ "companies": 605,
+ "eligibility": {
+  "eligible": 1524,
+  "shortage_list": 98,
+  "unlikely": 774,
+  "unlabelled": 3562
+ },
  "sources": {
-  "Ashby": 740,
-  "BambooHR": 101,
-  "Breezy": 26,
-  "Greenhouse": 1408,
-  "Lever": 245,
-  "Oracle": 964,
-  "Personio": 36,
-  "Pinpoint": 334,
-  "Recruitee": 35,
-  "SmartRecruiters": 740,
-  "Teamtailor": 313,
-  "Workday": 578
+  "Ashby": 773,
+  "BambooHR": 135,
+  "Breezy": 30,
+  "Greenhouse": 1513,
+  "Lever": 255,
+  "Oracle": 968,
+  "Personio": 48,
+  "Pinpoint": 412,
+  "Recruitee": 63,
+  "SmartRecruiters": 792,
+  "Teamtailor": 347,
+  "Workday": 622
  },
  "suggestions_unmatched": [
   "SLB",
@@ -53,7 +59,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 127
+   "jobs": 128
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -68,12 +74,12 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 352
+   "jobs": 357
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 612
+   "jobs": 611
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
@@ -83,7 +89,7 @@
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 49
+   "jobs": 48
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
@@ -135,11 +141,5 @@
    "boards": 0,
    "jobs": 0
   }
- },
- "eligibility": {
-  "eligible": 1425,
-  "shortage_list": 94,
-  "unlikely": 765,
-  "unlabelled": 3236
  }
 }
