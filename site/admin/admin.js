@@ -47,7 +47,13 @@
   function refreshStatus(name) {
     const s = stats && stats.seeds && stats.seeds[name];
     if (!s) return tag("Waiting for next refresh", "warn");
-    if (!s.sponsor) return tag("Not on sponsor register", "bad");
+    if (!s.sponsor) {
+      const near = (stats.suggestions_closest || {})[name] || [];
+      const wrap = el("span");
+      wrap.append(tag("Not on sponsor register", "bad"));
+      if (near.length) wrap.append(el("div", "Closest register names: " + near.join(", ") + ". Re-add it under one of these if it's the same company.", "muted small"));
+      return wrap;
+    }
     return s.jobs ? tag(fmt(s.jobs) + " UK jobs", "ok") : tag("Sponsor, 0 UK jobs found", "warn");
   }
 
