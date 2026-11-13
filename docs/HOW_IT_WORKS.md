@@ -48,9 +48,9 @@ flowchart LR
     end
     ATS["Company job systems<br/>Greenhouse, Workday, Oracle,<br/>Lever, Ashby and 8 more"] --> PIPE
     SITE --> USER(("Job seeker"))
-    USER -. "suggest a company,<br/>feedback (anonymous)" .-> FORM["Google Form<br/>+ Sheet"]
-    FORM -. "read on every refresh" .-> PIPE
-    OWNER(("Owner")) -- "control centre" --> GH
+    USER -.->|"suggest a company,<br/>feedback (anonymous)"| FORM["Google Form<br/>+ Sheet"]
+    FORM -.->|"read on every refresh"| PIPE
+    OWNER(("Owner")) -->|"control centre"| GH
 ```
 
 There are only four moving parts:
@@ -111,12 +111,12 @@ flowchart TD
     A["Sponsor on the register<br/>e.g. 'Monzo Bank Limited'"] --> B["Clean the name<br/>'monzo bank'"]
     B --> C["Guess board names<br/>monzobank, monzo-bank, monzo"]
     C --> D{"Does a job board<br/>exist on any of<br/>11 systems?"}
-    D -- yes --> E{"Does the board's company<br/>name match the sponsor?"}
-    E -- yes --> F["Save the board"]
-    E -- no --> X["Ignore (wrong company)"]
-    D -- no --> W{"Workday site listed<br/>for that name?"}
-    W -- "yes, name matches" --> F
-    W -- no --> R["Recheck in 90 days"]
+    D -->|yes| E{"Does the board's company<br/>name match the sponsor?"}
+    E -->|yes| F["Save the board"]
+    E -->|no| X["Ignore (wrong company)"]
+    D -->|no| W{"Workday site listed<br/>for that name?"}
+    W -->|"yes, name matches"| F
+    W -->|no| R["Recheck in 90 days"]
     S["Visitor or owner<br/>suggests a careers link"] --> SN["Sniffer: which system<br/>sits behind this page?"]
     SN --> F
 ```
@@ -141,10 +141,10 @@ A private page where the owner signs in with their own GitHub key. It talks stra
 ```mermaid
 flowchart LR
     O(("Owner")) --> CC["Control centre<br/>/admin"]
-    CC -- "start or stop a refresh" --> ACT["GitHub Actions"]
-    CC -- "approve or reject suggestions,<br/>add companies" --> SEED["data/seed_boards.json"]
-    CC -- "edit wording, colour, links" --> CFG["site/config.js"]
-    CC -- "read" --> FORM["Google Sheet<br/>(suggestions, feedback, ratings)"]
+    CC -->|"start or stop a refresh"| ACT["GitHub Actions"]
+    CC -->|"approve or reject suggestions,<br/>add companies"| SEED["data/seed_boards.json"]
+    CC -->|"edit wording, colour, links"| CFG["site/config.js"]
+    CC -->|"read"| FORM["Google Sheet<br/>(suggestions, feedback, ratings)"]
     SEED --> ACT
     CFG --> PAGES["Website updates in about a minute"]
 ```
