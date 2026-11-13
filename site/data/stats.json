@@ -1,25 +1,27 @@
 {
- "generated": "2026-11-13T13:10:25.766083+00:00",
+ "generated": "2026-11-13T15:21:23.178475+00:00",
  "sponsors": 120259,
- "sponsors_checked": 16094,
- "boards": 817,
- "jobs": 4261,
- "companies": 485,
+ "sponsors_checked": 16279,
+ "boards": 815,
+ "jobs": 4367,
+ "companies": 497,
  "sources": {
-  "Ashby": 736,
+  "Ashby": 737,
   "BambooHR": 100,
   "Breezy": 26,
-  "Greenhouse": 1393,
+  "Greenhouse": 1404,
   "Lever": 252,
-  "Personio": 36,
-  "Pinpoint": 248,
+  "Personio": 35,
+  "Pinpoint": 250,
   "Recruitee": 35,
-  "SmartRecruiters": 735,
-  "Teamtailor": 298,
-  "Workday": 402
+  "SmartRecruiters": 738,
+  "Teamtailor": 313,
+  "Workday": 477
  },
  "suggestions_unmatched": [
+  "J.P. Morgan Securities",
   "SLB",
+  "Sainsbury's Supermarkets",
   "Sainsbury\u2019s",
   "TEST please ignore"
  ],
@@ -37,7 +39,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 126
+   "jobs": 127
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -48,6 +50,16 @@
    "sponsor": "GoCardless Limited",
    "boards": 1,
    "jobs": 8
+  },
+  "J.P. Morgan Securities": {
+   "sponsor": null,
+   "boards": 0,
+   "jobs": 0
+  },
+  "JPMorgan Chase Bank": {
+   "sponsor": "JPMorgan Chase Bank, National Association",
+   "boards": 1,
+   "jobs": 0
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
@@ -65,6 +77,11 @@
    "jobs": 0
   },
   "SLB": {
+   "sponsor": null,
+   "boards": 0,
+   "jobs": 0
+  },
+  "Sainsbury's Supermarkets": {
    "sponsor": null,
    "boards": 0,
    "jobs": 0
