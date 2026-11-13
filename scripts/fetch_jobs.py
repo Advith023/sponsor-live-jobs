@@ -691,7 +691,7 @@ def workday_jobs(t):
 
 
 # ---- Oracle Recruiting Cloud (public candidate-experience API; link-only)
-OR_RE = re.compile(r"https://([a-z0-9-]+\.fa\.[a-z0-9-]+\.oraclecloud\.com)/hcmUI/CandidateExperience/[a-z-]+/sites/([A-Za-z0-9_]+)", re.I)
+OR_RE = re.compile(r"https://([a-z0-9-]+\.fa(?:\.[a-z0-9-]+)?\.oraclecloud\.com)/hcmUI/CandidateExperience/[a-z-]+/sites/([A-Za-z0-9_]+)", re.I)
 OR_MAX_DETAILS = 150
 
 
@@ -1041,6 +1041,18 @@ def site_config() -> dict:
         return {}
 
 
+def closest_sponsors(name: str, sponsors: dict, n: int = 3) -> list[str]:
+    """Register names that look like a suggested name, to help fix a mismatch by hand."""
+    import difflib
+    key = norm_name(name)
+    if not key:
+        return []
+    first = key.split()[0].rstrip("s")
+    pool = [k for k in sponsors if first and first in k.replace(" ", "")] or list(sponsors)
+    best = difflib.get_close_matches(key, pool, n=n, cutoff=0.3) or pool[:n]
+    return [sponsors[k]["name"] for k in best]
+
+
 def match_sponsor(name: str, sponsors: dict) -> str | None:
     key = norm_name(name)
     if not key:
@@ -1262,6 +1274,7 @@ def run():
         "boards": len(boards), "jobs": len(jobs), "companies": payload["companies"],
         "sources": dict(sorted({src: sum(1 for j in jobs if j["src"] == src) for src in {j["src"] for j in jobs}}.items())),
         "suggestions_unmatched": sorted(set(unmatched))[:200],
+        "suggestions_closest": {n: closest_sponsors(n, sponsors) for n in sorted(set(unmatched))[:50]},
         "seeds": {n: {"sponsor": sponsors[k]["name"] if k else None,
                       "boards": len(cache.get(k, {}).get("boards", [])) if k else 0,
                       "jobs": sum(1 for j in jobs if k and j["sp"] == sponsors[k]["name"])}

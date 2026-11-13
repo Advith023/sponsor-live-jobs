@@ -179,3 +179,10 @@ def test_oracle_and_sniffer(monkeypatch):
     assert jobs[0]["url"].endswith("/sites/CX/job/1") and jobs[1]["remote"] and "SQL" in jobs[0]["desc"]
     assert any("selectedLocationsFacet=7," in u for u in seen)
     assert fj.oracle_probe("https://hdhe.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX") is None
+
+
+def test_oracle_without_region_and_closest():
+    b = fj.board_from_link("https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001")
+    assert b == {"ats": "oracle", "token": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001"}
+    sp = {fj.norm_name(n): {"name": n} for n in ["J Sainsbury PLC", "Sainsbury's Bank PLC", "Monzo Bank Limited"]}
+    assert "J Sainsbury PLC" in fj.closest_sponsors("Sainsbury's Supermarkets", sp)
