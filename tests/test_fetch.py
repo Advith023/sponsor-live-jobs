@@ -149,3 +149,33 @@ def test_workday_first_word_needs_rest_of_name():
     assert fj.workday_matches("Barclays Bank UK PLC", "barclays", "2755 Barclays Services Corpor") is True
     assert fj.workday_matches("Boeing Defence UK Limited", "boeing", "Boeing Defence UK Ltd") is True
     assert fj.workday_matches("AVEVA Solutions Limited", "aveva", None) is False
+
+
+def test_oracle_and_sniffer(monkeypatch):
+    sb = "https://hdhe.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/jobs/preview/400098161/apply/email?mode=location"
+    assert fj.board_from_link(sb) == {"ats": "oracle", "token": "https://hdhe.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX"}
+    listing = '<a href="/jobs/description/400098161/">Data Analyst</a>'
+    job = f'<a class="apply" href="{sb}">Apply</a>'
+    pages = {"https://www.example.jobs/jobs/": listing, "https://www.example.jobs/jobs/description/400098161/": job}
+    monkeypatch.setattr(fj, "allowed", lambda url: True)
+    monkeypatch.setattr(fj, "safe_text", lambda url: pages.get(url))
+    assert fj.sniff_board("https://www.example.jobs/jobs/")["ats"] == "oracle"
+
+    facets = {"items": [{"TotalJobsCount": 2, "locationsFacet": [{"Id": 7, "Name": "United Kingdom"}, {"Id": 8, "Name": "LONDON, United Kingdom"}]}]}
+    page = {"items": [{"TotalJobsCount": 2, "requisitionList": [
+        {"Id": "1", "Title": "Data Analyst", "PrimaryLocation": "LONDON, United Kingdom", "PostedDate": "2026-11-13", "JobFamily": "Data", "WorkplaceType": "Hybrid"},
+        {"Id": "2", "Title": "Engineer", "PrimaryLocation": "GLASGOW, LANARKSHIRE, United Kingdom", "PostedDate": "2026-11-12", "WorkplaceType": "Remote"}]}]}
+    detail = {"items": [{"ExternalDescriptionStr": "<p>SQL and Python</p>", "ExternalQualificationsStr": "3+ years of experience"}]}
+    seen = []
+
+    def fake_get(url, **kw):
+        seen.append(url)
+        if "Details" in url:
+            return detail
+        return facets if "facetsList=LOCATIONS" in url else page
+    monkeypatch.setattr(fj, "safe_get", fake_get)
+    jobs = fj.oracle_jobs("https://hdhe.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX")
+    assert [j["title"] for j in jobs] == ["Data Analyst", "Engineer"]
+    assert jobs[0]["url"].endswith("/sites/CX/job/1") and jobs[1]["remote"] and "SQL" in jobs[0]["desc"]
+    assert any("selectedLocationsFacet=7," in u for u in seen)
+    assert fj.oracle_probe("https://hdhe.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX") is None
