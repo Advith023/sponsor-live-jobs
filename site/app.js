@@ -182,7 +182,16 @@
   }
 
   // ---------- CV matching (in memory only)
+  // Anonymous usage counts (GoatCounter, no cookies, no personal data)
+  const gc = (path) => { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, event: true }); } catch {} };
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a"); if (!a) return;
+    if (a.matches(".apply, .title")) gc("apply-click");
+    else if (a.matches(".track")) gc("track-click");
+  });
+
   async function useCv(text) {
+    gc("cv-match");
     const out = $("#cvResult");
     try {
       await CVMatch.loadSkills();
@@ -262,6 +271,7 @@
     $("#fbOpen").onclick = () => { $("#fbMsg").textContent = ""; $("#fbDialog").showModal(); };
     $("#fbCancel").onclick = () => $("#fbDialog").close();
     $("#fbForm").addEventListener("submit", async (e) => {
+      gc("feedback-sent");
       e.preventDefault();
       const text = $("#fbText").value.trim();
       if (!text && !stars) { $("#fbMsg").textContent = "Add a rating or a comment first."; return; }
@@ -282,6 +292,7 @@
     $("#suggestNote").textContent = "Needs a free GitHub account for now.";
   }
   $("#suggestForm").addEventListener("submit", async (e) => {
+    gc("company-suggested");
     e.preventDefault();
     const f = e.target, company = f.company.value.trim(), link = f.link.value.trim(), msg = $("#suggestMsg");
     const gf = googleForm(cfg.suggestGoogleFormPrefill);
