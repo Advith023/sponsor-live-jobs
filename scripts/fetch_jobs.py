@@ -636,18 +636,26 @@ def workday_tenants(name: str) -> list[str]:
 
 
 def workday_matches(sponsor_name: str, tenant: str, org: str | None) -> bool:
+    full = "".join(norm_name(sponsor_name).split())
     if not org:
-        return tenant == "".join(norm_name(sponsor_name).split())  # exact full-name tenant only
+        return tenant == full  # exact full-name tenant only
     o = re.sub(r"[^a-z0-9]", "", org.lower())
+    if full in o:
+        return True
     words = [w for w in norm_name(sponsor_name).split() if len(w) >= 4 and w not in GENERIC_WORDS]
-    return tenant in o or any(w in o for w in words)
+    if tenant == full:
+        return tenant in o or any(w in o for w in words)
+    # tenant was only the first word: "Baxter Games Newcastle" must not match Baxter healthcare.
+    # Every other distinctive word of the sponsor's name has to appear in the employer name too.
+    others = [w for w in words if w != tenant]
+    return tenant in o and all(w in o for w in others)
 
 
 def workday_discover(sponsor_name: str) -> dict | None:
     for t in workday_tenants(sponsor_name):
         url = workday_find(t)
         if url and workday_matches(sponsor_name, t, workday_org(url)):
-            return {"ats": "workday", "token": url}
+            return {"ats": "workday", "token": url, "ok": 1}
     return None
 
 
@@ -984,6 +992,24 @@ def run():
     todo = [k for k in todo if k in seed_jobs] + [k for k in todo if k not in seed_jobs]
     batch = todo[:DISCOVERY_BATCH]
     print(f"Discovery batch: {len(batch):,} of {len(todo):,} pending")
+
+    # Re-check automatically found Workday boards once with the stricter name match
+    recheck = [(k, b) for k, c in cache.items() if k in sponsors and k not in seed_jobs
+               for b in c.get("boards", []) if b.get("ats") == "workday" and not b.get("ok")]
+    if recheck:
+        def verify(kb):
+            k, b = kb
+            m = WD_RE.match(b["token"])
+            return kb, (workday_matches(sponsors[k]["name"], m.group(1), workday_org(b["token"])) if m else False)
+        dropped = 0
+        with ThreadPoolExecutor(WORKERS) as ex:
+            for (k, b), ok in ex.map(verify, recheck):
+                if ok:
+                    b["ok"] = 1
+                else:
+                    cache[k]["boards"] = [x for x in cache[k]["boards"] if x is not b]
+                    dropped += 1
+        print(f"Workday re-check: {len(recheck)} boards, {dropped} dropped as wrong company")
 
     # Catch-up: sponsors checked before Workday discovery existed get a Workday-only check, likeliest first
     wd_todo = [k for k, c in cache.items() if k in sponsors and not c.get("wd")]

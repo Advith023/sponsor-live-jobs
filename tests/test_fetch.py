@@ -129,7 +129,7 @@ def test_workday_discovery(monkeypatch):
     monkeypatch.setattr(fj, "workday_org", lambda url: "2755 Barclays Services Corpor")
     assert fj.workday_tenants("BARCLAYS BANK UK PLC") == ["barclaysbank", "barclays"]
     assert fj.workday_discover("BARCLAYS BANK UK PLC") == {
-        "ats": "workday", "token": "https://barclays.wd3.myworkdayjobs.com/External_Career_Site_Barclays"}
+        "ats": "workday", "token": "https://barclays.wd3.myworkdayjobs.com/External_Career_Site_Barclays", "ok": 1}
     # a different company that happens to share the tenant guess is rejected
     monkeypatch.setattr(fj, "workday_org", lambda url: "Something Else Ltd")
     assert fj.workday_discover("Barclays Bank UK PLC") is None
@@ -142,3 +142,10 @@ def test_match_sponsor_and_sheet_links():
     assert fj.match_sponsor("Monzo", sp) == "monzo bank"
     assert fj.match_sponsor("Nobody", sp) is None
     assert fj.sheet_csv_url("https://docs.google.com/spreadsheets/d/e/X/pubhtml?gid=1&single=true").endswith("/pub?gid=1&single=true&output=csv")
+
+
+def test_workday_first_word_needs_rest_of_name():
+    assert fj.workday_matches("Baxter Games Newcastle Ltd", "baxter", "Baxter Healthcare Ltd") is False
+    assert fj.workday_matches("Barclays Bank UK PLC", "barclays", "2755 Barclays Services Corpor") is True
+    assert fj.workday_matches("Boeing Defence UK Limited", "boeing", "Boeing Defence UK Ltd") is True
+    assert fj.workday_matches("AVEVA Solutions Limited", "aveva", None) is False
