@@ -1,22 +1,23 @@
 {
- "generated": "2026-11-13T15:21:23.178475+00:00",
+ "generated": "2026-11-13T15:50:41.369038+00:00",
  "sponsors": 120259,
- "sponsors_checked": 16279,
+ "sponsors_checked": 16364,
  "boards": 815,
- "jobs": 4367,
- "companies": 497,
+ "jobs": 5095,
+ "companies": 514,
  "sources": {
-  "Ashby": 737,
-  "BambooHR": 100,
+  "Ashby": 738,
+  "BambooHR": 101,
   "Breezy": 26,
-  "Greenhouse": 1404,
+  "Greenhouse": 1411,
   "Lever": 252,
+  "Oracle": 614,
   "Personio": 35,
-  "Pinpoint": 250,
+  "Pinpoint": 251,
   "Recruitee": 35,
-  "SmartRecruiters": 738,
+  "SmartRecruiters": 740,
   "Teamtailor": 313,
-  "Workday": 477
+  "Workday": 579
  },
  "suggestions_unmatched": [
   "J.P. Morgan Securities",
@@ -25,6 +26,30 @@
   "Sainsbury\u2019s",
   "TEST please ignore"
  ],
+ "suggestions_closest": {
+  "J.P. Morgan Securities": [
+   "J P & S Servicess Ltd",
+   "Jag Force Security",
+   "Jannet Security Services Ltd"
+  ],
+  "SLB": [
+   "DSL BARS LTD T/A THE RUSTY KEG BAR",
+   "BMSL BUILDERS LIMITED"
+  ],
+  "Sainsbury's Supermarkets": [
+   "The Sainsbury Laboratory",
+   "J Sainsbury Plc"
+  ],
+  "Sainsbury\u2019s": [
+   "J Sainsbury Plc",
+   "The Sainsbury Laboratory"
+  ],
+  "TEST please ignore": [
+   "MTEST LABS LIMITED",
+   "TEST EDUCATION CENTRE LTD",
+   "Test Associates Limited"
+  ]
+ },
  "seeds": {
   "Checkout": {
    "sponsor": "CHECKOUT (WIMBLEDON) LIMITED",
@@ -58,8 +83,8 @@
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
-   "boards": 1,
-   "jobs": 0
+   "boards": 2,
+   "jobs": 614
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
