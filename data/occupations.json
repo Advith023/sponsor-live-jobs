@@ -1,0 +1,5049 @@
+{
+ "note": "Parsed from the Home Office pages below. Used only to label job titles.",
+ "sources": [
+  "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-skilled-occupations",
+  "https://www.gov.uk/government/publications/skilled-worker-visa-temporary-shortage-list/skilled-worker-visa-temporary-shortage-list"
+ ],
+ "fetched": "2026-11-13",
+ "tsl": [
+  "1243",
+  "1258",
+  "3111",
+  "3112",
+  "3113",
+  "3114",
+  "3115",
+  "3116",
+  "3120",
+  "3131",
+  "3132",
+  "3133",
+  "3412",
+  "3414",
+  "3417",
+  "3422",
+  "3429",
+  "3512",
+  "3520",
+  "3532",
+  "3533",
+  "3541",
+  "3544",
+  "3549",
+  "3552",
+  "3554",
+  "3571",
+  "3573",
+  "4121",
+  "4122",
+  "4129",
+  "4132",
+  "5213",
+  "5214",
+  "5223",
+  "5225",
+  "5231",
+  "5232",
+  "5233",
+  "5235",
+  "5241",
+  "5242",
+  "5244",
+  "5245",
+  "5249",
+  "5311",
+  "5315",
+  "5319",
+  "5322",
+  "5323",
+  "5330",
+  "8133"
+ ],
+ "occupations": {
+  "1111": {
+   "n": "Chief executives and senior officials",
+   "t": [
+    "Chairpersons",
+    "Chief executives",
+    "Diplomats and foreign office officials",
+    "Senior public service officials",
+    "Chief executives and senior officials not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1121": {
+   "n": "Production managers and directors in manufacturing",
+   "t": [
+    "Production managers and directors in manufacturing"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1122": {
+   "n": "Production managers and directors in construction",
+   "t": [
+    "Production managers and directors in construction"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1123": {
+   "n": "Production managers and directors in mining and energy",
+   "t": [
+    "Managers and directors in the extraction of fossil fuels",
+    "Managers and directors in the production of energy",
+    "Production managers and directors in mining and energy not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1131": {
+   "n": "Financial managers and directors",
+   "t": [
+    "Bank, building society and post office managers",
+    "Company secretaries and finance managers and directors",
+    "Investment bankers and directors",
+    "Financial managers and directors not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1132": {
+   "n": "Marketing, sales and advertising directors",
+   "t": [
+    "Advertising and marketing directors",
+    "Sales directors",
+    "Marketing, sales and advertising directors not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1133": {
+   "n": "Public relations and communications directors",
+   "t": [
+    "Public relations and communications directors"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1134": {
+   "n": "Purchasing managers and directors",
+   "t": [
+    "Estimating managers and directors",
+    "Procurement and purchasing managers and directors",
+    "Purchasing managers and directors not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1135": {
+   "n": "Charitable organisation managers and directors",
+   "t": [
+    "Charitable organisation managers and directors"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1136": {
+   "n": "Human resource managers and directors",
+   "t": [
+    "Employee relations managers",
+    "Equality, diversity and inclusion managers",
+    "Learning and development managers and directors",
+    "Recruitment managers and directors",
+    "Human resources managers and directors not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1137": {
+   "n": "Information technology directors",
+   "t": [
+    "Information security directors",
+    "Information technology operations directors",
+    "Information technology programme managers and directors",
+    "Information technology technical directors",
+    "Information technology directors not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1139": {
+   "n": "Functional managers and directors not elsewhere classified",
+   "t": [
+    "Accounts directors",
+    "Administration directors",
+    "Complaints and customer service directors",
+    "Events directors",
+    "Intellectual property managers and directors",
+    "Municipal clerks",
+    "Research and development (R&D) directors",
+    "Functional managers and directors not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1140": {
+   "n": "Directors in logistics, warehousing and transport",
+   "t": [
+    "Supply chain directors",
+    "Directors in logistics, warehousing and transport not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1162": {
+   "n": "Senior police officers",
+   "t": [
+    "Chief, deputy chief and assistant chief constables",
+    "Chief inspectors",
+    "Chief superintendents",
+    "Senior police officers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1163": {
+   "n": "Senior officers in fire, ambulance, prison and related services",
+   "t": [
+    "Senior officers in ambulance services",
+    "Senior officers in fire services",
+    "Senior officers in immigration services",
+    "Senior officers in prison services",
+    "Senior officers in revenue and customs"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1171": {
+   "n": "Health services and public health managers and directors",
+   "t": [
+    "Clinical governance and information managers",
+    "Healthcare service managers and directors",
+    "Health services and public health managers and directors not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1172": {
+   "n": "Social services managers and directors",
+   "t": [
+    "Social services managers and directors"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1241": {
+   "n": "Managers in transport and distribution",
+   "t": [
+    "Airport managers",
+    "Depot and fleet managers",
+    "Dispatch and distribution managers",
+    "Harbour and port managers",
+    "Road traffic managers",
+    "Managers in transport and distribution not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1254": {
+   "n": "Waste disposal and environmental services managers",
+   "t": [
+    "Landfill site managers",
+    "Recycling managers",
+    "Scrap yard managers",
+    "Sewage works and water treatment managers",
+    "Waste disposal and environmental services managers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1255": {
+   "n": "Managers and directors in the creative industries",
+   "t": [
+    "Art gallery managers and directors",
+    "Film and television production managers",
+    "Publishing managers and directors",
+    "Radio production managers",
+    "Sport and talent agents",
+    "Theatre production managers",
+    "Managers and directors in the creative industries not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2111": {
+   "n": "Chemical scientists",
+   "t": [
+    "Analytical chemists",
+    "Industrial chemists",
+    "Nuclear and radiochemists",
+    "Research and development chemists",
+    "Chemical scientists not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2112": {
+   "n": "Biological scientists",
+   "t": [
+    "Agricultural scientists",
+    "Biologists",
+    "Botanical and horticultural scientists",
+    "Microbiologists and bacteriologists",
+    "Pathologists",
+    "Pharmacologists",
+    "Zoological scientists",
+    "Biological scientists not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2113": {
+   "n": "Biochemists and biomedical scientists",
+   "t": [
+    "Biochemists",
+    "Biomedical scientists",
+    "Biotechnologists",
+    "Clinical scientists",
+    "Biochemists and biomedical scientists not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2114": {
+   "n": "Physical scientists",
+   "t": [
+    "Geologists",
+    "Geophysicists",
+    "Hydrogeologists and hydrologists",
+    "Meteorologists",
+    "Physical scientists not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2115": {
+   "n": "Social and humanities scientists",
+   "t": [
+    "Anthropologists",
+    "Archaeologists",
+    "Behavioural scientists",
+    "Epidemiologists",
+    "Genealogists",
+    "Geographic information systems (GIS) analysts",
+    "Historians",
+    "Political scientists",
+    "Public health analysts",
+    "Social and humanities scientists not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2119": {
+   "n": "Natural and social science professionals not elsewhere classified",
+   "t": [
+    "Sports scientists",
+    "Natural and social science professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2121": {
+   "n": "Civil engineers",
+   "t": [
+    "Building and building services engineers",
+    "Geotechnical engineers",
+    "Mining engineers",
+    "Structural engineers",
+    "Transportation engineers",
+    "Water engineers (professional)",
+    "Civil engineers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2122": {
+   "n": "Mechanical engineers",
+   "t": [
+    "Automotive engineers (professional)",
+    "Marine engineers and naval architects",
+    "Mechanical design engineers",
+    "Mechanical engineers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2123": {
+   "n": "Electrical engineers",
+   "t": [
+    "Laser engineers",
+    "Power systems engineers",
+    "Railway signalling engineers",
+    "Electrical engineers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2124": {
+   "n": "Electronics engineers",
+   "t": [
+    "Broadcast engineers (professional)",
+    "Telecommunications engineers (professional)",
+    "Electronics engineers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2125": {
+   "n": "Production and process engineers",
+   "t": [
+    "Chemical engineers",
+    "Control and instrumentation engineers",
+    "Industrial and production engineers",
+    "Production and process engineers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2126": {
+   "n": "Aerospace engineers",
+   "t": [
+    "Aeronautical engineers (professional)",
+    "Aircraft engineers (professional)",
+    "Avionics engineers",
+    "Aerospace engineers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2127": {
+   "n": "Engineering project managers and project engineers",
+   "t": [
+    "Engineering project managers and project engineers"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2129": {
+   "n": "Engineering professionals not elsewhere classified",
+   "t": [
+    "Acoustic engineers",
+    "Biomedical engineers",
+    "Brewers (qualified)",
+    "Clinical Engineers",
+    "Energy engineers",
+    "Food technologists",
+    "Gas engineers (professional)",
+    "Heating and ventilating engineers (professional)",
+    "Materials engineers",
+    "Mechatronic engineers",
+    "Nuclear engineers",
+    "Patent engineers",
+    "Robotics engineers",
+    "Traffic engineers",
+    "Engineering professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2131": {
+   "n": "IT project managers",
+   "t": [
+    "IT project managers"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2132": {
+   "n": "IT managers",
+   "t": [
+    "IT information managers",
+    "IT product managers",
+    "IT service delivery managers",
+    "IT systems managers",
+    "IT test managers",
+    "Network managers",
+    "Software development managers",
+    "Technical support managers",
+    "IT managers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2133": {
+   "n": "IT business analysts, architects and systems designers",
+   "t": [
+    "Computer analysts and scientists",
+    "Data architects",
+    "Data engineers",
+    "IT systems architects",
+    "IT business analysts",
+    "IT solutions architects and designers",
+    "IT business analysts, architects and systems designers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2134": {
+   "n": "Programmers and software development professionals",
+   "t": [
+    "Computer games designers",
+    "Computer programmers",
+    "Software developers",
+    "Programmers and software development professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2135": {
+   "n": "Cyber security professionals",
+   "t": [
+    "Cyber operational defence specialists",
+    "Cyber security management and governance specialists",
+    "Forensic computer specialists",
+    "Secure system development specialists",
+    "Cyber security professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2136": {
+   "n": "IT quality and testing professionals",
+   "t": [
+    "IT quality and testing professionals"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2137": {
+   "n": "IT network professionals",
+   "t": [
+    "IT network professionals"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2139": {
+   "n": "Information technology professionals not elsewhere classified",
+   "t": [
+    "DevOps engineers",
+    "IT consultants",
+    "Webmasters and website managers",
+    "Information technology professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2141": {
+   "n": "Web design professionals",
+   "t": [
+    "Application designers",
+    "UI and UX designers and researchers",
+    "Web designers",
+    "Web design professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2142": {
+   "n": "Graphic and multimedia designers",
+   "t": [
+    "Multimedia animators",
+    "Graphic and multimedia designers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2151": {
+   "n": "Conservation professionals",
+   "t": [
+    "Conservationists",
+    "Ecologists",
+    "Heritage officers",
+    "Conservation professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2152": {
+   "n": "Environment professionals",
+   "t": [
+    "Energy managers",
+    "Environmental and geo-environmental engineers",
+    "Environmental consultants",
+    "Environmental scientists",
+    "Sustainability officers",
+    "Environmental professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2161": {
+   "n": "Research and development (R&D) managers",
+   "t": [
+    "Laboratory managers",
+    "Research and development (R&D) design managers",
+    "Research and development (R&D) managers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2162": {
+   "n": "Other researchers, unspecified discipline",
+   "t": [
+    "Other researchers, unspecified discipline"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2240": {
+   "n": "Veterinarians",
+   "t": [
+    "Veterinarians"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2311": {
+   "n": "Higher education teaching professionals",
+   "t": [
+    "Higher education teaching professionals"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2317": {
+   "n": "Teachers of English as a foreign language",
+   "t": [
+    "Teachers of English as a Foreign Language"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2319": {
+   "n": "Teaching professionals not elsewhere classified",
+   "t": [
+    "Adult education tutors",
+    "Dance and drama school principals and owners",
+    "Private music and singing teachers",
+    "Private tutors",
+    "Teaching professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2322": {
+   "n": "Education managers",
+   "t": [
+    "Education managers"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2323": {
+   "n": "Education advisers and school inspectors",
+   "t": [
+    "Educational advisers",
+    "School inspectors"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2329": {
+   "n": "Other educational professionals not elsewhere classified",
+   "t": [
+    "Bursars",
+    "Educational administrators",
+    "Examiners and markers",
+    "Other educational professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2411": {
+   "n": "Barristers and judges",
+   "t": [
+    "Barristers and advocates",
+    "Judges",
+    "Barristers and judges not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2412": {
+   "n": "Solicitors and lawyers",
+   "t": [
+    "Commercial solicitors and lawyers",
+    "Criminal solicitors and lawyers",
+    "Family solicitors and lawyers",
+    "Property solicitors and lawyers",
+    "Solicitors and lawyers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2419": {
+   "n": "Legal professionals not elsewhere classified",
+   "t": [
+    "Conveyancers",
+    "Litigation executives",
+    "Paralegals",
+    "Patent and trademark attorneys",
+    "Legal professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2421": {
+   "n": "Chartered and certified accountants",
+   "t": [
+    "Auditors (qualified accountant)",
+    "Financial accountants (qualified)",
+    "Forensic accountants",
+    "Fund accountants",
+    "Insolvency practitioners",
+    "Chartered and certified accountants not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2422": {
+   "n": "Finance and investment analysts and advisers",
+   "t": [
+    "Credit analysts",
+    "Financial advisers and planners",
+    "Financial analysts",
+    "Mortgage advisers",
+    "Finance and investment analysts and advisers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2423": {
+   "n": "Taxation experts",
+   "t": [
+    "Taxation experts"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2431": {
+   "n": "Management consultants and business analysts",
+   "t": [
+    "Business analysts and consultants",
+    "Management advisers and consultants",
+    "Risk analysts",
+    "Management consultants and business analysts not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2432": {
+   "n": "Marketing and commercial managers",
+   "t": [
+    "Commercial managers",
+    "Marketing managers",
+    "Marketing and commercial managers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2433": {
+   "n": "Actuaries, economists and statisticians",
+   "t": [
+    "Actuaries and actuarial analysts",
+    "Economists",
+    "Mathematicians",
+    "Statistical data scientists",
+    "Statisticians",
+    "Actuaries, economists and statisticians not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2434": {
+   "n": "Business and related research professionals",
+   "t": [
+    "Intelligence analysts",
+    "Researchers in media and entertainment",
+    "Business and related research professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2435": {
+   "n": "Professional/chartered company secretaries",
+   "t": [
+    "Professional/chartered company secretaries"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2439": {
+   "n": "Business, research and administrative professionals not elsewhere classified",
+   "t": [
+    "Policy officers",
+    "Business, research and administrative professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2440": {
+   "n": "Business and financial project management professionals",
+   "t": [
+    "Business change managers",
+    "Clinical trials coordinators",
+    "Risk managers",
+    "Business and financial project management professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2451": {
+   "n": "Architects",
+   "t": [
+    "Architects",
+    "Landscape architects and designers"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2452": {
+   "n": "Chartered architectural technologists, planning officers and consultants",
+   "t": [
+    "Chartered architectural technologists",
+    "Town planning officers",
+    "Urban designers",
+    "Chartered architectural technologists, planning officers and consultants not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2453": {
+   "n": "Quantity surveyors",
+   "t": [
+    "Quantity surveyors"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2454": {
+   "n": "Chartered surveyors",
+   "t": [
+    "Building control surveyors",
+    "Hydrographic surveyors",
+    "Land surveyors",
+    "Property surveyors",
+    "Chartered surveyors not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2455": {
+   "n": "Construction project managers and related professionals",
+   "t": [
+    "Construction project and contract managers",
+    "Transport planners",
+    "Construction project managers and related professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2462": {
+   "n": "Probation officers",
+   "t": [
+    "Probation officers"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2464": {
+   "n": "Youth work professionals",
+   "t": [
+    "Youth work professionals"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2469": {
+   "n": "Welfare professionals not elsewhere classified",
+   "t": [
+    "Adoption officers",
+    "Children and family services professionals",
+    "Mediators and restorative practice professionals",
+    "Welfare professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2471": {
+   "n": "Librarians",
+   "t": [
+    "Librarians"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2472": {
+   "n": "Archivists, conservators and curators",
+   "t": [
+    "Archivists",
+    "Collection managers and curators",
+    "Conservators",
+    "Museum education officers",
+    "Archivists and curators not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2481": {
+   "n": "Quality control and planning engineers",
+   "t": [
+    "Garment technologists",
+    "Planning engineers",
+    "Quality control engineers",
+    "Quality control and planning engineers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2482": {
+   "n": "Quality assurance and regulatory professionals",
+   "t": [
+    "Compliance and regulatory professionals",
+    "Quality assurance professionals"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2483": {
+   "n": "Environmental health professionals",
+   "t": [
+    "Environmental health professionals"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2491": {
+   "n": "Newspaper, periodical and broadcast editors",
+   "t": [
+    "Newspaper, periodical and broadcast editors"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2492": {
+   "n": "Newspaper and periodical broadcast journalists and reporters",
+   "t": [
+    "Broadcast journalists",
+    "Newspaper journalists and reporters",
+    "Newspaper and periodical journalists and reporters not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2493": {
+   "n": "Public relations professionals",
+   "t": [
+    "Press officers",
+    "Public relations officers",
+    "Social media managers",
+    "Public relations professionals not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2494": {
+   "n": "Advertising accounts managers and creative directors",
+   "t": [
+    "Advertising account managers",
+    "Creative directors",
+    "Fundraising managers"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "3415": {
+   "n": "Musicians",
+   "t": [
+    "Composers and musical arrangers",
+    "Music conductors",
+    "Instrumentalists",
+    "Musicians not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "3416": {
+   "n": "Arts officers, producers and directors",
+   "t": [
+    "Art consultants",
+    "Broadcasting and entertainment directors",
+    "Broadcasting and entertainment editors",
+    "Broadcasting and entertainment producers",
+    "Studio and stage managers",
+    "Arts officers, producers and directors not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "3511": {
+   "n": "Aircraft pilots and air traffic controllers",
+   "t": [
+    "Airline pilots",
+    "Air traffic controllers",
+    "Flying instructors",
+    "Helicopter pilots",
+    "Aircraft pilots and air traffic controllers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "3531": {
+   "n": "Brokers",
+   "t": [
+    "Commodity brokers and traders",
+    "Insurance and mortgage brokers",
+    "Shipbrokers",
+    "Stockbrokers",
+    "Brokers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "3534": {
+   "n": "Financial accounts managers",
+   "t": [
+    "Claims managers",
+    "Credit managers",
+    "Investment managers",
+    "Relationship managers",
+    "Financial accounts managers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "3556": {
+   "n": "Sales accounts and business development managers",
+   "t": [
+    "Brand managers",
+    "Business development managers",
+    "Sales account managers",
+    "Sales accounts and business development managers not elsewhere classified"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "1150": {
+   "n": "Managers and directors in retail and wholesale",
+   "t": [
+    "Managers and directors in retail and wholesale"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1211": {
+   "n": "Managers and proprietors in agriculture and horticulture",
+   "t": [
+    "Managers and proprietors in agriculture and horticulture"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1212": {
+   "n": "Managers and proprietors in forestry, fishing and related services",
+   "t": [
+    "Cattery and kennel managers and proprietors",
+    "Fisheries managers and proprietors",
+    "Forestry managers",
+    "Livery yard and stud farm managers and proprietors",
+    "Racehorse trainers",
+    "Managers and proprietors in forestry, fishing and related services not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1221": {
+   "n": "Hotel and accommodation managers and proprietors",
+   "t": [
+    "Hotel and accommodation managers and proprietors"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1222": {
+   "n": "Restaurant and catering establishment managers and proprietors",
+   "t": [
+    "Café and restaurant managers and proprietors",
+    "Catering operations managers",
+    "Takeaway managers and proprietors",
+    "Restaurant and catering establishment managers and proprietors not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1223": {
+   "n": "Publicans and managers of licensed premises",
+   "t": [
+    "Publicans and managers of licensed premises"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1224": {
+   "n": "Leisure and sports managers and proprietors",
+   "t": [
+    "Cinema managers and proprietors",
+    "Golf course managers",
+    "Gym, fitness and leisure services managers and proprietors",
+    "Marina managers",
+    "Museum managers and proprietors",
+    "Parks and gardens managers",
+    "Theatre managers (excludes hospital service)",
+    "Leisure and sports managers and proprietors not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1225": {
+   "n": "Travel agency managers and proprietors",
+   "t": [
+    "Travel agency managers and proprietors"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1231": {
+   "n": "Health care practice managers",
+   "t": [
+    "Dental practice managers",
+    "Medical practice managers",
+    "Opticians managers",
+    "Veterinary practice managers",
+    "Health care practice managers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1232": {
+   "n": "Residential, day and domiciliary care managers and proprietors",
+   "t": [
+    "Day care managers",
+    "Home care managers",
+    "Residential care managers and proprietors",
+    "Residential, day and domiciliary care managers and proprietors not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1233": {
+   "n": "Early education and childcare services proprietors",
+   "t": [
+    "Early education and childcare services proprietors"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1242": {
+   "n": "Managers in storage and warehousing",
+   "t": [
+    "Managers in storage and warehousing"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1243": {
+   "n": "Managers in logistics",
+   "t": [
+    "Managers in logistics"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1251": {
+   "n": "Property, housing and estate managers",
+   "t": [
+    "Facilities managers",
+    "Landlords, property and housing managers",
+    "Property investors and developers",
+    "Sales and lettings managers",
+    "Shopping centre managers",
+    "Property, housing and estate managers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1252": {
+   "n": "Garage managers and proprietors",
+   "t": [
+    "Garage managers and proprietors"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1253": {
+   "n": "Hairdressing and beauty salon managers and proprietors",
+   "t": [
+    "Beauty salon managers and proprietors",
+    "Hairdressing managers and proprietors",
+    "Hairdressing and beauty salon managers and proprietors not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1256": {
+   "n": "Betting shop and gambling establishment managers",
+   "t": [
+    "Betting shop managers",
+    "Bingo hall managers",
+    "Casino managers",
+    "Betting shop and gambling establishment managers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1257": {
+   "n": "Hire services managers and proprietors",
+   "t": [
+    "Hire services managers and proprietors"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1258": {
+   "n": "Directors in consultancy services",
+   "t": [
+    "Design consultancy directors",
+    "Environmental consultancy directors",
+    "Management consultancy directors",
+    "Surveying consultancy directors",
+    "Directors in consultancy services not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1259": {
+   "n": "Managers and proprietors in other services not elsewhere classified",
+   "t": [
+    "Cleaning and hygiene services managers and proprietors",
+    "Educational establishment managers and proprietors",
+    "Funeral services and crematorium managers and proprietors",
+    "Library managers",
+    "Recruitment agency managers and proprietors",
+    "Security services managers and proprietors",
+    "Managers and proprietors in other services not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "2324": {
+   "n": "Early education and childcare services managers",
+   "t": [
+    "Early education and childcare services managers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3111": {
+   "n": "Laboratory technicians",
+   "t": [
+    "Biological laboratory technicians",
+    "Chemical laboratory technicians",
+    "Health physics monitors",
+    "Laboratory food technicians",
+    "Medical laboratory technicians",
+    "Laboratory technicians not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3112": {
+   "n": "Electrical and electronics technicians",
+   "t": [
+    "Avionics technicians",
+    "Electrical and electronics technicians not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3113": {
+   "n": "Engineering technicians",
+   "t": [
+    "Aerospace technicians",
+    "Wind turbine technicians",
+    "Engineering technicians not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3114": {
+   "n": "Building and civil engineering technicians",
+   "t": [
+    "Building technicians",
+    "Civil engineering technicians",
+    "Surveying technicians",
+    "Building and civil engineering technicians not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3115": {
+   "n": "Quality assurance technicians",
+   "t": [
+    "Quality assurance technicians"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3116": {
+   "n": "Planning, process and production technicians",
+   "t": [
+    "Planning, process and production technicians"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3119": {
+   "n": "Science, engineering and production technicians not elsewhere classified",
+   "t": [
+    "School technicians",
+    "Textile consultants",
+    "Science, engineering and production technicians not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3120": {
+   "n": "CAD, drawing and architectural technicians",
+   "t": [
+    "Architectural technicians",
+    "BIM and CAD technicians",
+    "Cartographers",
+    "CAD, drawing and architectural technicians not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3131": {
+   "n": "IT operations technicians",
+   "t": [
+    "Games testers",
+    "Network and systems administrators",
+    "Quality assurance testers",
+    "Software technicians",
+    "IT operations technicians not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3132": {
+   "n": "IT user support technicians",
+   "t": [
+    "IT user support technicians"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3133": {
+   "n": "Database administrators and web content technicians",
+   "t": [
+    "Database administrators",
+    "Web content technicians",
+    "Database administrators and web content technicians not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3211": {
+   "n": "Dispensing opticians",
+   "t": [
+    "Dispensing opticians"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3212": {
+   "n": "Pharmaceutical technicians",
+   "t": [
+    "Pharmaceutical technicians"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3221": {
+   "n": "Youth and community workers",
+   "t": [
+    "Community workers",
+    "Family support workers",
+    "Youth workers (excludes youth work professionals)",
+    "Youth and community workers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3222": {
+   "n": "Child and early years officers",
+   "t": [
+    "Child protection officers",
+    "Learning and behaviour mentors",
+    "Welfare and attendance officers",
+    "Child and early years officers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3223": {
+   "n": "Housing officers",
+   "t": [
+    "Housing officers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3224": {
+   "n": "Counsellors",
+   "t": [
+    "Bereavement counsellors",
+    "Debt advisers",
+    "Life coaches",
+    "Relationship counsellors",
+    "Substance misuse workers",
+    "Counsellors not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3229": {
+   "n": "Welfare and housing associate professionals not elsewhere classified",
+   "t": [
+    "Advocates (excludes solicitor advocates)",
+    "Celebrants",
+    "Charity workers",
+    "Day care officers",
+    "Health advisers",
+    "Homelessness and housing advice support workers",
+    "Mental health project workers",
+    "Probation service workers",
+    "Student support workers",
+    "Victim support workers",
+    "Welfare and housing associate professionals not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3232": {
+   "n": "Early education and childcare practitioners",
+   "t": [
+    "Early education and childcare practitioners"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3240": {
+   "n": "Veterinary nurses",
+   "t": [
+    "Veterinary nurses"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3312": {
+   "n": "Police officers (sergeant and below)",
+   "t": [
+    "Police constable",
+    "Police sergeant",
+    "Police officers (sergeant and below) not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3313": {
+   "n": "Fire service officers (watch manager and below)",
+   "t": [
+    "Firefighters",
+    "Fire service crew managers",
+    "Watch managers",
+    "Fire service officers (watch manager and below) not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3314": {
+   "n": "Prison service officers (below principal officer)",
+   "t": [
+    "Operational support grades",
+    "Prison officers",
+    "Prison service officers (below principal officer) not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3319": {
+   "n": "Protective service associate professionals not elsewhere classified",
+   "t": [
+    "Coastguard",
+    "Customs and border control officers",
+    "Fraud investigators (excludes benefit fraud)",
+    "Immigration officers",
+    "Private investigators",
+    "Security consultants and managers (excludes cyber security)",
+    "Protective service associate professionals not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3411": {
+   "n": "Artists",
+   "t": [
+    "Art technicians (excludes education)",
+    "Drawing and painting artists",
+    "Hand drawn animators",
+    "Illustrators (excludes medical and scientific)",
+    "Medical and scientific illustrators",
+    "Picture restorers",
+    "Sculptors",
+    "Tattoo and henna artists",
+    "Artists not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3412": {
+   "n": "Authors, writers and translators",
+   "t": [
+    "Authors",
+    "Bloggers",
+    "Copywriters",
+    "Literary editors",
+    "Poets",
+    "Script writers",
+    "Technical writers (excludes computing)",
+    "Translators and interpreters",
+    "Authors, writers and translators not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3413": {
+   "n": "Actors, entertainers and presenters",
+   "t": [
+    "Actors",
+    "Broadcasters, podcasters and presenters",
+    "Children’s entertainers",
+    "Comedians",
+    "Disc jockeys",
+    "Magicians",
+    "Models",
+    "Singers",
+    "Social media influencers",
+    "Actors, entertainers and presenters not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3414": {
+   "n": "Dancers and choreographers",
+   "t": [
+    "Choreographers",
+    "Dance teachers (excludes educational establishments)",
+    "Dancers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3417": {
+   "n": "Photographers, audio-visual and broadcasting equipment operators",
+   "t": [
+    "Camera operators and videographers",
+    "Lighting designers",
+    "Photographers",
+    "Sound designers",
+    "Sound engineers",
+    "Theatre technicians (excludes hospitals)",
+    "Photographers, audio-visual and broadcasting equipment operators not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3421": {
+   "n": "Interior designers",
+   "t": [
+    "Interior designers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3422": {
+   "n": "Clothing, fashion and accessories designers",
+   "t": [
+    "Clothing and fashion consultants",
+    "Clothing and fashion designers",
+    "Footwear designers",
+    "Jewellery designers",
+    "Textile designers",
+    "Clothing, fashion and accessories designers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3429": {
+   "n": "Design occupations not elsewhere classified",
+   "t": [
+    "Industrial and product designers",
+    "Packaging designers",
+    "Performance make-up artists",
+    "Set designers",
+    "Visual merchandising managers and designers",
+    "Design occupations not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3433": {
+   "n": "Fitness and wellbeing instructors",
+   "t": [
+    "Group fitness instructors and personal trainers",
+    "Pilates teachers",
+    "Yoga teachers",
+    "Fitness and wellbeing instructors not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3512": {
+   "n": "Ship and hovercraft officers",
+   "t": [
+    "Ship and hovercraft captains and deck officers (excludes armed forces and fishing)",
+    "Marine engineers",
+    "Ship and hovercraft officers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3520": {
+   "n": "Legal associate professionals",
+   "t": [
+    "Conveyancing professionals",
+    "Cost lawyers",
+    "Barrister’s and judge’s clerks",
+    "Litigation officers",
+    "Probate managers",
+    "Will writers",
+    "Legal associate professionals not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3532": {
+   "n": "Insurance underwriters",
+   "t": [
+    "Insurance underwriters"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3533": {
+   "n": "Financial and accounting technicians",
+   "t": [
+    "Accounting technicians",
+    "Financial control technicians",
+    "Financial and accounting technicians not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3541": {
+   "n": "Estimators, valuers and assessors",
+   "t": [
+    "Energy advisers and assessors",
+    "Estimators",
+    "Loss adjusters",
+    "Valuers",
+    "Vehicle damage assessors",
+    "Estimators, valuers and assessors not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3542": {
+   "n": "Importers and exporters",
+   "t": [
+    "Importers and exporters"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3543": {
+   "n": "Project support officers",
+   "t": [
+    "Project support officers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3544": {
+   "n": "Data analysts",
+   "t": [
+    "Data analysts"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3549": {
+   "n": "Business associate professionals not elsewhere classified",
+   "t": [
+    "Business support officers",
+    "Business systems analysts",
+    "Contract administrators",
+    "Clinical coders",
+    "Clinical trials administrators",
+    "Research coordinators",
+    "Business associate professionals not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3551": {
+   "n": "Buyers and procurement officers",
+   "t": [
+    "Buyers and procurement officers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3552": {
+   "n": "Business sales executives",
+   "t": [
+    "Business sales executives"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3553": {
+   "n": "Merchandisers",
+   "t": [
+    "Merchandisers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3554": {
+   "n": "Advertising and marketing associate professionals",
+   "t": [
+    "Advertising and marketing executives",
+    "Fundraisers",
+    "Market researchers (excludes interviewers)",
+    "Marketing associate professionals not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3555": {
+   "n": "Estate agents and auctioneers",
+   "t": [
+    "Estate agents",
+    "Land and property auctioneers and valuers",
+    "Letting agents",
+    "Estate agents and auctioneers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3557": {
+   "n": "Events managers and organisers",
+   "t": [
+    "Conference managers and organisers",
+    "Exhibition managers and organisers",
+    "Festival managers and organisers",
+    "Hospitality managers",
+    "Wedding planners and organisers",
+    "Event managers and organisers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3560": {
+   "n": "Public services associate professionals",
+   "t": [
+    "Electoral services officers",
+    "Health service administrators",
+    "Job Centre officers",
+    "Waste management officers",
+    "Public services associate professionals not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3571": {
+   "n": "Human resources and industrial relations officers",
+   "t": [
+    "Equality and diversity officers",
+    "Human resources advisers",
+    "Recruitment consultants",
+    "Human resources and industrial relations officers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3572": {
+   "n": "Careers advisers and vocational guidance specialists",
+   "t": [
+    "Careers advisers and coaches",
+    "Work placement officers",
+    "Careers advisers and vocational guidance specialists not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3573": {
+   "n": "Information technology trainers",
+   "t": [
+    "Information technology trainers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3574": {
+   "n": "Other vocational and industrial trainers",
+   "t": [
+    "Business coaches",
+    "Retail and store trainers",
+    "Training assessors",
+    "Other vocational and industrial trainers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3581": {
+   "n": "Inspectors of standards and regulations",
+   "t": [
+    "Animal health inspectors and officers",
+    "Building control officers",
+    "Driving examiners",
+    "Health and safety inspectors",
+    "Housing and planning inspectors",
+    "Licensing officers",
+    "Meat hygiene inspectors",
+    "Nuclear safety inspectors",
+    "Trading standards officers",
+    "Traffic and vehicle examiners and inspectors",
+    "Inspectors of standards and regulations not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3582": {
+   "n": "Health and safety managers and officers",
+   "t": [
+    "Asbestos safety officers",
+    "Fire safety managers and officers",
+    "Occupational health and safety managers and officers",
+    "Road traffic and transport safety officers",
+    "Occupational hygienists",
+    "Health and safety managers and officers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4111": {
+   "n": "National government administrative occupations",
+   "t": [
+    "National government benefits officers",
+    "National government revenue officers",
+    "Passport officers",
+    "National government administrative occupations not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4112": {
+   "n": "Local government administrative occupations",
+   "t": [
+    "Local government benefits officers",
+    "Local government housing assistants",
+    "Local government revenue officers",
+    "Parish clerks",
+    "Local government administrative occupations not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4113": {
+   "n": "Officers of non-governmental organisations",
+   "t": [
+    "Charity administrators",
+    "Clerks to governors",
+    "Union officials",
+    "Officers of non-governmental organisations not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4121": {
+   "n": "Credit controllers",
+   "t": [
+    "Credit controllers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4122": {
+   "n": "Book-keepers, payroll managers and wages clerks",
+   "t": [
+    "Accounting clerks and bookkeepers",
+    "Payroll officers and wages clerks",
+    "Bookkeepers, payroll managers and wage clerks not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4124": {
+   "n": "Finance officers",
+   "t": [
+    "Finance officers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4129": {
+   "n": "Financial administrative occupations not elsewhere classified",
+   "t": [
+    "Box office assistants",
+    "Grants officers",
+    "Mortgage administrators",
+    "Revenue assistants (excludes National and Local government revenue occupations)",
+    "Treasury assistants",
+    "Finance administrative occupations not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4132": {
+   "n": "Pensions and insurance clerks and assistants",
+   "t": [
+    "Claims handlers",
+    "Insurance administrators",
+    "Pensions administrators",
+    "Pensions and insurance clerks and assistants not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4134": {
+   "n": "Transport and distribution clerks and assistants",
+   "t": [
+    "Transport and distribution clerks and assistants"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4141": {
+   "n": "Office managers",
+   "t": [
+    "Office managers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4143": {
+   "n": "Customer service managers",
+   "t": [
+    "Call centre managers",
+    "Customer service managers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4151": {
+   "n": "Sales administrators",
+   "t": [
+    "Sales administrators"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4159": {
+   "n": "Other administrative occupations not elsewhere classified",
+   "t": [
+    "Business administrators",
+    "Church administrators",
+    "Facilities coordinators",
+    "Proofreaders",
+    "Property administrators",
+    "Warranty administrators",
+    "Other administrative occupations not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4214": {
+   "n": "Company secretaries and administrators",
+   "t": [
+    "Company secretaries and administrators"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "4215": {
+   "n": "Personal assistants and other secretaries",
+   "t": [
+    "Farm secretaries",
+    "Personal assistants (excludes care workers)",
+    "Personal assistants and other secretaries not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5111": {
+   "n": "Farmers",
+   "t": [
+    "Agricultural contractors",
+    "Aquaculture farmers",
+    "Arable farmers",
+    "Dairy farmers",
+    "Livestock farmers",
+    "Poultry farmers",
+    "Farmers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5112": {
+   "n": "Horticultural trades",
+   "t": [
+    "Horticultural trades"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5113": {
+   "n": "Gardeners and landscape gardeners",
+   "t": [
+    "Garden designers",
+    "Gardeners (excludes horticultural/market gardening)",
+    "Green roof installers",
+    "Landscape gardeners",
+    "Gardeners and landscape gardeners not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5114": {
+   "n": "Groundsmen and greenkeepers",
+   "t": [
+    "Groundsmen and greenkeepers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5119": {
+   "n": "Agricultural and fishing trades not elsewhere classified",
+   "t": [
+    "Arborists",
+    "Beekeepers",
+    "Countryside and park officers and rangers",
+    "Falconers",
+    "Fish and river keepers",
+    "Fishers",
+    "Gamekeepers",
+    "Agricultural and fishing trades not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5211": {
+   "n": "Sheet metal workers",
+   "t": [
+    "Metal fabricators and finishers",
+    "Panel beaters (excludes vehicles)",
+    "Whitesmiths",
+    "Sheet metal workers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5212": {
+   "n": "Metal plate workers, smiths, moulders and related occupations",
+   "t": [
+    "Die casters",
+    "Farriers",
+    "Moulders, mould makers and core makers",
+    "Smiths",
+    "Metal plate workers, smiths, moulders and related occupations not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5213": {
+   "n": "Welding trades",
+   "t": [
+    "Braziers and solderers",
+    "Pipe welders",
+    "Plate welders",
+    "Welding trades not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5214": {
+   "n": "Pipe fitters",
+   "t": [
+    "Pipe fitters"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5221": {
+   "n": "Metal machining setters and setter-operators",
+   "t": [
+    "Computer numerical control (CNC) machine setters and setter-operators",
+    "Metal machining setters and setter-operators not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5222": {
+   "n": "Tool makers, tool fitters and markers-out",
+   "t": [
+    "Tool fitters",
+    "Tool makers",
+    "Tool makers, tool fitters and markers-out not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5223": {
+   "n": "Metal working production and maintenance fitters",
+   "t": [
+    "Automation maintenance technicians",
+    "Bicycle mechanics",
+    "Catering equipment technicians",
+    "Door fitters and makers",
+    "Gunsmiths",
+    "Heavy plant maintenance technicians",
+    "Hydraulic technicians",
+    "Lift technicians",
+    "Locksmiths",
+    "Pump technicians",
+    "Textile machine technicians",
+    "Turbine fitters",
+    "Metal working production and maintenance fitters not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5224": {
+   "n": "Precision instrument makers and repairers",
+   "t": [
+    "Calibration and precision instrument technicians",
+    "Camera and photographic equipment technicians",
+    "Horologists, watch makers and repairers",
+    "Optical technicians",
+    "Precision instrument makers and repairers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5225": {
+   "n": "Air-conditioning and refrigeration installers and repairers",
+   "t": [
+    "Air-conditioning and refrigeration installers and repairers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5231": {
+   "n": "Vehicle technicians, mechanics and electricians",
+   "t": [
+    "Auto electricians",
+    "Car/light vehicle technicians",
+    "Heavy and large vehicle technicians",
+    "Motorcycle technicians",
+    "Motorsport technicians",
+    "MOT testers",
+    "Roadside assistance technicians",
+    "Vehicle technicians, mechanics and electricians not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5232": {
+   "n": "Vehicle body builders and repairers",
+   "t": [
+    "Vehicle body builders and repairers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5233": {
+   "n": "Vehicle paint technicians",
+   "t": [
+    "Vehicle paint technicians"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5234": {
+   "n": "Aircraft maintenance and related trades",
+   "t": [
+    "Aircraft maintenance and related trades"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5235": {
+   "n": "Boat and ship builders and repairers",
+   "t": [
+    "Boat and ship builders and repairers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5236": {
+   "n": "Rail and rolling stock builders and repairers",
+   "t": [
+    "Rail and rolling stock builders and repairers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5241": {
+   "n": "Electricians and electrical fitters",
+   "t": [
+    "Electric vehicle charging point installers",
+    "Electro-mechanical technicians",
+    "Installation and maintenance electricians",
+    "Smart energy experts",
+    "Solar panel installers",
+    "Street lighting electrician",
+    "Electricians and electrical fitters not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5242": {
+   "n": "Telecoms and related network installers and repairers",
+   "t": [
+    "Telecoms and related network installers and repairers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5243": {
+   "n": "TV, video and audio servicers and repairers",
+   "t": [
+    "TV, video and audio servicers and repairers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5244": {
+   "n": "Computer system and equipment installers and servicers",
+   "t": [
+    "Computer system and equipment installers and servicers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5245": {
+   "n": "Security system installers and repairers",
+   "t": [
+    "Security system installers and repairers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5246": {
+   "n": "Electrical service and maintenance mechanics and repairers",
+   "t": [
+    "Electrical service and maintenance mechanics and repairers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5249": {
+   "n": "Electrical and electronic trades not elsewhere classified",
+   "t": [
+    "Broadcast and communications technicians",
+    "Overhead line workers",
+    "Signal workers",
+    "Electrical and electronic trades not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5250": {
+   "n": "Skilled metal, electrical and electronic trades supervisors",
+   "t": [
+    "Skilled metal, electrical and electronic trades supervisors"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5311": {
+   "n": "Steel erectors",
+   "t": [
+    "Steel erectors"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5312": {
+   "n": "Stonemasons and related trades",
+   "t": [
+    "Dry stone wallers",
+    "Monumental masons",
+    "Stonemasons",
+    "Stonemasons and related trades not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5313": {
+   "n": "Bricklayers",
+   "t": [
+    "Bricklayers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5314": {
+   "n": "Roofers, roof tilers and slaters",
+   "t": [
+    "Felt and flat roofers",
+    "Sheeters and cladders",
+    "Thatchers",
+    "Tilers and slaters",
+    "Roofers, roof tilers and slaters not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5315": {
+   "n": "Plumbers and heating and ventilating installers and repairers",
+   "t": [
+    "Plumbers and heating and ventilation installers and repairers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5316": {
+   "n": "Carpenters and joiners",
+   "t": [
+    "Bedroom and kitchen fitters",
+    "Carpenters",
+    "Joiners",
+    "Carpenters and joiners not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5317": {
+   "n": "Glaziers, window fabricators and fitters",
+   "t": [
+    "Glass cutters and glaziers",
+    "Window fabricators",
+    "Window fitters",
+    "Glaziers, window fabricators and fitters not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5319": {
+   "n": "Construction and building trades not elsewhere classified",
+   "t": [
+    "Builders",
+    "Divers",
+    "Fence erectors",
+    "Industrial climbers",
+    "Remotely Operated Vehicle (ROV) operators",
+    "Steel fixers and underpinners",
+    "Construction and building trades not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5321": {
+   "n": "Plasterers",
+   "t": [
+    "Dry liners",
+    "Plasterers (wall and decorative)"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5322": {
+   "n": "Floorers and wall tilers",
+   "t": [
+    "Carpet and linoleum fitters",
+    "Floor layers",
+    "Tilers",
+    "Floorers and wall tilers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5323": {
+   "n": "Painters and decorators",
+   "t": [
+    "Painters and decorators"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5330": {
+   "n": "Construction and building trades supervisors",
+   "t": [
+    "Carpenter and joinery supervisors",
+    "Demolition supervisors",
+    "Painting supervisors",
+    "Plumbing supervisors",
+    "Road construction supervisors",
+    "Roofing supervisors",
+    "Scaffolding supervisors",
+    "Construction and building trade supervisors not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5411": {
+   "n": "Upholsterers",
+   "t": [
+    "Curtain makers",
+    "Trimmers and upholsterers",
+    "Upholsterers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5412": {
+   "n": "Footwear and leather working trades",
+   "t": [
+    "Footwear makers and repairers",
+    "Leather workers (excludes leather dressing)",
+    "Footwear and leather working trades not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5413": {
+   "n": "Tailors and dressmakers",
+   "t": [
+    "Costume makers",
+    "Dressmakers",
+    "Fitters and alterations assistants",
+    "Kilt makers",
+    "Milliners (excludes wholesale, retail trade)",
+    "Tailors",
+    "Tailors and dressmakers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5419": {
+   "n": "Textiles, garments and related trades not elsewhere classified",
+   "t": [
+    "Embroiderers and sewers",
+    "Knitters",
+    "Sail makers",
+    "Weavers (excludes basket, wig and wire goods mfr)",
+    "Textiles, garments and related trades not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5421": {
+   "n": "Pre-press technicians",
+   "t": [
+    "Pre-press technicians"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5422": {
+   "n": "Printers",
+   "t": [
+    "Digital printers",
+    "Flexographic printers",
+    "Lithographic printers",
+    "Screen printers",
+    "Printers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5423": {
+   "n": "Print finishing and binding workers",
+   "t": [
+    "Print finishing and binding workers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5431": {
+   "n": "Butchers",
+   "t": [
+    "Butchers",
+    "Slaughterers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5432": {
+   "n": "Bakers and flour confectioners",
+   "t": [
+    "Bakers (excludes food process bakery workers and textile manufacturing)",
+    "Cake decorators and designers",
+    "Bakers and flour confectioners not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5433": {
+   "n": "Fishmongers and poultry dressers",
+   "t": [
+    "Fishmongers",
+    "Poultry dressers",
+    "Fishmongers and poultry dressers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5434": {
+   "n": "Chefs",
+   "t": [
+    "Chefs"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5436": {
+   "n": "Catering and bar managers",
+   "t": [
+    "Catering and bar managers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5441": {
+   "n": "Glass and ceramics makers, decorators and finishers",
+   "t": [
+    "Ceramic makers, decorators and finishers",
+    "Ceramic potters",
+    "Glass blowers",
+    "Glass makers, decorators and finishers",
+    "Optical glass makers",
+    "Glass and ceramics makers, decorators and finishers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5442": {
+   "n": "Furniture makers and other craft woodworkers",
+   "t": [
+    "Cabinet makers (excludes metal)",
+    "Furniture makers and fitters",
+    "Furniture restorers",
+    "Furniture sprayers and finishers",
+    "Picture framers",
+    "Shed makers",
+    "Furniture makers and other craft woodworkers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5443": {
+   "n": "Florists",
+   "t": [
+    "Florists"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "5449": {
+   "n": "Other skilled trades not elsewhere classified",
+   "t": [
+    "Basket makers (excludes wire goods mfr)",
+    "Candle makers",
+    "Goldsmiths, silversmiths, jewellers and precious stone workers",
+    "Hairpiece and wig makers",
+    "Metal engravers",
+    "Craft model makers",
+    "Musical instrument repairers, makers and tuners",
+    "Sign makers and writers",
+    "Toy makers and repairers",
+    "Other skilled trades not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6111": {
+   "n": "Early education and childcare assistants",
+   "t": [
+    "Early education and childcare assistants"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6114": {
+   "n": "Childminders",
+   "t": [
+    "Childminders"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6117": {
+   "n": "Playworkers",
+   "t": [
+    "Playworkers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6129": {
+   "n": "Animal care services occupations not elsewhere classified",
+   "t": [
+    "Animal boarding assistants",
+    "Animal breeders",
+    "Animal groomers",
+    "Animal trainers (excludes performing animals)",
+    "Animal walkers",
+    "Animal welfare workers",
+    "Stable workers",
+    "Veterinary assistants",
+    "Zookeepers",
+    "Animal care services occupations not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6134": {
+   "n": "Houseparents and residential wardens",
+   "t": [
+    "Foster carers",
+    "Residential childcare practitioners",
+    "School matrons and houseparents",
+    "Residential housing wardens",
+    "Houseparents and residential wardens not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6135": {
+   "n": "Care workers and home carers",
+   "t": [
+    "Community support workers",
+    "Home care workers",
+    "Residential care workers",
+    "Care workers and home carers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6136": {
+   "n": "Senior care workers",
+   "t": [
+    "Senior community support workers",
+    "Senior home care workers",
+    "Senior residential care workers",
+    "Senior care workers not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6213": {
+   "n": "Air travel assistants",
+   "t": [
+    "Flight attendants",
+    "Passenger services assistants",
+    "Air travel assistants not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6214": {
+   "n": "Rail travel assistants",
+   "t": [
+    "Railway station assistants",
+    "Revenue protection officers",
+    "Train conductors and guards",
+    "Rail travel assistants not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6311": {
+   "n": "Police community support officers",
+   "t": [
+    "Police community support officers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "7124": {
+   "n": "Market and street traders and assistants",
+   "t": [
+    "Market and street traders and assistants"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "7131": {
+   "n": "Shopkeepers and owners - retail and wholesale",
+   "t": [
+    "Antique dealers",
+    "Art dealers",
+    "Car traders",
+    "Newsagents",
+    "Retail jewellers",
+    "Wholesalers",
+    "Wine merchants",
+    "Shopkeepers and owners - retail and wholesale not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "7132": {
+   "n": "Sales supervisors - retail and wholesale",
+   "t": [
+    "Sales supervisors - retail and wholesale"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "7214": {
+   "n": "Market research interviewers",
+   "t": [
+    "Field and telephone interviewers",
+    "Mystery shoppers",
+    "Political canvassers",
+    "Traffic enumerators"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "7220": {
+   "n": "Customer service supervisors",
+   "t": [
+    "Customer service supervisors"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "8113": {
+   "n": "Chemical and related process operatives",
+   "t": [
+    "Chemical and related process operatives"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "8133": {
+   "n": "Energy plant operatives",
+   "t": [
+    "Boiler operatives",
+    "Compressor operatives",
+    "Nuclear decommissioning operatives",
+    "Energy plant operatives not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "8134": {
+   "n": "Water and sewerage plant operatives",
+   "t": [
+    "Water and sewerage distribution operatives",
+    "Water treatment operatives",
+    "Water and sewerage plant operatives not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "8143": {
+   "n": "Routine inspectors and testers",
+   "t": [
+    "Routine inspectors and testers"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "8215": {
+   "n": "Driving instructors",
+   "t": [
+    "Cycling instructors",
+    "Forklift instructors",
+    "Heavy and large vehicle driving instructors",
+    "Motorcycle instructors",
+    "Passenger carrying vehicle (PCV) and car driving instructors",
+    "Driving instructors not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "8232": {
+   "n": "Marine and waterways transport operatives",
+   "t": [
+    "Marine and waterways transport operatives"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "9119": {
+   "n": "Fishing and other elementary agriculture occupations not elsewhere classified",
+   "t": [
+    "Vent chick sexer",
+    "Deckhand on large fishing vessel (9 metres and above)",
+    "Grass cutter",
+    "Hatchery worker (fishing)",
+    "Horticultural worker",
+    "Labourer (landscape gardening)",
+    "Mushroom picker",
+    "Nursery worker"
+   ],
+   "g": [
+    "transitional",
+    "not_eligible"
+   ]
+  },
+  "9249": {
+   "n": "Elementary sales occupations not elsewhere classified",
+   "t": [
+    "Retail order pickers",
+    "Trolley collectors",
+    "Elementary sales occupations not elsewhere classified"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3214": {
+   "n": "Complementary health associate professionals",
+   "t": [
+    "Alexander technique teachers",
+    "Aromatherapists",
+    "Homeopaths (excludes medically qualified)",
+    "Hospital play specialists",
+    "Hypnotherapists",
+    "Massage therapists",
+    "Reflexologists",
+    "Reiki healers",
+    "Complementary health associate professionals not elsewhere classified",
+    "Colour therapist",
+    "Holistic therapist",
+    "Homeopath",
+    "Hypnotherapist",
+    "Massage therapist",
+    "Reflexologist"
+   ],
+   "g": [
+    "transitional",
+    "not_eligible"
+   ]
+  },
+  "6116": {
+   "n": "Nannies and au pairs",
+   "t": [
+    "Au pairs",
+    "Nannies",
+    "Au pair",
+    "Nanny"
+   ],
+   "g": [
+    "transitional",
+    "not_eligible"
+   ]
+  },
+  "6232": {
+   "n": "Caretakers",
+   "t": [
+    "Caretakers",
+    "Caretaker",
+    "Concierge",
+    "Janitor",
+    "Porter (college)",
+    "School premises manager",
+    "Site manager (educational establishments)"
+   ],
+   "g": [
+    "transitional",
+    "not_eligible"
+   ]
+  },
+  "6250": {
+   "n": "Bed and breakfast and guest house owners and proprietors",
+   "t": [
+    "Bed and breakfast and guest house owners and proprietors",
+    "Guest house owner",
+    "Landlady (guest house)"
+   ],
+   "g": [
+    "transitional",
+    "not_eligible"
+   ]
+  },
+  "7115": {
+   "n": "Vehicle and parts salespersons and advisers",
+   "t": [
+    "Vehicle parts advisers",
+    "Vehicle sales executives",
+    "Car sales executive",
+    "Car salesman",
+    "Parts adviser (retail trade)",
+    "Parts technician"
+   ],
+   "g": [
+    "transitional",
+    "not_eligible"
+   ]
+  },
+  "7125": {
+   "n": "Visual merchandisers and related occupations",
+   "t": [
+    "Fashion stylists",
+    "Visual merchandisers and window dressers",
+    "Visual merchandisers and related occupations not elsewhere classified",
+    "Display representative",
+    "Fashion stylist",
+    "Visual merchandising assistant",
+    "Window dresser"
+   ],
+   "g": [
+    "transitional",
+    "not_eligible"
+   ]
+  },
+  "7129": {
+   "n": "Sales related occupations not elsewhere classified",
+   "t": [
+    "Demonstrators and product promoters",
+    "Hire desk controllers",
+    "Sales energy consultants",
+    "Sales related occupations not elsewhere classified",
+    "Demonstrator",
+    "Hire controller",
+    "Insurance salesman",
+    "Promoter (wholesale, retail trade)",
+    "Sales representative (retail trade)"
+   ],
+   "g": [
+    "transitional",
+    "not_eligible"
+   ]
+  },
+  "8115": {
+   "n": "Metal making and treating process operatives",
+   "t": [
+    "Galvanisers and platers",
+    "Metal sprayers and powder coaters",
+    "Metal making and treating process operatives not elsewhere classified",
+    "Degreaser (metal trades)",
+    "Electroplater",
+    "Furnaceman (metal trades)",
+    "Process worker (nickel mfr)",
+    "Wire drawer"
+   ],
+   "g": [
+    "transitional",
+    "not_eligible"
+   ]
+  },
+  "9252": {
+   "n": "Warehouse operatives",
+   "t": [
+    "Warehouse operatives",
+    "Order picker",
+    "Storeman",
+    "Team member (warehousing)",
+    "Warehouse operative",
+    "Warehouseman"
+   ],
+   "g": [
+    "transitional",
+    "not_eligible"
+   ]
+  },
+  "2211": {
+   "n": "Generalist medical practitioners (England)",
+   "t": [
+    "Doctor",
+    "General practitioner",
+    "House officer (hospital service)",
+    "Medical practitioner",
+    "Physician"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2212": {
+   "n": "Specialist medical practitioners",
+   "t": [
+    "Anaesthetist",
+    "Consultant (hospital service)",
+    "Homeopath (medically qualified)",
+    "Medical acupuncturist",
+    "Paediatrician",
+    "Psychiatrist",
+    "Radiologist",
+    "Surgeon"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2221": {
+   "n": "Physiotherapists",
+   "t": [
+    "Electro-therapist",
+    "Physiotherapist",
+    "Physiotherapy practitioner"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2222": {
+   "n": "Occupational therapists",
+   "t": [
+    "Community occupational therapist",
+    "Occupational therapist",
+    "Paediatric occupational therapist"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2223": {
+   "n": "Speech and language therapists",
+   "t": [
+    "Communication therapist",
+    "Language therapist",
+    "Speech and language therapist",
+    "Speech therapist"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2224": {
+   "n": "Psychotherapists and cognitive behaviour therapists",
+   "t": [
+    "Cognitive behavioural therapist",
+    "Psycho-analyst",
+    "Psychological counsellor",
+    "Psychotherapist"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2225": {
+   "n": "Clinical psychologists",
+   "t": [
+    "Clinical psychologist",
+    "Consultant clinical psychologist"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2226": {
+   "n": "Other psychologists",
+   "t": [
+    "Educational psychologist",
+    "Forensic psychologist",
+    "Occupational psychologist",
+    "Psychologist",
+    "Psychometrist"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2229": {
+   "n": "Therapy professionals not elsewhere classified",
+   "t": [
+    "Acupuncturist",
+    "Art therapist",
+    "Chiropractor",
+    "Dance movement therapist",
+    "Family therapist",
+    "Genetic counsellor",
+    "Nutritionist",
+    "Osteopath",
+    "Sports massage therapist",
+    "Sports therapist"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2231": {
+   "n": "Midwifery nurses",
+   "t": [
+    "Delivery suite manager",
+    "Midwife",
+    "Midwifery manager"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2232": {
+   "n": "Registered community nurses",
+   "t": [
+    "Community care nurse",
+    "District nurse",
+    "Health visitor",
+    "Practice nurse"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2233": {
+   "n": "Registered specialist nurses",
+   "t": [
+    "Advanced primary care nurse",
+    "Intensive care nurse",
+    "Clinical nurse specialist",
+    "Theatre manager (hospital service)"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2234": {
+   "n": "Registered nurse practitioners",
+   "t": [
+    "Health care practitioner",
+    "Mental health practitioner",
+    "Practitioner (nursing)"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2235": {
+   "n": "Registered mental health nurses",
+   "t": [
+    "Community mental health nurse",
+    "Psychiatric nurse"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2236": {
+   "n": "Registered children’s nurses",
+   "t": [
+    "Community children’s nurse",
+    "Neonatal nurse",
+    "Paediatric nurse",
+    "School nurse"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2237": {
+   "n": "Other registered nursing professionals",
+   "t": [
+    "Clinical lead nurse",
+    "Matron (care/residential home)",
+    "Nurse",
+    "Nurse educator",
+    "Occupational health nurse",
+    "Staff nurse",
+    "Team leader (nursing)",
+    "Ward manager"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2251": {
+   "n": "Pharmacists",
+   "t": [
+    "Chemist (pharmaceutical)",
+    "Dispensary manager",
+    "Pharmaceutical chemist",
+    "Pharmacist",
+    "Pharmacy manager"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2252": {
+   "n": "Optometrists",
+   "t": [
+    "Doctor of optometry",
+    "Ophthalmic optician",
+    "Optician"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2253": {
+   "n": "Dental practitioners (England)",
+   "t": [
+    "Dental surgeon",
+    "Dentist",
+    "Orthodontist",
+    "Periodontist"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2254": {
+   "n": "Medical radiographers",
+   "t": [
+    "Medical photographer",
+    "Nuclear medicine practitioner",
+    "Radiographer",
+    "Sonographer",
+    "Therapeutic radiographer",
+    "Vascular technologist"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2255": {
+   "n": "Paramedics",
+   "t": [
+    "Ambulance paramedic",
+    "Emergency care practitioner",
+    "Paramedic",
+    "Paramedic-ECP"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2256": {
+   "n": "Podiatrists",
+   "t": [
+    "Chiropodist",
+    "Foot health practitioner (qualified)",
+    "Podiatrist"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2259": {
+   "n": "Other health professionals not elsewhere classified",
+   "t": [
+    "Audiologist",
+    "Clinical physiologist",
+    "Dietician-nutritionist",
+    "Family planner",
+    "Occupational health adviser",
+    "Operating theatre practitioner",
+    "Physiologist"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2312": {
+   "n": "Further education teaching professionals (England)",
+   "t": [
+    "FE College lecturer",
+    "Lecturer (further education)",
+    "Teacher (further education)",
+    "Tutor (further education)"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2313": {
+   "n": "Secondary education teaching professionals",
+   "t": [
+    "Curriculum leader (secondary school)",
+    "Deputy head teacher (secondary school)",
+    "Head of year (secondary school)",
+    "Secondary school teacher",
+    "Sixth form teacher",
+    "Teacher (secondary school)"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2314": {
+   "n": "Primary education teaching professionals",
+   "t": [
+    "Deputy head teacher (primary school)",
+    "Infant teacher",
+    "Junior school teacher",
+    "Primary school teacher"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2315": {
+   "n": "Nursery education teaching professionals",
+   "t": [
+    "Kindergarten teacher (professional)",
+    "Nursery school teacher",
+    "Pre-school teacher"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2316": {
+   "n": "Special and additional needs education teaching professionals",
+   "t": [
+    "Behaviour support teacher",
+    "Deputy head teacher (special/additional needs school)",
+    "Learning support teacher",
+    "Special educational needs coordinator",
+    "Special needs teacher"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2321": {
+   "n": "Head teachers and principals",
+   "t": [
+    "Head master (secondary school)",
+    "Head teacher (primary school)",
+    "Principal (further education)",
+    "Rector (university)"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "2461": {
+   "n": "Social workers",
+   "t": [
+    "Independent review officer (social worker)",
+    "Mental health social worker",
+    "Senior practitioner (local government: social services)",
+    "Social worker",
+    "Team leader (local government: social services)"
+   ],
+   "g": [
+    "eligible"
+   ]
+  },
+  "3213": {
+   "n": "Medical and dental technicians",
+   "t": [
+    "Cardiographer",
+    "Dental hygienist",
+    "Dental technician",
+    "Medical technical officer",
+    "Ocularist",
+    "Orthopaedic technician",
+    "Radiography assistant practitioner"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3219": {
+   "n": "Health associate professionals not elsewhere classified",
+   "t": [
+    "Antenatal teacher",
+    "Diet adviser",
+    "Health trainer",
+    "Therapist"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "3231": {
+   "n": "Higher level teaching assistants",
+   "t": [
+    "Advanced teaching assistant",
+    "HLTA",
+    "Learning support practitioner",
+    "Teaching assistant (qualified)"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6112": {
+   "n": "Teaching assistants",
+   "t": [
+    "Classroom assistant",
+    "School assistant",
+    "Teaching assistant"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6113": {
+   "n": "Educational support assistants",
+   "t": [
+    "Education support assistant",
+    "Learning support assistant",
+    "Non-teaching assistant (schools)",
+    "Special needs assistant",
+    "Support assistant (educational establishments)"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6131": {
+   "n": "Nursing auxiliaries and assistants",
+   "t": [
+    "Auxiliary nurse",
+    "Health care assistant (hospital service)",
+    "Health care support worker",
+    "Nursing assistant",
+    "Nursing auxiliary"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6132": {
+   "n": "Ambulance staff (excluding paramedics)",
+   "t": [
+    "Ambulance care assistant",
+    "Ambulance driver",
+    "Ambulance service preparation operative",
+    "Ambulance technician",
+    "Emergency medical technician"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "6133": {
+   "n": "Dental nurses",
+   "t": [
+    "Dental assistant",
+    "Dental nurse",
+    "Dental nurse-receptionist",
+    "Dental surgery assistant"
+   ],
+   "g": [
+    "transitional"
+   ]
+  },
+  "1112": {
+   "n": "Elected officers and representatives",
+   "t": [
+    "Councillor (local government)",
+    "Member of Parliament"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "1161": {
+   "n": "Officers in armed forces",
+   "t": [
+    "Army officer",
+    "Commander (armed forces)",
+    "Flight-lieutenant",
+    "Royal Navy officer",
+    "Squadron-leader"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "2463": {
+   "n": "Clergy",
+   "t": [
+    "Chaplain",
+    "Clergyman",
+    "Minister of religion",
+    "Nun",
+    "Pastor",
+    "Priest",
+    "Vicar"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "3311": {
+   "n": "Non-commissioned officers and other ranks",
+   "t": [
+    "Aircraftman",
+    "Aircraft technician (armed forces)",
+    "Lance-corporal",
+    "Sergeant (armed forces)",
+    "Soldier",
+    "Weapons engineer (armed forces)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "3431": {
+   "n": "Sports players",
+   "t": [
+    "Cricketer",
+    "Footballer",
+    "Jockey",
+    "Golfer"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "3432": {
+   "n": "Sports coaches, instructors and officials",
+   "t": [
+    "Referee",
+    "Riding instructor",
+    "Sports coach",
+    "Sports development officer",
+    "Swimming teacher"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4123": {
+   "n": "Bank and post office clerks",
+   "t": [
+    "Bank clerk",
+    "Cashier (banking)",
+    "Customer service adviser (building society)",
+    "Customer service officer (banking)",
+    "Post office clerk"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4131": {
+   "n": "Records clerks and assistants",
+   "t": [
+    "Admissions officer",
+    "Clerical officer (hospital service)",
+    "Examinations officer (education)",
+    "Filing clerk",
+    "Records clerk",
+    "Ward clerk"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4133": {
+   "n": "Stock control clerks and assistants",
+   "t": [
+    "Auditor (stock control)",
+    "Despatch clerk",
+    "Material controller",
+    "Stock controller",
+    "Stores administrator",
+    "Supply chain coordinator"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4135": {
+   "n": "Library clerks and assistants",
+   "t": [
+    "Archives assistant (library)",
+    "Information assistant (library)",
+    "Learning resource assistant",
+    "Library assistant",
+    "Library clerk",
+    "Library supervisor"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4136": {
+   "n": "Human resources administrative occupations",
+   "t": [
+    "Course administrator",
+    "Human resources administrator",
+    "Personnel administrator",
+    "Personnel clerk",
+    "Training administrator"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4142": {
+   "n": "Office supervisors",
+   "t": [
+    "Administration supervisor",
+    "Clerical supervisor",
+    "Facilities supervisor",
+    "Office supervisor"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4152": {
+   "n": "Data entry administrators",
+   "t": [
+    "Data administrator",
+    "Database assistant",
+    "Data entry clerk",
+    "Database inputter"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4211": {
+   "n": "Medical secretaries",
+   "t": [
+    "Clinic coordinator",
+    "Clinic administrator",
+    "Medical administrator",
+    "Medical secretary",
+    "Secretary (medical practice)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4212": {
+   "n": "Legal secretaries",
+   "t": [
+    "Legal administrator",
+    "Legal clerk",
+    "Legal secretary",
+    "Secretary (legal services)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4213": {
+   "n": "School secretaries",
+   "t": [
+    "Administration assistant (schools)",
+    "Clerical assistant (schools)",
+    "School administrator",
+    "School secretary",
+    "Secretary (schools)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4216": {
+   "n": "Receptionists",
+   "t": [
+    "Dental receptionist",
+    "Doctor’s receptionist",
+    "Medical receptionist",
+    "Reception manager",
+    "Receptionist",
+    "Receptionist-administrator"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "4217": {
+   "n": "Typists and related keyboard occupations",
+   "t": [
+    "Audio typist",
+    "Transcriber",
+    "Typist",
+    "Typist-clerk"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "5435": {
+   "n": "Cooks",
+   "t": [
+    "Cook",
+    "Cook-supervisor",
+    "Fish fryer",
+    "Head cook"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6121": {
+   "n": "Pest control officers",
+   "t": [
+    "Fumigator",
+    "Pest control officer",
+    "Pest control technician",
+    "Pest controller"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6137": {
+   "n": "Care escorts",
+   "t": [
+    "Bus escort",
+    "Escort",
+    "Passenger assistant",
+    "School escort"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6138": {
+   "n": "Undertakers, mortuary and crematorium assistants",
+   "t": [
+    "Crematorium technician",
+    "Embalmer",
+    "Funeral director",
+    "Pall bearer",
+    "Undertaker"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6211": {
+   "n": "Sports and leisure assistants",
+   "t": [
+    "Croupier",
+    "Leisure attendant",
+    "Lifeguard",
+    "Runner (broadcasting)",
+    "Sports assistant"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6212": {
+   "n": "Travel agents",
+   "t": [
+    "Reservations agent",
+    "Sales consultant (travel agents)",
+    "Travel adviser",
+    "Travel agent",
+    "Travel consultant"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6219": {
+   "n": "Leisure and travel service occupations not elsewhere classified",
+   "t": [
+    "Bus conductor",
+    "Holiday representative",
+    "Information assistant (tourism)",
+    "Steward (shipping)",
+    "Tour guide"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6221": {
+   "n": "Hairdressers and barbers",
+   "t": [
+    "Artistic director (hairdressing)",
+    "Barber",
+    "Colourist (hairdressing)",
+    "Hair designer",
+    "Hair stylist",
+    "Hairdresser"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6222": {
+   "n": "Beauticians and related occupations",
+   "t": [
+    "Beautician",
+    "Beauty therapist",
+    "Nail technician",
+    "Spa therapist"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6231": {
+   "n": "Housekeepers and related occupations",
+   "t": [
+    "Chalet host",
+    "House keeper",
+    "Lifestyle manager",
+    "Valet"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6240": {
+   "n": "Cleaning and housekeeping managers and supervisors",
+   "t": [
+    "Butler",
+    "Cleaner-in-charge",
+    "Cleaning supervisor",
+    "Guest service manager",
+    "Hotel services supervisor",
+    "House keeper (hotel)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "6312": {
+   "n": "Parking and civil enforcement occupations",
+   "t": [
+    "Car park attendant",
+    "Civil enforcement officer",
+    "Community warden",
+    "Parking attendant",
+    "Traffic warden"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7111": {
+   "n": "Sales and retail assistants",
+   "t": [
+    "Retail assistant",
+    "Sales adviser",
+    "Sales assistant",
+    "Sales consultant (retail trade)",
+    "Shop assistant"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7112": {
+   "n": "Retail cashiers and check-out operators",
+   "t": [
+    "Cashier (wholesale trade)",
+    "Check-out operator",
+    "Customer team member (retail trade)",
+    "Forecourt attendant",
+    "General assistant (check-out: retail trade)",
+    "Till operator"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7113": {
+   "n": "Telephone salespersons",
+   "t": [
+    "Inbound sales adviser",
+    "Sales adviser (telephone sales)",
+    "Telesales executive",
+    "Telesales operative"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7114": {
+   "n": "Pharmacy and optical dispensing assistants",
+   "t": [
+    "Dispenser",
+    "Health care assistant (retail pharmacy)",
+    "Optical assistant",
+    "Pharmacy assistant"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7121": {
+   "n": "Collector salespersons and credit agents",
+   "t": [
+    "Agent (insurance)",
+    "Canvasser",
+    "Distributor (door-to-door sales)",
+    "Insurance agent"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7122": {
+   "n": "Debt, rent and other cash collectors",
+   "t": [
+    "Bailiff",
+    "Collecting agent",
+    "Debt collector",
+    "Meter reader",
+    "Pawn broker",
+    "Vending operator"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7123": {
+   "n": "Roundspersons and van salespersons",
+   "t": [
+    "Dairyman (retail trade: delivery round)",
+    "Ice-cream salesman",
+    "Milkman (milk retailing)",
+    "Roundsman",
+    "Van salesman"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7211": {
+   "n": "Call and contact centre occupations",
+   "t": [
+    "Call centre agent",
+    "Call centre operator",
+    "Customer service adviser (call centre)",
+    "Customer service operator"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7212": {
+   "n": "Telephonists",
+   "t": [
+    "Call handler (motoring organisation)",
+    "Operator (telephone)",
+    "Switchboard operator (telephone)",
+    "Telephonist",
+    "Telephonist-receptionist"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7213": {
+   "n": "Communication operators",
+   "t": [
+    "Call handler (emergency services)",
+    "Communications officer",
+    "Control room operator (emergency services)",
+    "Controller (taxi service)",
+    "Emergency medical despatcher",
+    "Radio operator"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "7219": {
+   "n": "Customer service occupations not elsewhere classified",
+   "t": [
+    "Complaints officer",
+    "Customer adviser",
+    "Customer service administrator",
+    "Customer service adviser",
+    "Customer service assistant",
+    "Customer services representative"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8111": {
+   "n": "Food, drink and tobacco process operatives",
+   "t": [
+    "Baker (food products mfr)",
+    "Bakery assistant",
+    "Factory worker (food products mfr)",
+    "Meat processor (meat packing)",
+    "Process worker (brewery)",
+    "Process worker (dairy)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8112": {
+   "n": "Textile process operatives",
+   "t": [
+    "Factory worker (clothing mfr)",
+    "Hosiery worker",
+    "Machinist (rope, twine mfr)",
+    "Process worker (textile mfr)",
+    "Spinner (paper twine mfr)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8114": {
+   "n": "Plastics process operatives",
+   "t": [
+    "Extrusion operator (plastics mfr)",
+    "Fabricator (plastics mfr)",
+    "Injection moulder",
+    "Laminator (fibreglass)",
+    "Process worker (plastic goods mfr)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8119": {
+   "n": "Process operatives not elsewhere classified",
+   "t": [
+    "Glass worker",
+    "Moulder (rubber goods mfr)",
+    "Melting pot assistant (electric cable)",
+    "Process worker (fibreglass mfr)",
+    "Stone finisher (cast concrete products mfr)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8120": {
+   "n": "Metal working machine operatives",
+   "t": [
+    "Engineer (nos)",
+    "Machinist (metal trades)",
+    "Metal polisher",
+    "Process worker (metal trades)",
+    "Shot blaster"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8131": {
+   "n": "Paper and wood machine operatives",
+   "t": [
+    "Box maker (cardboard)",
+    "Guillotine operator (printing)",
+    "Machinist (paper goods mfr)",
+    "Sawyer",
+    "Wood machinist"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8132": {
+   "n": "Mining and quarry workers and related operatives",
+   "t": [
+    "Coal miner",
+    "Derrickman (oil wells)",
+    "Diamond driller (well sinking)",
+    "Plant operator (quarry)",
+    "Quarry operative"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8135": {
+   "n": "Printing machine assistants",
+   "t": [
+    "Finishing operative (printing)",
+    "Lithographer (printing)",
+    "Machinist (printing)",
+    "Print operator",
+    "Printer’s assistant"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8139": {
+   "n": "Plant and machine operatives not elsewhere classified",
+   "t": [
+    "Bench hand (metal trades)",
+    "Cable maker (spring mfr)",
+    "Laser operator",
+    "Manufacturer (metal goods mfr)",
+    "Saw doctor"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8141": {
+   "n": "Assemblers (electrical and electronic products)",
+   "t": [
+    "Assembler (electrical, electronic equipment mfr)",
+    "Line operator (electrical)",
+    "Panel wirer",
+    "Solderer",
+    "Technical operator (circuit board mfr)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8142": {
+   "n": "Assemblers (vehicles and metal goods)",
+   "t": [
+    "Assembler (metal trades)",
+    "Car worker",
+    "Lineworker (vehicle mfr)",
+    "Manufacturing operator (metal trades)",
+    "Process worker (metal trades: assembly)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8144": {
+   "n": "Weighers, graders and sorters",
+   "t": [
+    "Grader (food products mfr)",
+    "Metal sorter",
+    "Selector (ceramics mfr)",
+    "Weighbridge clerk",
+    "Weighbridge operator"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8145": {
+   "n": "Tyre, exhaust and windscreen fitters",
+   "t": [
+    "Tyre and exhaust fitter",
+    "Tyre fitter",
+    "Tyre technician",
+    "Windscreen fitter"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8146": {
+   "n": "Sewing machinists",
+   "t": [
+    "Overlocker",
+    "Seamstress",
+    "Sewing machinist",
+    "Stitcher",
+    "Upholstery machinist"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8149": {
+   "n": "Assemblers and routine operatives not elsewhere classified",
+   "t": [
+    "Assembler",
+    "Gluer (furniture mfr)",
+    "Paint line operator",
+    "Production assistant",
+    "Riveter (soft toy mfr)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8151": {
+   "n": "Scaffolders, stagers and riggers",
+   "t": [
+    "Bell hanger (church bells)",
+    "Rigger (film, television production)",
+    "Stage rigger (shipbuilding)",
+    "Tackleman (steelworks)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8152": {
+   "n": "Road construction operatives",
+   "t": [
+    "Asphalter",
+    "Concrete finisher (building construction)",
+    "Highways operative",
+    "Paver",
+    "Road worker",
+    "Tarmacer"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8153": {
+   "n": "Rail construction and maintenance operatives",
+   "t": [
+    "Line Inspector (railways)",
+    "Maintenance man (railway maintenance and repair)",
+    "Relayer (railways)",
+    "Track maintenance engineer",
+    "Trackman (railways)",
+    "Ultrasonic engineer (railway maintenance and repair)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8159": {
+   "n": "Construction operatives not elsewhere classified",
+   "t": [
+    "Asbestos remover",
+    "Cable layer",
+    "Demolition worker",
+    "General handyman",
+    "Maintenance man",
+    "Public lighting operative",
+    "Thermal insulation engineer"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8160": {
+   "n": "Production, factory and assembly supervisors",
+   "t": [
+    "Foreman (plasterboard mfr)",
+    "Leading hand (textile mfr)",
+    "Mill foreman (food products mfr)",
+    "Print room supervisor",
+    "Process supervisor (chemical mfr)",
+    "Production team leader (vehicle mfr)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8211": {
+   "n": "Heavy and large goods vehicle drivers",
+   "t": [
+    "Haulage contractor",
+    "LGV/HGV driver",
+    "Lorry driver",
+    "Owner (HGV/LGV)",
+    "Tanker driver"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8212": {
+   "n": "Bus and coach drivers",
+   "t": [
+    "Bus driver",
+    "Coach driver",
+    "Coach operator",
+    "Minibus driver",
+    "PSV driver"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8213": {
+   "n": "Taxi and cab drivers and chauffeurs",
+   "t": [
+    "Carriage driver",
+    "Chauffeur",
+    "Mini cab driver",
+    "Taxi driver",
+    "Taxi owner"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8214": {
+   "n": "Delivery drivers and couriers",
+   "t": [
+    "Courier-driver",
+    "Cash in transit driver",
+    "Customer service team member (delivery service)",
+    "Delivery driver",
+    "Meals on wheels driver",
+    "Parcel delivery driver",
+    "Van driver"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8219": {
+   "n": "Road transport drivers not elsewhere classified",
+   "t": [
+    "Driver",
+    "Driver-cleaner",
+    "Driver-valeter",
+    "Recovery driver",
+    "Test driver (vehicle mfr)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8221": {
+   "n": "Crane drivers",
+   "t": [
+    "Crane driver",
+    "Crane operator",
+    "Haulage engine driver",
+    "Grab driver",
+    "Winchman"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8222": {
+   "n": "Fork-lift truck drivers",
+   "t": [
+    "Fork lift driver",
+    "Fork lift truck driver",
+    "Fork truck operator",
+    "Stacker-driver"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8229": {
+   "n": "Mobile machine drivers and operatives not elsewhere classified",
+   "t": [
+    "Agricultural machinist",
+    "Digger driver",
+    "Dredger",
+    "Excavator driver",
+    "JCB driver",
+    "Plant operator",
+    "Rig operator",
+    "Tractor driver (agriculture)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8231": {
+   "n": "Train and tram drivers",
+   "t": [
+    "Diesel driver (railways)",
+    "Train driver",
+    "Train operator",
+    "Tram driver",
+    "Shunter driver"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8233": {
+   "n": "Air transport operatives",
+   "t": [
+    "Aircraft dispatcher",
+    "Baggage handler",
+    "Cargo handler (airport)",
+    "Controller, airfield",
+    "Ground staff (airport)",
+    "Ramp agent",
+    "Refueller (airport)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8234": {
+   "n": "Rail transport operatives",
+   "t": [
+    "Protection master",
+    "Railway worker",
+    "Shunter",
+    "Signalman (railways)",
+    "Transport supervisor (railways)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "8239": {
+   "n": "Other drivers and transport operatives not elsewhere classified",
+   "t": [
+    "Bus inspector",
+    "Marshal (transport)",
+    "Operations assistant (freight handling)",
+    "Test driver (motor vehicle mfr)",
+    "Transport supervisor",
+    "Yard foreman (road transport)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9111": {
+   "n": "Farm workers",
+   "t": [
+    "Agricultural worker",
+    "Farm labourer",
+    "Farm worker",
+    "Herdsman",
+    "Poultry catcher",
+    "Shepherd"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9112": {
+   "n": "Forestry and related workers",
+   "t": [
+    "Arboricultural worker",
+    "Forestry contractor",
+    "Forestry worker",
+    "Lumberjack",
+    "Park keeper"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9121": {
+   "n": "Groundworkers",
+   "t": [
+    "Drainage worker",
+    "Ground worker (building construction)",
+    "Trench digger"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9129": {
+   "n": "Elementary construction occupations not elsewhere classified",
+   "t": [
+    "Building worker",
+    "Electrician’s mate (building construction)",
+    "Hod carrier",
+    "Labourer (building construction)",
+    "Odd job man",
+    "Sea diver’s assistant"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9131": {
+   "n": "Industrial cleaning process occupations",
+   "t": [
+    "Cleaner and greaser",
+    "Factory cleaner",
+    "Hygiene operative",
+    "Industrial cleaner",
+    "Pot washer"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9132": {
+   "n": "Packers, bottlers, canners and fillers",
+   "t": [
+    "Factory worker (packing)",
+    "Packaging operator",
+    "Packer",
+    "Paint filler"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9139": {
+   "n": "Elementary process plant occupations not elsewhere classified",
+   "t": [
+    "Factory worker",
+    "Fitter’s mate",
+    "Labourer (engineering)",
+    "Material handler"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9211": {
+   "n": "Postal workers, mail sorters and messengers",
+   "t": [
+    "Leaflet distributor",
+    "Mail sorter",
+    "Messenger",
+    "Paper boy",
+    "Paper girl",
+    "Postman",
+    "Postwoman"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9219": {
+   "n": "Elementary administration occupations not elsewhere classified",
+   "t": [
+    "General assistant",
+    "Office junior",
+    "Office worker",
+    "Reprographic technician"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9221": {
+   "n": "Window cleaners",
+   "t": [
+    "Window cleaner",
+    "Window cleaning contractor"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9222": {
+   "n": "Street cleaners",
+   "t": [
+    "Cleansing operative (street cleaning)",
+    "Litter picker",
+    "Road sweeper",
+    "Street cleaner"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9223": {
+   "n": "Cleaners and domestics",
+   "t": [
+    "Chambermaid",
+    "Cleaner",
+    "Domestic",
+    "Home help",
+    "School cleaner"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9224": {
+   "n": "Launderers, dry cleaners and pressers",
+   "t": [
+    "Carpet cleaner",
+    "Dry cleaner",
+    "Garment presser",
+    "Laundry assistant",
+    "Laundry worker",
+    "Presser (laundry, launderette, dry cleaning)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9225": {
+   "n": "Refuse and salvage occupations",
+   "t": [
+    "Binman (local government: cleansing department)",
+    "Dustman",
+    "Hopper attendant (refuse destruction)",
+    "Recycling operative",
+    "Refuse collector",
+    "Salvage worker"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9226": {
+   "n": "Vehicle valeters and cleaners",
+   "t": [
+    "Car washer",
+    "Carriage cleaner",
+    "Motor car polisher (garage)",
+    "Vehicle valeter"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9229": {
+   "n": "Elementary cleaning occupations not elsewhere classified",
+   "t": [
+    "Amenity block attendant",
+    "Bin cleaner",
+    "Chimney sweep",
+    "Toilet cleaner"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9231": {
+   "n": "Security guards and related occupations",
+   "t": [
+    "CCTV operator",
+    "Court usher",
+    "Door supervisor",
+    "Enforcement officer",
+    "Security guard",
+    "Security officer"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9232": {
+   "n": "School midday and crossing patrol occupations",
+   "t": [
+    "Dinner lady (schools)",
+    "Lunchtime supervisor",
+    "Midday assistant",
+    "School crossing patrol officer"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9233": {
+   "n": "Exam invigilators",
+   "t": [
+    "Invigilator"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9241": {
+   "n": "Shelf fillers",
+   "t": [
+    "Customer team member (shelf filling)",
+    "Evening merchandiser",
+    "General assistant (retail trade)",
+    "Grocery assistant",
+    "Shelf filler",
+    "Shelf stacker"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9251": {
+   "n": "Elementary storage supervisors",
+   "t": [
+    "Despatch supervisor",
+    "Foreman (docks)",
+    "Warehouse supervisor",
+    "Yard foreman (auctioneers)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9253": {
+   "n": "Delivery operatives",
+   "t": [
+    "Driver’s mate",
+    "Delivery assistant",
+    "Furniture remover",
+    "Porter"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9259": {
+   "n": "Elementary storage occupations not elsewhere classified",
+   "t": [
+    "Art handler",
+    "Dock worker",
+    "General assistant (wholesale trade)",
+    "Labourer (haulage contractor)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9261": {
+   "n": "Bar and catering supervisors",
+   "t": [
+    "Bar supervisor",
+    "Catering supervisor",
+    "Foreman (catering)Head waiter",
+    "Restaurant supervisor"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9262": {
+   "n": "Hospital porters",
+   "t": [
+    "Hospital porter",
+    "Porter (hospital service)",
+    "Portering supervisor (hospital services)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9263": {
+   "n": "Kitchen and catering assistants",
+   "t": [
+    "Catering assistant",
+    "Crew member (fast food outlet)",
+    "Kitchen assistant",
+    "Kitchen porter",
+    "Sandwich artist"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9264": {
+   "n": "Waiters and waitresses",
+   "t": [
+    "Food and beverage assistant",
+    "Silver service waiter",
+    "Steward (catering)",
+    "Waiter",
+    "Waitress"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9265": {
+   "n": "Bar staff",
+   "t": [
+    "Barmaid",
+    "Bar staff",
+    "Bartender",
+    "Glass collector (public house)",
+    "Mixologist (beverages)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9266": {
+   "n": "Coffee shop workers",
+   "t": [
+    "Barista",
+    "Coffee shop assistant"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9267": {
+   "n": "Leisure and theme park attendants",
+   "t": [
+    "Arcade assistant",
+    "Art gallery assistant",
+    "Cinema attendant",
+    "Museum attendant",
+    "Ride operator",
+    "Steward (sports ground)",
+    "Usher"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  },
+  "9269": {
+   "n": "Other elementary services occupations not elsewhere classified",
+   "t": [
+    "Bingo caller",
+    "Cloak room attendant",
+    "Hotel assistant",
+    "Night porter",
+    "Porter (residential buildings)",
+    "Stage hand (entertainment)"
+   ],
+   "g": [
+    "not_eligible"
+   ]
+  }
+ }
+}
