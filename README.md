@@ -1,5 +1,7 @@
 # SponsorLive
 
+> **New here?** Read **[How SponsorLive works](docs/HOW_IT_WORKS.md)**: a guide from the simple version to the technical deep dive, with diagrams, screenshots and charts.
+
 **Live UK jobs at companies that can sponsor visas, taken straight from each company's careers page.**
 
 LinkedIn and other job boards are full of reposted or "ghost" jobs that are already closed when you click Apply. SponsorLive only shows roles that are **live right now on the employer's own job board or careers site**, and only at employers on the **Home Office register of licensed Skilled Worker sponsors**.
@@ -81,6 +83,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 | Date | Work |
 |---|---|
+| 2026-11-13 | Added docs/HOW_IT_WORKS.md: layered guide (simple, walkthrough, deep dive) with Mermaid diagrams, screenshots and charts from live data. |
 | 2026-11-13 | Oracle live: 614 JPMorgan UK jobs. Sainsbury's is on the register as J Sainsbury Plc (found via the closest-names feature) and is now seeded under that name. Total 5,095 jobs from 514 sponsors. |
 | 2026-11-13 | Added Oracle Recruiting Cloud (public candidate API, UK location filter, descriptions for skills) and a careers-page sniffer that spots the hiring system behind a company's own site (found Sainsbury's runs on Oracle). Seeded Sainsbury's and JPMorgan. Suggestions that don't match the register now list the closest register names in the control centre. SLB not added: its job list is only available through a private search service. |
 | 2026-11-13 | First run with Workday: 3,528 jobs from 366 sponsors (12,736 checked). Stricter Workday name check after a wrong match (Baxter Games matched to Baxter healthcare); existing Workday boards are re-checked once. Added a second daily refresh at 13:43 UTC because GitHub skipped the 05:17 schedule. |
