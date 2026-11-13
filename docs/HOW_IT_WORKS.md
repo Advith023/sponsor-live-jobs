@@ -182,6 +182,7 @@ flowchart LR
 | `k` | Skills found in the description (indices into `skills.json`) | `[0, 1, 5]` |
 | `y` | Minimum years of experience asked | `3` |
 | `lv` | Seniority from the title | "Senior" |
+| `el` | Visa fit label: `e` eligible, `s` shortage list, `u` unlikely to qualify (hidden by default). Missing means no confident match | `"u"` |
 
 `stats.json` holds the totals, jobs per system, and the result for every company the owner or visitors added (matched to the register or not, how many jobs it produced, and the closest register names if it didn't match).
 
@@ -217,6 +218,7 @@ The hardest problem is names. The register says "SAINSBURYS SUPERMARKETS LIMITED
 | **Skills** | A vocabulary of 164 skills with aliases (for example "PySpark" counts as Spark), matched as whole words in the description. Short or ambiguous terms such as "R" and "Go" are only matched when written as the skill, so "go-getter" doesn't count as the Go language |
 | **Experience** | Phrases such as "3+ years of experience", "minimum of five years" and "experience: 3 to 5 years" in the description, ignoring company history ("founded 10 years ago") |
 | **Seniority** | Words in the title: Graduate, Junior, Senior, Lead, Head of |
+| **Visa fit** | The end of the title (the part that names the role) is matched against the official example job titles in the Home Office occupation tables, plus a curated list of common job-board titles. Roles in the not eligible table, or below the skill level and not on the Temporary Shortage List, are marked unlikely and hidden by default. Only exact official titles can hide a job; vague single words such as "Engineer" never do. The tables are read from GOV.UK each run and the last good copy is kept if the page changes |
 
 ### The CV matcher
 
@@ -249,6 +251,7 @@ flowchart LR
 - Some careers sites can't be read automatically. One large employer only publishes its jobs through a private search service, so it is not included.
 - Skills and experience are found by keyword rules. They can miss unusual wording.
 - A sponsor licence means the company *can* sponsor. Whether it will for a particular role is the employer's decision.
+- The visa fit check uses titles only, not salary, and the employer picks the occupation code. It is a guide, not immigration advice, and anything it can't place stays visible.
 
 ---
 

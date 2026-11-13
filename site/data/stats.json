@@ -135,5 +135,11 @@
    "boards": 0,
    "jobs": 0
   }
+ },
+ "eligibility": {
+  "eligible": 1425,
+  "shortage_list": 94,
+  "unlikely": 765,
+  "unlabelled": 3236
  }
 }

@@ -1,3 +1,4 @@
+# SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 """Skilled Worker eligibility check for job titles.
 
 SponsorLive by Advith Ashok. All rights reserved.
@@ -188,11 +189,12 @@ GENERIC = {
     "therapist", "domestic", "escort", "messenger", "dispenser", "model", "associate",
     "lead", "leader", "partner", "member", "representative", "designer", "developer",
     "scientist", "practitioner", "professional", "trainer", "inspector", "clerk",
+    "builder", "maker", "assessor", "investigator", "producer", "editor",
 }
 # Official example titles that are too ambiguous outside their original context.
 IGNORE_OFFICIAL = {
     "communications officer", "production assistant", "transport supervisor",
-    "lifestyle manager", "guest service manager", "operations assistant",
+    "lifestyle manager", "security consultant", "security manager", "guest service manager", "operations assistant",
     "data administrator", "general assistant", "team member", "supply chain coordinator",
     "material controller", "hire controller", "laser operator", "plant operator",
 }
@@ -204,7 +206,7 @@ EXTRA = {
         # retail and grocery
         "customer assistant", "customer service assistant", "retail assistant",
         "store assistant", "shop assistant", "shop floor assistant", "sales floor assistant",
-        "sales associate", "retail associate", "store associate", "retail colleague",
+        "retail sales associate", "retail associate", "store associate", "retail colleague",
         "store colleague", "shop colleague", "night colleague", "customer colleague",
         "retail team member", "store team member", "customer team member",
         "cashier", "checkout assistant", "checkout operator", "checkout colleague",
@@ -216,10 +218,14 @@ EXTRA = {
         "store manager", "assistant store manager", "deputy store manager", "shop manager",
         "retail manager", "store supervisor", "retail supervisor",
         "shift manager", "shift leader", "shift supervisor", "duty manager",
+        "customer and trading manager", "food manager", "general merchandise manager",
+        "nightshift manager", "night shift manager", "clerical colleague",
+        "general service assistant", "team member", "colleague",
         # warehouse and driving
         "picker", "packer", "picker packer", "order picker", "warehouse operative",
         "warehouse associate", "warehouse assistant", "warehouse colleague",
-        "warehouse team member", "warehouse operator", "fulfilment associate",
+        "warehouse team member", "warehouse operator", "warehouse manager",
+        "warehouse team manager", "warehouse shift manager", "fulfilment associate",
         "fulfilment assistant", "fulfilment colleague", "warehouse picker",
         "delivery driver", "home delivery driver", "van driver", "hgv driver", "lgv driver",
         "class 1 driver", "class 2 driver", "tonne driver", "driver", "courier",
@@ -266,7 +272,7 @@ EXTRA = {
         "ai engineer", "research scientist", "applied scientist", "research engineer",
         "data engineer", "analytics engineer", "platform engineer", "cloud engineer",
         "infrastructure engineer", "site reliability engineer", "sre", "devops engineer",
-        "security engineer", "network engineer", "systems engineer", "solutions architect",
+        "security engineer", "information security officer", "ciso", "network engineer", "systems engineer", "solutions architect",
         "software architect", "data architect", "cloud architect", "enterprise architect",
         "engineering manager", "product manager", "product owner", "product designer",
         "ux designer", "ui designer", "ux researcher", "user researcher", "qa engineer",
@@ -291,7 +297,7 @@ NOISE = {
 }
 ANYWHERE_U = re.compile(
     r"\b(apprentice(ship)?s?|intern(ship)?s?|work experience|industrial placement|"
-    r"placement student|summer placement|volunteer)\b", re.I)
+    r"placement student|summer placement|summer analyst|summer associate|off-cycle|volunteer)\b", re.I)
 CONNECTORS = {"in", "for", "at", "with", "within", "on", "to"}
 
 
@@ -311,8 +317,9 @@ def tokens(text: str) -> list:
 
 
 def _variants(title: str) -> list:
-    """Official example titles to plain phrases ("Sales and retail assistants"
-    gives "sales assistants" and "retail assistants")."""
+    """Official example titles to plain phrases as (phrase, literal) pairs.
+    "Sales and retail assistants" gives the literal title plus the derived
+    phrases "sales assistants" and "retail assistants"."""
     t = re.sub(r"\bnot elsewhere classified\b", "", title, flags=re.I)
     t = re.sub(r"\(excludes[^)]*\)", "", t, flags=re.I)
     m = re.search(r"\(([^)]*)\)", t)
@@ -320,21 +327,19 @@ def _variants(title: str) -> list:
         if m.group(1).strip().lower() not in ("professional", "qualified"):
             return []
         t = t.replace(m.group(0), "")
-    out = set()
+    out = {}
     for alt in _slash_alts(t):
         words = alt.split()
         if not words:
             continue
-        head = words[-1]
+        head = words[-1].lower()
+        out[alt.strip()] = True
         parts = [p.strip() for p in re.split(r",|\band\b", alt) if p.strip()]
-        out.add(alt.strip())
         if len(parts) > 1:
             for p in parts:
-                if len(p.split()) > 1:
-                    out.add(p)
-                if not p.endswith(head):
-                    out.add(p + " " + head)
-    return [v for v in out if v]
+                d = p if p.lower().endswith(head) else p + " " + head
+                out.setdefault(d, False)
+    return [(v, lit) for v, lit in out.items() if v]
 
 
 def _slash_alts(t: str) -> list:
@@ -352,14 +357,17 @@ def build_index(data: dict) -> dict:
     occ = data.get("occupations") or {}
     tsl = set(data.get("tsl") or [])
     index: dict = {}
+    ignore = {tuple(tokens(p)) for p in IGNORE_OFFICIAL}
     for code, o in occ.items():
         g = o.get("g") or []
         label = "e" if "eligible" in g else ("s" if code in tsl and "transitional" in g else "u")
         for title in list(o.get("t") or []) + [o.get("n") or ""]:
-            for v in _variants(title):
+            for v, literal in _variants(title):
                 key = tuple(tokens(v))
-                if not key or " ".join(key) in IGNORE_OFFICIAL:
+                if not key or key in ignore:
                     continue
+                if not literal and (label == "u" or len(key) < 2):
+                    continue   # only exact official titles can hide a job
                 if len(key) == 1 and key[0] in GENERIC:
                     continue
                 if key not in index or _RANK[label] > _RANK[index[key]]:

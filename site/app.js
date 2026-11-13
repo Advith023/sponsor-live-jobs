@@ -3,7 +3,7 @@
   const cfg = window.SPONSORLIVE_CONFIG || {};
   const $ = (s) => document.querySelector(s);
   const PAGE = 40;
-  const state = { q: "", loc: "", age: 0, remote: false, cats: new Set(), rg: new Set(), src: new Set(), sort: "new", shown: PAGE };
+  const state = { q: "", loc: "", age: 0, remote: false, all: false, cats: new Set(), rg: new Set(), src: new Set(), sort: "new", shown: PAGE };
   let cv = null; // in-memory only, never stored
   let jobs = [], filtered = [];
 
@@ -34,7 +34,7 @@
   function readUrl() {
     const p = new URLSearchParams(location.search);
     state.q = p.get("q") || ""; state.loc = p.get("loc") || "";
-    state.age = +p.get("age") || 0; state.remote = p.get("remote") === "1";
+    state.age = +p.get("age") || 0; state.remote = p.get("remote") === "1"; state.all = p.get("all") === "1";
     state.sort = p.get("sort") || "new";
     state.cats = new Set((p.get("cat") || "").split("|").filter(Boolean));
     state.rg = new Set((p.get("rg") || "").split("|").filter(Boolean));
@@ -47,6 +47,7 @@
     if (state.loc) p.set("loc", state.loc);
     if (state.age) p.set("age", state.age);
     if (state.remote) p.set("remote", "1");
+    if (state.all) p.set("all", "1");
     if (state.sort !== "new") p.set("sort", state.sort);
     if (state.cats.size) p.set("cat", [...state.cats].join("|"));
     if (state.rg.size) p.set("rg", [...state.rg].join("|"));
@@ -60,6 +61,7 @@
     const terms = norm(state.q).split(/\s+/).filter(Boolean);
     const lterms = norm(state.loc).split(/[\s,]+/).filter(Boolean);
     const cutoff = state.age ? Date.now() - state.age * 864e5 : 0;
+    if (!state.all && j.el === "u") return false;  // below the Skilled Worker skill level, see scripts/eligibility.py
     if (state.remote && !j.r) return false;
     if (skip !== "cat" && state.cats.size && !state.cats.has(j.cat)) return false;
     if (skip !== "rg" && state.rg.size && !j._rg.some((r) => state.rg.has(r))) return false;
@@ -90,6 +92,8 @@
 
   // ---------- rendering
   const tpl = $("#tpl").content;
+  const TIP_S = "This type of role is on the Temporary Shortage List, which has its own conditions and runs until 31 December 2026. Check GOV.UK and ask the employer.";
+  const TIP_U = "The job title matches an occupation that is below the Skilled Worker skill level, so this role is unlikely to be sponsored. This is a guide, not advice: the employer decides.";
   function card(j) {
     const n = tpl.cloneNode(true);
     const a = n.querySelector(".title");
@@ -105,6 +109,8 @@
     if (j.ty) add(j.ty, "tag");
     if (j.s) add(j.s, "tag");
     add(j.cat, "tag");
+    if (j.el === "s") add("Shortage list role", "tag info");
+    if (j.el === "u") add("Unlikely to qualify", "tag warn");
     add("via " + j.src);
     const tr = new URLSearchParams({ add: "1", employer: j.c, title: j.t, location: j.l, url: j.u });
     if (j._m) tr.set("fit", j._m.pct);
@@ -130,6 +136,8 @@
       det.textContent = parts.join(" · ");
       box.appendChild(det);
     }
+    const tags = m.querySelectorAll(".info, .warn");
+    tags.forEach((t) => (t.title = t.classList.contains("info") ? TIP_S : TIP_U));
     n.querySelector(".badge").title = `${j.sp} is on the Home Office register (Skilled Worker${j.rt ? ", " + j.rt : ""}). Sponsorship for this role is the employer's decision: ask the recruiter.`;
     return n;
   }
@@ -141,6 +149,9 @@
     filtered.slice(0, state.shown).forEach((j) => frag.appendChild(card(j)));
     list.appendChild(frag);
     $("#count").textContent = `${filtered.length.toLocaleString("en-GB")} live ${filtered.length === 1 ? "job" : "jobs"}`;
+    const hid = state.all ? 0 : jobs.filter((j) => j.el === "u").length;
+    $("#hiddenNote").hidden = !hid;
+    $("#hiddenNote").textContent = hid ? `${hid.toLocaleString("en-GB")} roles unlikely to qualify are hidden` : "";
     $("#moreBtn").hidden = filtered.length <= state.shown;
     const empty = $("#empty");
     empty.hidden = filtered.length > 0;
@@ -302,6 +313,7 @@
   $("#q").addEventListener("input", (e) => { state.q = e.target.value; debounce(apply); });
   $("#loc").addEventListener("input", (e) => { state.loc = e.target.value; debounce(apply); });
   $("#remote").addEventListener("change", (e) => { state.remote = e.target.checked; apply(); });
+  $("#showAll").addEventListener("change", (e) => { state.all = e.target.checked; apply(); });
   $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; apply(); });
   $("#age").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
@@ -309,7 +321,7 @@
   });
   $("#moreBtn").addEventListener("click", () => { state.shown += PAGE; render(); });
   $("#reset").addEventListener("click", () => {
-    Object.assign(state, { q: "", loc: "", age: 0, remote: false, sort: cv ? "match" : "new" }); state.cats.clear(); state.rg.clear(); state.src.clear();
+    Object.assign(state, { q: "", loc: "", age: 0, remote: false, all: false, sort: cv ? "match" : "new" }); state.cats.clear(); state.rg.clear(); state.src.clear();
     syncControls(); apply();
   });
   $("#share").addEventListener("click", async () => {
@@ -320,7 +332,7 @@
 
   function syncControls() {
     $("#q").value = state.q; $("#loc").value = state.loc;
-    $("#remote").checked = state.remote; $("#sort").value = state.sort;
+    $("#remote").checked = state.remote; $("#showAll").checked = state.all; $("#sort").value = state.sort;
     document.querySelectorAll("#age button").forEach((b) => b.classList.toggle("on", +b.dataset.v === state.age));
   }
 
@@ -341,7 +353,7 @@
       jobs.forEach((j) => j.l.split(/\s*[\/;|]\s*/).forEach((x) => { const c = x.split(",")[0].trim(); if (c) cities[c] = (cities[c] || 0) + 1; }));
       $("#locList").innerHTML = Object.entries(cities).sort((a, b) => b[1] - a[1]).slice(0, 60).map(([c]) => `<option value="${c.replace(/"/g, "&quot;")}">`).join("");
       const upd = d.generated ? new Date(d.generated).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" }) : "pending";
-      $("#stats").textContent = `${(d.count || 0).toLocaleString("en-GB")} live roles · ${(d.companies || 0).toLocaleString("en-GB")} licensed sponsors · updated ${upd}`;
+      $("#stats").textContent = `${jobs.filter((j) => j.el !== "u").length.toLocaleString("en-GB")} live roles · ${(d.companies || 0).toLocaleString("en-GB")} licensed sponsors · updated ${upd}`;
       apply();
     })
     .catch(() => { $("#stats").textContent = "Couldn't load jobs right now. Please refresh."; apply(); });

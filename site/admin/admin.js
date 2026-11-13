@@ -88,6 +88,8 @@
       .forEach(([label, v]) => { const d = el("div", null, "stat"); d.append(el("b", v), el("span", label)); box.append(d); });
     const src = $("sources"); src.replaceChildren();
     Object.entries(stats.sources || {}).sort((a, b) => b[1] - a[1]).forEach(([k, v]) => src.append(el("span", `${k}: ${fmt(v)}`, "chip")));
+    const fit = stats.eligibility;
+    if (fit) src.append(el("span", `Visa fit: ${fmt(fit.eligible)} eligible, ${fmt(fit.shortage_list)} shortage list, ${fmt(fit.unlikely)} hidden as unlikely, ${fmt(fit.unlabelled)} unlabelled`, "chip"));
   }
 
   // ---------- runs
