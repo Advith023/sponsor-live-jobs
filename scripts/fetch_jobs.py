@@ -38,6 +38,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import skills  # noqa: E402
+import eligibility  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CACHE_PATH = ROOT / "data" / "ats_cache.json"
@@ -1192,6 +1193,9 @@ def run():
         if k not in sponsors:
             del cache[k]
 
+    # Official occupation lists, used to label roles that are unlikely to qualify
+    elig_index = eligibility.build_index(eligibility.refresh(http_get))
+
     # Fetch jobs from every known board
     boards = [(k, b) for k, c in cache.items() for b in c.get("boards", [])]
     print(f"Boards to fetch: {len(boards):,}")
@@ -1236,6 +1240,9 @@ def run():
                     "y": skills.min_years(j.get("desc") or ""),
                     "lv": skills.level(j["title"]),
                 })
+                el = eligibility.classify(j["title"], elig_index)[0]
+                if el:
+                    jobs[-1]["el"] = el  # label only, the occupation code is never published
 
     # Boards that returned nothing twice in a row get rechecked later
     for k, ats, tok in dead:
@@ -1272,6 +1279,8 @@ def run():
     STATS_PATH.write_text(json.dumps({
         "generated": NOW.isoformat(), "sponsors": len(sponsors), "sponsors_checked": checked,
         "boards": len(boards), "jobs": len(jobs), "companies": payload["companies"],
+        "eligibility": {k: sum(1 for j in jobs if j.get("el") == v)
+                        for k, v in (("eligible", "e"), ("shortage_list", "s"), ("unlikely", "u"), ("unlabelled", None))},
         "sources": dict(sorted({src: sum(1 for j in jobs if j["src"] == src) for src in {j["src"] for j in jobs}}.items())),
         "suggestions_unmatched": sorted(set(unmatched))[:200],
         "suggestions_closest": {n: closest_sponsors(n, sponsors) for n in sorted(set(unmatched))[:50]},
