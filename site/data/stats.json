@@ -1,44 +1,33 @@
 {
- "generated": "2026-11-13T15:50:41.369038+00:00",
+ "generated": "2026-11-13T16:17:51.352805+00:00",
  "sponsors": 120259,
- "sponsors_checked": 16364,
- "boards": 815,
- "jobs": 5095,
- "companies": 514,
+ "sponsors_checked": 16449,
+ "boards": 791,
+ "jobs": 5520,
+ "companies": 519,
  "sources": {
-  "Ashby": 738,
+  "Ashby": 740,
   "BambooHR": 101,
   "Breezy": 26,
-  "Greenhouse": 1411,
-  "Lever": 252,
-  "Oracle": 614,
-  "Personio": 35,
-  "Pinpoint": 251,
+  "Greenhouse": 1408,
+  "Lever": 245,
+  "Oracle": 964,
+  "Personio": 36,
+  "Pinpoint": 334,
   "Recruitee": 35,
   "SmartRecruiters": 740,
   "Teamtailor": 313,
-  "Workday": 579
+  "Workday": 578
  },
  "suggestions_unmatched": [
-  "J.P. Morgan Securities",
   "SLB",
-  "Sainsbury's Supermarkets",
   "Sainsbury\u2019s",
   "TEST please ignore"
  ],
  "suggestions_closest": {
-  "J.P. Morgan Securities": [
-   "J P & S Servicess Ltd",
-   "Jag Force Security",
-   "Jannet Security Services Ltd"
-  ],
   "SLB": [
    "DSL BARS LTD T/A THE RUSTY KEG BAR",
    "BMSL BUILDERS LIMITED"
-  ],
-  "Sainsbury's Supermarkets": [
-   "The Sainsbury Laboratory",
-   "J Sainsbury Plc"
   ],
   "Sainsbury\u2019s": [
    "J Sainsbury Plc",
@@ -76,15 +65,15 @@
    "boards": 1,
    "jobs": 8
   },
-  "J.P. Morgan Securities": {
-   "sponsor": null,
-   "boards": 0,
-   "jobs": 0
+  "J Sainsbury Plc": {
+   "sponsor": "J Sainsbury Plc",
+   "boards": 1,
+   "jobs": 352
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
-   "boards": 2,
-   "jobs": 614
+   "boards": 1,
+   "jobs": 612
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
@@ -102,11 +91,6 @@
    "jobs": 0
   },
   "SLB": {
-   "sponsor": null,
-   "boards": 0,
-   "jobs": 0
-  },
-  "Sainsbury's Supermarkets": {
    "sponsor": null,
    "boards": 0,
    "jobs": 0
@@ -134,7 +118,7 @@
   "Teya Services": {
    "sponsor": "Teya Europe Ltd",
    "boards": 2,
-   "jobs": 62
+   "jobs": 58
   },
   "Trainline": {
    "sponsor": "Trainline.com Ltd",
