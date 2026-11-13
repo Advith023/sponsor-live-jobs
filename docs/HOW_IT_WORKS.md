@@ -170,7 +170,7 @@ flowchart LR
 | Key | Meaning | Example |
 |---|---|---|
 | `t` | Job title | "Senior Data Analyst" |
-| `c` | Company (as shown on its board) | "Monzo Bank" |
+| `c` | Company name, tidied from the register | "Monzo Bank" |
 | `sp` | Sponsor name on the register | "Monzo Bank Limited" |
 | `l` | Location text | "London / United Kingdom" |
 | `u` | Apply link (company's own site) | `https://...` |
