@@ -1,29 +1,29 @@
 {
- "generated": "2026-11-14T12:14:27.822170+00:00",
+ "generated": "2026-11-14T18:51:03.995117+00:00",
  "sponsors": 120259,
- "sponsors_checked": 22794,
- "boards": 1126,
- "jobs": 6401,
- "companies": 670,
+ "sponsors_checked": 26106,
+ "boards": 1294,
+ "jobs": 7606,
+ "companies": 814,
  "eligibility": {
-  "eligible": 1686,
-  "shortage_list": 103,
-  "unlikely": 828,
-  "unlabelled": 3784
+  "eligible": 1970,
+  "shortage_list": 128,
+  "unlikely": 933,
+  "unlabelled": 4575
  },
  "sources": {
-  "Ashby": 917,
-  "BambooHR": 170,
-  "Breezy": 39,
-  "Greenhouse": 1750,
-  "Lever": 279,
-  "Oracle": 982,
-  "Personio": 51,
-  "Pinpoint": 458,
-  "Recruitee": 81,
-  "SmartRecruiters": 869,
-  "Teamtailor": 393,
-  "Workday": 412
+  "Ashby": 1014,
+  "BambooHR": 208,
+  "Breezy": 44,
+  "Greenhouse": 1954,
+  "Lever": 298,
+  "Oracle": 974,
+  "Personio": 56,
+  "Pinpoint": 511,
+  "Recruitee": 82,
+  "SmartRecruiters": 932,
+  "Teamtailor": 569,
+  "Workday": 964
  },
  "suggestions_unmatched": [
   "SLB",
@@ -74,7 +74,7 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 372
+   "jobs": 364
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
