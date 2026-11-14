@@ -1,29 +1,29 @@
 {
- "generated": "2026-11-13T20:39:07.690664+00:00",
+ "generated": "2026-11-14T12:14:27.822170+00:00",
  "sponsors": 120259,
- "sponsors_checked": 19657,
- "boards": 939,
- "jobs": 5958,
- "companies": 605,
+ "sponsors_checked": 22794,
+ "boards": 1126,
+ "jobs": 6401,
+ "companies": 670,
  "eligibility": {
-  "eligible": 1524,
-  "shortage_list": 98,
-  "unlikely": 774,
-  "unlabelled": 3562
+  "eligible": 1686,
+  "shortage_list": 103,
+  "unlikely": 828,
+  "unlabelled": 3784
  },
  "sources": {
-  "Ashby": 773,
-  "BambooHR": 135,
-  "Breezy": 30,
-  "Greenhouse": 1513,
-  "Lever": 255,
-  "Oracle": 968,
-  "Personio": 48,
-  "Pinpoint": 412,
-  "Recruitee": 63,
-  "SmartRecruiters": 792,
-  "Teamtailor": 347,
-  "Workday": 622
+  "Ashby": 917,
+  "BambooHR": 170,
+  "Breezy": 39,
+  "Greenhouse": 1750,
+  "Lever": 279,
+  "Oracle": 982,
+  "Personio": 51,
+  "Pinpoint": 458,
+  "Recruitee": 81,
+  "SmartRecruiters": 869,
+  "Teamtailor": 393,
+  "Workday": 412
  },
  "suggestions_unmatched": [
   "SLB",
@@ -59,7 +59,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 128
+   "jobs": 127
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -74,12 +74,12 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 357
+   "jobs": 372
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 611
+   "jobs": 610
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
@@ -124,7 +124,7 @@
   "Teya Services": {
    "sponsor": "Teya Europe Ltd",
    "boards": 2,
-   "jobs": 58
+   "jobs": 59
   },
   "Trainline": {
    "sponsor": "Trainline.com Ltd",
