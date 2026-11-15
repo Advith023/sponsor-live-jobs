@@ -1,1 +1,12 @@
-{"hide": [], "show": []}
+{
+ "hide": [
+  "Interim Social Media Writer"
+ ],
+ "show": [],
+ "handled": {
+  "11/15/2026 15:29:45|Report role: Interim Social Media Writer (Part-Time) | Farfetch | https://jobs.ashbyhq.com/fcb2fa31-4415-4b05-9f1a-16a326c21432/5d72cfcf-0581-41f4-8fc8-46d46d00f5ac": {
+   "action": "hide",
+   "phrase": "Interim Social Media Writer"
+  }
+ }
+}
