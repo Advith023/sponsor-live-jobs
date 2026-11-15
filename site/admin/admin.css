@@ -41,3 +41,5 @@ input[type=color]{height:40px;padding:4px;width:80px}
 .jump a{border:1px solid #c3d2cb;border-radius:999px;padding:5px 12px;background:#fff;color:#14231d;text-decoration:none;font-weight:600;font-size:14px}
 .jump a:hover{background:#eef5f1}
 .card{scroll-margin-top:60px}
+.qsearch{display:flex;gap:8px;margin:6px 0}.qsearch input{flex:1;min-width:0}
+input.phrase{width:12em;max-width:100%;padding:3px 6px;font-size:.85rem}

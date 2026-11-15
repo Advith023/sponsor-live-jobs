@@ -81,8 +81,20 @@
     <!-- quality -->
     <section class="card" id="sec-quality">
       <div class="bar"><h2>Quality check</h2></div>
-      <p class="muted">Job titles the automatic checks weren't sure about, at employers with many store or catering roles. "Hide" hides every job ending in that title; "Keep" stops it ever being hidden. Changes apply from the next refresh.</p>
+      <p class="muted">Keeps roles that can't be sponsored off the site. Every decision here is saved to the repo and applies from the next refresh (twice a day, or run one from "Refresh jobs").</p>
       <p id="qSummary" class="muted"></p>
+
+      <h3>Check a role</h3>
+      <p class="muted">Paste a job title or a job link to see whether it's shown or hidden on the site, and hide or keep it.</p>
+      <div class="qsearch"><input id="qSearch" type="search" placeholder="e.g. Beauty Expert, or https://..." aria-label="Job title or link"><button id="qSearchBtn" type="button">Check</button></div>
+      <p id="qSearchMsg" class="muted small"></p>
+      <table class="tbl"><tbody id="qSearchRows"></tbody></table>
+
+      <h3>Reported by visitors <span id="qReportCount" class="muted small"></span></h3>
+      <p class="muted">Each "Report this role" tap from the site. <b>Hide</b> hides every job ending in the title in the box (edit it first if needed). <b>Ignore</b> marks the report as checked and leaves the role on the site. <b>Undo</b> reverses either.</p>
+      <table class="tbl"><thead><tr><th>Status</th><th>Role</th><th>Company</th><th>Sent</th><th></th></tr></thead><tbody id="qReports"></tbody></table>
+
+      <h3>Titles the checks weren't sure about</h3>
       <table class="tbl"><thead><tr><th>Now</th><th>Title</th><th>Jobs</th><th>Example</th><th></th></tr></thead><tbody id="qRows"></tbody></table>
       <h3>Your rules</h3>
       <table class="tbl"><tbody id="qRules"></tbody></table>

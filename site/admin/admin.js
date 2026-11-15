@@ -101,6 +101,7 @@
       rulesFile = { sha: f.sha, data: JSON.parse(b64decode(f.content)) };
     } catch { rulesFile = { sha: undefined, data: { hide: [], show: [] } }; }
     rulesFile.data.hide = rulesFile.data.hide || []; rulesFile.data.show = rulesFile.data.show || [];
+    rulesFile.data.handled = rulesFile.data.handled || {};
     return rulesFile.data;
   }
   async function writeRules(message) {
@@ -109,13 +110,105 @@
     rulesFile.sha = r.content.sha;
   }
   async function decide(phrase, action) {
+    if (!phrase) return alert("Type the title first.");
     const d = await readRules();
     d.hide = d.hide.filter((x) => x !== phrase); d.show = d.show.filter((x) => x !== phrase);
     if (action === "hide") d.hide.push(phrase);
     if (action === "show") d.show.push(phrase);
     await writeRules(`${action === "hide" ? "Hide" : action === "show" ? "Keep" : "Clear rule for"} "${phrase}"`);
-    loadQuality();
+    await loadQuality();
   }
+  // The part of a job title that names the role: "Beauty Expert - Stroud" -> "Beauty Expert"
+  const titlePhrase = (t, company) => {
+    const segs = (t || "").replace(/\([^)]*\)|\[[^\]]*\]/g, " ").split(/\s[-\u2013\u2014|]\s|[|,:;]|\s[-\u2013\u2014]|[-\u2013\u2014]\s/).map((x) => x.split("/")[0].trim()).filter(Boolean);
+    const co = (company || "").toLowerCase().split(/\s+/)[company && /^j$/i.test(company.split(/\s+/)[0]) ? 1 : 0] || "";
+    return segs.find((x) => !co || !x.toLowerCase().replace(/[\u2019']/g, "'").includes(co.replace(/[\u2019']/g, "'"))) || segs[0] || "";
+  };
+  const phraseInput = (v) => { const i = el("input"); i.value = v; i.className = "phrase"; i.title = "The title to hide or keep. Every job ending in this wording is affected."; return i; };
+  const ruleState = (d, title) => {
+    const p = titlePhrase(title).toLowerCase();
+    if (d.hide.some((x) => p.endsWith(x.toLowerCase()))) return "hide";
+    if (d.show.some((x) => p.endsWith(x.toLowerCase()))) return "show";
+    return null;
+  };
+
+  // Visitor reports ("Report this role" on the site), read straight from the form's sheet
+  async function renderReports(sheet) {
+    const body = $("qReports"); body.replaceChildren();
+    if (!sheet) { body.append(row(["", "Set up the form in Site settings to receive reports.", "", "", ""])); return; }
+    const d = await readRules();
+    const fi = sheet.head.findIndex((h) => /feedback/.test(h));
+    const reports = [];
+    for (const r of sheet.rows) {
+      const text = fi >= 0 ? (r[fi] || "").trim() : "";
+      const m = text.match(/^Report role:\s*(.+?)\s*\|\s*(.+?)\s*(?:\|\s*(\S+))?\s*$/i);
+      if (m) reports.push({ key: (r.find(isDate) || "").trim() + "|" + text, date: (r.find(isDate) || "").trim(), title: m[1], company: m[2], url: m[3] || "" });
+    }
+    const fresh = reports.filter((x) => !d.handled[x.key]).length;
+    $("qReportCount").textContent = reports.length ? `${fresh} new, ${reports.length - fresh} dealt with` : "None yet";
+    if (!reports.length) { body.append(row(["", "No reports yet. They appear here within a few minutes of being sent.", "", "", ""])); return; }
+    for (const x of reports.reverse()) {
+      const h = d.handled[x.key];
+      const title = x.url ? Object.assign(el("a", x.title), { href: x.url, target: "_blank", rel: "noopener" }) : x.title;
+      const act = el("span");
+      if (!h) {
+        const inp = phraseInput(titlePhrase(x.title, x.company));
+        act.append(inp, " ", btn("Hide", () => handle(x.key, "hide", inp.value.trim()), "small"), " ",
+          btn("Ignore", () => handle(x.key, "ignore"), "small"));
+      } else {
+        act.append(btn("Undo", () => handle(x.key, "undo"), "small"));
+      }
+      const status = !h ? tag("New", "warn") : h.action === "hide" ? tag(`Hidden: "${h.phrase}"`, "bad") : tag("Ignored", "ok");
+      body.append(row([status, title, x.company, x.date, act]));
+    }
+  }
+  async function handle(key, action, phrase) {
+    const d = await readRules();
+    if (action === "hide") {
+      if (!phrase) return alert("Type the title to hide first.");
+      d.handled[key] = { action, phrase };
+      if (!d.hide.includes(phrase)) d.hide.push(phrase);
+      d.show = d.show.filter((x) => x !== phrase);
+    } else if (action === "ignore") {
+      d.handled[key] = { action };
+    } else {
+      const h = d.handled[key]; delete d.handled[key];
+      if (h && h.action === "hide" && !Object.values(d.handled).some((o) => o.action === "hide" && o.phrase === h.phrase)) d.hide = d.hide.filter((x) => x !== h.phrase);
+    }
+    await writeRules(action === "undo" ? "Undo a role report decision" : `${action === "hide" ? "Hide" : "Ignore"} reported role${phrase ? ` "${phrase}"` : ""}`);
+    const sheet = await sheetRows().catch(() => null);
+    await renderReports(sheet); loadQuality();
+  }
+
+  // Search: paste a job title or link and see what the site does with it
+  let jobsCache = null;
+  async function searchJobs() {
+    const q = $("qSearch").value.trim();
+    const out = $("qSearchRows"); out.replaceChildren();
+    if (!q) { $("qSearchMsg").textContent = ""; return; }
+    $("qSearchMsg").textContent = "Searching…";
+    if (!jobsCache) jobsCache = (await (await fetch("../data/jobs.json", { cache: "no-store" })).json()).jobs || [];
+    const d = await readRules();
+    const ql = q.toLowerCase();
+    const hits = jobsCache.filter((j) => j.u === q || j.t.toLowerCase().includes(ql) || (/^https?:/.test(q) && j.u.startsWith(q)));
+    $("qSearchMsg").textContent = hits.length ? `${fmt(hits.length)} live ${hits.length === 1 ? "job matches" : "jobs match"}${hits.length > 50 ? ", showing the first 50" : ""}.` : "No live job matches that. It may have closed, or the title is worded differently.";
+    for (const j of hits.slice(0, 50)) {
+      const now = j.el === "u" ? tag("Hidden", "bad") : j.el === "s" ? tag("Shown, shortage list", "ok") : tag("Shown", "ok");
+      const pending = ruleState(d, j.t);
+      const st = el("span"); st.append(now);
+      if (pending === "hide" && j.el !== "u") st.append(" ", tag("Hidden from next refresh", "warn"));
+      if (pending === "show" && j.el === "u") st.append(" ", tag("Shown from next refresh", "warn"));
+      const inp = phraseInput(titlePhrase(j.t, j.c));
+      const act = el("span");
+      act.append(inp, " ", btn("Hide title", () => decide(inp.value.trim(), "hide").then(searchJobs), "small"), " ",
+        btn("Keep title", () => decide(inp.value.trim(), "show").then(searchJobs), "small"));
+      body2(out, [st, Object.assign(el("a", j.t), { href: j.u, target: "_blank", rel: "noopener" }), j.c, act]);
+    }
+  }
+  const body2 = (tbody, cells) => tbody.append(row(cells));
+  $("qSearchBtn").onclick = () => searchJobs().catch((err) => ($("qSearchMsg").textContent = err.message));
+  $("qSearch").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); $("qSearchBtn").click(); } });
+
   async function loadQuality() {
     const d = await readRules();
     const q = (stats && stats.quality) || { review: [] };
@@ -263,6 +356,7 @@
     const items = [];
     for (const r of sheet.rows) {
       const text = fi >= 0 ? (r[fi] || "").trim() : "";
+      if (/^Report role:/i.test(text)) continue;  // shown under Quality check instead
       const rating = ri >= 0 ? parseInt(r[ri], 10) || 0 : 0;
       const date = (r.find(isDate) || "").trim();
       if ((text || rating) && !hidden.has(date + text + rating)) items.push({ date, text, rating });
@@ -313,6 +407,7 @@
     let sheet = null;
     try { sheet = await sheetRows(); } catch (err) { body.append(row([err.message, "", "", "", ""])); }
     renderFeedback(sheet);
+    renderReports(sheet).catch((err) => { $("qReports").replaceChildren(row([err.message, "", "", "", ""])); });
     if (sheet) {
       const ci = sheet.head.findIndex((h) => /company/.test(h)), li = sheet.head.findIndex((h) => /link|url|careers/.test(h));
       for (const r of sheet.rows) {

@@ -11,7 +11,7 @@ This guide explains how it works in three layers. Read as far as you need:
 
 Plus: [what makes it different](#4-what-makes-it-different), [results so far](#5-results-so-far), [lessons learnt](#6-lessons-learnt) and a [glossary](#7-glossary).
 
-*Figures are from 13 November 2026: **5,520 live UK jobs at 519 licensed sponsors**, with 16,449 of the 120,259 sponsors on the register checked so far. Coverage grows every day.*
+*Figures are from 15 November 2026: **8,013 live UK jobs at 885 licensed sponsors**, of which 6,888 are shown and 1,125 are hidden as unlikely to qualify for a visa. 29,434 of the 120,259 sponsors on the register have been checked so far. Coverage grows every day.*
 
 ![SponsorLive home page](images/screen_home.jpg)
 
@@ -27,7 +27,8 @@ SponsorLive is like a **robot helper that does the boring checking for you**:
 2. **For each company, it goes looking for the company's own jobs page.** Companies use different "job systems" (think of them as different shops with different shelves), so the robot knows how to read 13 kinds of shelf.
 3. **It writes down only the jobs that are live right now and in the UK**, with a link straight to the company.
 4. **It adds helpful labels to each job**: which part of the UK, what kind of work, which skills it asks for and how many years of experience.
-5. **It puts everything on a website** where you can search, filter, check your CV against every job and keep track of what you've applied for.
+5. **It hides jobs that almost certainly can't be sponsored**, such as shop, catering and cleaning roles, by checking each job title against the government's own list of jobs that qualify for a work visa. Visitors can still choose to see them.
+6. **It puts everything on a website** where you can search, filter, check your CV against every job and keep track of what you've applied for.
 
 Nobody has to press a button. The robot runs by itself, for free, and the website updates on its own.
 
@@ -76,7 +77,9 @@ sequenceDiagram
     GA->>HO: Download the latest sponsor register (CSV)
     GA->>ATS: Look for job boards for up to 8,000 new sponsors
     GA->>ATS: Fetch live jobs from every known board
+    GA->>HO: Read the eligible occupation tables and the shortage list (GOV.UK)
     GA->>GA: Keep UK jobs only, tag region, category, skills, experience
+    GA->>GA: Visa fit check and quality check (see section 3)
     GA->>Repo: Save jobs.json and stats.json
     GA->>Pages: Publish the website
 ```
@@ -128,7 +131,10 @@ The website is a single page that loads the job data and does everything else **
 - **Search and filters**: keyword, location, how recent, remote only, UK region, job system and category. Every search can be shared as a link.
 - **CV matcher**: the visitor uploads a CV (PDF, Word or text). It is read on their own device and never uploaded. The site finds the skills and years of experience on it and scores every job.
 - **Application tracker**: "+ Track" on any job saves it to a personal tracker, again stored only on that device. On a computer, the CV and cover letter used for each application can be saved into a folder of the visitor's choice.
+- **Visa fit**: roles that are unlikely to qualify for a Skilled Worker visa are hidden by default. A tick box ("Include roles unlikely to qualify") shows them again with an "Unlikely to qualify" tag, and shortage list roles carry a "Shortage list role" tag. A short note links to the Home Office list. No occupation codes are shown.
+- **Report this role**: every job card has a small link. Two taps send an anonymous report to the owner's Google Form; each device can report a role once.
 - **Suggestions and feedback**: anonymous, through a Google Form. No names, no emails, no login.
+- **Visit counts**: GoatCounter counts visits and a few actions (apply clicks, CV matches, tracks, reports) with no cookies and no personal data. Only the owner can see the dashboard.
 
 ![CV matcher with match scores](images/screen_cv_match.jpg)
 
@@ -144,10 +150,23 @@ flowchart LR
     CC -->|"start or stop a refresh"| ACT["GitHub Actions"]
     CC -->|"approve or reject suggestions,<br/>add companies"| SEED["data/seed_boards.json"]
     CC -->|"edit wording, colour, links"| CFG["site/config.js"]
-    CC -->|"read"| FORM["Google Sheet<br/>(suggestions, feedback, ratings)"]
+    CC -->|"hide or keep job titles,<br/>act on reported roles"| RULES["data/title_rules.json"]
+    RULES --> ACT
+    CC -->|"read"| FORM["Google Sheet<br/>(suggestions, feedback, ratings,<br/>role reports)"]
     SEED --> ACT
     CFG --> PAGES["Website updates in about a minute"]
 ```
+
+**Quality check panel** (in the control centre):
+
+| Part | What it does | Buttons |
+|---|---|---|
+| **Check a role** | Paste a job title or a job link. It shows every live match and whether it's shown, hidden, or about to change at the next refresh | Hide title, Keep title |
+| **Reported by visitors** | Every "Report this role" tap, newest first, read straight from the form's sheet within a few minutes | Hide (edit the title in the box first if needed), Ignore, then Undo |
+| **Titles the checks weren't sure about** | Titles at store and catering employers that weren't recognised, plus the ones the employer check hid automatically | Hide, Keep |
+| **Your rules** | Everything you've decided | Undo |
+
+Every decision is saved to `data/title_rules.json` in the repository and applies from the next refresh. "Hide" hides every job whose title ends in that wording; "Keep" stops it ever being hidden. Hiding a note under *Feedback from visitors* only tidies that list on your device and does not change the site.
 
 ![Control centre overview](images/screen_control_centre.jpg)
 
@@ -240,19 +259,48 @@ flowchart LR
 - **Jobs with little detail** are capped below "strong fit", because a title alone isn't enough evidence.
 - Every result carries a reminder that this is a keyword match, not a hiring prediction.
 
+### The visa fit check
+
+Licensed sponsors also advertise roles that can't be sponsored on the Skilled Worker route, such as customer assistants, drivers and cleaners. Showing those as "jobs at visa sponsors" would mislead people, so every job goes through four layers. Each layer can only hide a job when it is confident; anything it can't place stays visible.
+
+```mermaid
+flowchart TD
+    J["Job title and advert"] --> R0{"Owner rule in<br/>title_rules.json?"}
+    R0 -->|keep| SHOW["Shown"]
+    R0 -->|hide| HIDE["Hidden: unlikely to qualify"]
+    R0 -->|none| T{"1. Title match:<br/>end of the title against the<br/>Home Office occupation tables"}
+    T -->|eligible table| SHOW
+    T -->|"transitional and on the<br/>shortage list"| SL["Shown with<br/>'Shortage list role'"]
+    T -->|"not eligible, or below<br/>the skill level"| HIDE
+    T -->|no confident match| P{"2. Pay check:<br/>only pay below £15 an hour<br/>or £25,000 a year?"}
+    P -->|yes| HIDE
+    P -->|no| E{"3. Employer check:<br/>most of the employer's<br/>recognised roles are front-line,<br/>and this title ends in<br/>assistant, operative, crew…?"}
+    E -->|yes| HIDE
+    E -->|no| SHOW
+    HIDE --> Q["4. Owner review:<br/>reports and unsure titles<br/>in the control centre"]
+    SHOW --> Q
+```
+
+1. **Title match.** On every refresh the robot reads two GOV.UK pages: *Immigration Rules Appendix Skilled Occupations* (eligible, transitional and not eligible tables, each with official example job titles) and the *Temporary Shortage List*. Only the end of a job title is matched, because that is the part that names the role: "Sales Assistant Manager" is a manager, "Customer Assistant" is an assistant. Matches come from the exact official titles plus a curated list of common job-board titles. Single vague words such as "Engineer" or "Consultant" never decide anything. If GOV.UK changes its page layout, the last good copy (`data/occupations.json`) is kept.
+2. **Pay check.** If an advert only quotes pay clearly below any Skilled Worker level, the job is hidden. Any higher figure in the advert cancels this.
+3. **Employer check.** At employers whose recognised roles are mostly front-line (for example a caterer), an unrecognised title ending in a front-line word is hidden too. Internships don't count towards an employer's profile.
+4. **Owner review.** Visitor reports and titles the checks weren't sure about go to the control centre, where one click hides or keeps that title for good.
+
+Occupation codes stay inside `scripts/eligibility.py` and `data/occupations.json`; the website only receives a one-letter label (`e`, `s` or `u`). The site says plainly that this is a guide, not immigration advice, and that the employer decides on sponsorship.
+
 ### Testing and quality
 
-- 13 automated tests cover link recognition, region tagging, skills and experience parsing, company matching, Workday and Oracle parsing and the sniffer. Responses are recorded from the real systems so the tests run offline.
+- 21 automated tests cover link recognition, region tagging, skills and experience parsing, company matching, Workday and Oracle parsing, the sniffer, reading the GOV.UK occupation tables, title matching, the pay and employer checks, owner rules and visitor reports. Responses and page layouts are recorded from the real systems so the tests run offline.
 - The tests run before every refresh. If they fail, the site keeps showing the last good data.
 - Each new job system was checked against live employers before going in (for example JPMorgan for Oracle, Barclays for Workday).
 
 ### Limits, stated plainly
 
-- Coverage is a sample, not every UK job: 16,449 of 120,259 sponsors have been checked so far, and some companies hire through agencies or don't advertise online.
+- Coverage is a sample, not every UK job: 29,434 of 120,259 sponsors have been checked so far, and some companies hire through agencies or don't advertise online.
 - Some careers sites can't be read automatically. One large employer only publishes its jobs through a private search service, so it is not included.
 - Skills and experience are found by keyword rules. They can miss unusual wording.
 - A sponsor licence means the company *can* sponsor. Whether it will for a particular role is the employer's decision.
-- The visa fit check uses titles only, not salary, and the employer picks the occupation code. It is a guide, not immigration advice, and anything it can't place stays visible.
+- The visa fit check works from job titles and any pay in the advert. The employer chooses the occupation code and the salary, so it is a guide, not immigration advice, and anything it can't place stays visible. Visitors can report a role it got wrong.
 
 ---
 
@@ -262,7 +310,7 @@ flowchart LR
 |---|---|---|
 | Source | Reposts and scraped adverts | The employer's own hiring system, every time |
 | Freshness | Often stale | Checked twice a day; closed jobs disappear |
-| Sponsorship | Self-declared or unchecked | Every company is on the Home Office register |
+| Sponsorship | Self-declared or unchecked | Every company is on the Home Office register, and roles that can't be sponsored are hidden |
 | CV matching | Usually uploads your CV to a server | Runs on your device; nothing is uploaded |
 | Tracking | Separate tools | Built in, with the exact CV and cover letter per application |
 | Running cost | Servers and databases | Zero: GitHub Actions and Pages |
@@ -297,7 +345,8 @@ A few findings from the data:
 4. **Find the cheap signal.** Workday's `robots.txt` and the careers-page sniffer turned hard discovery problems into a few cheap requests.
 5. **Privacy can be a feature, not a cost.** Doing the CV matching in the browser avoided collecting personal data at all.
 6. **Static sites go a long way.** Two JSON files, a scheduled job and a static site do the work that many products build servers for.
-7. **Say what you don't know.** Coverage, limits and the meaning of "licensed sponsor" are stated on the site and here.
+7. **Trust is earned job by job.** One shop-floor role listed as a "visa job" undoes a lot of good work, so the visa fit check is built to fail safe (when unsure, show the job) and every miss can be reported and fixed in one click.
+8. **Say what you don't know.** Coverage, limits and the meaning of "licensed sponsor" are stated on the site and here.
 
 ---
 
@@ -314,6 +363,9 @@ A few findings from the data:
 | **GitHub Pages** | GitHub's free hosting for static websites |
 | **robots.txt** | A file websites publish to tell automated visitors what they may read |
 | **schema.org JobPosting** | A standard way for websites to describe a job so search engines can show it |
+| **Skilled Worker visa** | The main UK work visa that needs a licensed sponsor and an eligible occupation |
+| **Appendix Skilled Occupations** | The Home Office tables of occupations that can or can't be sponsored, with official example job titles |
+| **Temporary Shortage List (TSL)** | Occupations below the usual skill level that can still be sponsored for now, with conditions |
 | **Fingerprint** | Identifying details deliberately left in data or code to show where it came from |
 
 ---
