@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-15T15:35:34.491804+00:00",
+ "generated": "2026-11-15T19:27:45.666535+00:00",
  "sponsors": 120259,
- "sponsors_checked": 29718,
- "boards": 1409,
- "jobs": 8147,
- "companies": 897,
+ "sponsors_checked": 32846,
+ "boards": 1570,
+ "jobs": 8802,
+ "companies": 995,
  "quality": {
   "hidden_by_pay": 17,
   "hidden_by_employer_profile": 10,
@@ -21,6 +21,14 @@
     "phrase": "interim social media writer",
     "jobs": 1,
     "example": "Interim Social Media Writer (Part-Time)",
+    "company": "Farfetch",
+    "auto": false,
+    "reported": 1
+   },
+   {
+    "phrase": "head of procurement",
+    "jobs": 1,
+    "example": "Head of Procurement",
     "company": "Farfetch",
     "auto": false,
     "reported": 1
@@ -103,6 +111,13 @@
     "auto": false
    },
    {
+    "phrase": "uk team leader",
+    "jobs": 8,
+    "example": "UK Team Leader (ANIMAL)",
+    "company": "Mountain Warehouse",
+    "auto": false
+   },
+   {
     "phrase": "field service engineer",
     "jobs": 7,
     "example": "Field Service Engineer (Oxford)",
@@ -128,6 +143,13 @@
     "jobs": 5,
     "example": "Training Delivery Instructor (Electronic Controls & Diagnostic Trainer)",
     "company": "Capita",
+    "auto": false
+   },
+   {
+    "phrase": "assistant manager",
+    "jobs": 4,
+    "example": "Assistant Manager",
+    "company": "Aramark",
     "auto": false
    },
    {
@@ -159,13 +181,6 @@
     "auto": false
    },
    {
-    "phrase": "head of procurement",
-    "jobs": 3,
-    "example": "Head of Procurement",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
     "phrase": "senior manager",
     "jobs": 3,
     "example": "Senior Manager, Commercial Operations, UKI EMEA",
@@ -194,10 +209,31 @@
     "auto": false
    },
    {
-    "phrase": "assistant manager",
+    "phrase": "french speaking",
     "jobs": 2,
-    "example": "Assistant Manager",
-    "company": "Aramark",
+    "example": "French Speaking - Private Client Stylist - Future Opportunities",
+    "company": "Farfetch",
+    "auto": false
+   },
+   {
+    "phrase": "german speaking",
+    "jobs": 2,
+    "example": "German Speaking - Private Client Stylist - Future Opportunities",
+    "company": "Farfetch",
+    "auto": false
+   },
+   {
+    "phrase": "interim sale manager",
+    "jobs": 2,
+    "example": "Interim Sales Manager (MAT Cover)",
+    "company": "Farfetch",
+    "auto": false
+   },
+   {
+    "phrase": "loyalty and customer growth manager",
+    "jobs": 2,
+    "example": "Loyalty & Customer Growth Manager",
+    "company": "Farfetch",
     "auto": false
    },
    {
@@ -215,38 +251,17 @@
     "auto": false
    },
    {
-    "phrase": "german speaking",
-    "jobs": 2,
-    "example": "German Speaking - Private Client Stylist - Future Opportunities",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
-    "phrase": "french speaking",
-    "jobs": 2,
-    "example": "French Speaking - Private Client Stylist - Future Opportunities",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
-    "phrase": "loyalty and customer growth manager",
-    "jobs": 2,
-    "example": "Loyalty & Customer Growth Manager",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
-    "phrase": "interim sale manager",
-    "jobs": 2,
-    "example": "Interim Sales Manager (MAT Cover)",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
     "phrase": "training support administrator",
     "jobs": 2,
     "example": "Training Support Administrator",
     "company": "Capita",
+    "auto": false
+   },
+   {
+    "phrase": "assistant buyer",
+    "jobs": 2,
+    "example": "Assistant Buyer",
+    "company": "Mountain Warehouse",
     "auto": false
    },
    {
@@ -360,35 +375,28 @@
     "example": "Events Team Leader",
     "company": "Aramark",
     "auto": false
-   },
-   {
-    "phrase": "hospitality coordinator",
-    "jobs": 1,
-    "example": "Hospitality Coordinator",
-    "company": "Aramark",
-    "auto": false
    }
   ]
  },
  "eligibility": {
-  "eligible": 2102,
-  "shortage_list": 138,
-  "unlikely": 1165,
-  "unlabelled": 4742
+  "eligible": 2254,
+  "shortage_list": 147,
+  "unlikely": 1243,
+  "unlabelled": 5158
  },
  "sources": {
-  "Ashby": 1164,
-  "BambooHR": 244,
-  "Breezy": 90,
-  "Greenhouse": 2027,
-  "Lever": 308,
-  "Oracle": 978,
-  "Personio": 56,
-  "Pinpoint": 558,
+  "Ashby": 1230,
+  "BambooHR": 305,
+  "Breezy": 92,
+  "Greenhouse": 2175,
+  "Lever": 316,
+  "Oracle": 957,
+  "Personio": 68,
+  "Pinpoint": 720,
   "Recruitee": 84,
-  "SmartRecruiters": 951,
-  "Teamtailor": 603,
-  "Workday": 1084
+  "SmartRecruiters": 987,
+  "Teamtailor": 633,
+  "Workday": 1235
  },
  "suggestions_unmatched": [
   "SLB",
@@ -429,7 +437,7 @@
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
    "boards": 2,
-   "jobs": 23
+   "jobs": 24
   },
   "GoCardless": {
    "sponsor": "GoCardless Limited",
@@ -439,7 +447,7 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 368
+   "jobs": 347
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
