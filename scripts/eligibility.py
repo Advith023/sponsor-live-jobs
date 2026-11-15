@@ -224,6 +224,17 @@ EXTRA = {
         "food service assistant", "food service worker", "food service colleague",
         "hospitality assistant", "cleaning operative", "general assistant", "steward",
         "kitchen steward", "keyholder", "chef manager", "chef supervisor",
+        "beauty expert", "beauty advisor", "beauty adviser", "beauty consultant",
+        "shift lead", "front of house supervisor", "hospitality supervisor",
+        "rental agent", "rental service agent", "campervan rental agent",
+        "breakfast service assistant", "till assistant", "food market assistant",
+        "kitchen crew", "kitchen service worker", "soft fm supervisor",
+        "facilities services operative", "facilities assistant", "debrief operative",
+        "cleaning manager", "food and beverage manager", "assistant food and beverage manager",
+        "conference and events assistant", "conference and events supervisor",
+        "events assistant", "culinary manager", "mess manager", "commis chef",
+        "retail experience specialist", "brand home guide", "brand home lead guide",
+        "warehouse team leader", "television licence field officer", "visits assistant",
         # warehouse and driving
         "picker", "packer", "picker packer", "order picker", "warehouse operative",
         "warehouse associate", "warehouse assistant", "warehouse colleague",
@@ -313,7 +324,7 @@ def _sing(w: str) -> str:
 
 
 def tokens(text: str) -> list:
-    text = text.lower().replace("’", "'").replace("healthcare", "health care")
+    text = text.lower().replace("’", "'").replace("&", " and ").replace("healthcare", "health care")
     text = re.sub(r"\bhr\b", "human resources", text)
     text = re.sub(r"\bq\.?a\b", "quality assurance", text)
     return [_sing(w) for w in re.findall(r"[a-z0-9]+", text.replace("'", ""))]

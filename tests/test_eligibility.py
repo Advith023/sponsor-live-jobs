@@ -88,6 +88,7 @@ def test_labels():
         "Front-End Engineer": "e",
         "Nursery Nurse": "u",
         "Food Service Worker": "u",
+        "Beauty Expert": "u",
         "Chief Information Security Officer (CISO)": "e",
     }
     for title, want in cases.items():

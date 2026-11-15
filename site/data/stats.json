@@ -6,10 +6,10 @@
  "jobs": 8013,
  "companies": 885,
  "eligibility": {
-  "eligible": 2076,
+  "eligible": 2074,
   "shortage_list": 138,
-  "unlikely": 1066,
-  "unlabelled": 4733
+  "unlikely": 1115,
+  "unlabelled": 4686
  },
  "sources": {
   "Ashby": 1159,
