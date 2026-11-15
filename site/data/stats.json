@@ -1,151 +1,30 @@
 {
- "generated": "2026-11-15T12:47:02.881942+00:00",
+ "generated": "2026-11-15T15:35:34.491804+00:00",
  "sponsors": 120259,
- "sponsors_checked": 29434,
- "boards": 1418,
- "jobs": 8013,
- "companies": 885,
- "eligibility": {
-  "eligible": 2074,
-  "shortage_list": 138,
-  "unlikely": 1125,
-  "unlabelled": 4676
- },
- "sources": {
-  "Ashby": 1159,
-  "BambooHR": 240,
-  "Breezy": 44,
-  "Greenhouse": 2008,
-  "Lever": 308,
-  "Oracle": 971,
-  "Personio": 56,
-  "Pinpoint": 554,
-  "Recruitee": 84,
-  "SmartRecruiters": 951,
-  "Teamtailor": 600,
-  "Workday": 1038
- },
- "suggestions_unmatched": [
-  "SLB",
-  "Sainsbury\u2019s",
-  "TEST please ignore"
- ],
- "suggestions_closest": {
-  "SLB": [
-   "DSL BARS LTD T/A THE RUSTY KEG BAR",
-   "BMSL BUILDERS LIMITED"
-  ],
-  "Sainsbury\u2019s": [
-   "J Sainsbury Plc",
-   "The Sainsbury Laboratory"
-  ],
-  "TEST please ignore": [
-   "MTEST LABS LIMITED",
-   "TEST EDUCATION CENTRE LTD",
-   "Test Associates Limited"
-  ]
- },
- "seeds": {
-  "Checkout": {
-   "sponsor": "CHECKOUT (WIMBLEDON) LIMITED",
-   "boards": 0,
-   "jobs": 0
-  },
-  "Cleo AI": {
-   "sponsor": "Cleo AI Ltd",
-   "boards": 0,
-   "jobs": 0
-  },
-  "Deliveroo": {
-   "sponsor": "Roofoods Ltd t/a Deliveroo",
-   "boards": 2,
-   "jobs": 127
-  },
-  "Funding Circle": {
-   "sponsor": "FUNDING CIRCLE LTD",
-   "boards": 2,
-   "jobs": 23
-  },
-  "GoCardless": {
-   "sponsor": "GoCardless Limited",
-   "boards": 1,
-   "jobs": 8
-  },
-  "J Sainsbury Plc": {
-   "sponsor": "J Sainsbury Plc",
-   "boards": 1,
-   "jobs": 361
-  },
-  "JPMorgan Chase Bank": {
-   "sponsor": "JPMorgan Chase Bank, National Association",
-   "boards": 1,
-   "jobs": 610
-  },
-  "Kpler": {
-   "sponsor": "Kpler Limited",
-   "boards": 1,
-   "jobs": 40
-  },
-  "Monzo Bank": {
-   "sponsor": "Monzo Bank Ltd",
-   "boards": 1,
-   "jobs": 48
-  },
-  "Octopus Energy": {
-   "sponsor": "Octopus Energy Limited",
-   "boards": 0,
-   "jobs": 0
-  },
-  "SLB": {
-   "sponsor": null,
-   "boards": 0,
-   "jobs": 0
-  },
-  "Sainsbury\u2019s": {
-   "sponsor": null,
-   "boards": 0,
-   "jobs": 0
-  },
-  "Spotify": {
-   "sponsor": "Spotify Limited",
-   "boards": 1,
-   "jobs": 40
-  },
-  "Synthesia": {
-   "sponsor": "Synthesia Limited",
-   "boards": 2,
-   "jobs": 24
-  },
-  "TEST please ignore": {
-   "sponsor": null,
-   "boards": 0,
-   "jobs": 0
-  },
-  "Teya Services": {
-   "sponsor": "Teya Europe Ltd",
-   "boards": 2,
-   "jobs": 59
-  },
-  "Trainline": {
-   "sponsor": "Trainline.com Ltd",
-   "boards": 0,
-   "jobs": 0
-  },
-  "Wise Payments": {
-   "sponsor": "Wise Payments Limited",
-   "boards": 1,
-   "jobs": 0
-  },
-  "iwoca": {
-   "sponsor": "iwoca Limited",
-   "boards": 0,
-   "jobs": 0
-  }
- },
+ "sponsors_checked": 29718,
+ "boards": 1409,
+ "jobs": 8147,
+ "companies": 897,
  "quality": {
-  "hidden_by_pay": 0,
+  "hidden_by_pay": 17,
   "hidden_by_employer_profile": 10,
   "review": [
+   {
+    "phrase": "product owner",
+    "jobs": 1,
+    "example": "Product Owner (12 month FTC)",
+    "company": "Hiscox Underwriting Group Services",
+    "auto": false,
+    "reported": 1
+   },
+   {
+    "phrase": "interim social media writer",
+    "jobs": 1,
+    "example": "Interim Social Media Writer (Part-Time)",
+    "company": "Farfetch",
+    "auto": false,
+    "reported": 1
+   },
    {
     "phrase": "supervisor",
     "jobs": 2,
@@ -172,13 +51,6 @@
     "jobs": 1,
     "example": "Coffee Shop Supervisor",
     "company": "Aramark",
-    "auto": true
-   },
-   {
-    "phrase": "tour assistant",
-    "jobs": 1,
-    "example": "Tour Assistant - Bars",
-    "company": "Diageo",
     "auto": true
    },
    {
@@ -210,6 +82,20 @@
     "auto": true
    },
    {
+    "phrase": "tour assistant",
+    "jobs": 1,
+    "example": "Tour Assistant - Bars",
+    "company": "Diageo",
+    "auto": true
+   },
+   {
+    "phrase": "multifunctional sale associate",
+    "jobs": 26,
+    "example": "MULTIFUNCTIONAL SALES ASSOCIATE (10 hours, Fix Term, Cambridge)",
+    "company": "Mango Fly",
+    "auto": false
+   },
+   {
     "phrase": "customer experience manager",
     "jobs": 17,
     "example": "Customer Experience Manager",
@@ -226,7 +112,14 @@
    {
     "phrase": "general manager",
     "jobs": 6,
-    "example": "General Manager | Exeter",
+    "example": "General Manager | Birmingham",
+    "company": "Blank Street",
+    "auto": false
+   },
+   {
+    "phrase": "assistant general manager",
+    "jobs": 5,
+    "example": "Assistant General Manager | Cambridge",
     "company": "Blank Street",
     "auto": false
    },
@@ -238,10 +131,10 @@
     "auto": false
    },
    {
-    "phrase": "assistant general manager",
-    "jobs": 5,
-    "example": "Assistant General Manager | Cambridge",
-    "company": "Blank Street",
+    "phrase": "floor manager",
+    "jobs": 4,
+    "example": "FLOOR MANAGER (40 Hours, Bristol Cribbs)",
+    "company": "Mango Fly",
     "auto": false
    },
    {
@@ -266,10 +159,17 @@
     "auto": false
    },
    {
-    "phrase": "analyst",
+    "phrase": "head of procurement",
     "jobs": 3,
-    "example": "Analyst",
-    "company": "J Sainsbury",
+    "example": "Head of Procurement",
+    "company": "Farfetch",
+    "auto": false
+   },
+   {
+    "phrase": "senior manager",
+    "jobs": 3,
+    "example": "Senior Manager, Commercial Operations, UKI EMEA",
+    "company": "Hourglass Cosmetics",
     "auto": false
    },
    {
@@ -280,10 +180,10 @@
     "auto": false
    },
    {
-    "phrase": "senior manager",
+    "phrase": "analyst",
     "jobs": 3,
-    "example": "Senior Manager, Public Sector",
-    "company": "InPost",
+    "example": "Analyst",
+    "company": "J Sainsbury",
     "auto": false
    },
    {
@@ -301,6 +201,55 @@
     "auto": false
    },
    {
+    "phrase": "marketing tech principal",
+    "jobs": 2,
+    "example": "Marketing Tech (Senior) Principal",
+    "company": "Farfetch",
+    "auto": false
+   },
+   {
+    "phrase": "principal",
+    "jobs": 2,
+    "example": "Principal, Financial Crime and Regulatory Compliance",
+    "company": "Farfetch",
+    "auto": false
+   },
+   {
+    "phrase": "german speaking",
+    "jobs": 2,
+    "example": "German Speaking - Private Client Stylist - Future Opportunities",
+    "company": "Farfetch",
+    "auto": false
+   },
+   {
+    "phrase": "french speaking",
+    "jobs": 2,
+    "example": "French Speaking - Private Client Stylist - Future Opportunities",
+    "company": "Farfetch",
+    "auto": false
+   },
+   {
+    "phrase": "loyalty and customer growth manager",
+    "jobs": 2,
+    "example": "Loyalty & Customer Growth Manager",
+    "company": "Farfetch",
+    "auto": false
+   },
+   {
+    "phrase": "interim sale manager",
+    "jobs": 2,
+    "example": "Interim Sales Manager (MAT Cover)",
+    "company": "Farfetch",
+    "auto": false
+   },
+   {
+    "phrase": "training support administrator",
+    "jobs": 2,
+    "example": "Training Support Administrator",
+    "company": "Capita",
+    "auto": false
+   },
+   {
     "phrase": "lead online manager",
     "jobs": 2,
     "example": "Lead Online Manager",
@@ -312,13 +261,6 @@
     "jobs": 2,
     "example": "Ethical Trade Manager (12m FTC)",
     "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "training support administrator",
-    "jobs": 2,
-    "example": "Training Support Administrator",
-    "company": "Capita",
     "auto": false
    },
    {
@@ -425,70 +367,144 @@
     "example": "Hospitality Coordinator",
     "company": "Aramark",
     "auto": false
-   },
-   {
-    "phrase": "hospitality team lead",
-    "jobs": 1,
-    "example": "Hospitality Team Lead",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "cleaning and catering team",
-    "jobs": 1,
-    "example": "Cleaning and Catering Team",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "finance analyst",
-    "jobs": 1,
-    "example": "Finance Analyst - Labour Costs",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "commercial finance",
-    "jobs": 1,
-    "example": "Commercial Finance - Analytics & BI Developer",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "buyer",
-    "jobs": 1,
-    "example": "Buyer - Boxed Confectionary",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "people partner",
-    "jobs": 1,
-    "example": "People Partner -  Operations",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "head of buying",
-    "jobs": 1,
-    "example": "Head of Buying - Grocery (12m FTC)",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "capacity and network planning manager",
-    "jobs": 1,
-    "example": "Capacity & Network Planning Manager",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "estate manager",
-    "jobs": 1,
-    "example": "Estates Manager: Argos",
-    "company": "J Sainsbury",
-    "auto": false
    }
   ]
+ },
+ "eligibility": {
+  "eligible": 2102,
+  "shortage_list": 138,
+  "unlikely": 1165,
+  "unlabelled": 4742
+ },
+ "sources": {
+  "Ashby": 1164,
+  "BambooHR": 244,
+  "Breezy": 90,
+  "Greenhouse": 2027,
+  "Lever": 308,
+  "Oracle": 978,
+  "Personio": 56,
+  "Pinpoint": 558,
+  "Recruitee": 84,
+  "SmartRecruiters": 951,
+  "Teamtailor": 603,
+  "Workday": 1084
+ },
+ "suggestions_unmatched": [
+  "SLB",
+  "Sainsbury\u2019s",
+  "TEST please ignore"
+ ],
+ "suggestions_closest": {
+  "SLB": [
+   "DSL BARS LTD T/A THE RUSTY KEG BAR",
+   "BMSL BUILDERS LIMITED"
+  ],
+  "Sainsbury\u2019s": [
+   "J Sainsbury Plc",
+   "The Sainsbury Laboratory"
+  ],
+  "TEST please ignore": [
+   "MTEST LABS LIMITED",
+   "TEST EDUCATION CENTRE LTD",
+   "Test Associates Limited"
+  ]
+ },
+ "seeds": {
+  "Checkout": {
+   "sponsor": "CHECKOUT (WIMBLEDON) LIMITED",
+   "boards": 0,
+   "jobs": 0
+  },
+  "Cleo AI": {
+   "sponsor": "Cleo AI Ltd",
+   "boards": 0,
+   "jobs": 0
+  },
+  "Deliveroo": {
+   "sponsor": "Roofoods Ltd t/a Deliveroo",
+   "boards": 2,
+   "jobs": 127
+  },
+  "Funding Circle": {
+   "sponsor": "FUNDING CIRCLE LTD",
+   "boards": 2,
+   "jobs": 23
+  },
+  "GoCardless": {
+   "sponsor": "GoCardless Limited",
+   "boards": 1,
+   "jobs": 8
+  },
+  "J Sainsbury Plc": {
+   "sponsor": "J Sainsbury Plc",
+   "boards": 1,
+   "jobs": 368
+  },
+  "JPMorgan Chase Bank": {
+   "sponsor": "JPMorgan Chase Bank, National Association",
+   "boards": 1,
+   "jobs": 610
+  },
+  "Kpler": {
+   "sponsor": "Kpler Limited",
+   "boards": 1,
+   "jobs": 40
+  },
+  "Monzo Bank": {
+   "sponsor": "Monzo Bank Ltd",
+   "boards": 1,
+   "jobs": 48
+  },
+  "Octopus Energy": {
+   "sponsor": "Octopus Energy Limited",
+   "boards": 0,
+   "jobs": 0
+  },
+  "SLB": {
+   "sponsor": null,
+   "boards": 0,
+   "jobs": 0
+  },
+  "Sainsbury\u2019s": {
+   "sponsor": null,
+   "boards": 0,
+   "jobs": 0
+  },
+  "Spotify": {
+   "sponsor": "Spotify Limited",
+   "boards": 1,
+   "jobs": 40
+  },
+  "Synthesia": {
+   "sponsor": "Synthesia Limited",
+   "boards": 2,
+   "jobs": 24
+  },
+  "TEST please ignore": {
+   "sponsor": null,
+   "boards": 0,
+   "jobs": 0
+  },
+  "Teya Services": {
+   "sponsor": "Teya Europe Ltd",
+   "boards": 2,
+   "jobs": 59
+  },
+  "Trainline": {
+   "sponsor": "Trainline.com Ltd",
+   "boards": 0,
+   "jobs": 0
+  },
+  "Wise Payments": {
+   "sponsor": "Wise Payments Limited",
+   "boards": 1,
+   "jobs": 0
+  },
+  "iwoca": {
+   "sponsor": "iwoca Limited",
+   "boards": 0,
+   "jobs": 0
+  }
  }
 }
