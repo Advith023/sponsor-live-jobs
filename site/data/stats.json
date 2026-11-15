@@ -1,29 +1,29 @@
 {
- "generated": "2026-11-14T18:51:03.995117+00:00",
+ "generated": "2026-11-15T12:47:02.881942+00:00",
  "sponsors": 120259,
- "sponsors_checked": 26106,
- "boards": 1294,
- "jobs": 7606,
- "companies": 814,
+ "sponsors_checked": 29434,
+ "boards": 1418,
+ "jobs": 8013,
+ "companies": 885,
  "eligibility": {
-  "eligible": 1970,
-  "shortage_list": 128,
-  "unlikely": 933,
-  "unlabelled": 4575
+  "eligible": 2076,
+  "shortage_list": 138,
+  "unlikely": 954,
+  "unlabelled": 4845
  },
  "sources": {
-  "Ashby": 1014,
-  "BambooHR": 208,
+  "Ashby": 1159,
+  "BambooHR": 240,
   "Breezy": 44,
-  "Greenhouse": 1954,
-  "Lever": 298,
-  "Oracle": 974,
+  "Greenhouse": 2008,
+  "Lever": 308,
+  "Oracle": 971,
   "Personio": 56,
-  "Pinpoint": 511,
-  "Recruitee": 82,
-  "SmartRecruiters": 932,
-  "Teamtailor": 569,
-  "Workday": 964
+  "Pinpoint": 554,
+  "Recruitee": 84,
+  "SmartRecruiters": 951,
+  "Teamtailor": 600,
+  "Workday": 1038
  },
  "suggestions_unmatched": [
   "SLB",
@@ -64,7 +64,7 @@
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
    "boards": 2,
-   "jobs": 25
+   "jobs": 23
   },
   "GoCardless": {
    "sponsor": "GoCardless Limited",
@@ -74,7 +74,7 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 364
+   "jobs": 361
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
