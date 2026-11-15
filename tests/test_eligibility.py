@@ -130,3 +130,9 @@ def test_owner_rules_and_employer_profile(tmp_path):
     hidden, review = el.quality_pass(jobs)
     assert hidden == 1 and jobs[10]["el"] == "u" and "el" not in jobs[11]
     assert any(r["phrase"] == "analyst" and not r["auto"] for r in review)
+
+
+def test_reported_roles_top_the_queue():
+    jobs = [{"t": "Analyst", "sp": "X", "c": "X"}]
+    _, review = el.quality_pass(jobs, reports=[("Beauty Expert - Stroud", "J Sainsbury"), ("Beauty Expert", "J Sainsbury")])
+    assert review[0]["phrase"] == "beauty expert" and review[0]["reported"] == 2

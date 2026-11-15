@@ -505,7 +505,7 @@ FRONTLINE = {
 }
 
 
-def quality_pass(jobs: list, min_labelled: int = 10, share: float = 0.6):
+def quality_pass(jobs: list, min_labelled: int = 10, share: float = 0.6, reports=()):
     """Second pass over the labelled jobs. Returns (auto_hidden, review_queue).
 
     1. Employer profile: if most of an employer's recognised roles are
@@ -538,10 +538,20 @@ def quality_pass(jobs: list, min_labelled: int = 10, share: float = 0.6):
             elif u_share >= 0.3 and core:
                 queue[" ".join(core)] += 1
                 example.setdefault(" ".join(core), (j["t"], j["c"]))
-    review = [{"phrase": p, "jobs": n, "example": example[p][0], "company": example[p][1], "auto": True}
-              for p, n in auto.most_common(30)]
+    # 3. Roles visitors reported with "Report this role" go to the top of the queue
+    reported = Counter()
+    for title, company in reports:
+        segs = _segments(title)
+        core = " ".join(_core(segs[0])) if segs else ""
+        if core:
+            reported[core] += 1
+            example.setdefault(core, (title, company))
+    review = [{"phrase": p, "jobs": n, "example": example[p][0], "company": example[p][1], "auto": False, "reported": n}
+              for p, n in reported.most_common(30)]
+    review += [{"phrase": p, "jobs": n, "example": example[p][0], "company": example[p][1], "auto": True}
+               for p, n in auto.most_common(30) if p not in reported]
     review += [{"phrase": p, "jobs": n, "example": example[p][0], "company": example[p][1], "auto": False}
-               for p, n in queue.most_common(40)]
+               for p, n in queue.most_common(40) if p not in reported]
     return sum(auto.values()), review
 
 

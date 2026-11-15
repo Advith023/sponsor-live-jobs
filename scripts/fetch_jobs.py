@@ -1023,6 +1023,20 @@ def load_suggestions() -> list[tuple[str, str]]:
     return out
 
 
+def load_reports() -> list[tuple[str, str]]:
+    """(title, company) pairs from "Report this role" clicks on the site. They
+    arrive in the Google Form's feedback answer as "Report role: title | company | url"."""
+    csv_url = sheet_csv_url(SUGGESTIONS_CSV_URL or site_config().get("suggestionsCsvUrl", ""))
+    out = []
+    if csv_url:
+        for row in csv.reader(io.StringIO(safe_text(csv_url) or "")):
+            for c in row:
+                m = re.match(r"\s*Report role:\s*(.+?)\s*\|\s*(.+?)\s*(\||$)", c)
+                if m:
+                    out.append((m.group(1), m.group(2)))
+    return out
+
+
 def sheet_csv_url(url: str) -> str:
     """Accept a Google Sheet 'Publish to web' link in either format and return the CSV version."""
     if not url or "docs.google.com/spreadsheets" not in url:
@@ -1267,7 +1281,7 @@ def run():
                 b.pop("empty", None)
 
     # Quality checks: employer profile rule and the review queue for the control centre
-    auto_hidden, review = eligibility.quality_pass(jobs)
+    auto_hidden, review = eligibility.quality_pass(jobs, reports=load_reports())
     for j in jobs:
         j.pop("_kept", None)
 

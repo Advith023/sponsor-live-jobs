@@ -92,6 +92,8 @@
 
   // ---------- rendering
   const tpl = $("#tpl").content;
+  const REP_KEY = "sponsorlive-reported";
+  const reported = () => { try { return JSON.parse(localStorage.getItem(REP_KEY) || "[]"); } catch { return []; } };
   const TIP_S = "This type of role is on the Temporary Shortage List, which has its own conditions and runs until 31 December 2026. Check GOV.UK and ask the employer.";
   const TIP_U = "The job title matches an occupation that is below the Skilled Worker skill level, so this role is unlikely to be sponsored. This is a guide, not advice: the employer decides.";
   function card(j) {
@@ -115,6 +117,21 @@
     const tr = new URLSearchParams({ add: "1", employer: j.c, title: j.t, location: j.l, url: j.u });
     if (j._m) tr.set("fit", j._m.pct);
     n.querySelector(".track").href = "tracker/?" + tr;
+    const rep = n.querySelector(".report");
+    if (gfb && gfb.feedback) {
+      rep.hidden = false;
+      if (reported().includes(j.u)) { rep.textContent = "Reported, thank you"; rep.disabled = true; }
+      rep.onclick = async () => {
+        if (!rep.dataset.armed) { rep.dataset.armed = "1"; rep.textContent = "Tap again to report this role as not visa-eligible"; return; }
+        rep.disabled = true;
+        try {
+          await fetch(gfb.action, { method: "POST", mode: "no-cors", body: new URLSearchParams({ [gfb.feedback]: `Report role: ${j.t} | ${j.c} | ${j.u}` }) });
+          try { localStorage.setItem(REP_KEY, JSON.stringify([...reported(), j.u].slice(-200))); } catch {}
+          gc("role-reported");
+          rep.textContent = "Reported, thank you. We'll check it.";
+        } catch { rep.textContent = "Couldn't send. Please try again later."; rep.disabled = false; }
+      };
+    }
     if (j._m) {
       const box = n.querySelector(".match");
       box.hidden = false;

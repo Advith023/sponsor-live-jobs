@@ -109,3 +109,5 @@ select{width:100%;padding:8px;border-radius:10px;border:1px solid var(--line);ba
 .filters .hint{font-size:.8rem;line-height:1.4;color:var(--muted,#666);margin:.4rem 0 0}
 #hiddenNote{margin-left:.6rem;font-size:.85rem;color:var(--muted,#666)}
 @media (prefers-color-scheme:dark){.meta .tag.info{background:#10243a;color:#9cc8f0;border-color:#24496e}.meta .tag.warn{background:#2e2110;color:#f0c98a;border-color:#6b4a1d}}
+.job .report{font-size:.78rem;color:var(--muted);margin-top:6px;padding:0;background:none;border:0;cursor:pointer;text-decoration:underline}
+.job .report:disabled{cursor:default;text-decoration:none}

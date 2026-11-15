@@ -125,7 +125,7 @@
     (q.review || []).filter((r) => !decided.has(r.phrase)).forEach((r) => {
       const act = el("span");
       act.append(btn("Hide", () => decide(r.phrase, "hide"), "small"), " ", btn("Keep", () => decide(r.phrase, "show"), "small"));
-      body.append(row([r.auto ? tag("Auto-hidden", "warn") : tag("Shown", "ok"), r.phrase, fmt(r.jobs), `${r.example} (${r.company})`, act]));
+      body.append(row([r.reported ? tag(`Reported ×${r.reported}`, "bad") : r.auto ? tag("Auto-hidden", "warn") : tag("Shown", "ok"), r.phrase, fmt(r.jobs), `${r.example} (${r.company})`, act]));
     });
     if (!body.children.length) body.append(row(["", "Nothing to review. New titles appear here after each refresh.", "", "", ""]));
     const rules = $("qRules"); rules.replaceChildren();
