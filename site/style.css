@@ -111,3 +111,7 @@ select{width:100%;padding:8px;border-radius:10px;border:1px solid var(--line);ba
 @media (prefers-color-scheme:dark){.meta .tag.info{background:#10243a;color:#9cc8f0;border-color:#24496e}.meta .tag.warn{background:#2e2110;color:#f0c98a;border-color:#6b4a1d}}
 .job .report{font-size:.78rem;color:var(--muted);margin-top:6px;padding:0;background:none;border:0;cursor:pointer;text-decoration:underline}
 .job .report:disabled{cursor:default;text-decoration:none}
+.nudge{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:10px;background:var(--card,#fff);border:1px solid var(--line,#ddd);border-radius:999px;padding:8px 10px 8px 16px;box-shadow:0 6px 24px rgba(0,0,0,.12);font-size:.9rem;max-width:calc(100% - 24px)}
+.nudge .nstars button{background:none;border:0;font-size:1.25rem;color:#c9c9c9;cursor:pointer;padding:0 1px}
+.nudge .nstars:hover button{color:#f2b01e}.nudge .nstars button:hover~button{color:#c9c9c9}
+.nudge .nclose{background:none;border:0;font-size:1.2rem;color:var(--muted,#777);cursor:pointer}

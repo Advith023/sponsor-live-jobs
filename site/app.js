@@ -287,6 +287,22 @@
     $("#fbText").required = false;
     $("#fbOpen").onclick = () => { $("#fbMsg").textContent = ""; $("#fbDialog").showModal(); };
     $("#fbCancel").onclick = () => $("#fbDialog").close();
+    // A quiet, one-off rating nudge: only after someone has opened a job and come back
+    const NUDGE = "sponsorlive-rate-nudge";
+    let openedJob = false;
+    document.addEventListener("click", (e) => { if (e.target.closest("a.apply, a.title")) openedJob = true; });
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState !== "visible" || !openedJob) return;
+      try { if (localStorage.getItem(NUDGE)) return; localStorage.setItem(NUDGE, String(Date.now())); } catch { return; }
+      const card = $("#rateNudge"); card.hidden = false;
+      card.querySelectorAll("[data-v]").forEach((b) => (b.onclick = () => {
+        card.hidden = true;
+        const target = document.querySelector(`#fbStars button[data-v="${b.dataset.v}"]`);
+        $("#fbMsg").textContent = ""; $("#fbDialog").showModal();
+        if (target) target.click();
+      }));
+      $("#rateClose").onclick = () => (card.hidden = true);
+    });
     $("#fbForm").addEventListener("submit", async (e) => {
       gc("feedback-sent");
       e.preventDefault();
