@@ -219,6 +219,7 @@ The hardest problem is names. The register says "SAINSBURYS SUPERMARKETS LIMITED
 | **Experience** | Phrases such as "3+ years of experience", "minimum of five years" and "experience: 3 to 5 years" in the description, ignoring company history ("founded 10 years ago") |
 | **Seniority** | Words in the title: Graduate, Junior, Senior, Lead, Head of |
 | **Visa fit** | The end of the title (the part that names the role) is matched against the official example job titles in the Home Office occupation tables, plus a curated list of common job-board titles. Roles in the not eligible table, or below the skill level and not on the Temporary Shortage List, are marked unlikely and hidden by default. Only exact official titles can hide a job; vague single words such as "Engineer" never do. The tables are read from GOV.UK each run and the last good copy is kept if the page changes |
+| **Quality check** | Two automatic checks after the title match: adverts that only quote pay clearly below any Skilled Worker level are hidden, and at employers whose recognised roles are mostly store or catering jobs, unrecognised front-line titles are hidden too. Titles it isn't sure about go to a review list in the control centre, where one click hides or keeps that title for good |
 
 ### The CV matcher
 

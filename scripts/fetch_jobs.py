@@ -1194,12 +1194,14 @@ def run():
             del cache[k]
 
     # Official occupation lists, used to label roles that are unlikely to qualify
-    elig_index = eligibility.build_index(eligibility.refresh(http_get))
+    elig_index = eligibility.apply_rules(eligibility.build_index(eligibility.refresh(http_get)),
+                                         eligibility.load_rules())
 
     # Fetch jobs from every known board
     boards = [(k, b) for k, c in cache.items() for b in c.get("boards", [])]
     print(f"Boards to fetch: {len(boards):,}")
     jobs, dead = [], set()
+    pay_hidden = [0]
 
     def fetch(k, b):
         return k, b, ATS[b["ats"]][1](b["token"])
@@ -1240,7 +1242,12 @@ def run():
                     "y": skills.min_years(j.get("desc") or ""),
                     "lv": skills.level(j["title"]),
                 })
-                el = eligibility.classify(j["title"], elig_index)[0]
+                el, why = eligibility.classify(j["title"], elig_index)
+                if why == "kept by owner":
+                    jobs[-1]["_kept"] = True
+                elif not el and eligibility.pay_too_low(j.get("desc") or "", j.get("salary") or ""):
+                    el = "u"
+                    pay_hidden[0] += 1
                 if el:
                     jobs[-1]["el"] = el  # label only, the occupation code is never published
 
@@ -1258,6 +1265,11 @@ def run():
         for b in c.get("boards", []):
             if (b["ats"], b["token"]) not in dead_keys:
                 b.pop("empty", None)
+
+    # Quality checks: employer profile rule and the review queue for the control centre
+    auto_hidden, review = eligibility.quality_pass(jobs)
+    for j in jobs:
+        j.pop("_kept", None)
 
     # de-duplicate by URL
     uniq = {}
@@ -1279,6 +1291,8 @@ def run():
     STATS_PATH.write_text(json.dumps({
         "generated": NOW.isoformat(), "sponsors": len(sponsors), "sponsors_checked": checked,
         "boards": len(boards), "jobs": len(jobs), "companies": payload["companies"],
+        "quality": {"hidden_by_pay": pay_hidden[0], "hidden_by_employer_profile": auto_hidden,
+                    "review": review},
         "eligibility": {k: sum(1 for j in jobs if j.get("el") == v)
                         for k, v in (("eligible", "e"), ("shortage_list", "s"), ("unlikely", "u"), ("unlabelled", None))},
         "sources": dict(sorted({src: sum(1 for j in jobs if j["src"] == src) for src in {j["src"] for j in jobs}}.items())),

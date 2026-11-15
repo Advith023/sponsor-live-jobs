@@ -35,6 +35,7 @@ TSL_URL = ("https://www.gov.uk/government/publications/"
            "skilled-worker-visa-temporary-shortage-list/"
            "skilled-worker-visa-temporary-shortage-list")
 SNAPSHOT = Path(__file__).resolve().parent.parent / "data" / "occupations.json"
+RULES = Path(__file__).resolve().parent.parent / "data" / "title_rules.json"
 
 # Appendix Skilled Occupations table numbers and what they mean for a new
 # Skilled Worker application. Tables 4 and 5 are pay scales, not occupations.
@@ -416,10 +417,38 @@ def _core(seg: str) -> list:
     return toks
 
 
+def _phrase(text: str) -> str:
+    return " ".join(_core(text))
+
+
+def load_rules(path: Path = RULES) -> dict:
+    """Owner decisions from the control centre: {"hide": [...], "show": [...]}."""
+    try:
+        d = json.loads(path.read_text())
+        return {"hide": [_phrase(x) for x in d.get("hide", []) if _phrase(x)],
+                "show": [_phrase(x) for x in d.get("show", []) if _phrase(x)]}
+    except Exception:
+        return {"hide": [], "show": []}
+
+
+def apply_rules(index: dict, rules: dict) -> dict:
+    index = dict(index)
+    for p in rules.get("hide", []):
+        index[tuple(p.split())] = "u"
+    index["__show__"] = {tuple(p.split()) for p in rules.get("show", [])}
+    return index
+
+
 def classify(title: str, index: dict):
     """Return (label, matched phrase) or (None, None)."""
     if not index or not title:
         return None, None
+    show = index.get("__show__") or set()
+    if show:
+        for seg in _segments(title):
+            toks = tuple(_core(seg))
+            if any(toks[i:] in show for i in range(len(toks))):
+                return None, "kept by owner"
     if ANYWHERE_U.search(title):
         return "u", "apprentice/intern"
     found = []
@@ -436,6 +465,84 @@ def classify(title: str, index: dict):
         if found:
             break
     return found[0] if found else (None, None)
+
+
+# --------------------------------------------------------------------------
+# Automatic quality checks, run on every refresh
+# --------------------------------------------------------------------------
+_HOURLY = re.compile(r"£\s?(\d{1,2}(?:\.\d{1,2})?)\s*(?:per hour|an hour|p/?h\b|/\s?h(?:ou)?r\b|ph\b|hourly)", re.I)
+_ANNUAL = re.compile(r"£\s?(\d{2,3})(?:,(\d{3})|k)\b", re.I)
+HOURLY_FLOOR = 15.0      # well below any Skilled Worker going rate
+ANNUAL_FLOOR = 25000
+
+
+def pay_too_low(desc: str, salary: str) -> bool:
+    """True when the advert only quotes pay clearly below any Skilled Worker
+    threshold (for example £12.60 an hour). Any higher figure cancels it."""
+    text = f"{salary or ''} {desc or ''}"
+    if "£" not in text:
+        return False
+    hourly = [float(x) for x in _HOURLY.findall(text)]
+    annual = []
+    for a, b in _ANNUAL.findall(text):
+        v = int(a) * 1000 + (int(b) if b else 0)
+        if v >= 5000:
+            annual.append(v)
+    if not hourly and not annual:
+        return False
+    if any(h >= HOURLY_FLOOR for h in hourly) or any(v >= ANNUAL_FLOOR for v in annual):
+        return False
+    return True
+
+
+# Role words that, at an employer whose listed roles are mostly store or
+# catering jobs, almost always mean a front-line role.
+FRONTLINE = {
+    "assistant", "operative", "crew", "attendant", "colleague", "worker", "porter",
+    "server", "cashier", "cleaner", "host", "guide", "agent", "steward", "keyholder",
+    "advisor", "adviser", "supervisor", "member", "helper",
+    "barista", "baker", "picker", "packer", "driver",
+}
+
+
+def quality_pass(jobs: list, min_labelled: int = 10, share: float = 0.6):
+    """Second pass over the labelled jobs. Returns (auto_hidden, review_queue).
+
+    1. Employer profile: if most of an employer's recognised roles are
+       unlikely to qualify, an unrecognised title there that ends in a
+       front-line word is hidden too.
+    2. Review queue: the most common titles still unlabelled at employers with
+       many front-line roles, for a quick hide or keep in the control centre.
+    """
+    from collections import Counter, defaultdict
+    by_emp = defaultdict(list)
+    for j in jobs:
+        by_emp[j["sp"]].append(j)
+    auto = Counter()
+    queue = Counter()
+    example = {}
+    for emp, js in by_emp.items():
+        # internships say nothing about the employer, so leave them out
+        lab = [j for j in js if j.get("el") and not ANYWHERE_U.search(j["t"])]
+        if len(lab) < min_labelled:
+            continue
+        u_share = sum(j["el"] == "u" for j in lab) / len(lab)
+        for j in js:
+            if j.get("el") or j.get("_kept"):
+                continue
+            core = _core(_segments(j["t"])[0]) if _segments(j["t"]) else []
+            if u_share >= share and core and core[-1] in FRONTLINE:
+                j["el"] = "u"
+                auto[" ".join(core)] += 1
+                example.setdefault(" ".join(core), (j["t"], j["c"]))
+            elif u_share >= 0.3 and core:
+                queue[" ".join(core)] += 1
+                example.setdefault(" ".join(core), (j["t"], j["c"]))
+    review = [{"phrase": p, "jobs": n, "example": example[p][0], "company": example[p][1], "auto": True}
+              for p, n in auto.most_common(30)]
+    review += [{"phrase": p, "jobs": n, "example": example[p][0], "company": example[p][1], "auto": False}
+               for p, n in queue.most_common(40)]
+    return sum(auto.values()), review
 
 
 if __name__ == "__main__":   # python scripts/eligibility.py  -> update the snapshot only

@@ -8,8 +8,8 @@
  "eligibility": {
   "eligible": 2074,
   "shortage_list": 138,
-  "unlikely": 1115,
-  "unlabelled": 4686
+  "unlikely": 1125,
+  "unlabelled": 4676
  },
  "sources": {
   "Ashby": 1159,
@@ -141,5 +141,354 @@
    "boards": 0,
    "jobs": 0
   }
+ },
+ "quality": {
+  "hidden_by_pay": 0,
+  "hidden_by_employer_profile": 10,
+  "review": [
+   {
+    "phrase": "supervisor",
+    "jobs": 2,
+    "example": "Supervisor",
+    "company": "Aramark",
+    "auto": true
+   },
+   {
+    "phrase": "recruitment and training assistant",
+    "jobs": 1,
+    "example": "Recruitment & Training Assistant",
+    "company": "Aramark",
+    "auto": true
+   },
+   {
+    "phrase": "franchise assistant",
+    "jobs": 1,
+    "example": "Franchise Assistant",
+    "company": "Aramark",
+    "auto": true
+   },
+   {
+    "phrase": "coffee shop supervisor",
+    "jobs": 1,
+    "example": "Coffee Shop Supervisor",
+    "company": "Aramark",
+    "auto": true
+   },
+   {
+    "phrase": "tour assistant",
+    "jobs": 1,
+    "example": "Tour Assistant - Bars",
+    "company": "Diageo",
+    "auto": true
+   },
+   {
+    "phrase": "depot operation assistant",
+    "jobs": 1,
+    "example": "Depot Operations Assistant",
+    "company": "InPost",
+    "auto": true
+   },
+   {
+    "phrase": "night transport supervisor",
+    "jobs": 1,
+    "example": "Nights Transport Supervisor",
+    "company": "InPost",
+    "auto": true
+   },
+   {
+    "phrase": "senior supervisor",
+    "jobs": 1,
+    "example": "Senior Supervisor",
+    "company": "InPost",
+    "auto": true
+   },
+   {
+    "phrase": "service desk supervisor",
+    "jobs": 1,
+    "example": "Service Desk Supervisor",
+    "company": "InPost",
+    "auto": true
+   },
+   {
+    "phrase": "customer experience manager",
+    "jobs": 17,
+    "example": "Customer Experience Manager",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "field service engineer",
+    "jobs": 7,
+    "example": "Field Service Engineer (Oxford)",
+    "company": "InPost",
+    "auto": false
+   },
+   {
+    "phrase": "general manager",
+    "jobs": 6,
+    "example": "General Manager | Exeter",
+    "company": "Blank Street",
+    "auto": false
+   },
+   {
+    "phrase": "training delivery instructor",
+    "jobs": 5,
+    "example": "Training Delivery Instructor (Electronic Controls & Diagnostic Trainer)",
+    "company": "Capita",
+    "auto": false
+   },
+   {
+    "phrase": "assistant general manager",
+    "jobs": 5,
+    "example": "Assistant General Manager | Cambridge",
+    "company": "Blank Street",
+    "auto": false
+   },
+   {
+    "phrase": "lead customer experience manager",
+    "jobs": 4,
+    "example": "Lead Customer Experience Manager",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "administrator",
+    "jobs": 3,
+    "example": "Administrator",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "area manager",
+    "jobs": 3,
+    "example": "Area Manager",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "analyst",
+    "jobs": 3,
+    "example": "Analyst",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "experience specialist",
+    "jobs": 3,
+    "example": "Experience Specialist - Guinness Open Gate Brewery London (Admissions)",
+    "company": "Diageo",
+    "auto": false
+   },
+   {
+    "phrase": "senior manager",
+    "jobs": 3,
+    "example": "Senior Manager, Public Sector",
+    "company": "InPost",
+    "auto": false
+   },
+   {
+    "phrase": "training manager",
+    "jobs": 2,
+    "example": "Training Manager",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "assistant manager",
+    "jobs": 2,
+    "example": "Assistant Manager",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "lead online manager",
+    "jobs": 2,
+    "example": "Lead Online Manager",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "ethical trade manager",
+    "jobs": 2,
+    "example": "Ethical Trade Manager (12m FTC)",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "training support administrator",
+    "jobs": 2,
+    "example": "Training Support Administrator",
+    "company": "Capita",
+    "auto": false
+   },
+   {
+    "phrase": "group manager",
+    "jobs": 1,
+    "example": "Group Manager",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "director data and technology",
+    "jobs": 1,
+    "example": "Director Data & Technology, International",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "transformation manager",
+    "jobs": 1,
+    "example": "Transformation Manager, International Technology",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "store lead",
+    "jobs": 1,
+    "example": "Stores Lead",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "regional operation director",
+    "jobs": 1,
+    "example": "Regional Operations Director - South East & London",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "assistant group manager",
+    "jobs": 1,
+    "example": "Assistant Group Manager",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "architectural outfitter",
+    "jobs": 1,
+    "example": "Architectural Outfitter",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "commis chef sushi",
+    "jobs": 1,
+    "example": "Commis Chef Sushi",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "operation administrator",
+    "jobs": 1,
+    "example": "Operations Administrator",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "workplace hospitality and event manager",
+    "jobs": 1,
+    "example": "Workplace Hospitality & Events Manager",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "security worker data clerk",
+    "jobs": 1,
+    "example": "Security Worker Data Clerk",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "wait staff lead",
+    "jobs": 1,
+    "example": "Wait Staff Lead",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "offshore electrician",
+    "jobs": 1,
+    "example": "Offshore Electrician",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "event team leader",
+    "jobs": 1,
+    "example": "Events Team Leader",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "hospitality coordinator",
+    "jobs": 1,
+    "example": "Hospitality Coordinator",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "hospitality team lead",
+    "jobs": 1,
+    "example": "Hospitality Team Lead",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "cleaning and catering team",
+    "jobs": 1,
+    "example": "Cleaning and Catering Team",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "finance analyst",
+    "jobs": 1,
+    "example": "Finance Analyst - Labour Costs",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "commercial finance",
+    "jobs": 1,
+    "example": "Commercial Finance - Analytics & BI Developer",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "buyer",
+    "jobs": 1,
+    "example": "Buyer - Boxed Confectionary",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "people partner",
+    "jobs": 1,
+    "example": "People Partner -  Operations",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "head of buying",
+    "jobs": 1,
+    "example": "Head of Buying - Grocery (12m FTC)",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "capacity and network planning manager",
+    "jobs": 1,
+    "example": "Capacity & Network Planning Manager",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "estate manager",
+    "jobs": 1,
+    "example": "Estates Manager: Argos",
+    "company": "J Sainsbury",
+    "auto": false
+   }
+  ]
  }
 }

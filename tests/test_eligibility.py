@@ -109,3 +109,24 @@ def test_refresh_keeps_old_on_bad_page(tmp_path):
 
 def test_no_data_means_no_labels():
     assert el.classify("Customer Assistant", el.build_index({})) == (None, None)
+
+
+def test_pay_check():
+    assert el.pay_too_low("Pay: £12.60 per hour, flexible shifts", "")
+    assert el.pay_too_low("", "£11.44 an hour")
+    assert not el.pay_too_low("£45,000 per annum", "")
+    assert not el.pay_too_low("£12.60 per hour rising to £48k", "")   # any higher figure cancels it
+    assert not el.pay_too_low("No pay given", "")
+
+
+def test_owner_rules_and_employer_profile(tmp_path):
+    p = tmp_path / "rules.json"
+    p.write_text('{"hide": ["Team Captain"], "show": ["Customer Assistant"]}')
+    idx = el.apply_rules(el.build_index(data()), el.load_rules(p))
+    assert el.classify("Senior Team Captain", idx)[0] == "u"
+    assert el.classify("Customer Assistant", idx) == (None, "kept by owner")
+    jobs = [{"t": "Cleaner", "sp": "Shop Ltd", "c": "Shop", "el": "u"} for _ in range(10)]
+    jobs += [{"t": "Floor Supervisor", "sp": "Shop Ltd", "c": "Shop"}, {"t": "Analyst", "sp": "Shop Ltd", "c": "Shop"}]
+    hidden, review = el.quality_pass(jobs)
+    assert hidden == 1 and jobs[10]["el"] == "u" and "el" not in jobs[11]
+    assert any(r["phrase"] == "analyst" and not r["auto"] for r in review)

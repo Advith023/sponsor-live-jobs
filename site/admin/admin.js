@@ -92,6 +92,48 @@
     if (fit) src.append(el("span", `Visa fit: ${fmt(fit.eligible)} eligible, ${fmt(fit.shortage_list)} shortage list, ${fmt(fit.unlikely)} hidden as unlikely, ${fmt(fit.unlabelled)} unlabelled`, "chip"));
   }
 
+  // ---------- quality check (data/title_rules.json)
+  const RULES_PATH = "data/title_rules.json";
+  let rulesFile = null;
+  async function readRules() {
+    try {
+      const f = await gh(`/contents/${RULES_PATH}?ref=main`);
+      rulesFile = { sha: f.sha, data: JSON.parse(b64decode(f.content)) };
+    } catch { rulesFile = { sha: undefined, data: { hide: [], show: [] } }; }
+    rulesFile.data.hide = rulesFile.data.hide || []; rulesFile.data.show = rulesFile.data.show || [];
+    return rulesFile.data;
+  }
+  async function writeRules(message) {
+    const text = JSON.stringify(rulesFile.data, null, 1) + "\n";
+    const r = await gh(`/contents/${RULES_PATH}`, { method: "PUT", body: JSON.stringify({ message, content: b64encode(text), branch: "main", ...(rulesFile.sha ? { sha: rulesFile.sha } : {}) }) });
+    rulesFile.sha = r.content.sha;
+  }
+  async function decide(phrase, action) {
+    const d = await readRules();
+    d.hide = d.hide.filter((x) => x !== phrase); d.show = d.show.filter((x) => x !== phrase);
+    if (action === "hide") d.hide.push(phrase);
+    if (action === "show") d.show.push(phrase);
+    await writeRules(`${action === "hide" ? "Hide" : action === "show" ? "Keep" : "Clear rule for"} "${phrase}"`);
+    loadQuality();
+  }
+  async function loadQuality() {
+    const d = await readRules();
+    const q = (stats && stats.quality) || { review: [] };
+    $("qSummary").textContent = `Last refresh hid ${fmt(q.hidden_by_pay)} roles for low advertised pay and ${fmt(q.hidden_by_employer_profile)} front-line roles at store and catering employers. Your rules: ${d.hide.length} hidden, ${d.show.length} kept.`;
+    const body = $("qRows"); body.replaceChildren();
+    const decided = new Set([...d.hide, ...d.show]);
+    (q.review || []).filter((r) => !decided.has(r.phrase)).forEach((r) => {
+      const act = el("span");
+      act.append(btn("Hide", () => decide(r.phrase, "hide"), "small"), " ", btn("Keep", () => decide(r.phrase, "show"), "small"));
+      body.append(row([r.auto ? tag("Auto-hidden", "warn") : tag("Shown", "ok"), r.phrase, fmt(r.jobs), `${r.example} (${r.company})`, act]));
+    });
+    if (!body.children.length) body.append(row(["", "Nothing to review. New titles appear here after each refresh.", "", "", ""]));
+    const rules = $("qRules"); rules.replaceChildren();
+    [...d.hide.map((p) => [p, "hide"]), ...d.show.map((p) => [p, "show"])].forEach(([p, a]) => {
+      rules.append(row([a === "hide" ? tag("Hidden", "bad") : tag("Kept", "ok"), p, btn("Undo", () => decide(p, "clear"), "small")]));
+    });
+  }
+
   // ---------- runs
   async function loadRuns() {
     const d = await gh("/actions/workflows/update.yml/runs?per_page=8");
@@ -365,7 +407,7 @@
       const me = await gh("https://api.github.com/user").catch(() => null);
       $("who").textContent = me ? `Signed in as ${me.login}` : "Signed in";
       await loadStats();
-      await Promise.all([loadRuns(), loadSeeds(), loadSettings()]);
+      await Promise.all([loadRuns(), loadSeeds(), loadSettings(), loadQuality()]);
       await loadSuggestions();
     } catch (err) { if (token) $("who").textContent = "Something went wrong: " + err.message; }
   }
