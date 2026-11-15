@@ -87,6 +87,7 @@ def test_labels():
         "Software Developer in Test": "e",
         "Front-End Engineer": "e",
         "Nursery Nurse": "u",
+        "Food Service Worker": "u",
         "Chief Information Security Officer (CISO)": "e",
     }
     for title, want in cases.items():

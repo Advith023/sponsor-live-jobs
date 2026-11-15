@@ -195,7 +195,7 @@ GENERIC = {
 IGNORE_OFFICIAL = {
     "communications officer", "production assistant", "transport supervisor",
     "lifestyle manager", "security consultant", "security manager", "guest service manager", "operations assistant",
-    "data administrator", "general assistant", "team member", "supply chain coordinator",
+    "data administrator", "team member", "supply chain coordinator",
     "material controller", "hire controller", "laser operator", "plant operator",
 }
 
@@ -221,6 +221,9 @@ EXTRA = {
         "customer and trading manager", "food manager", "general merchandise manager",
         "nightshift manager", "night shift manager", "clerical colleague",
         "general service assistant", "team member", "colleague",
+        "food service assistant", "food service worker", "food service colleague",
+        "hospitality assistant", "cleaning operative", "general assistant", "steward",
+        "kitchen steward", "keyholder", "chef manager", "chef supervisor",
         # warehouse and driving
         "picker", "packer", "picker packer", "order picker", "warehouse operative",
         "warehouse associate", "warehouse assistant", "warehouse colleague",
