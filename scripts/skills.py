@@ -131,7 +131,7 @@ _NUM = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven":
 _YEARS_RE = re.compile(
     r"(?:at\s+least|minimum(?:\s+of)?|min\.?|over|more\s+than|\b)\s*"
     r"(\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten)\s*(?:\+|plus)?\s*"
-    r"(?:(?:-|to|–|—)\s*\d{1,2}\s*\+?\s*)?"
+    r"(?:(?:-|to|\u2013|\u2014)\s*\d{1,2}\s*\+?\s*)?"
     r"(?:\(\d{1,2}\)\s*)?(?:years?|yrs?)['’]?\s*(?:of\s+)?(?:[\w&/+#-]+\s+){0,6}?(?:experience|exp\b|in\s+a\s+similar)", re.I)
 _YEARS_AFTER_RE = re.compile(r"experience[^.;\n]{0,40}?\(?\s*(\d{1,2})\s*(?:\+|plus)?\s*(?:(?:-|to|\u2013)\s*\d{1,2}\s*)?(?:years?|yrs?)\b", re.I)
 _YEARS_NOT = re.compile(r"years?\s+old|anniversar|founded|in business|been around", re.I)

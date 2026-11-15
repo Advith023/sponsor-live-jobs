@@ -216,7 +216,7 @@ UK_RE = re.compile(
     r"bradford|middlesbrough|durham|northampton|bedford|chelmsford|colchester|maidstone|"
     r"canterbury|woking|farnborough|bracknell|high wycombe|st albans|hemel hempstead|"
     r"egham|staines|uxbridge|heathrow|hammersmith|shoreditch|croydon|wimbledon|"
-    r"remote\s*[-–(,]?\s*uk)\b", re.I)
+    r"remote\s*[-\u2013(,]?\s*uk)\b", re.I)
 UK_COUNTRY = re.compile(r"\b(united kingdom|uk|u\.k\.|gb|gbr|great britain|england|scotland|wales|northern ireland)\b", re.I)
 # Places that share names with UK cities
 FALSE_FRIENDS = re.compile(r"\b(new york|new england|new south wales|new london|new hampshire|york,?\s*pa|"

@@ -120,7 +120,7 @@ def parse_appendix(html: str) -> dict:
                 continue
             code = m.group(1)
             name = _clean(m.group(2)).split("Note:")[0]
-            name = re.sub(r"\s*[–-]\s*(Jobs with|ONLY)\b.*$", "", name).strip()
+            name = re.sub(r"\s*[\u2013-]\s*(Jobs with|ONLY)\b.*$", "", name).strip()
             cell = next((c for c in row[1:] if "•" in c), "")
             titles = [_clean(t) for t in cell.split("•") if _clean(t)]
             o = occ.setdefault(code, {"n": name, "t": [], "g": []})
@@ -397,7 +397,7 @@ def build_index(data: dict) -> dict:
 
 def _segments(title: str) -> list:
     t = re.sub(r"\([^)]*\)|\[[^\]]*\]", " ", title)
-    segs = re.split(r"\s[-–—|]\s|[|,:;]|\s[-–—]|[-–—]\s", t)
+    segs = re.split(r"\s[-\u2013\u2014|]\s|[|,:;]|\s[-\u2013\u2014]|[-\u2013\u2014]\s", t)
     out = []
     for s in segs:
         for alt in s.split("/"):
