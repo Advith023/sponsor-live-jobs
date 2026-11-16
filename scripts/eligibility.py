@@ -1,7 +1,7 @@
-# SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
+# Sponsor Scout by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 """Skilled Worker eligibility check for job titles.
 
-SponsorLive by Advith Ashok. All rights reserved.
+Sponsor Scout by Advith Ashok. All rights reserved.
 
 Licensed sponsors also post roles that cannot be sponsored on the Skilled
 Worker route (customer assistants, drivers, cleaners and so on). This module

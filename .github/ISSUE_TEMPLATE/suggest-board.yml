@@ -1,6 +1,6 @@
-# SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
+# Sponsor Scout by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 name: Suggest a company's job board
-description: Add a company's careers page or job board to SponsorLive.
+description: Add a company's careers page or job board to Sponsor Scout.
 title: "Suggest: "
 labels: ["board-suggestion"]
 body:

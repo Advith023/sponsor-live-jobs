@@ -1,4 +1,4 @@
-# SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved.
+# Sponsor Scout by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved.
 # Re-reads the Home Office occupation tables on demand. The daily refresh also does this.
 name: Update occupation lists
 on:

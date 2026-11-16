@@ -1,5 +1,5 @@
-// SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
-// SponsorLive control centre. Talks straight to the GitHub API with the owner's own token.
+// Sponsor Scout by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
+// Sponsor Scout control centre. Talks straight to the GitHub API with the owner's own token.
 // The token stays in this browser (localStorage or sessionStorage) and is only ever sent to api.github.com.
 (() => {
   const REPO = "Advith023/sponsor-live-jobs";

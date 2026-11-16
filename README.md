@@ -1,10 +1,10 @@
-# SponsorLive
+# Sponsor Scout
 
-> **New here?** Read **[How SponsorLive works](docs/HOW_IT_WORKS.md)**: a guide from the simple version to the technical deep dive, with diagrams, screenshots and charts.
+> **New here?** Read **[How Sponsor Scout works](docs/HOW_IT_WORKS.md)**: a guide from the simple version to the technical deep dive, with diagrams, screenshots and charts.
 
 **Live UK jobs at companies that can sponsor visas, taken straight from each company's careers page.**
 
-LinkedIn and other job boards are full of reposted or "ghost" jobs that are already closed when you click Apply. SponsorLive only shows roles that are **live right now on the employer's own job board or careers site**, and only at employers on the **Home Office register of licensed Skilled Worker sponsors**.
+LinkedIn and other job boards are full of reposted or "ghost" jobs that are already closed when you click Apply. Sponsor Scout only shows roles that are **live right now on the employer's own job board or careers site**, and only at employers on the **Home Office register of licensed Skilled Worker sponsors**.
 
 What the site states, and nothing more:
 > The role is live on the company's site and the company holds a Skilled Worker sponsor licence. Sponsorship for a specific role is the employer's decision, so ask the recruiter.
@@ -84,6 +84,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 
 | Date | Work |
 |---|---|
+| 2026-11-16 | Renamed SponsorLive to Sponsor Scout (another brand, sponsorlive.be, owned the old name in search). Display name changed everywhere; the repo name, URL, storage keys and GoatCounter code were kept so nothing already shared or saved breaks. |
 | 2026-11-15 | "Report this role" link on every job card (two taps, anonymous, via the Google Form). Control centre Quality check panel now has: a search box to paste any job title or link and see if it's shown or hidden; visitor reports listed within minutes with Hide, Ignore and Undo; and the review list of unsure titles. All decisions save to `data/title_rules.json`. Anonymous visit counts added with GoatCounter (private dashboard). Guide updated with a full section on the visa fit check. |
 | 2026-11-15 | Automatic quality check on every refresh: adverts that only quote pay clearly below any Skilled Worker level (under £15 an hour or £25,000 a year) are hidden; at employers whose recognised roles are mostly store or catering jobs, unrecognised front-line titles (assistant, operative, crew, supervisor and similar) are hidden too. A Quality check panel in the control centre lists the titles it wasn't sure about, with Hide and Keep buttons that save to `data/title_rules.json`. Also hid more catering, store and events titles found in a manual sweep. |
 | 2026-11-13 | Visa fit check: every job title is matched against the Home Office occupation tables (Appendix Skilled Occupations and the Temporary Shortage List), read from GOV.UK on each refresh. Roles below the skill level, such as customer assistants, drivers and cleaners, are hidden by default with a toggle to show them; shortage list roles get a note. Only exact official titles or curated phrases at the end of a title can hide a job, and occupation codes are never published. First pass: 765 of 5,520 jobs hidden, 1,425 matched eligible, 94 shortage list. |

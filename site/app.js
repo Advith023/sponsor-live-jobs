@@ -1,4 +1,4 @@
-// SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
+// Sponsor Scout by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 (() => {
   const cfg = window.SPONSORLIVE_CONFIG || {};
   const $ = (s) => document.querySelector(s);
@@ -8,8 +8,8 @@
   let jobs = [], filtered = [];
 
   // ---------- setup
-  $("#siteName").textContent = cfg.siteName || "SponsorLive";
-  if (cfg.siteName) document.title = document.title.replace("SponsorLive", cfg.siteName);
+  $("#siteName").textContent = cfg.siteName || "Sponsor Scout";
+  if (cfg.siteName) document.title = document.title.replace("Sponsor Scout", cfg.siteName);
   if (cfg.headline) $("#headline").textContent = cfg.headline;
   if (cfg.intro) $("#intro").textContent = cfg.intro;
   if (cfg.notice) $("#noticeText").textContent = cfg.notice;

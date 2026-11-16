@@ -1,4 +1,4 @@
-// SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
+// Sponsor Scout by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 const $ = id => document.getElementById(id);
 const stages = ['Researching','Ready for approval','Submitted','Receipt verified','Rejected','Withdrawn','Skipped'];
 const sponsors = ['Unknown','Tentative','Confirmed for this role','Unavailable'];
@@ -227,5 +227,5 @@ render();
  const existing=duplicates({...draft,id:''});
  if(existing.length){openEditor(existing[0].id);$('notice').textContent='You are already tracking this role.';return;}
  openEditor(undefined,draft);
- $('notice').textContent='Added from SponsorLive. The company holds a sponsor licence; confirm sponsorship for this specific role with the recruiter.';
+ $('notice').textContent='Added from Sponsor Scout. The company holds a sponsor licence; confirm sponsorship for this specific role with the recruiter.';
 })();

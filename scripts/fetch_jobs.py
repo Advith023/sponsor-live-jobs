@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
+# Sponsor Scout by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 """
-SponsorLive data refresh.
+Sponsor Scout data refresh.
 
 1. Downloads the latest UK Register of Licensed Sponsors (Workers) from gov.uk.
 2. For each Skilled Worker sponsor, looks for a public job board on common
@@ -51,7 +51,7 @@ MAX_DESC = 20000
 REGISTER_API = "https://www.gov.uk/api/content/government/publications/register-of-licensed-sponsors-workers"
 REGISTER_PAGE = "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers"
 
-UA = "SponsorLiveBot/1.0 (+https://github.com/Advith023/sponsor-live-jobs)"
+UA = "SponsorScoutBot/1.0 (+https://github.com/Advith023/sponsor-live-jobs)"
 TIMEOUT = 20
 WORKERS = int(os.environ.get("WORKERS", "32"))
 DISCOVERY_BATCH = int(os.environ.get("DISCOVERY_BATCH", "8000"))
@@ -1293,7 +1293,7 @@ def run():
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
-        "owner": "SponsorLive by Advith Ashok, github.com/Advith023/sponsor-live-jobs",
+        "owner": "Sponsor Scout by Advith Ashok, github.com/Advith023/sponsor-live-jobs",
         "generated": NOW.isoformat(),
         "register": register_url,
         "count": len(jobs),

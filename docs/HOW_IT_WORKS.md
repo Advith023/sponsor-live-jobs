@@ -1,7 +1,7 @@
-<!-- SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE. -->
-# How SponsorLive works
+<!-- Sponsor Scout by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE. -->
+# How Sponsor Scout works
 
-**SponsorLive** lists live UK jobs at companies that hold a Home Office licence to sponsor work visas. Every job comes straight from the company's own careers system, checked twice a day.
+**Sponsor Scout** lists live UK jobs at companies that hold a Home Office licence to sponsor work visas. Every job comes straight from the company's own careers system, checked twice a day.
 
 This guide explains how it works in three layers. Read as far as you need:
 
@@ -13,7 +13,7 @@ Plus: [what makes it different](#4-what-makes-it-different), [results so far](#5
 
 *Figures are from 15 November 2026: **8,013 live UK jobs at 885 licensed sponsors**, of which 6,888 are shown and 1,125 are hidden as unlikely to qualify for a visa. 29,434 of the 120,259 sponsors on the register have been checked so far. Coverage grows every day.*
 
-![SponsorLive home page](images/screen_home.jpg)
+![Sponsor Scout home page](images/screen_home.jpg)
 
 ---
 
@@ -21,7 +21,7 @@ Plus: [what makes it different](#4-what-makes-it-different), [results so far](#5
 
 Imagine you need a job in the UK, and your visa means only certain companies are allowed to hire you. The government keeps a list of those companies, but the list is **120,000 names long** and says nothing about which of them are hiring right now. Job sites are full of adverts that closed weeks ago, or that come from companies that can't sponsor you at all.
 
-SponsorLive is like a **robot helper that does the boring checking for you**:
+Sponsor Scout is like a **robot helper that does the boring checking for you**:
 
 1. **Every morning and afternoon, it reads the government's list** of companies allowed to sponsor visas.
 2. **For each company, it goes looking for the company's own jobs page.** Companies use different "job systems" (think of them as different shops with different shelves), so the robot knows how to read 13 kinds of shelf.
@@ -306,7 +306,7 @@ Occupation codes stay inside `scripts/eligibility.py` and `data/occupations.json
 
 ## 4. What makes it different
 
-| | Typical job boards | SponsorLive |
+| | Typical job boards | Sponsor Scout |
 |---|---|---|
 | Source | Reposts and scraped adverts | The employer's own hiring system, every time |
 | Freshness | Often stale | Checked twice a day; closed jobs disappear |
@@ -370,4 +370,4 @@ A few findings from the data:
 
 ---
 
-*SponsorLive is designed and built by Advith Ashok. Copyright (c) 2026 Advith Ashok. All rights reserved. The code is public to read, not to reuse; see [LICENSE](../LICENSE).*
+*Sponsor Scout is designed and built by Advith Ashok. Copyright (c) 2026 Advith Ashok. All rights reserved. The code is public to read, not to reuse; see [LICENSE](../LICENSE).*

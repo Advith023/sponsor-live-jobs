@@ -1,4 +1,4 @@
-# SponsorLive by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
+# Sponsor Scout by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 """Offline tests for the eligibility labels. The HTML below copies the layout
 of the gov.uk pages (heading per table, code and name in the first cell,
 bulleted example titles, a leading <br> in Table 6 cells)."""
