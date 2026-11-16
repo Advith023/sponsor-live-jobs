@@ -112,6 +112,7 @@ python3 -m http.server -d site 8000    # open http://localhost:8000
 - Other countries' sponsor lists (US H-1B data, Netherlands IND register, Canada LMIA list, Ireland permits): on hold until the UK baseline is strong.
 - Set up the alert form provider and a custom domain.
 - Add "report wrong match" and job-closed feedback.
+- Sponsorship history under the hood (after the 17 Nov launch): certificates per year and route per employer from the Home Office migration transparency data. Show years separately, display small numbers as "<5", only on confident name matches, and label it a guide, not a promise.
 
 ---
 
