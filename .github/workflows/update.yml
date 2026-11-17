@@ -12,7 +12,7 @@ on:
         default: "8000"
   push:
     branches: [main]
-    paths: ["site/**", ".github/workflows/**"]
+    paths: ["site/**", ".github/workflows/**", "data/title_rules.json"]
 
 permissions:
   contents: write
@@ -53,12 +53,37 @@ jobs:
           git pull --rebase -X theirs origin main
           git push
 
+  rules:
+    # A Hide in the control centre: apply it to the published jobs now, not at the next refresh
+    if: github.event_name == 'push'
+    concurrency:              # waits for a running refresh, so the refresh can't overwrite it
+      group: refresh
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply hide rules
+        run: python scripts/apply_rules.py
+      - name: Commit data
+        run: |
+          git config user.name "Advith Ashok"
+          git config user.email "180869546+Advith023@users.noreply.github.com"
+          git add site/data/jobs.json
+          git diff --cached --quiet || git commit -m "Apply hide rules"
+          git pull --rebase -X theirs origin main
+          git push
+
   deploy:
-    needs: [refresh]
+    needs: [refresh, rules]
     concurrency:
       group: pages
       cancel-in-progress: false
-    if: always() && (needs.refresh.result == 'success' || needs.refresh.result == 'skipped')
+    if: always() && contains(fromJSON('["success","skipped"]'), needs.refresh.result) && contains(fromJSON('["success","skipped"]'), needs.rules.result)
     runs-on: ubuntu-latest
     environment:
       name: github-pages

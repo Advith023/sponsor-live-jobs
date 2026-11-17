@@ -13,6 +13,7 @@
   // ---------- helpers
   async function gh(path, opts = {}) {
     const r = await fetch(path.startsWith("http") ? path : API + path, {
+      cache: "no-store",  // GitHub lets browsers cache file reads for 60s; a stale copy makes the next save fail
       ...opts,
       headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28",
         ...(opts.body ? { "Content-Type": "application/json" } : {}) },
@@ -29,7 +30,24 @@
   const b64encode = (str) => { let bin = ""; new TextEncoder().encode(str).forEach((b) => (bin += String.fromCharCode(b))); return btoa(bin); };
   const el = (tag, text, cls) => { const e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; };
   const tag = (text, cls) => el("span", text, "tag " + cls);
-  const btn = (text, onClick, cls) => { const b = el("button", text, cls); b.type = "button"; b.onclick = onClick; return b; };
+  // Buttons show "Working…" while their action runs and report errors instead of failing silently
+  const btn = (text, onClick, cls) => {
+    const b = el("button", text, cls); b.type = "button";
+    b.onclick = async (ev) => {
+      if (b.disabled) return;
+      const r = onClick(ev);
+      if (!(r instanceof Promise)) return;
+      b.disabled = true; b.textContent = "Working…";
+      try { await r; } catch (e) { alert("That didn't save: " + e.message + "\nPlease try again."); }
+      finally { b.disabled = false; b.textContent = text; }
+    };
+    return b;
+  };
+  const toast = (msg) => {
+    let t = document.getElementById("toast");
+    if (!t) { t = el("div"); t.id = "toast"; t.setAttribute("role", "status"); document.body.append(t); }
+    t.textContent = msg; t.hidden = false; clearTimeout(t._h); t._h = setTimeout(() => (t.hidden = true), 6000);
+  };
   const fmt = (n) => (n ?? 0).toLocaleString("en-GB");
   const when = (iso) => new Date(iso).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
   const row = (cells) => { const tr = document.createElement("tr"); cells.forEach((c) => { const td = document.createElement("td"); c instanceof Node ? td.append(c) : (td.textContent = c ?? ""); tr.append(td); }); return tr; };
@@ -116,6 +134,7 @@
     if (action === "hide") d.hide.push(phrase);
     if (action === "show") d.show.push(phrase);
     await writeRules(`${action === "hide" ? "Hide" : action === "show" ? "Keep" : "Clear rule for"} "${phrase}"`);
+    toast(action === "hide" ? `Saved. Jobs ending "${phrase}" leave the site in about 2 minutes.` : "Saved. This takes effect at the next refresh.");
     await loadQuality();
   }
   // The part of a job title that names the role: "Beauty Expert - Stroud" -> "Beauty Expert"
@@ -176,6 +195,7 @@
       if (h && h.action === "hide" && !Object.values(d.handled).some((o) => o.action === "hide" && o.phrase === h.phrase)) d.hide = d.hide.filter((x) => x !== h.phrase);
     }
     await writeRules(action === "undo" ? "Undo a role report decision" : `${action === "hide" ? "Hide" : "Ignore"} reported role${phrase ? ` "${phrase}"` : ""}`);
+    toast(action === "hide" ? `Saved. Jobs ending "${phrase}" leave the site in about 2 minutes.` : action === "undo" ? "Undone. Hidden jobs come back at the next refresh." : "Saved.");
     const sheet = await sheetRows().catch(() => null);
     await renderReports(sheet); loadQuality();
   }
