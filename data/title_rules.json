@@ -36,6 +36,9 @@
   },
   "11/17/2026 23:41:14|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Tooting-Tooting-Greater-London-SW17-7EW/Back-of-House-Nandoca_R0000054361": {
    "action": "hide"
+  },
+  "11/17/2026 23:41:15|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Carlisle-Carlisle-Cumbria-CA1-1QN/Back-of-House-Nandoca_R0000054357": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -98,6 +101,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:41:14|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Tooting-Tooting-Greater-London-SW17-7EW/Back-of-House-Nandoca_R0000054361"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Carlisle-Carlisle-Cumbria-CA1-1QN/Back-of-House-Nandoca_R0000054357",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:41:15|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Carlisle-Carlisle-Cumbria-CA1-1QN/Back-of-House-Nandoca_R0000054357"
   }
  ]
 }
