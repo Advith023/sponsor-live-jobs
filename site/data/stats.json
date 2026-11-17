@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-16T13:42:45.939776+00:00",
+ "generated": "2026-11-16T23:01:48.701339+00:00",
  "sponsors": 120259,
- "sponsors_checked": 36130,
- "boards": 1783,
- "jobs": 10740,
- "companies": 1115,
+ "sponsors_checked": 39240,
+ "boards": 1949,
+ "jobs": 11535,
+ "companies": 1216,
  "quality": {
-  "hidden_by_pay": 16,
-  "hidden_by_employer_profile": 11,
+  "hidden_by_pay": 21,
+  "hidden_by_employer_profile": 13,
   "review": [
    {
     "phrase": "product owner",
@@ -104,17 +104,59 @@
     "auto": true
    },
    {
+    "phrase": "account assistant",
+    "jobs": 1,
+    "example": "Accounts Assistant (3 month fixed term contract)",
+    "company": "Reiss",
+    "auto": true
+   },
+   {
+    "phrase": "stockroom supervisor",
+    "jobs": 1,
+    "example": "Stockroom Supervisor",
+    "company": "Reiss",
+    "auto": true
+   },
+   {
+    "phrase": "seasonal sale associate",
+    "jobs": 41,
+    "example": "Seasonal Sales Associate",
+    "company": "Reiss",
+    "auto": false
+   },
+   {
+    "phrase": "register your interest",
+    "jobs": 31,
+    "example": "Register Your Interest",
+    "company": "Reiss",
+    "auto": false
+   },
+   {
     "phrase": "multifunctional sale associate",
-    "jobs": 25,
-    "example": "MULTIFUNCTIONAL SALES ASSOCIATE (10 hours, Fix Term, Cambridge)",
+    "jobs": 22,
+    "example": "MULTIFUNCTIONAL SALES ASSOCIATE (20 hours, Fix Term, Bristol Cribbs)",
     "company": "Mango Fly",
     "auto": false
    },
    {
     "phrase": "customer experience manager",
-    "jobs": 16,
+    "jobs": 17,
     "example": "Customer Experience Manager",
     "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "sale associate",
+    "jobs": 15,
+    "example": "Sales  Associate (Full time) | Heathrow T5",
+    "company": "Reiss",
+    "auto": false
+   },
+   {
+    "phrase": "sale manager",
+    "jobs": 11,
+    "example": "Sales Manager | Vigo Street Central London",
+    "company": "Reiss",
     "auto": false
    },
    {
@@ -122,6 +164,13 @@
     "jobs": 8,
     "example": "UK Team Leader (ANIMAL)",
     "company": "Mountain Warehouse",
+    "auto": false
+   },
+   {
+    "phrase": "assistant manager",
+    "jobs": 7,
+    "example": "Assistant Manager",
+    "company": "Aramark",
     "auto": false
    },
    {
@@ -136,6 +185,13 @@
     "jobs": 6,
     "example": "General Manager | Birmingham",
     "company": "Blank Street",
+    "auto": false
+   },
+   {
+    "phrase": "senior sale associate",
+    "jobs": 6,
+    "example": "Senior Sales Associate",
+    "company": "Reiss",
     "auto": false
    },
    {
@@ -156,13 +212,6 @@
     "phrase": "administrator",
     "jobs": 4,
     "example": "Administrator",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "assistant manager",
-    "jobs": 4,
-    "example": "Assistant Manager",
     "company": "Aramark",
     "auto": false
    },
@@ -286,6 +335,13 @@
     "auto": false
    },
    {
+    "phrase": "people partner",
+    "jobs": 2,
+    "example": "People Partner | Head Office (12 month fixed contract)",
+    "company": "Reiss",
+    "auto": false
+   },
+   {
     "phrase": "regional procurement buyer",
     "jobs": 2,
     "example": "Regional Procurement Buyer FTC",
@@ -340,70 +396,28 @@
     "example": "Regional Operations Director - South East & London",
     "company": "Aramark",
     "auto": false
-   },
-   {
-    "phrase": "assistant group manager",
-    "jobs": 1,
-    "example": "Assistant Group Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "architectural outfitter",
-    "jobs": 1,
-    "example": "Architectural Outfitter",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "commis chef sushi",
-    "jobs": 1,
-    "example": "Commis Chef Sushi",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "operation administrator",
-    "jobs": 1,
-    "example": "Operations Administrator",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "workplace hospitality and event manager",
-    "jobs": 1,
-    "example": "Workplace Hospitality & Events Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "security worker data clerk",
-    "jobs": 1,
-    "example": "Security Worker Data Clerk",
-    "company": "Aramark",
-    "auto": false
    }
   ]
  },
  "eligibility": {
-  "eligible": 2502,
-  "shortage_list": 188,
-  "unlikely": 1344,
-  "unlabelled": 6706
+  "eligible": 2680,
+  "shortage_list": 203,
+  "unlikely": 1346,
+  "unlabelled": 7306
  },
  "sources": {
-  "Ashby": 1422,
-  "BambooHR": 332,
-  "Breezy": 98,
-  "Greenhouse": 3485,
-  "Lever": 376,
-  "Oracle": 981,
-  "Personio": 76,
-  "Pinpoint": 791,
+  "Ashby": 1526,
+  "BambooHR": 353,
+  "Breezy": 237,
+  "Greenhouse": 3631,
+  "Lever": 408,
+  "Oracle": 931,
+  "Personio": 77,
+  "Pinpoint": 838,
   "Recruitee": 102,
-  "SmartRecruiters": 1021,
-  "Teamtailor": 669,
-  "Workday": 1387
+  "SmartRecruiters": 1076,
+  "Teamtailor": 762,
+  "Workday": 1594
  },
  "suggestions_unmatched": [
   "SLB",
@@ -439,7 +453,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 131
+   "jobs": 129
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -449,17 +463,17 @@
   "GoCardless": {
    "sponsor": "GoCardless Limited",
    "boards": 1,
-   "jobs": 8
+   "jobs": 9
   },
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 372
+   "jobs": 325
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 609
+   "jobs": 606
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
