@@ -54,6 +54,9 @@
   },
   "11/17/2026 23:41:05|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Hammersmith---Broadway-Hammersmith-Greater-London-W6-7AB/Back-of-House-Nandoca_R0000054381": {
    "action": "hide"
+  },
+  "11/17/2026 23:41:03|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Braintree-Braintree-Essex-CM77-8YH/Front-of-House-Nandoca_R0000053508": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -152,6 +155,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:41:05|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Hammersmith---Broadway-Hammersmith-Greater-London-W6-7AB/Back-of-House-Nandoca_R0000054381"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Braintree-Braintree-Essex-CM77-8YH/Front-of-House-Nandoca_R0000053508",
+   "t": "Front of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:41:03|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Braintree-Braintree-Essex-CM77-8YH/Front-of-House-Nandoca_R0000053508"
   }
  ]
 }
