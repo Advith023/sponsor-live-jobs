@@ -69,6 +69,9 @@
   },
   "11/17/2026 23:40:57|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bath---Kingsmead-Bath-Somerset-BA1-2BX/Back-of-House-Nandoca_R0000054299": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:40|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bath---Kingsmead-Bath-Somerset-BA1-2BX/Back-of-House-Nandoca_R0000054389": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -197,6 +200,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:40:57|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bath---Kingsmead-Bath-Somerset-BA1-2BX/Back-of-House-Nandoca_R0000054299"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bath---Kingsmead-Bath-Somerset-BA1-2BX/Back-of-House-Nandoca_R0000054389",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:40|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bath---Kingsmead-Bath-Somerset-BA1-2BX/Back-of-House-Nandoca_R0000054389"
   }
  ]
 }
