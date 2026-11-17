@@ -123,6 +123,9 @@
   },
   "11/17/2026 23:40:05|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Wednesbury---Junction-9-Wednesbury-West-Midlands-WS10-9QY/Front-of-House-Nandoca_R0000054414": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:02|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Nandos-Brixton-Greater-London-SW9-9SP/Front-of-House-Nandoca_R0000054415": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -359,6 +362,12 @@
    "t": "Front of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:40:05|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Wednesbury---Junction-9-Wednesbury-West-Midlands-WS10-9QY/Front-of-House-Nandoca_R0000054414"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Nandos-Brixton-Greater-London-SW9-9SP/Front-of-House-Nandoca_R0000054415",
+   "t": "Front of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:02|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Nandos-Brixton-Greater-London-SW9-9SP/Front-of-House-Nandoca_R0000054415"
   }
  ]
 }
