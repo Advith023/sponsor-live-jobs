@@ -108,8 +108,11 @@
       const text = `${j.t} at ${j.c} - visa sponsorship available`;
       const url = j.u;
       gc("share-click");
-      if (navigator.share) { try { await navigator.share({ title: text, url }); } catch {} }
-      else { try { await navigator.clipboard.writeText(text + "\n" + url); shareBtn.textContent = "Copied!"; setTimeout(() => { shareBtn.textContent = "Share"; }, 2000); } catch {} }
+      try {
+        if (navigator.share) await navigator.share({ title: text, text, url });
+        else if (navigator.clipboard) { await navigator.clipboard.writeText(text + "\n" + url); shareBtn.textContent = "Copied!"; setTimeout(() => { shareBtn.textContent = "Share"; }, 2000); }
+        else prompt("Copy this link:", text + "\n" + url);
+      } catch (e) { if (e.name !== "AbortError") prompt("Copy this link:", text + "\n" + url); }
     };
     const m = n.querySelector(".meta");
     const add = (txt, cls) => { if (!txt) return; const s = document.createElement("span"); s.textContent = txt; if (cls) s.className = cls; m.appendChild(s); };
