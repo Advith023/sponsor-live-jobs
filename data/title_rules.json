@@ -78,6 +78,9 @@
   },
   "11/17/2026 23:40:31|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Southampton---WQ-Shopping-Southampton-Hampshire-SO15-1QF/Back-of-House-Nandoca_R0000054375": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:35|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Norwich---Riverside-Norwich-Norfolk-NR1-1WX/Back-of-House-Nandoca_R0000054395": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -224,6 +227,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:40:31|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Southampton---WQ-Shopping-Southampton-Hampshire-SO15-1QF/Back-of-House-Nandoca_R0000054375"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Norwich---Riverside-Norwich-Norfolk-NR1-1WX/Back-of-House-Nandoca_R0000054395",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:35|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Norwich---Riverside-Norwich-Norfolk-NR1-1WX/Back-of-House-Nandoca_R0000054395"
   }
  ]
 }
