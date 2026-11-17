@@ -6,7 +6,8 @@
   "Head of Procurement",
   "product owner",
   "Seasonal Sales Associate",
-  "Restaurant Marketing Associate"
+  "Restaurant Marketing Associate",
+  "Sales Associate"
  ],
  "show": [],
  "handled": {
@@ -29,6 +30,10 @@
   "11/17/2026 20:46:45|Report role: Restaurant Marketing Associate | Deliveroo | https://job-boards.greenhouse.io/deliveroo/jobs/8392929": {
    "action": "hide",
    "phrase": "Restaurant Marketing Associate"
+  },
+  "11/17/2026 18:15:37|Report role: Sales Associate (Part-time) | Metrocentre | Reiss | https://reiss.breezy.hr/p/fd043ddbe58e-sales-associate-part-time-metrocentre": {
+   "action": "hide",
+   "phrase": "Sales Associate"
   }
  }
 }
