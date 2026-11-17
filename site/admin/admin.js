@@ -495,6 +495,78 @@
     } catch (err) { msg.textContent = err.message; }
   };
 
+  // ---------- popular jobs (GoatCounter API)
+  const GC_KEY = "sponsorlive-gc-token";
+  const GC_API = "https://advithashoksponsorlive.goatcounter.com/api/v0";
+  let gcToken = localStorage.getItem(GC_KEY) || "";
+
+  async function gcFetch(path) {
+    const r = await fetch(GC_API + path, { headers: { Authorization: "Bearer " + gcToken } });
+    if (!r.ok) throw new Error(r.status === 403 ? "Token rejected. Check it has Read permission." : "GoatCounter error: " + r.status);
+    return r.json();
+  }
+
+  $("gcSave").onclick = () => {
+    gcToken = $("gcToken").value.trim();
+    if (!gcToken) { $("gcMsg").textContent = "Paste a token first."; return; }
+    localStorage.setItem(GC_KEY, gcToken);
+    $("gcToken").value = "";
+    $("gcMsg").textContent = "Saved.";
+    loadPopular();
+  };
+
+  async function loadPopular() {
+    if (!gcToken) { $("gcSetup").hidden = false; return; }
+    $("gcSetup").hidden = true;
+    $("popularPeriod").hidden = false;
+    const period = $("gcPeriod").value;
+    const now = new Date();
+    let start;
+    if (period === "day") start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    else if (period === "week") { start = new Date(now); start.setDate(start.getDate() - 7); }
+    else { start = new Date(now); start.setDate(start.getDate() - 30); }
+    const sf = start.toISOString().slice(0, 10);
+    const ef = now.toISOString().slice(0, 10);
+    try {
+      const data = await gcFetch(`/stats/hits?start=${sf}&end=${ef}&limit=500&filter=apply%2F`);
+      const paths = (data.paths || []).filter(p => p.path && p.path.startsWith("apply/") && p.path !== "apply-click");
+      // aggregate counts
+      const jobs = paths.map(p => {
+        const parts = p.path.replace(/^apply\//, "").split("/");
+        const company = decodeURIComponent(parts[0] || "");
+        const title = decodeURIComponent(parts.slice(1).join("/") || "");
+        return { company, title, count: p.count || 0 };
+      }).sort((a, b) => b.count - a.count);
+
+      // summary stats
+      const totalClicks = jobs.reduce((s, j) => s + j.count, 0);
+      const uniqueJobs = jobs.length;
+      const topCompanies = {};
+      jobs.forEach(j => { topCompanies[j.company] = (topCompanies[j.company] || 0) + j.count; });
+      const topCo = Object.entries(topCompanies).sort((a, b) => b[1] - a[1]).slice(0, 3);
+
+      const box = $("popularStats"); box.replaceChildren(); box.hidden = false;
+      [["Apply clicks", fmt(totalClicks)], ["Unique jobs clicked", fmt(uniqueJobs)],
+       ["Top company", topCo[0] ? `${topCo[0][0]} (${topCo[0][1]})` : "-"]]
+        .forEach(([label, v]) => { const d = el("div", null, "stat"); d.append(el("b", v), el("span", label)); box.append(d); });
+
+      // table
+      const body = $("popularRows"); body.replaceChildren();
+      $("popularTable").hidden = false;
+      if (!jobs.length) { body.append(row(["", "No apply clicks tracked yet", "", ""])); return; }
+      jobs.slice(0, 50).forEach((j, i) => {
+        body.append(row([i + 1, j.title, j.company, fmt(j.count)]));
+      });
+    } catch (err) {
+      $("gcMsg").textContent = err.message;
+      $("gcSetup").hidden = false;
+      $("popularPeriod").hidden = true;
+    }
+  }
+
+  $("loadPopular").onclick = loadPopular;
+  $("gcPeriod").onchange = loadPopular;
+
   // ---------- start
   async function start() {
     $("login").hidden = true; $("app").hidden = false; $("signout").hidden = false;
@@ -502,7 +574,7 @@
       const me = await gh("https://api.github.com/user").catch(() => null);
       $("who").textContent = me ? `Signed in as ${me.login}` : "Signed in";
       await loadStats();
-      await Promise.all([loadRuns(), loadSeeds(), loadSettings(), loadQuality()]);
+      await Promise.all([loadRuns(), loadSeeds(), loadSettings(), loadQuality(), loadPopular()]);
       await loadSuggestions();
     } catch (err) { if (token) $("who").textContent = "Something went wrong: " + err.message; }
   }

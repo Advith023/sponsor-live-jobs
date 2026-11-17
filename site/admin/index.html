@@ -43,13 +43,41 @@
 
   <div id="app" hidden>
     <p id="who" class="muted"></p>
-    <nav class="jump"><a href="#sec-overview">Overview</a><a href="#sec-refresh">Refresh</a><a href="#sec-suggestions">Suggestions</a><a href="#sec-feedback">Feedback</a><a href="#sec-settings">Site settings</a><a href="#sec-companies">Companies</a></nav>
+    <nav class="jump"><a href="#sec-overview">Overview</a><a href="#sec-popular">Popular jobs</a><a href="#sec-refresh">Refresh</a><a href="#sec-suggestions">Suggestions</a><a href="#sec-feedback">Feedback</a><a href="#sec-settings">Site settings</a><a href="#sec-companies">Companies</a></nav>
 
     <!-- overview -->
     <section class="card" id="sec-overview">
       <div class="bar"><h2>Overview</h2><button id="reloadAll">Reload</button></div>
       <div id="stats" class="stats"></div>
       <div id="sources" class="chips"></div>
+    </section>
+
+    <!-- popular jobs -->
+    <section class="card" id="sec-popular">
+      <div class="bar"><h2>Popular jobs</h2><button id="loadPopular">Load</button></div>
+      <p class="muted">Shows which jobs visitors are clicking "Apply" on, ranked by clicks. Needs a GoatCounter API token (kept in this browser only, sent only to GoatCounter).</p>
+      <div id="gcSetup">
+        <label>GoatCounter API token <input id="gcToken" type="password" autocomplete="off" placeholder="Paste token here"></label>
+        <button id="gcSave" class="primary" type="button">Save token</button>
+        <span id="gcMsg" class="muted small"></span>
+        <details>
+          <summary>How to get a token (1 minute, once)</summary>
+          <ol>
+            <li>Go to <a href="https://advithashoksponsorlive.goatcounter.com/user/api-tokens" target="_blank" rel="noopener">GoatCounter API tokens</a> (sign in if needed).</li>
+            <li>Add a new token with <b>Read</b> permission.</li>
+            <li>Copy and paste it above.</li>
+          </ol>
+        </details>
+      </div>
+      <div id="popularPeriod" hidden>
+        <select id="gcPeriod">
+          <option value="day">Today</option>
+          <option value="week" selected>This week</option>
+          <option value="month">This month</option>
+        </select>
+      </div>
+      <div id="popularStats" class="stats" hidden></div>
+      <table class="tbl" id="popularTable" hidden><thead><tr><th>#</th><th>Job title</th><th>Company</th><th>Clicks</th></tr></thead><tbody id="popularRows"></tbody></table>
     </section>
 
     <!-- refresh -->

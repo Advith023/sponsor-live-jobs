@@ -43,3 +43,7 @@ input[type=color]{height:40px;padding:4px;width:80px}
 .card{scroll-margin-top:60px}
 .qsearch{display:flex;gap:8px;margin:6px 0}.qsearch input{flex:1;min-width:0}
 input.phrase{width:12em;max-width:100%;padding:3px 6px;font-size:.85rem}
+#gcSetup{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin:8px 0}
+#gcSetup label{flex:1;min-width:200px}
+#popularPeriod{margin:8px 0}
+#popularPeriod select{padding:6px 10px;border-radius:8px;border:1px solid #c3d2cb}
