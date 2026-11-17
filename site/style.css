@@ -23,6 +23,9 @@ a{color:var(--accent)}
 .search input{width:100%;padding:14px 16px;border-radius:12px;border:0;font-size:16px;background:#fff;color:#0f172a;box-shadow:0 6px 20px rgba(0,0,0,.18)}
 .search input:focus{outline:3px solid #4ade80}
 .stats{margin-top:14px;color:#bbf7d0;font-size:14px}
+.ticker{margin-top:8px;font-size:13px;color:#86efac;overflow:hidden;white-space:nowrap;position:relative;height:1.5em}
+.ticker span{display:inline-block;animation:scroll-left 30s linear infinite}
+@keyframes scroll-left{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 
 .layout{display:grid;grid-template-columns:260px 1fr;gap:28px;padding-top:24px;padding-bottom:30px}
 .filters section{margin-bottom:22px}
@@ -86,9 +89,12 @@ select{width:100%;padding:8px;border-radius:10px;border:1px solid var(--line);ba
 .match{font-size:12.5px;text-align:right;max-width:260px;border-radius:10px;padding:6px 8px;border:1px solid var(--line)}
 .match strong{display:block;font-size:13.5px}
 .match .why{color:var(--muted);margin-top:2px}
-.match.hi{border-color:#16a34a;background:var(--brand-soft)}
-.match.mid{border-color:#ca8a04}
+.match.hi{border-color:#16a34a;background:var(--brand-soft);border-width:2px}
+.match.hi strong{color:#16a34a}
+.match.mid{border-color:#ca8a04;background:#fefce8;border-width:2px}
+.match.mid strong{color:#a16207}
 .match.lo{opacity:.85}
+@media(prefers-color-scheme:dark){.match.mid{background:#1a1a0e}}
 .acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 .btn.track{padding:10px 12px;white-space:nowrap}
 #suggestBox input{width:100%}

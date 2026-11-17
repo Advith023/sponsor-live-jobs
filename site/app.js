@@ -425,6 +425,16 @@
         const upd = d.generated ? new Date(d.generated).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" }) : "pending";
         $("#stats").textContent = `${jobs.filter((j) => j.el !== "u").length.toLocaleString("en-GB")} live roles · ${(d.companies || 0).toLocaleString("en-GB")} licensed sponsors · updated ${upd}`;
         if (btn) { btn.hidden = false; btn.disabled = false; }
+        // --- ticker: companies that posted in the last 24h
+        const day = Date.now() - 864e5;
+        const recent = {};
+        jobs.forEach((j) => { if (j._t >= day && j.el !== "u") recent[j.c] = (recent[j.c] || 0) + 1; });
+        const tk = $("#ticker"), tt = $("#tickerText");
+        if (tk && tt && Object.keys(recent).length) {
+          const items = Object.entries(recent).sort((a, b) => b[1] - a[1]).slice(0, 15);
+          tt.textContent = "Hiring now: " + items.map(([c, n]) => `${c} (${n})`).join("  ·  ");
+          tk.hidden = false;
+        }
         apply();
       })
       .catch(() => { $("#stats").textContent = "Couldn't load jobs right now. Please refresh."; if (btn) { btn.hidden = false; btn.disabled = false; } apply(); });
