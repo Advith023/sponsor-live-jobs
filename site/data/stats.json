@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-16T23:01:48.701339+00:00",
+ "generated": "2026-11-17T14:30:00.835560+00:00",
  "sponsors": 120259,
- "sponsors_checked": 39240,
- "boards": 1949,
- "jobs": 11535,
- "companies": 1216,
+ "sponsors_checked": 42255,
+ "boards": 2111,
+ "jobs": 12476,
+ "companies": 1314,
  "quality": {
-  "hidden_by_pay": 21,
-  "hidden_by_employer_profile": 13,
+  "hidden_by_pay": 37,
+  "hidden_by_employer_profile": 27,
   "review": [
    {
     "phrase": "product owner",
@@ -35,8 +35,15 @@
    },
    {
     "phrase": "supervisor",
-    "jobs": 2,
+    "jobs": 11,
     "example": "Supervisor",
+    "company": "Aramark",
+    "auto": true
+   },
+   {
+    "phrase": "front of house service assistant",
+    "jobs": 1,
+    "example": "Front of House Service Assistant",
     "company": "Aramark",
     "auto": true
    },
@@ -104,6 +111,13 @@
     "auto": true
    },
    {
+    "phrase": "account payable assistant",
+    "jobs": 1,
+    "example": "Accounts Payable Assistant - Property (FTC)",
+    "company": "Mountain Warehouse",
+    "auto": true
+   },
+   {
     "phrase": "account assistant",
     "jobs": 1,
     "example": "Accounts Assistant (3 month fixed term contract)",
@@ -115,6 +129,27 @@
     "jobs": 1,
     "example": "Stockroom Supervisor",
     "company": "Reiss",
+    "auto": true
+   },
+   {
+    "phrase": "operation supervisor",
+    "jobs": 1,
+    "example": "Operations Supervisor",
+    "company": "Space NK",
+    "auto": true
+   },
+   {
+    "phrase": "luxury skincare advisor",
+    "jobs": 1,
+    "example": "Luxury Skincare Advisor",
+    "company": "Space NK",
+    "auto": true
+   },
+   {
+    "phrase": "online assistant",
+    "jobs": 1,
+    "example": "Online Assistant",
+    "company": "J Sainsbury",
     "auto": true
    },
    {
@@ -147,9 +182,16 @@
    },
    {
     "phrase": "sale associate",
-    "jobs": 15,
+    "jobs": 16,
     "example": "Sales  Associate (Full time) | Heathrow T5",
     "company": "Reiss",
+    "auto": false
+   },
+   {
+    "phrase": "assistant manager",
+    "jobs": 11,
+    "example": "Assistant Manager",
+    "company": "Aramark",
     "auto": false
    },
    {
@@ -164,13 +206,6 @@
     "jobs": 8,
     "example": "UK Team Leader (ANIMAL)",
     "company": "Mountain Warehouse",
-    "auto": false
-   },
-   {
-    "phrase": "assistant manager",
-    "jobs": 7,
-    "example": "Assistant Manager",
-    "company": "Aramark",
     "auto": false
    },
    {
@@ -204,15 +239,22 @@
    {
     "phrase": "floor manager",
     "jobs": 5,
-    "example": "FLOOR MANAGER (40 Hours, Bristol Cribbs)",
+    "example": "FLOOR MANAGER ( 40 hours, Belfast)",
     "company": "Mango Fly",
     "auto": false
    },
    {
-    "phrase": "administrator",
+    "phrase": "supply nursery educator",
+    "jobs": 5,
+    "example": "Supply Nursery Educator",
+    "company": "Storal Learning",
+    "auto": false
+   },
+   {
+    "phrase": "deputy nursery manager",
     "jobs": 4,
-    "example": "Administrator",
-    "company": "Aramark",
+    "example": "Deputy Nursery Manager",
+    "company": "Storal Learning",
     "auto": false
    },
    {
@@ -230,6 +272,13 @@
     "auto": false
    },
    {
+    "phrase": "administrator",
+    "jobs": 3,
+    "example": "Administrator",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
     "phrase": "area manager",
     "jobs": 3,
     "example": "Area Manager",
@@ -244,6 +293,13 @@
     "auto": false
    },
    {
+    "phrase": "experience specialist",
+    "jobs": 3,
+    "example": "Experience Specialist - Guinness Open Gate Brewery London (Admissions)",
+    "company": "Diageo",
+    "auto": false
+   },
+   {
     "phrase": "training delivery instructor",
     "jobs": 3,
     "example": "Training Delivery Instructor - Control Systems",
@@ -251,10 +307,10 @@
     "auto": false
    },
    {
-    "phrase": "experience specialist",
+    "phrase": "nursery lunchtime practitioner",
     "jobs": 3,
-    "example": "Experience Specialist - Guinness Open Gate Brewery London (Admissions)",
-    "company": "Diageo",
+    "example": "Nursery Lunchtime Practitioner",
+    "company": "Storal Learning",
     "auto": false
    },
    {
@@ -265,59 +321,17 @@
     "auto": false
    },
    {
-    "phrase": "training manager",
+    "phrase": "retail operator",
     "jobs": 2,
-    "example": "Training Manager",
+    "example": "Retail Operator",
     "company": "Aramark",
     "auto": false
    },
    {
-    "phrase": "marketing tech principal",
+    "phrase": "training manager",
     "jobs": 2,
-    "example": "Marketing Tech (Senior) Principal",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
-    "phrase": "principal",
-    "jobs": 2,
-    "example": "Principal, Financial Crime and Regulatory Compliance",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
-    "phrase": "german speaking",
-    "jobs": 2,
-    "example": "German Speaking - Private Client Stylist - Future Opportunities",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
-    "phrase": "french speaking",
-    "jobs": 2,
-    "example": "French Speaking - Private Client Stylist - Future Opportunities",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
-    "phrase": "loyalty and customer growth manager",
-    "jobs": 2,
-    "example": "Loyalty & Customer Growth Manager",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
-    "phrase": "interim sale manager",
-    "jobs": 2,
-    "example": "Interim Sales Manager (MAT Cover)",
-    "company": "Farfetch",
-    "auto": false
-   },
-   {
-    "phrase": "training support administrator",
-    "jobs": 2,
-    "example": "Training Support Administrator",
-    "company": "Capita",
+    "example": "Training Manager",
+    "company": "Aramark",
     "auto": false
    },
    {
@@ -335,6 +349,13 @@
     "auto": false
    },
    {
+    "phrase": "training support administrator",
+    "jobs": 2,
+    "example": "Training Support Administrator",
+    "company": "Capita",
+    "auto": false
+   },
+   {
     "phrase": "people partner",
     "jobs": 2,
     "example": "People Partner | Head Office (12 month fixed contract)",
@@ -346,6 +367,13 @@
     "jobs": 2,
     "example": "Regional Procurement Buyer FTC",
     "company": "Pladis (UK)",
+    "auto": false
+   },
+   {
+    "phrase": "financial planner",
+    "jobs": 2,
+    "example": "Financial Planner",
+    "company": "Quilter Business Services",
     "auto": false
    },
    {
@@ -363,23 +391,37 @@
     "auto": false
    },
    {
+    "phrase": "human resource coordinator",
+    "jobs": 1,
+    "example": "HR Coordinator",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "deputy general manager",
+    "jobs": 1,
+    "example": "Deputy General Manager",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "cafe team leader",
+    "jobs": 1,
+    "example": "Cafe Team Leader",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "maintenance technician electrical",
+    "jobs": 1,
+    "example": "Maintenance Technician Electrical",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
     "phrase": "group manager",
     "jobs": 1,
     "example": "Group Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "director data and technology",
-    "jobs": 1,
-    "example": "Director Data & Technology, International",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "transformation manager",
-    "jobs": 1,
-    "example": "Transformation Manager, International Technology",
     "company": "Aramark",
     "auto": false
    },
@@ -389,35 +431,28 @@
     "example": "Stores Lead",
     "company": "Aramark",
     "auto": false
-   },
-   {
-    "phrase": "regional operation director",
-    "jobs": 1,
-    "example": "Regional Operations Director - South East & London",
-    "company": "Aramark",
-    "auto": false
    }
   ]
  },
  "eligibility": {
-  "eligible": 2680,
-  "shortage_list": 203,
-  "unlikely": 1346,
-  "unlabelled": 7306
+  "eligible": 2790,
+  "shortage_list": 218,
+  "unlikely": 1552,
+  "unlabelled": 7916
  },
  "sources": {
-  "Ashby": 1526,
-  "BambooHR": 353,
-  "Breezy": 237,
-  "Greenhouse": 3631,
-  "Lever": 408,
-  "Oracle": 931,
-  "Personio": 77,
-  "Pinpoint": 838,
-  "Recruitee": 102,
-  "SmartRecruiters": 1076,
-  "Teamtailor": 762,
-  "Workday": 1594
+  "Ashby": 1609,
+  "BambooHR": 371,
+  "Breezy": 242,
+  "Greenhouse": 3736,
+  "Lever": 444,
+  "Oracle": 978,
+  "Personio": 81,
+  "Pinpoint": 989,
+  "Recruitee": 109,
+  "SmartRecruiters": 1109,
+  "Teamtailor": 966,
+  "Workday": 1842
  },
  "suggestions_unmatched": [
   "SLB",
@@ -468,17 +503,17 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 325
+   "jobs": 382
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 606
+   "jobs": 596
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
    "boards": 1,
-   "jobs": 40
+   "jobs": 41
   },
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
@@ -503,7 +538,7 @@
   "Spotify": {
    "sponsor": "Spotify Limited",
    "boards": 1,
-   "jobs": 40
+   "jobs": 39
   },
   "Synthesia": {
    "sponsor": "Synthesia Limited",
