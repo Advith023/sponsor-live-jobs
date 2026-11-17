@@ -195,3 +195,13 @@ def test_level_prefers_most_senior_word():
     assert level("Lead Graduate Engineer") == "Lead"
     assert level("Graduate Analyst") == "Entry"
     assert level("Data Scientist") is None
+
+
+def test_report_hides_only_that_job():
+    import apply_rules
+    rep = [{"u": "https://x.breezy.hr/p/1-sales-associate", "t": "Sales Associate", "c": "Reiss"}]
+    assert apply_rules.is_reported({"u": "https://x.breezy.hr/p/1-sales-associate/", "t": "Sales Associate", "c": "Reiss"}, rep)
+    assert not apply_rules.is_reported({"u": "https://x.breezy.hr/p/2-sales-associate", "t": "Sales Associate", "c": "Reiss"}, rep)
+    no_link = [{"u": "", "t": "Product Owner (12 month FTC)", "c": "Hiscox"}]
+    assert apply_rules.is_reported({"u": "a", "t": "Product Owner (12 month FTC)", "c": "Hiscox Underwriting"}, no_link)
+    assert not apply_rules.is_reported({"u": "b", "t": "Product Owner", "c": "Apadmi"}, no_link)

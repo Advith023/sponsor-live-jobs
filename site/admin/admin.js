@@ -120,6 +120,7 @@
     } catch { rulesFile = { sha: undefined, data: { hide: [], show: [] } }; }
     rulesFile.data.hide = rulesFile.data.hide || []; rulesFile.data.show = rulesFile.data.show || [];
     rulesFile.data.handled = rulesFile.data.handled || {};
+    rulesFile.data.hide_jobs = rulesFile.data.hide_jobs || [];
     return rulesFile.data;
   }
   async function writeRules(message) {
@@ -171,31 +172,25 @@
       const title = x.url ? Object.assign(el("a", x.title), { href: x.url, target: "_blank", rel: "noopener" }) : x.title;
       const act = el("span");
       if (!h) {
-        const inp = phraseInput(titlePhrase(x.title, x.company));
-        act.append(inp, " ", btn("Hide", () => handle(x.key, "hide", inp.value.trim()), "small"), " ",
-          btn("Ignore", () => handle(x.key, "ignore"), "small"));
+        // A report hides only this exact job (by its apply link), never similar titles
+        act.append(btn("Hide", () => handle(x, "hide"), "small"), " ", btn("Ignore", () => handle(x, "ignore"), "small"));
       } else {
-        act.append(btn("Undo", () => handle(x.key, "undo"), "small"));
+        act.append(btn("Undo", () => handle(x, "undo"), "small"));
       }
-      const status = !h ? tag("New", "warn") : h.action === "hide" ? tag(`Hidden: "${h.phrase}"`, "bad") : tag("Ignored", "ok");
+      const status = !h ? tag("New", "warn") : h.action === "hide" ? tag("Hidden", "bad") : tag("Ignored", "ok");
       body.append(row([status, title, x.company, x.date, act]));
     }
   }
-  async function handle(key, action, phrase) {
+  async function handle(x, action) {
     const d = await readRules();
-    if (action === "hide") {
-      if (!phrase) return alert("Type the title to hide first.");
-      d.handled[key] = { action, phrase };
-      if (!d.hide.includes(phrase)) d.hide.push(phrase);
-      d.show = d.show.filter((x) => x !== phrase);
-    } else if (action === "ignore") {
-      d.handled[key] = { action };
-    } else {
-      const h = d.handled[key]; delete d.handled[key];
-      if (h && h.action === "hide" && !Object.values(d.handled).some((o) => o.action === "hide" && o.phrase === h.phrase)) d.hide = d.hide.filter((x) => x !== h.phrase);
-    }
-    await writeRules(action === "undo" ? "Undo a role report decision" : `${action === "hide" ? "Hide" : "Ignore"} reported role${phrase ? ` "${phrase}"` : ""}`);
-    toast(action === "hide" ? `Saved. Jobs ending "${phrase}" leave the site in about 2 minutes.` : action === "undo" ? "Undone. Hidden jobs come back at the next refresh." : "Saved.");
+    const key = x.key;
+    const job = { u: x.url, t: x.title, c: x.company, key };
+    d.hide_jobs = d.hide_jobs.filter((o) => o.key !== key);
+    if (action === "hide") { d.handled[key] = { action }; d.hide_jobs.push(job); }
+    else if (action === "ignore") d.handled[key] = { action };
+    else delete d.handled[key];
+    await writeRules(action === "undo" ? "Undo a role report decision" : `${action === "hide" ? "Hide" : "Ignore"} reported role "${x.title}" at ${x.company}`);
+    toast(action === "hide" ? "Saved. This job leaves the site in about 2 minutes." : action === "undo" ? "Undone. The job comes back at the next refresh." : "Saved.");
     const sheet = await sheetRows().catch(() => null);
     await renderReports(sheet); loadQuality();
   }

@@ -37,6 +37,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import apply_rules  # noqa: E402
 import skills  # noqa: E402
 import eligibility  # noqa: E402
 
@@ -1279,6 +1280,12 @@ def run():
         for b in c.get("boards", []):
             if (b["ats"], b["token"]) not in dead_keys:
                 b.pop("empty", None)
+
+    # Roles visitors reported and the owner hid: that exact job only, matched by apply link
+    reported = apply_rules.load_reported()
+    for j in jobs:
+        if reported and apply_rules.is_reported(j, reported):
+            j["el"] = "u"
 
     # Quality checks: employer profile rule and the review queue for the control centre
     auto_hidden, review = eligibility.quality_pass(jobs, reports=load_reports())
