@@ -99,6 +99,9 @@
   },
   "11/17/2026 23:40:23|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Leeds---Trinity-Leeds-West-Yorkshire-LS1-5AY/Front-of-House-Nandoca_R0000054405": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:21|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Walsall-Walsall-West-Midlands-WS2-8LR/Back-of-House-Nandoca_R0000054407": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -287,6 +290,12 @@
    "t": "Front of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:40:23|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Leeds---Trinity-Leeds-West-Yorkshire-LS1-5AY/Front-of-House-Nandoca_R0000054405"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Walsall-Walsall-West-Midlands-WS2-8LR/Back-of-House-Nandoca_R0000054407",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:21|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Walsall-Walsall-West-Midlands-WS2-8LR/Back-of-House-Nandoca_R0000054407"
   }
  ]
 }
