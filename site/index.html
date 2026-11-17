@@ -26,10 +26,11 @@
     <h1 id="headline">Live UK jobs at companies that can sponsor visas</h1>
     <p class="lede" id="intro">Every role comes straight from the company's own careers page, and every company is on the Home Office register of licensed Skilled Worker sponsors. No reposts, no ghost listings.</p>
     <div class="search">
-      <input id="q" type="search" placeholder="Job title, company or skill, e.g. data analyst, Monzo" autocomplete="off" aria-label="Search jobs">
+      <input id="q" type="search" placeholder="What job? e.g. data analyst jobs in London, or Monzo" autocomplete="off" aria-label="Search jobs">
       <input id="loc" type="search" placeholder="Location, e.g. London" autocomplete="off" aria-label="Location" list="locList">
       <datalist id="locList"></datalist>
     </div>
+    <p class="qhint" id="qHint" hidden></p>
     <div class="stats" id="stats">Loading live jobs…</div>
     <div id="ticker" class="ticker" hidden><span id="tickerText"></span></div>
     <button id="refreshBtn" class="link" style="font-size:.85rem;margin-top:.25rem;color:#fff" hidden>↻ Refresh jobs</button>

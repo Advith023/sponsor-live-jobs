@@ -20,6 +20,59 @@
   if (cfg.featureContactUrl) { $("#featureBox").hidden = false; $("#featureLink").href = cfg.featureContactUrl; }
 
   const norm = (s) => (s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "");
+  // ---------- plain-English search
+  // "data analyst jobs in London" -> role words "data analyst", place "London".
+  // Filler words are dropped, plurals and everyday job names are understood,
+  // and a place at the end (or after "in"/"near") becomes the location.
+  const words = (s) => " " + norm(s).replace(/[^a-z0-9+#]+/g, " ").trim() + " ";
+  const STOP = new Set("job jobs role roles position positions vacancy vacancies opening openings opportunity opportunities career careers work working hiring find show me give looking look search want need get for a an the i im my any some all in near around at within based from to and or with please uk united kingdom britain england anywhere nearby".split(" "));
+  const SYN = [
+    ["lawyer lawyers solicitor solicitors legal attorney counsel barrister paralegal law", ["lawyer", "solicitor", "legal", "=counsel", "paralegal", "attorney", "barrister"]],
+    ["developer developers programmer programmers coder coders", ["developer", "engineer", "programmer", "software"]],
+    ["accountant accountants accounting accounts bookkeeper bookkeeping", ["accountant", "accounting", "accounts", "bookkeep", "finance"]],
+    ["hr", ["hr", "human resources", "people partner", "people operations", "people advisor"]],
+    ["recruiter recruiters recruitment", ["recruit", "talent acquisition", "talent partner"]],
+    ["admin administrator secretary receptionist pa", ["admin", "administrator", "administrative", "secretary", "receptionist", "office"]],
+    ["teacher teachers teaching tutor lecturer", ["teacher", "teaching", "tutor", "lecturer"]],
+    ["nurse nurses nursing", ["=nurse", "nursing"]],
+    ["doctor doctors physician gp", ["doctor", "physician", "gp", "clinical fellow", "consultant"]],
+    ["designer designers", ["designer", "design", "ux", "ui"]],
+    ["marketer marketing", ["marketing", "marketer", "brand", "growth"]],
+    ["it", ["it", "technology", "service desk", "infrastructure", "support engineer"]],
+  ];
+  // A word matches the start of a word ("analyst" finds "analysts"); short words
+  // and ones marked "=" must match the whole word ("hr" never finds "hrs").
+  const has = (field, a) => a[0] === "=" ? field.includes(` ${a.slice(1)} `) || field.includes(` ${a.slice(1)}s `)
+    : a.length <= 3 ? field.includes(` ${a} `) : field.includes(" " + a);
+  const synOf = (w) => { for (const [keys, alts] of SYN) if (keys.split(" ").includes(w)) return alts; return null; };
+  let PLACES = new Set();
+  function parseQuery(q) {
+    let toks = norm(q).replace(/[^a-z0-9+#&]+/g, " ").trim().split(" ").filter(Boolean);
+    let place = "", remote = false;
+    // explicit "in X" / "near X": take X if it is a known place
+    const at = toks.findLastIndex((t) => ["in", "near", "around", "within"].includes(t));
+    if (at >= 0 && at < toks.length - 1) {
+      const rest = toks.slice(at + 1).filter((t) => !STOP.has(t)).join(" ");
+      if (PLACES.has(rest) || rest === "remote") { place = rest; toks = toks.slice(0, at); }
+    }
+    // otherwise a known place at the end, up to 3 words ("milton keynes")
+    if (!place) for (let n = 3; n >= 1 && !place; n--) {
+      const tail = toks.slice(-n).join(" ");
+      if (toks.length > n && PLACES.has(tail)) { place = tail; toks = toks.slice(0, -n); }
+    }
+    if (place === "remote" || toks.includes("remote")) { remote = true; if (place === "remote") place = ""; toks = toks.filter((t) => t !== "remote"); }
+    const groups = toks.filter((t) => !STOP.has(t)).map((t) => {
+      const syn = synOf(t);
+      if (syn) return syn;
+      const alts = [t];
+      if (t.length > 3 && t.endsWith("ies")) alts.push(t.slice(0, -3) + "y");
+      else if (t.length > 3 && t.endsWith("s") && !t.endsWith("ss")) alts.push(t.slice(0, -1));
+      return alts;
+    });
+    return { groups, place, remote };
+  }
+  let parsed = { groups: [], place: "", remote: false };
+
   const ago = (iso) => {
     if (!iso) return null;
     const d = (Date.now() - new Date(iso)) / 864e5;
@@ -60,23 +113,34 @@
   // ---------- filtering
   // skip: name of one filter to ignore (used for the counts shown on that filter's chips)
   function passes(j, skip) {
-    const terms = norm(state.q).split(/\s+/).filter(Boolean);
-    const lterms = norm(state.loc).split(/[\s,]+/).filter(Boolean);
+    const lterms = norm(state.loc || parsed.place).split(/[\s,]+/).filter(Boolean);
     const cutoff = state.age ? Date.now() - state.age * 864e5 : 0;
     if (!state.all && j.el === "u") return false;  // below the Skilled Worker skill level, see scripts/eligibility.py
     if (state.lv === "entry" && j.lv !== "Entry") return false;
     if (state.lv === "exp" && !j.lv) return false;  // "exp" = any role with a level (Senior/Lead/Director)
     if (state.lv === "exp" && j.lv === "Entry") return false;
-    if (state.remote && !j.r) return false;
+    if ((state.remote || parsed.remote) && !j.r) return false;
     if (skip !== "cat" && state.cats.size && !state.cats.has(j.cat)) return false;
     if (skip !== "rg" && state.rg.size && !j._rg.some((r) => state.rg.has(r))) return false;
     if (skip !== "src" && state.src.size && !state.src.has(j.src)) return false;
     if (cutoff && (!j._t || j._t < cutoff)) return false;
-    if (terms.length && !terms.every((t) => j._hay.includes(t))) return false;
-    if (lterms.length && !lterms.every((t) => j._loc.includes(t))) return false;
+    if (parsed.groups.length && !parsed.groups.every((alts) => alts.some((a) => has(parsed.titleOnly ? j._tw : j._hay, a)))) return false;
+    if (lterms.length && !lterms.every((t) => j._loc.includes(" " + t)) && !(parsed.place && !state.loc && j._rg.some((r) => norm(r) === parsed.place))) return false;
     return true;
   }
   function apply() {
+    parsed = parseQuery(state.q);
+    // Prefer job titles and company names: "data scientist" means the title, not "Data" in a
+    // department name. Only if nothing fits are category, team and job type searched too.
+    parsed.titleOnly = parsed.groups.length > 0 && jobs.some((j) => parsed.groups.every((alts) => alts.some((a) => has(j._tw, a))));
+    const hint = $("#qHint");
+    if (hint) {
+      const role = parsed.groups.map((g) => g[0].replace("=", "")).join(" ");
+      const where = state.loc ? "" : parsed.place ? parsed.place.replace(/\b\w/g, (c) => c.toUpperCase()) : "";
+      const changed = state.q.trim() && norm(state.q).trim() !== role;
+      hint.hidden = !changed;
+      if (changed) hint.textContent = `Showing ${role ? `"${role}" roles` : "all roles"}${where ? ` in ${where}` : ""}${parsed.remote ? ", remote" : ""}`;
+    }
     filtered = jobs.filter((j) => passes(j));
     const by = {
       new: (a, b) => (b._t || 0) - (a._t || 0),
@@ -414,11 +478,14 @@
         jobs = (d.jobs || []).map((j) => ({
           ...j,
           _t: j.p ? Date.parse(j.p) : 0,
-          _hay: norm(`${j.t} ${j.c} ${j.sp} ${j.cat} ${j.d || ""} ${j.ty || ""}`),
-          _loc: norm(`${j.l} ${j.r ? "remote" : ""}`),
+          _tw: words(`${j.t} ${j.c} ${j.sp}`),  // title and company
+          _hay: words(`${j.t} ${j.c} ${j.sp} ${j.cat} ${j.d || ""} ${j.ty || ""}`),
+          _loc: words(`${j.l} ${j.r ? "remote" : ""}`),
           _rg: j.rg && j.rg.length ? j.rg : ["UK (other / unspecified)"],
         }));
         if (cv) jobs.forEach((j) => (j._m = CVMatch.score(j, cv)));
+        PLACES = new Set(REGION_ORDER.map(norm));
+        jobs.forEach((j) => j.l.split(/\s*[,\/;|]\s*/).forEach((x) => { const k = words(x).trim(); if (k && !["united kingdom", "uk", "england", "gb"].includes(k)) PLACES.add(k); }));
         const cities = {};
         jobs.forEach((j) => j.l.split(/\s*[\/;|]\s*/).forEach((x) => { const c = x.split(",")[0].trim(); if (c) cities[c] = (cities[c] || 0) + 1; }));
         $("#locList").innerHTML = Object.entries(cities).sort((a, b) => b[1] - a[1]).slice(0, 60).map(([c]) => `<option value="${c.replace(/"/g, "&quot;")}">`).join("");
