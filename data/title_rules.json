@@ -102,6 +102,9 @@
   },
   "11/17/2026 23:40:21|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Walsall-Walsall-West-Midlands-WS2-8LR/Back-of-House-Nandoca_R0000054407": {
    "action": "hide"
+  },
+  "11/17/2026 23:39:55|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Nandos-Brixton-Greater-London-SW9-9SP/Back-of-House-Nandoca_R0000054039": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -296,6 +299,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:40:21|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Walsall-Walsall-West-Midlands-WS2-8LR/Back-of-House-Nandoca_R0000054407"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Nandos-Brixton-Greater-London-SW9-9SP/Back-of-House-Nandoca_R0000054039",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:39:55|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Nandos-Brixton-Greater-London-SW9-9SP/Back-of-House-Nandoca_R0000054039"
   }
  ]
 }
