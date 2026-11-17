@@ -25,6 +25,9 @@
   },
   "11/17/2026 20:46:33|Report role: Sales Associate (Part-time) | Metrocentre | Reiss | https://reiss.breezy.hr/p/fd043ddbe58e-sales-associate-part-time-metrocentre": {
    "action": "hide"
+  },
+  "11/17/2026 20:46:35|Report role: Seasonal Sales Associate | Metro Centre | Reiss | https://reiss.breezy.hr/p/eea12bb3ce8c-seasonal-sales-associate-metro-centre": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -75,6 +78,12 @@
    "t": "Sales Associate (Part-time)",
    "c": "Metrocentre | Reiss",
    "key": "11/17/2026 20:46:33|Report role: Sales Associate (Part-time) | Metrocentre | Reiss | https://reiss.breezy.hr/p/fd043ddbe58e-sales-associate-part-time-metrocentre"
+  },
+  {
+   "u": "https://reiss.breezy.hr/p/eea12bb3ce8c-seasonal-sales-associate-metro-centre",
+   "t": "Seasonal Sales Associate",
+   "c": "Metro Centre | Reiss",
+   "key": "11/17/2026 20:46:35|Report role: Seasonal Sales Associate | Metro Centre | Reiss | https://reiss.breezy.hr/p/eea12bb3ce8c-seasonal-sales-associate-metro-centre"
   }
  ]
 }
