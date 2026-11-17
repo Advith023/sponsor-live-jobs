@@ -5,7 +5,8 @@
   "interim social media writer",
   "Head of Procurement",
   "product owner",
-  "Seasonal Sales Associate"
+  "Seasonal Sales Associate",
+  "Restaurant Marketing Associate"
  ],
  "show": [],
  "handled": {
@@ -24,6 +25,10 @@
   "11/17/2026 18:15:33|Report role: Seasonal Sales Associate | Metro Centre | Reiss | https://reiss.breezy.hr/p/eea12bb3ce8c-seasonal-sales-associate-metro-centre": {
    "action": "hide",
    "phrase": "Seasonal Sales Associate"
+  },
+  "11/17/2026 20:46:45|Report role: Restaurant Marketing Associate | Deliveroo | https://job-boards.greenhouse.io/deliveroo/jobs/8392929": {
+   "action": "hide",
+   "phrase": "Restaurant Marketing Associate"
   }
  }
 }
