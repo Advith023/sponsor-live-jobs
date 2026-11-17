@@ -186,3 +186,12 @@ def test_oracle_without_region_and_closest():
     assert b == {"ats": "oracle", "token": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001"}
     sp = {fj.norm_name(n): {"name": n} for n in ["J Sainsbury PLC", "Sainsbury's Bank PLC", "Monzo Bank Limited"]}
     assert "J Sainsbury PLC" in fj.closest_sponsors("Sainsbury's Supermarkets", sp)
+
+
+def test_level_prefers_most_senior_word():
+    from skills import level
+    assert level("Senior Associate") == "Senior"
+    assert level("Associate Director, Finance") == "Director"
+    assert level("Lead Graduate Engineer") == "Lead"
+    assert level("Graduate Analyst") == "Entry"
+    assert level("Data Scientist") is None
