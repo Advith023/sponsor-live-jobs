@@ -87,6 +87,9 @@
   },
   "11/17/2026 23:40:33|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Slough---High-Street-Slough-Berkshire-SL1-1JU/Back-of-House-Nandoca_R0000054396": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:30|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bradford---Centenary-Square-Bradford-West-Yorkshire-BD1-1SD/Back-of-House-Nandoca_R0000054399": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -251,6 +254,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:40:33|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Slough---High-Street-Slough-Berkshire-SL1-1JU/Back-of-House-Nandoca_R0000054396"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bradford---Centenary-Square-Bradford-West-Yorkshire-BD1-1SD/Back-of-House-Nandoca_R0000054399",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:30|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bradford---Centenary-Square-Bradford-West-Yorkshire-BD1-1SD/Back-of-House-Nandoca_R0000054399"
   }
  ]
 }
