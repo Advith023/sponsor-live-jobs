@@ -105,6 +105,9 @@
   },
   "11/17/2026 23:39:55|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Nandos-Brixton-Greater-London-SW9-9SP/Back-of-House-Nandoca_R0000054039": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:18|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bristol---Cribbs-Venue-Bristol-Gloucestershire-BS10-7SR/Back-of-House-Nandoca_R0000054401": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -305,6 +308,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:39:55|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Nandos-Brixton-Greater-London-SW9-9SP/Back-of-House-Nandoca_R0000054039"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bristol---Cribbs-Venue-Bristol-Gloucestershire-BS10-7SR/Back-of-House-Nandoca_R0000054401",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:18|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bristol---Cribbs-Venue-Bristol-Gloucestershire-BS10-7SR/Back-of-House-Nandoca_R0000054401"
   }
  ]
 }
