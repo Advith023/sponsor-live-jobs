@@ -4,7 +4,8 @@
   "Product Owner",
   "interim social media writer",
   "Head of Procurement",
-  "product owner"
+  "product owner",
+  "Seasonal Sales Associate"
  ],
  "show": [],
  "handled": {
@@ -19,6 +20,10 @@
   "11/15/2026 15:58:10|Report role: Head of Procurement | Farfetch | https://jobs.ashbyhq.com/fcb2fa31-4415-4b05-9f1a-16a326c21432/9b486d5e-dd21-4702-8035-b2d5f2dd557b": {
    "action": "hide",
    "phrase": "Head of Procurement"
+  },
+  "11/17/2026 18:15:33|Report role: Seasonal Sales Associate | Metro Centre | Reiss | https://reiss.breezy.hr/p/eea12bb3ce8c-seasonal-sales-associate-metro-centre": {
+   "action": "hide",
+   "phrase": "Seasonal Sales Associate"
   }
  }
 }
