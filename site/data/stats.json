@@ -1,14 +1,46 @@
 {
- "generated": "2026-11-17T14:30:00.835560+00:00",
+ "generated": "2026-11-17T21:54:14.436839+00:00",
  "sponsors": 120259,
- "sponsors_checked": 42255,
- "boards": 2111,
- "jobs": 12476,
- "companies": 1314,
+ "sponsors_checked": 45307,
+ "boards": 2238,
+ "jobs": 12885,
+ "companies": 1399,
  "quality": {
-  "hidden_by_pay": 37,
-  "hidden_by_employer_profile": 27,
+  "hidden_by_pay": 41,
+  "hidden_by_employer_profile": 26,
   "review": [
+   {
+    "phrase": "back of house nandoca",
+    "jobs": 23,
+    "example": "Back of House Nandoca",
+    "company": "Nando's",
+    "auto": false,
+    "reported": 23
+   },
+   {
+    "phrase": "front of house nandoca",
+    "jobs": 9,
+    "example": "Front of House Nandoca",
+    "company": "Nando's",
+    "auto": false,
+    "reported": 9
+   },
+   {
+    "phrase": "seasonal sale associate",
+    "jobs": 2,
+    "example": "Seasonal Sales Associate",
+    "company": "Reiss",
+    "auto": false,
+    "reported": 2
+   },
+   {
+    "phrase": "sale associate",
+    "jobs": 2,
+    "example": "Sales  Associate (Full time) | Heathrow T5",
+    "company": "Reiss",
+    "auto": false,
+    "reported": 2
+   },
    {
     "phrase": "product owner",
     "jobs": 1,
@@ -28,16 +60,39 @@
    {
     "phrase": "head of procurement",
     "jobs": 1,
-    "example": "Head of Procurement",
-    "company": "Farfetch",
+    "example": "Head of Procurement - Packaging, UK&I",
+    "company": "Pladis (UK)",
+    "auto": false,
+    "reported": 1
+   },
+   {
+    "phrase": "restaurant marketing associate",
+    "jobs": 1,
+    "example": "Restaurant Marketing Associate",
+    "company": "Deliveroo",
+    "auto": false,
+    "reported": 1
+   },
+   {
+    "phrase": "trainee recruitment consultant",
+    "jobs": 1,
+    "example": "Trainee Recruitment Consultant",
+    "company": "Amoria Bond",
     "auto": false,
     "reported": 1
    },
    {
     "phrase": "supervisor",
-    "jobs": 11,
+    "jobs": 10,
     "example": "Supervisor",
     "company": "Aramark",
+    "auto": true
+   },
+   {
+    "phrase": "account payable assistant",
+    "jobs": 2,
+    "example": "Accounts Payable Assistant - Property (FTC)",
+    "company": "Mountain Warehouse",
     "auto": true
    },
    {
@@ -111,13 +166,6 @@
     "auto": true
    },
    {
-    "phrase": "account payable assistant",
-    "jobs": 1,
-    "example": "Accounts Payable Assistant - Property (FTC)",
-    "company": "Mountain Warehouse",
-    "auto": true
-   },
-   {
     "phrase": "account assistant",
     "jobs": 1,
     "example": "Accounts Assistant (3 month fixed term contract)",
@@ -146,20 +194,6 @@
     "auto": true
    },
    {
-    "phrase": "online assistant",
-    "jobs": 1,
-    "example": "Online Assistant",
-    "company": "J Sainsbury",
-    "auto": true
-   },
-   {
-    "phrase": "seasonal sale associate",
-    "jobs": 41,
-    "example": "Seasonal Sales Associate",
-    "company": "Reiss",
-    "auto": false
-   },
-   {
     "phrase": "register your interest",
     "jobs": 31,
     "example": "Register Your Interest",
@@ -169,7 +203,7 @@
    {
     "phrase": "multifunctional sale associate",
     "jobs": 22,
-    "example": "MULTIFUNCTIONAL SALES ASSOCIATE (20 hours, Fix Term, Bristol Cribbs)",
+    "example": "MULTIFUNCTIONAL SALES ASSOCIATE (15 hours, Fix Term, Basingstoke)",
     "company": "Mango Fly",
     "auto": false
    },
@@ -178,13 +212,6 @@
     "jobs": 17,
     "example": "Customer Experience Manager",
     "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "sale associate",
-    "jobs": 16,
-    "example": "Sales  Associate (Full time) | Heathrow T5",
-    "company": "Reiss",
     "auto": false
    },
    {
@@ -293,17 +320,17 @@
     "auto": false
    },
    {
-    "phrase": "experience specialist",
-    "jobs": 3,
-    "example": "Experience Specialist - Guinness Open Gate Brewery London (Admissions)",
-    "company": "Diageo",
-    "auto": false
-   },
-   {
     "phrase": "training delivery instructor",
     "jobs": 3,
     "example": "Training Delivery Instructor - Control Systems",
     "company": "Capita",
+    "auto": false
+   },
+   {
+    "phrase": "experience specialist",
+    "jobs": 3,
+    "example": "Experience Specialist - Guinness Open Gate Brewery London (Admissions)",
+    "company": "Diageo",
     "auto": false
    },
    {
@@ -335,6 +362,20 @@
     "auto": false
    },
    {
+    "phrase": "human resource people partner",
+    "jobs": 2,
+    "example": "HR People Partner - FTC (12 month maternity cover)",
+    "company": "InPost",
+    "auto": false
+   },
+   {
+    "phrase": "training support administrator",
+    "jobs": 2,
+    "example": "Training Support Administrator",
+    "company": "Capita",
+    "auto": false
+   },
+   {
     "phrase": "operational technology lead",
     "jobs": 2,
     "example": "Operational Technology Lead",
@@ -349,13 +390,6 @@
     "auto": false
    },
    {
-    "phrase": "training support administrator",
-    "jobs": 2,
-    "example": "Training Support Administrator",
-    "company": "Capita",
-    "auto": false
-   },
-   {
     "phrase": "people partner",
     "jobs": 2,
     "example": "People Partner | Head Office (12 month fixed contract)",
@@ -367,13 +401,6 @@
     "jobs": 2,
     "example": "Regional Procurement Buyer FTC",
     "company": "Pladis (UK)",
-    "auto": false
-   },
-   {
-    "phrase": "financial planner",
-    "jobs": 2,
-    "example": "Financial Planner",
-    "company": "Quilter Business Services",
     "auto": false
    },
    {
@@ -435,24 +462,24 @@
   ]
  },
  "eligibility": {
-  "eligible": 2790,
-  "shortage_list": 218,
-  "unlikely": 1552,
-  "unlabelled": 7916
+  "eligible": 2902,
+  "shortage_list": 231,
+  "unlikely": 1546,
+  "unlabelled": 8206
  },
  "sources": {
-  "Ashby": 1609,
-  "BambooHR": 371,
-  "Breezy": 242,
-  "Greenhouse": 3736,
-  "Lever": 444,
-  "Oracle": 978,
-  "Personio": 81,
-  "Pinpoint": 989,
-  "Recruitee": 109,
-  "SmartRecruiters": 1109,
-  "Teamtailor": 966,
-  "Workday": 1842
+  "Ashby": 1701,
+  "BambooHR": 391,
+  "Breezy": 244,
+  "Greenhouse": 3821,
+  "Lever": 459,
+  "Oracle": 967,
+  "Personio": 94,
+  "Pinpoint": 1016,
+  "Recruitee": 110,
+  "SmartRecruiters": 1154,
+  "Teamtailor": 1032,
+  "Workday": 1896
  },
  "suggestions_unmatched": [
   "SLB",
@@ -488,7 +515,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 129
+   "jobs": 131
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -503,12 +530,12 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 382
+   "jobs": 374
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 596
+   "jobs": 593
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
@@ -518,7 +545,7 @@
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 51
+   "jobs": 50
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
