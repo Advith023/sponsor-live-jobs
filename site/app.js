@@ -98,10 +98,19 @@
   const TIP_U = "The job title matches an occupation that is below the Skilled Worker skill level, so this role is unlikely to be sponsored. This is a guide, not advice: the employer decides.";
   function card(j) {
     const n = tpl.cloneNode(true);
+    const li = n.querySelector(".job"); if (li) { li.dataset.co = j.c; li.dataset.title = j.t; }
     const a = n.querySelector(".title");
     a.textContent = j.t; a.href = j.u;
     n.querySelector(".apply").href = j.u;
     n.querySelector(".co").textContent = j.c;
+    const shareBtn = n.querySelector(".share");
+    if (shareBtn) shareBtn.onclick = async () => {
+      const text = `${j.t} at ${j.c} - visa sponsorship available`;
+      const url = j.u;
+      gc("share-click");
+      if (navigator.share) { try { await navigator.share({ title: text, url }); } catch {} }
+      else { try { await navigator.clipboard.writeText(text + "\n" + url); shareBtn.textContent = "Copied!"; setTimeout(() => { shareBtn.textContent = "Share"; }, 2000); } catch {} }
+    };
     const m = n.querySelector(".meta");
     const add = (txt, cls) => { if (!txt) return; const s = document.createElement("span"); s.textContent = txt; if (cls) s.className = cls; m.appendChild(s); };
     add("📍 " + j.l);
@@ -203,7 +212,7 @@
   const gc = (path) => { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, event: true }); } catch {} };
   document.addEventListener("click", (e) => {
     const a = e.target.closest("a"); if (!a) return;
-    if (a.matches(".apply, .title")) gc("apply-click");
+    if (a.matches(".apply, .title")) { gc("apply-click"); const li = a.closest(".job"); if (li) gc("apply/" + (li.dataset.co || "unknown") + "/" + (li.dataset.title || "unknown")); }
     else if (a.matches(".track")) gc("track-click");
   });
 
