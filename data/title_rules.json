@@ -93,6 +93,9 @@
   },
   "11/17/2026 23:40:26|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Leeds---Cardigan-Fields-Leeds-West-Yorkshire-LS4-2DG/Front-of-House-Nandoca_R0000054404": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:24|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Leeds---Cardigan-Fields-Leeds-West-Yorkshire-LS4-2DG/Back-of-House-Nandoca_R0000054402": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -269,6 +272,12 @@
    "t": "Front of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:40:26|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Leeds---Cardigan-Fields-Leeds-West-Yorkshire-LS4-2DG/Front-of-House-Nandoca_R0000054404"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Leeds---Cardigan-Fields-Leeds-West-Yorkshire-LS4-2DG/Back-of-House-Nandoca_R0000054402",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:24|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Leeds---Cardigan-Fields-Leeds-West-Yorkshire-LS4-2DG/Back-of-House-Nandoca_R0000054402"
   }
  ]
 }
