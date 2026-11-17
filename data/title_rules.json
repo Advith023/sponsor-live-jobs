@@ -19,6 +19,9 @@
   },
   "11/17/2026 18:15:37|Report role: Sales Associate (Part-time) | Metrocentre | Reiss | https://reiss.breezy.hr/p/fd043ddbe58e-sales-associate-part-time-metrocentre": {
    "action": "hide"
+  },
+  "11/17/2026 21:01:25|Report role: Trainee Recruitment Consultant | Amoria Bond | https://job-boards.eu.greenhouse.io/amoriabond/jobs/5035295101": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -57,6 +60,12 @@
    "t": "Sales Associate (Part-time)",
    "c": "Metrocentre | Reiss",
    "key": "11/17/2026 18:15:37|Report role: Sales Associate (Part-time) | Metrocentre | Reiss | https://reiss.breezy.hr/p/fd043ddbe58e-sales-associate-part-time-metrocentre"
+  },
+  {
+   "u": "https://job-boards.eu.greenhouse.io/amoriabond/jobs/5035295101",
+   "t": "Trainee Recruitment Consultant",
+   "c": "Amoria Bond",
+   "key": "11/17/2026 21:01:25|Report role: Trainee Recruitment Consultant | Amoria Bond | https://job-boards.eu.greenhouse.io/amoriabond/jobs/5035295101"
   }
  ]
 }
