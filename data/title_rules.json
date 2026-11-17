@@ -111,6 +111,9 @@
   },
   "11/17/2026 23:40:17|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Doncaster-York-Road-Newcomen-Road-Doncaster-South-Yorkshire-DN5-8AS/Back-of-House-Nandoca_R0000054409": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:13|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Berners-Street-Fitzrovia-Greater-London-W1T-3LA/Front-of-House-Nandoca_R0000054267": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -323,6 +326,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:40:17|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Doncaster-York-Road-Newcomen-Road-Doncaster-South-Yorkshire-DN5-8AS/Back-of-House-Nandoca_R0000054409"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Berners-Street-Fitzrovia-Greater-London-W1T-3LA/Front-of-House-Nandoca_R0000054267",
+   "t": "Front of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:13|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Berners-Street-Fitzrovia-Greater-London-W1T-3LA/Front-of-House-Nandoca_R0000054267"
   }
  ]
 }
