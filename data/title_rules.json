@@ -33,6 +33,9 @@
   },
   "11/17/2026 20:46:35|Report role: Seasonal Sales Associate | Metro Centre | Reiss | https://reiss.breezy.hr/p/eea12bb3ce8c-seasonal-sales-associate-metro-centre": {
    "action": "hide"
+  },
+  "11/17/2026 23:41:14|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Tooting-Tooting-Greater-London-SW17-7EW/Back-of-House-Nandoca_R0000054361": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -89,6 +92,12 @@
    "t": "Seasonal Sales Associate",
    "c": "Metro Centre | Reiss",
    "key": "11/17/2026 20:46:35|Report role: Seasonal Sales Associate | Metro Centre | Reiss | https://reiss.breezy.hr/p/eea12bb3ce8c-seasonal-sales-associate-metro-centre"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Tooting-Tooting-Greater-London-SW17-7EW/Back-of-House-Nandoca_R0000054361",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:41:14|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Tooting-Tooting-Greater-London-SW17-7EW/Back-of-House-Nandoca_R0000054361"
   }
  ]
 }
