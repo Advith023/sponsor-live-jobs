@@ -525,17 +525,28 @@
     if (period === "day") start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     else if (period === "week") { start = new Date(now); start.setDate(start.getDate() - 7); }
     else { start = new Date(now); start.setDate(start.getDate() - 30); }
-    const sf = start.toISOString().slice(0, 10);
-    const ef = now.toISOString().slice(0, 10);
+    const sf = start.toISOString().slice(0, 19) + "Z";
+    const ef = now.toISOString().slice(0, 19) + "Z";
     try {
-      const data = await gcFetch(`/stats/hits?start=${sf}&end=${ef}&limit=500&filter=apply%2F`);
-      const paths = (data.paths || []).filter(p => p.path && p.path.startsWith("apply/") && p.path !== "apply-click");
-      // aggregate counts
-      const jobs = paths.map(p => {
-        const parts = p.path.replace(/^apply\//, "").split("/");
+      // GoatCounter /stats/hits has no filter param; fetch pages and paginate with exclude_paths
+      let allHits = [], excludeIds = [], hasMore = true;
+      while (hasMore && excludeIds.length < 500) {
+        const exc = excludeIds.length ? "&exclude_paths=" + excludeIds.join(",") : "";
+        const data = await gcFetch(`/stats/hits?start=${sf}&end=${ef}&limit=100${exc}`);
+        const hits = data.hits || [];
+        for (const h of hits) {
+          if (h.path && h.path.startsWith("apply/") && h.path !== "apply/") allHits.push(h);
+          excludeIds.push(h.path_id);
+        }
+        hasMore = data.more && hits.length > 0;
+      }
+
+      // parse apply/Company/Title paths
+      const jobs = allHits.map(h => {
+        const parts = h.path.replace(/^apply\//, "").split("/");
         const company = decodeURIComponent(parts[0] || "");
         const title = decodeURIComponent(parts.slice(1).join("/") || "");
-        return { company, title, count: p.count || 0 };
+        return { company, title, count: h.count || 0 };
       }).sort((a, b) => b.count - a.count);
 
       // summary stats
