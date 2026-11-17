@@ -63,6 +63,9 @@
   },
   "11/17/2026 23:41:00|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Brentwood-Brentwood-Essex-CM14-4RR/Front-of-House-Nandoca_R0000054382": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:59|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Whiteley-Fareham-Hampshire-PO15-7FD/Back-of-House-Nandoca_R0000054384": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -179,6 +182,12 @@
    "t": "Front of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:41:00|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Brentwood-Brentwood-Essex-CM14-4RR/Front-of-House-Nandoca_R0000054382"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Whiteley-Fareham-Hampshire-PO15-7FD/Back-of-House-Nandoca_R0000054384",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:59|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Whiteley-Fareham-Hampshire-PO15-7FD/Back-of-House-Nandoca_R0000054384"
   }
  ]
 }
