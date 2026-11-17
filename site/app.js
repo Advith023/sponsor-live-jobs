@@ -3,7 +3,7 @@
   const cfg = window.SPONSORLIVE_CONFIG || {};
   const $ = (s) => document.querySelector(s);
   const PAGE = 40;
-  const state = { q: "", loc: "", age: 0, remote: false, all: false, cats: new Set(), rg: new Set(), src: new Set(), sort: "new", shown: PAGE };
+  const state = { q: "", loc: "", age: 0, remote: false, all: false, lv: "", cats: new Set(), rg: new Set(), src: new Set(), sort: "new", shown: PAGE };
   let cv = null; // in-memory only, never stored
   let jobs = [], filtered = [];
 
@@ -36,6 +36,7 @@
     state.q = p.get("q") || ""; state.loc = p.get("loc") || "";
     state.age = +p.get("age") || 0; state.remote = p.get("remote") === "1"; state.all = p.get("all") === "1";
     state.sort = p.get("sort") || "new";
+    state.lv = p.get("lv") || "";
     state.cats = new Set((p.get("cat") || "").split("|").filter(Boolean));
     state.rg = new Set((p.get("rg") || "").split("|").filter(Boolean));
     state.src = new Set((p.get("src") || "").split("|").filter(Boolean));
@@ -49,6 +50,7 @@
     if (state.remote) p.set("remote", "1");
     if (state.all) p.set("all", "1");
     if (state.sort !== "new") p.set("sort", state.sort);
+    if (state.lv) p.set("lv", state.lv);
     if (state.cats.size) p.set("cat", [...state.cats].join("|"));
     if (state.rg.size) p.set("rg", [...state.rg].join("|"));
     if (state.src.size) p.set("src", [...state.src].join("|"));
@@ -62,6 +64,9 @@
     const lterms = norm(state.loc).split(/[\s,]+/).filter(Boolean);
     const cutoff = state.age ? Date.now() - state.age * 864e5 : 0;
     if (!state.all && j.el === "u") return false;  // below the Skilled Worker skill level, see scripts/eligibility.py
+    if (state.lv === "entry" && j.lv !== "Entry") return false;
+    if (state.lv === "exp" && !j.lv) return false;  // "exp" = any role with a level (Senior/Lead/Director)
+    if (state.lv === "exp" && j.lv === "Entry") return false;
     if (state.remote && !j.r) return false;
     if (skip !== "cat" && state.cats.size && !state.cats.has(j.cat)) return false;
     if (skip !== "rg" && state.rg.size && !j._rg.some((r) => state.rg.has(r))) return false;
@@ -123,6 +128,8 @@
     if (j.ty) add(j.ty, "tag");
     if (j.s) add(j.s, "tag");
     add(j.cat, "tag");
+    if (j.lv === "Entry") add("Entry level", "tag");
+    else if (j.lv) add(j.lv + " level", "tag");
     if (j.el === "s") add("Shortage list role", "tag info");
     if (j.el === "u") add("Unlikely to qualify", "tag warn");
     add("via " + j.src);
@@ -375,9 +382,13 @@
     const b = e.target.closest("button"); if (!b) return;
     state.age = +b.dataset.v; syncControls(); apply();
   });
+  $("#lvl").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.lv = b.dataset.v; syncControls(); apply();
+  });
   $("#moreBtn").addEventListener("click", () => { state.shown += PAGE; render(); });
   $("#reset").addEventListener("click", () => {
-    Object.assign(state, { q: "", loc: "", age: 0, remote: false, all: false, sort: cv ? "match" : "new" }); state.cats.clear(); state.rg.clear(); state.src.clear();
+    Object.assign(state, { q: "", loc: "", age: 0, remote: false, all: false, sort: cv ? "match" : "new", lv: "" }); state.cats.clear(); state.rg.clear(); state.src.clear();
     syncControls(); apply();
   });
   $("#share").addEventListener("click", async () => {
@@ -390,6 +401,7 @@
     $("#q").value = state.q; $("#loc").value = state.loc;
     $("#remote").checked = state.remote; $("#showAll").checked = state.all; $("#sort").value = state.sort;
     document.querySelectorAll("#age button").forEach((b) => b.classList.toggle("on", +b.dataset.v === state.age));
+    document.querySelectorAll("#lvl button").forEach((b) => b.classList.toggle("on", b.dataset.v === state.lv));
   }
 
   // ---------- load
