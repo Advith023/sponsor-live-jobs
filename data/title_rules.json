@@ -42,6 +42,9 @@
   },
   "11/17/2026 23:41:12|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bluewater---Winter-Garden-Greenhithe-Kent-DA9-9SF/Back-of-House-Nandoca_R0000054367": {
    "action": "hide"
+  },
+  "11/17/2026 23:41:11|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Watford---Garston-Woodside-Leisure-Park-Kingsway-North-Orbital-Road-Herfordshire-WD25-7JZ/Back-of-House-Nandoca_R0000054294": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -116,6 +119,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:41:12|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Bluewater---Winter-Garden-Greenhithe-Kent-DA9-9SF/Back-of-House-Nandoca_R0000054367"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Watford---Garston-Woodside-Leisure-Park-Kingsway-North-Orbital-Road-Herfordshire-WD25-7JZ/Back-of-House-Nandoca_R0000054294",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:41:11|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Watford---Garston-Woodside-Leisure-Park-Kingsway-North-Orbital-Road-Herfordshire-WD25-7JZ/Back-of-House-Nandoca_R0000054294"
   }
  ]
 }
