@@ -75,6 +75,9 @@
   },
   "11/17/2026 23:40:38|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Basildon---Mayflower-Retail-Park-Basildon-Essex-SS14-3HZ/Front-of-House-Nandoca_R0000054390": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:31|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Southampton---WQ-Shopping-Southampton-Hampshire-SO15-1QF/Back-of-House-Nandoca_R0000054375": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -215,6 +218,12 @@
    "t": "Front of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:40:38|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Basildon---Mayflower-Retail-Park-Basildon-Essex-SS14-3HZ/Front-of-House-Nandoca_R0000054390"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Southampton---WQ-Shopping-Southampton-Hampshire-SO15-1QF/Back-of-House-Nandoca_R0000054375",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:31|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Southampton---WQ-Shopping-Southampton-Hampshire-SO15-1QF/Back-of-House-Nandoca_R0000054375"
   }
  ]
 }
