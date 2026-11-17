@@ -117,6 +117,9 @@
   },
   "11/17/2026 23:40:11|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Cardiff---Old-Brewery-Quarter-Cardiff-Cardiff-CF10-1FG/Back-of-House-Nandoca_R0000054021": {
    "action": "hide"
+  },
+  "11/17/2026 23:40:09|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Wednesbury---Junction-9-Wednesbury-West-Midlands-WS10-9QY/Back-of-House-Nandoca_R0000054412": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -341,6 +344,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:40:11|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Cardiff---Old-Brewery-Quarter-Cardiff-Cardiff-CF10-1FG/Back-of-House-Nandoca_R0000054021"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Wednesbury---Junction-9-Wednesbury-West-Midlands-WS10-9QY/Back-of-House-Nandoca_R0000054412",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:40:09|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Wednesbury---Junction-9-Wednesbury-West-Midlands-WS10-9QY/Back-of-House-Nandoca_R0000054412"
   }
  ]
 }
