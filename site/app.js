@@ -405,24 +405,36 @@
   }
 
   // ---------- load
-  readUrl(); syncControls();
-  fetch("data/jobs.json", { cache: "no-cache" })
-    .then((r) => r.json())
-    .then((d) => {
-      jobs = (d.jobs || []).map((j) => ({
-        ...j,
-        _t: j.p ? Date.parse(j.p) : 0,
-        _hay: norm(`${j.t} ${j.c} ${j.sp} ${j.cat} ${j.d || ""} ${j.ty || ""}`),
-        _loc: norm(`${j.l} ${j.r ? "remote" : ""}`),
-        _rg: j.rg && j.rg.length ? j.rg : ["UK (other / unspecified)"],
-      }));
-      if (cv) jobs.forEach((j) => (j._m = CVMatch.score(j, cv)));
-      const cities = {};
-      jobs.forEach((j) => j.l.split(/\s*[\/;|]\s*/).forEach((x) => { const c = x.split(",")[0].trim(); if (c) cities[c] = (cities[c] || 0) + 1; }));
-      $("#locList").innerHTML = Object.entries(cities).sort((a, b) => b[1] - a[1]).slice(0, 60).map(([c]) => `<option value="${c.replace(/"/g, "&quot;")}">`).join("");
-      const upd = d.generated ? new Date(d.generated).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" }) : "pending";
-      $("#stats").textContent = `${jobs.filter((j) => j.el !== "u").length.toLocaleString("en-GB")} live roles · ${(d.companies || 0).toLocaleString("en-GB")} licensed sponsors · updated ${upd}`;
-      apply();
-    })
-    .catch(() => { $("#stats").textContent = "Couldn't load jobs right now. Please refresh."; apply(); });
+  function loadJobs() {
+    $("#stats").textContent = "Loading live jobs…";
+    const btn = $("#refreshBtn"); if (btn) { btn.hidden = true; btn.disabled = true; }
+    fetch("data/jobs.json", { cache: "no-cache" })
+      .then((r) => r.json())
+      .then((d) => {
+        jobs = (d.jobs || []).map((j) => ({
+          ...j,
+          _t: j.p ? Date.parse(j.p) : 0,
+          _hay: norm(`${j.t} ${j.c} ${j.sp} ${j.cat} ${j.d || ""} ${j.ty || ""}`),
+          _loc: norm(`${j.l} ${j.r ? "remote" : ""}`),
+          _rg: j.rg && j.rg.length ? j.rg : ["UK (other / unspecified)"],
+        }));
+        if (cv) jobs.forEach((j) => (j._m = CVMatch.score(j, cv)));
+        const cities = {};
+        jobs.forEach((j) => j.l.split(/\s*[\/;|]\s*/).forEach((x) => { const c = x.split(",")[0].trim(); if (c) cities[c] = (cities[c] || 0) + 1; }));
+        $("#locList").innerHTML = Object.entries(cities).sort((a, b) => b[1] - a[1]).slice(0, 60).map(([c]) => `<option value="${c.replace(/"/g, "&quot;")}">`).join("");
+        const upd = d.generated ? new Date(d.generated).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" }) : "pending";
+        $("#stats").textContent = `${jobs.filter((j) => j.el !== "u").length.toLocaleString("en-GB")} live roles · ${(d.companies || 0).toLocaleString("en-GB")} licensed sponsors · updated ${upd}`;
+        if (btn) { btn.hidden = false; btn.disabled = false; }
+        apply();
+      })
+      .catch(() => { $("#stats").textContent = "Couldn't load jobs right now. Please refresh."; if (btn) { btn.hidden = false; btn.disabled = false; } apply(); });
+  }
+  let _lastRefresh = 0;
+  const refreshBtn = $("#refreshBtn");
+  if (refreshBtn) refreshBtn.addEventListener("click", () => {
+    if (Date.now() - _lastRefresh < 30000) return;  // rate-limit: 30s cooldown
+    _lastRefresh = Date.now();
+    loadJobs();
+  });
+  readUrl(); syncControls(); loadJobs();
 })();
