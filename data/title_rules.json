@@ -48,6 +48,9 @@
   },
   "11/17/2026 23:41:08|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Hammersmith---Broadway-Hammersmith-Greater-London-W6-7AB/Front-of-House-Nandoca_R0000054234": {
    "action": "hide"
+  },
+  "11/17/2026 23:41:07|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Hayes-Coldharbour-Lane-Hayes-London-UB3-3EX/Back-of-House-Nandoca_R0000054378": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -134,6 +137,12 @@
    "t": "Front of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:41:08|Report role: Front of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Hammersmith---Broadway-Hammersmith-Greater-London-W6-7AB/Front-of-House-Nandoca_R0000054234"
+  },
+  {
+   "u": "https://nandos.wd3.myworkdayjobs.com/Nandos/job/Hayes-Coldharbour-Lane-Hayes-London-UB3-3EX/Back-of-House-Nandoca_R0000054378",
+   "t": "Back of House Nandoca",
+   "c": "Nando's",
+   "key": "11/17/2026 23:41:07|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Hayes-Coldharbour-Lane-Hayes-London-UB3-3EX/Back-of-House-Nandoca_R0000054378"
   }
  ]
 }
