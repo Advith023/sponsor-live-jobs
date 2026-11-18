@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-17T21:54:14.436839+00:00",
- "sponsors": 120259,
- "sponsors_checked": 45307,
- "boards": 2238,
- "jobs": 12885,
- "companies": 1399,
+ "generated": "2026-11-18T14:05:24.184599+00:00",
+ "sponsors": 120283,
+ "sponsors_checked": 48345,
+ "boards": 2394,
+ "jobs": 13452,
+ "companies": 1498,
  "quality": {
-  "hidden_by_pay": 41,
-  "hidden_by_employer_profile": 26,
+  "hidden_by_pay": 42,
+  "hidden_by_employer_profile": 39,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -60,8 +60,8 @@
    {
     "phrase": "head of procurement",
     "jobs": 1,
-    "example": "Head of Procurement - Packaging, UK&I",
-    "company": "Pladis (UK)",
+    "example": "Head of Procurement",
+    "company": "Farfetch",
     "auto": false,
     "reported": 1
    },
@@ -80,6 +80,29 @@
     "company": "Amoria Bond",
     "auto": false,
     "reported": 1
+   },
+   {
+    "phrase": "data and strategy analyst",
+    "jobs": 1,
+    "example": "Data and Strategy Analyst",
+    "company": "Plentific",
+    "auto": false,
+    "reported": 1
+   },
+   {
+    "phrase": "strategy analyst",
+    "jobs": 1,
+    "example": "Strategy Analyst",
+    "company": "Hargreaves Lansdown",
+    "auto": false,
+    "reported": 1
+   },
+   {
+    "phrase": "customer host supervisor",
+    "jobs": 12,
+    "example": "Customer Host Supervisor (16 HRS)",
+    "company": "White stuff",
+    "auto": true
    },
    {
     "phrase": "supervisor",
@@ -194,6 +217,13 @@
     "auto": true
    },
    {
+    "phrase": "online assistant",
+    "jobs": 1,
+    "example": "Online Assistant",
+    "company": "J Sainsbury",
+    "auto": true
+   },
+   {
     "phrase": "register your interest",
     "jobs": 31,
     "example": "Register Your Interest",
@@ -202,21 +232,21 @@
    },
    {
     "phrase": "multifunctional sale associate",
-    "jobs": 22,
+    "jobs": 21,
     "example": "MULTIFUNCTIONAL SALES ASSOCIATE (15 hours, Fix Term, Basingstoke)",
     "company": "Mango Fly",
     "auto": false
    },
    {
     "phrase": "customer experience manager",
-    "jobs": 17,
+    "jobs": 16,
     "example": "Customer Experience Manager",
     "company": "J Sainsbury",
     "auto": false
    },
    {
     "phrase": "assistant manager",
-    "jobs": 11,
+    "jobs": 12,
     "example": "Assistant Manager",
     "company": "Aramark",
     "auto": false
@@ -226,6 +256,13 @@
     "jobs": 11,
     "example": "Sales Manager | Vigo Street Central London",
     "company": "Reiss",
+    "auto": false
+   },
+   {
+    "phrase": "assistant general manager",
+    "jobs": 8,
+    "example": "Assistant General Manager | Cambridge",
+    "company": "Blank Street",
     "auto": false
    },
    {
@@ -257,13 +294,6 @@
     "auto": false
    },
    {
-    "phrase": "assistant general manager",
-    "jobs": 5,
-    "example": "Assistant General Manager | Cambridge",
-    "company": "Blank Street",
-    "auto": false
-   },
-   {
     "phrase": "floor manager",
     "jobs": 5,
     "example": "FLOOR MANAGER ( 40 hours, Belfast)",
@@ -278,10 +308,10 @@
     "auto": false
    },
    {
-    "phrase": "deputy nursery manager",
+    "phrase": "administrator",
     "jobs": 4,
-    "example": "Deputy Nursery Manager",
-    "company": "Storal Learning",
+    "example": "Administrator",
+    "company": "Aramark",
     "auto": false
    },
    {
@@ -299,24 +329,10 @@
     "auto": false
    },
    {
-    "phrase": "administrator",
-    "jobs": 3,
-    "example": "Administrator",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
     "phrase": "area manager",
     "jobs": 3,
     "example": "Area Manager",
     "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "senior manager",
-    "jobs": 3,
-    "example": "Senior Manager, Commercial Operations, UKI EMEA",
-    "company": "Hourglass Cosmetics",
     "auto": false
    },
    {
@@ -334,9 +350,23 @@
     "auto": false
    },
    {
+    "phrase": "people partner",
+    "jobs": 3,
+    "example": "People Partner | Head Office (12 month fixed contract)",
+    "company": "Reiss",
+    "auto": false
+   },
+   {
     "phrase": "nursery lunchtime practitioner",
     "jobs": 3,
     "example": "Nursery Lunchtime Practitioner",
+    "company": "Storal Learning",
+    "auto": false
+   },
+   {
+    "phrase": "deputy nursery manager",
+    "jobs": 3,
+    "example": "Deputy Nursery Manager",
     "company": "Storal Learning",
     "auto": false
    },
@@ -390,17 +420,31 @@
     "auto": false
    },
    {
-    "phrase": "people partner",
-    "jobs": 2,
-    "example": "People Partner | Head Office (12 month fixed contract)",
-    "company": "Reiss",
-    "auto": false
-   },
-   {
     "phrase": "regional procurement buyer",
     "jobs": 2,
     "example": "Regional Procurement Buyer FTC",
     "company": "Pladis (UK)",
+    "auto": false
+   },
+   {
+    "phrase": "financial planner",
+    "jobs": 2,
+    "example": "Financial Planner",
+    "company": "Quilter Business Services",
+    "auto": false
+   },
+   {
+    "phrase": "buyer",
+    "jobs": 2,
+    "example": "Buyer/ Senior Buyer (Footwear & Bags) - 6 months FTC",
+    "company": "White stuff",
+    "auto": false
+   },
+   {
+    "phrase": "finance analyst",
+    "jobs": 2,
+    "example": "Finance Analyst - Supplier Planning (12M FTC)",
+    "company": "J Sainsbury",
     "auto": false
    },
    {
@@ -418,68 +462,40 @@
     "auto": false
    },
    {
+    "phrase": "senior financial control manager",
+    "jobs": 1,
+    "example": "Senior Financial Control Manager",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
     "phrase": "human resource coordinator",
     "jobs": 1,
     "example": "HR Coordinator",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "deputy general manager",
-    "jobs": 1,
-    "example": "Deputy General Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "cafe team leader",
-    "jobs": 1,
-    "example": "Cafe Team Leader",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "maintenance technician electrical",
-    "jobs": 1,
-    "example": "Maintenance Technician Electrical",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "group manager",
-    "jobs": 1,
-    "example": "Group Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "store lead",
-    "jobs": 1,
-    "example": "Stores Lead",
     "company": "Aramark",
     "auto": false
    }
   ]
  },
  "eligibility": {
-  "eligible": 2902,
-  "shortage_list": 231,
-  "unlikely": 1546,
-  "unlabelled": 8206
+  "eligible": 2970,
+  "shortage_list": 243,
+  "unlikely": 1665,
+  "unlabelled": 8574
  },
  "sources": {
-  "Ashby": 1701,
-  "BambooHR": 391,
-  "Breezy": 244,
-  "Greenhouse": 3821,
-  "Lever": 459,
-  "Oracle": 967,
-  "Personio": 94,
-  "Pinpoint": 1016,
-  "Recruitee": 110,
-  "SmartRecruiters": 1154,
-  "Teamtailor": 1032,
-  "Workday": 1896
+  "Ashby": 1726,
+  "BambooHR": 423,
+  "Breezy": 247,
+  "Greenhouse": 3951,
+  "Lever": 514,
+  "Oracle": 992,
+  "Personio": 95,
+  "Pinpoint": 1072,
+  "Recruitee": 125,
+  "SmartRecruiters": 1183,
+  "Teamtailor": 1122,
+  "Workday": 2002
  },
  "suggestions_unmatched": [
   "SLB",
@@ -515,37 +531,37 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 131
+   "jobs": 132
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
    "boards": 2,
-   "jobs": 23
+   "jobs": 21
   },
   "GoCardless": {
    "sponsor": "GoCardless Limited",
    "boards": 1,
-   "jobs": 9
+   "jobs": 8
   },
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 374
+   "jobs": 406
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 593
+   "jobs": 586
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
    "boards": 1,
-   "jobs": 41
+   "jobs": 42
   },
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 50
+   "jobs": 55
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
@@ -565,12 +581,12 @@
   "Spotify": {
    "sponsor": "Spotify Limited",
    "boards": 1,
-   "jobs": 39
+   "jobs": 41
   },
   "Synthesia": {
    "sponsor": "Synthesia Limited",
    "boards": 2,
-   "jobs": 22
+   "jobs": 21
   },
   "TEST please ignore": {
    "sponsor": null,
@@ -580,7 +596,7 @@
   "Teya Services": {
    "sponsor": "Teya Europe Ltd",
    "boards": 2,
-   "jobs": 59
+   "jobs": 58
   },
   "Trainline": {
    "sponsor": "Trainline.com Ltd",
