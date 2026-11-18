@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-18T14:05:24.184599+00:00",
+ "generated": "2026-11-18T21:35:21.217739+00:00",
  "sponsors": 120283,
- "sponsors_checked": 48345,
- "boards": 2394,
- "jobs": 13452,
- "companies": 1498,
+ "sponsors_checked": 51442,
+ "boards": 2454,
+ "jobs": 13810,
+ "companies": 1536,
  "quality": {
-  "hidden_by_pay": 42,
+  "hidden_by_pay": 46,
   "hidden_by_employer_profile": 39,
   "review": [
    {
@@ -98,15 +98,23 @@
     "reported": 1
    },
    {
+    "phrase": "data analyst",
+    "jobs": 1,
+    "example": "Data Analyst, Revenue Protection (Investigations)",
+    "company": "Sportradar",
+    "auto": false,
+    "reported": 1
+   },
+   {
     "phrase": "customer host supervisor",
-    "jobs": 12,
+    "jobs": 11,
     "example": "Customer Host Supervisor (16 HRS)",
     "company": "White stuff",
     "auto": true
    },
    {
     "phrase": "supervisor",
-    "jobs": 10,
+    "jobs": 9,
     "example": "Supervisor",
     "company": "Aramark",
     "auto": true
@@ -116,6 +124,13 @@
     "jobs": 2,
     "example": "Accounts Payable Assistant - Property (FTC)",
     "company": "Mountain Warehouse",
+    "auto": true
+   },
+   {
+    "phrase": "domestic assistant",
+    "jobs": 2,
+    "example": "Domestic Assistant",
+    "company": "Advantage Angels",
     "auto": true
    },
    {
@@ -196,6 +211,13 @@
     "auto": true
    },
    {
+    "phrase": "sale advisor",
+    "jobs": 1,
+    "example": "Sales Advisor",
+    "company": "Reiss",
+    "auto": true
+   },
+   {
     "phrase": "stockroom supervisor",
     "jobs": 1,
     "example": "Stockroom Supervisor",
@@ -217,13 +239,6 @@
     "auto": true
    },
    {
-    "phrase": "online assistant",
-    "jobs": 1,
-    "example": "Online Assistant",
-    "company": "J Sainsbury",
-    "auto": true
-   },
-   {
     "phrase": "register your interest",
     "jobs": 31,
     "example": "Register Your Interest",
@@ -232,7 +247,7 @@
    },
    {
     "phrase": "multifunctional sale associate",
-    "jobs": 21,
+    "jobs": 20,
     "example": "MULTIFUNCTIONAL SALES ASSOCIATE (15 hours, Fix Term, Basingstoke)",
     "company": "Mango Fly",
     "auto": false
@@ -246,7 +261,7 @@
    },
    {
     "phrase": "assistant manager",
-    "jobs": 12,
+    "jobs": 13,
     "example": "Assistant Manager",
     "company": "Aramark",
     "auto": false
@@ -266,17 +281,17 @@
     "auto": false
    },
    {
-    "phrase": "uk team leader",
-    "jobs": 8,
-    "example": "UK Team Leader (ANIMAL)",
-    "company": "Mountain Warehouse",
-    "auto": false
-   },
-   {
     "phrase": "field service engineer",
     "jobs": 7,
     "example": "Field Service Engineer (Oxford)",
     "company": "InPost",
+    "auto": false
+   },
+   {
+    "phrase": "uk team leader",
+    "jobs": 7,
+    "example": "UK Team Leader (Chain 2 & 3)",
+    "company": "Mountain Warehouse",
     "auto": false
    },
    {
@@ -294,13 +309,6 @@
     "auto": false
    },
    {
-    "phrase": "floor manager",
-    "jobs": 5,
-    "example": "FLOOR MANAGER ( 40 hours, Belfast)",
-    "company": "Mango Fly",
-    "auto": false
-   },
-   {
     "phrase": "supply nursery educator",
     "jobs": 5,
     "example": "Supply Nursery Educator",
@@ -308,10 +316,24 @@
     "auto": false
    },
    {
+    "phrase": "floor manager",
+    "jobs": 5,
+    "example": "FLOOR MANAGER ( 40 hours, Belfast)",
+    "company": "Mango Fly",
+    "auto": false
+   },
+   {
     "phrase": "administrator",
     "jobs": 4,
     "example": "Administrator",
     "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "travelling hca",
+    "jobs": 4,
+    "example": "Travelling HCAs - Multiple Locations",
+    "company": "Advantage Angels",
     "auto": false
    },
    {
@@ -371,6 +393,13 @@
     "auto": false
    },
    {
+    "phrase": "kitchen assistant care home",
+    "jobs": 3,
+    "example": "Kitchen Assistant Care Home",
+    "company": "Advantage Angels",
+    "auto": false
+   },
+   {
     "phrase": "analyst",
     "jobs": 3,
     "example": "Analyst",
@@ -420,10 +449,10 @@
     "auto": false
    },
    {
-    "phrase": "regional procurement buyer",
+    "phrase": "buyer",
     "jobs": 2,
-    "example": "Regional Procurement Buyer FTC",
-    "company": "Pladis (UK)",
+    "example": "Buyer/ Senior Buyer (Footwear & Bags) - 6 months FTC",
+    "company": "White stuff",
     "auto": false
    },
    {
@@ -434,10 +463,10 @@
     "auto": false
    },
    {
-    "phrase": "buyer",
+    "phrase": "regional procurement buyer",
     "jobs": 2,
-    "example": "Buyer/ Senior Buyer (Footwear & Bags) - 6 months FTC",
-    "company": "White stuff",
+    "example": "Regional Procurement Buyer FTC",
+    "company": "Pladis (UK)",
     "auto": false
    },
    {
@@ -460,42 +489,28 @@
     "example": "Ethical Trade Manager (12m FTC)",
     "company": "J Sainsbury",
     "auto": false
-   },
-   {
-    "phrase": "senior financial control manager",
-    "jobs": 1,
-    "example": "Senior Financial Control Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "human resource coordinator",
-    "jobs": 1,
-    "example": "HR Coordinator",
-    "company": "Aramark",
-    "auto": false
    }
   ]
  },
  "eligibility": {
-  "eligible": 2970,
-  "shortage_list": 243,
-  "unlikely": 1665,
-  "unlabelled": 8574
+  "eligible": 3101,
+  "shortage_list": 252,
+  "unlikely": 1683,
+  "unlabelled": 8774
  },
  "sources": {
-  "Ashby": 1726,
-  "BambooHR": 423,
-  "Breezy": 247,
-  "Greenhouse": 3951,
-  "Lever": 514,
-  "Oracle": 992,
+  "Ashby": 1748,
+  "BambooHR": 437,
+  "Breezy": 246,
+  "Greenhouse": 4026,
+  "Lever": 523,
+  "Oracle": 952,
   "Personio": 95,
-  "Pinpoint": 1072,
+  "Pinpoint": 1166,
   "Recruitee": 125,
-  "SmartRecruiters": 1183,
-  "Teamtailor": 1122,
-  "Workday": 2002
+  "SmartRecruiters": 1200,
+  "Teamtailor": 1224,
+  "Workday": 2068
  },
  "suggestions_unmatched": [
   "SLB",
@@ -546,12 +561,12 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 406
+   "jobs": 365
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 586
+   "jobs": 587
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
@@ -561,7 +576,7 @@
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 55
+   "jobs": 52
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
