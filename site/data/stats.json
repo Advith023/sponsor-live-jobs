@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-18T21:35:21.217739+00:00",
- "sponsors": 120283,
- "sponsors_checked": 51442,
- "boards": 2454,
- "jobs": 13810,
- "companies": 1536,
+ "generated": "2026-11-19T14:28:44.212420+00:00",
+ "sponsors": 120255,
+ "sponsors_checked": 54384,
+ "boards": 2526,
+ "jobs": 14022,
+ "companies": 1578,
  "quality": {
-  "hidden_by_pay": 46,
-  "hidden_by_employer_profile": 39,
+  "hidden_by_pay": 52,
+  "hidden_by_employer_profile": 46,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -120,6 +120,13 @@
     "auto": true
    },
    {
+    "phrase": "domestic assistant",
+    "jobs": 2,
+    "example": "Domestic Assistant",
+    "company": "Advantage Angels",
+    "auto": true
+   },
+   {
     "phrase": "account payable assistant",
     "jobs": 2,
     "example": "Accounts Payable Assistant - Property (FTC)",
@@ -127,10 +134,17 @@
     "auto": true
    },
    {
-    "phrase": "domestic assistant",
+    "phrase": "engineering supervisor",
     "jobs": 2,
-    "example": "Domestic Assistant",
-    "company": "Advantage Angels",
+    "example": "Engineering Supervisor",
+    "company": "Arriva UK Bus",
+    "auto": true
+   },
+   {
+    "phrase": "ap exception management assistant",
+    "jobs": 2,
+    "example": "AP Exception Management Assistant (6-month FTC)",
+    "company": "Arriva UK Bus",
     "auto": true
    },
    {
@@ -239,6 +253,27 @@
     "auto": true
    },
    {
+    "phrase": "f and b supervisor",
+    "jobs": 1,
+    "example": "F&B Supervisor, The Club",
+    "company": "Bamford Collection",
+    "auto": true
+   },
+   {
+    "phrase": "f and b assistant",
+    "jobs": 1,
+    "example": "F&B Assistant, The Bell",
+    "company": "Bamford Collection",
+    "auto": true
+   },
+   {
+    "phrase": "maintenance assistant",
+    "jobs": 1,
+    "example": "Maintenance Assistant (Painter & Decorator)",
+    "company": "Bamford Collection",
+    "auto": true
+   },
+   {
     "phrase": "register your interest",
     "jobs": 31,
     "example": "Register Your Interest",
@@ -247,21 +282,21 @@
    },
    {
     "phrase": "multifunctional sale associate",
-    "jobs": 20,
-    "example": "MULTIFUNCTIONAL SALES ASSOCIATE (15 hours, Fix Term, Basingstoke)",
+    "jobs": 21,
+    "example": "MULTIFUNCTIONAL SALES ASSOCIATE (20 Hours, Chester)",
     "company": "Mango Fly",
     "auto": false
    },
    {
     "phrase": "customer experience manager",
-    "jobs": 16,
+    "jobs": 15,
     "example": "Customer Experience Manager",
     "company": "J Sainsbury",
     "auto": false
    },
    {
     "phrase": "assistant manager",
-    "jobs": 13,
+    "jobs": 14,
     "example": "Assistant Manager",
     "company": "Aramark",
     "auto": false
@@ -275,9 +310,16 @@
    },
    {
     "phrase": "assistant general manager",
-    "jobs": 8,
+    "jobs": 9,
     "example": "Assistant General Manager | Cambridge",
     "company": "Blank Street",
+    "auto": false
+   },
+   {
+    "phrase": "production scheduler",
+    "jobs": 9,
+    "example": "Production Scheduler",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
@@ -285,6 +327,13 @@
     "jobs": 7,
     "example": "Field Service Engineer (Oxford)",
     "company": "InPost",
+    "auto": false
+   },
+   {
+    "phrase": "maintenance technician",
+    "jobs": 7,
+    "example": "Maintenance Technician",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
@@ -302,6 +351,13 @@
     "auto": false
    },
    {
+    "phrase": "senior field service engineer",
+    "jobs": 6,
+    "example": "Senior Field Service Engineer (Grid Automation)",
+    "company": "Hitachi Vantara",
+    "auto": false
+   },
+   {
     "phrase": "senior sale associate",
     "jobs": 6,
     "example": "Senior Sales Associate",
@@ -309,10 +365,10 @@
     "auto": false
    },
    {
-    "phrase": "supply nursery educator",
-    "jobs": 5,
-    "example": "Supply Nursery Educator",
-    "company": "Storal Learning",
+    "phrase": "retail service manager",
+    "jobs": 6,
+    "example": "Retail Service Managers- Bournemouth",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
@@ -323,10 +379,10 @@
     "auto": false
    },
    {
-    "phrase": "administrator",
-    "jobs": 4,
-    "example": "Administrator",
-    "company": "Aramark",
+    "phrase": "supply nursery educator",
+    "jobs": 5,
+    "example": "Supply Nursery Educator",
+    "company": "Storal Learning",
     "auto": false
    },
    {
@@ -351,45 +407,10 @@
     "auto": false
    },
    {
-    "phrase": "area manager",
-    "jobs": 3,
-    "example": "Area Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "training delivery instructor",
-    "jobs": 3,
-    "example": "Training Delivery Instructor - Control Systems",
-    "company": "Capita",
-    "auto": false
-   },
-   {
-    "phrase": "experience specialist",
-    "jobs": 3,
-    "example": "Experience Specialist - Guinness Open Gate Brewery London (Admissions)",
-    "company": "Diageo",
-    "auto": false
-   },
-   {
-    "phrase": "people partner",
-    "jobs": 3,
-    "example": "People Partner | Head Office (12 month fixed contract)",
-    "company": "Reiss",
-    "auto": false
-   },
-   {
-    "phrase": "nursery lunchtime practitioner",
-    "jobs": 3,
-    "example": "Nursery Lunchtime Practitioner",
-    "company": "Storal Learning",
-    "auto": false
-   },
-   {
-    "phrase": "deputy nursery manager",
-    "jobs": 3,
-    "example": "Deputy Nursery Manager",
-    "company": "Storal Learning",
+    "phrase": "shift fitter",
+    "jobs": 4,
+    "example": "Shift Fitter",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
@@ -400,117 +421,131 @@
     "auto": false
    },
    {
-    "phrase": "analyst",
+    "phrase": "administrator",
     "jobs": 3,
-    "example": "Analyst",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "retail operator",
-    "jobs": 2,
-    "example": "Retail Operator",
+    "example": "Administrator",
     "company": "Aramark",
     "auto": false
    },
    {
-    "phrase": "training manager",
-    "jobs": 2,
-    "example": "Training Manager",
+    "phrase": "area manager",
+    "jobs": 3,
+    "example": "Area Manager",
     "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "human resource people partner",
-    "jobs": 2,
-    "example": "HR People Partner - FTC (12 month maternity cover)",
-    "company": "InPost",
-    "auto": false
-   },
-   {
-    "phrase": "training support administrator",
-    "jobs": 2,
-    "example": "Training Support Administrator",
-    "company": "Capita",
-    "auto": false
-   },
-   {
-    "phrase": "operational technology lead",
-    "jobs": 2,
-    "example": "Operational Technology Lead",
-    "company": "Diageo",
     "auto": false
    },
    {
     "phrase": "assistant buyer",
-    "jobs": 2,
+    "jobs": 3,
     "example": "Assistant Buyer",
-    "company": "Mountain Warehouse",
+    "company": "Diageo",
     "auto": false
    },
    {
-    "phrase": "buyer",
-    "jobs": 2,
-    "example": "Buyer/ Senior Buyer (Footwear & Bags) - 6 months FTC",
-    "company": "White stuff",
+    "phrase": "experience specialist",
+    "jobs": 3,
+    "example": "Experience Specialist - Guinness Open Gate Brewery London (Admissions)",
+    "company": "Diageo",
     "auto": false
    },
    {
-    "phrase": "financial planner",
-    "jobs": 2,
-    "example": "Financial Planner",
-    "company": "Quilter Business Services",
+    "phrase": "global component standardisation and r and d engineer",
+    "jobs": 3,
+    "example": "Global Component Standardisation and R&D Engineer",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "regional procurement buyer",
-    "jobs": 2,
-    "example": "Regional Procurement Buyer FTC",
-    "company": "Pladis (UK)",
+    "phrase": "warranty and repair team leader",
+    "jobs": 3,
+    "example": "Warranty & Repair Team Leader",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "finance analyst",
-    "jobs": 2,
-    "example": "Finance Analyst - Supplier Planning (12M FTC)",
-    "company": "J Sainsbury",
+    "phrase": "strategy lead",
+    "jobs": 3,
+    "example": "Strategy Lead - EMEA",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "lead online manager",
-    "jobs": 2,
-    "example": "Lead Online Manager",
-    "company": "J Sainsbury",
+    "phrase": "head of operation",
+    "jobs": 3,
+    "example": "Head of Operations - Midlands",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "ethical trade manager",
-    "jobs": 2,
-    "example": "Ethical Trade Manager (12m FTC)",
-    "company": "J Sainsbury",
+    "phrase": "site manager hvdc",
+    "jobs": 3,
+    "example": "Site Manager HVDC",
+    "company": "Hitachi Vantara",
+    "auto": false
+   },
+   {
+    "phrase": "inside sale representative",
+    "jobs": 3,
+    "example": "Inside Sales Representative - English speaker",
+    "company": "Hitachi Vantara",
+    "auto": false
+   },
+   {
+    "phrase": "material controller",
+    "jobs": 3,
+    "example": "Material Controller",
+    "company": "Hitachi Vantara",
+    "auto": false
+   },
+   {
+    "phrase": "fleet operation manager",
+    "jobs": 3,
+    "example": "Fleet Operations Manager",
+    "company": "Hitachi Vantara",
+    "auto": false
+   },
+   {
+    "phrase": "train maintenance centre manager",
+    "jobs": 3,
+    "example": "Train Maintenance Centre (TMC) Manager",
+    "company": "Hitachi Vantara",
+    "auto": false
+   },
+   {
+    "phrase": "facility management team leader",
+    "jobs": 3,
+    "example": "Facilities Management (Non-Manufacturing) Team Leader (Professionals)",
+    "company": "Hitachi Vantara",
+    "auto": false
+   },
+   {
+    "phrase": "senior technical trainer",
+    "jobs": 3,
+    "example": "Senior Technical Trainer",
+    "company": "Hitachi Vantara",
     "auto": false
    }
   ]
  },
  "eligibility": {
-  "eligible": 3101,
-  "shortage_list": 252,
-  "unlikely": 1683,
-  "unlabelled": 8774
+  "eligible": 3102,
+  "shortage_list": 250,
+  "unlikely": 1711,
+  "unlabelled": 8959
  },
  "sources": {
-  "Ashby": 1748,
-  "BambooHR": 437,
-  "Breezy": 246,
-  "Greenhouse": 4026,
-  "Lever": 523,
-  "Oracle": 952,
-  "Personio": 95,
-  "Pinpoint": 1166,
-  "Recruitee": 125,
-  "SmartRecruiters": 1200,
-  "Teamtailor": 1224,
-  "Workday": 2068
+  "Ashby": 1756,
+  "BambooHR": 459,
+  "Breezy": 253,
+  "Greenhouse": 4037,
+  "Lever": 526,
+  "Oracle": 935,
+  "Personio": 96,
+  "Pinpoint": 1206,
+  "Recruitee": 121,
+  "SmartRecruiters": 1192,
+  "Teamtailor": 1296,
+  "Workday": 2145
  },
  "suggestions_unmatched": [
   "SLB",
@@ -546,7 +581,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 132
+   "jobs": 131
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -561,12 +596,12 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 365
+   "jobs": 350
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 587
+   "jobs": 585
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
@@ -576,7 +611,7 @@
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 52
+   "jobs": 51
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
@@ -601,7 +636,7 @@
   "Synthesia": {
    "sponsor": "Synthesia Limited",
    "boards": 2,
-   "jobs": 21
+   "jobs": 20
   },
   "TEST please ignore": {
    "sponsor": null,
@@ -611,7 +646,7 @@
   "Teya Services": {
    "sponsor": "Teya Europe Ltd",
    "boards": 2,
-   "jobs": 58
+   "jobs": 57
   },
   "Trainline": {
    "sponsor": "Trainline.com Ltd",
