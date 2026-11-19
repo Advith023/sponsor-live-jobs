@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-19T14:28:44.212420+00:00",
+ "generated": "2026-11-19T21:48:10.136988+00:00",
  "sponsors": 120255,
- "sponsors_checked": 54384,
- "boards": 2526,
- "jobs": 14022,
- "companies": 1578,
+ "sponsors_checked": 57531,
+ "boards": 2561,
+ "jobs": 14316,
+ "companies": 1608,
  "quality": {
-  "hidden_by_pay": 52,
-  "hidden_by_employer_profile": 46,
+  "hidden_by_pay": 54,
+  "hidden_by_employer_profile": 51,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -107,14 +107,14 @@
    },
    {
     "phrase": "customer host supervisor",
-    "jobs": 11,
-    "example": "Customer Host Supervisor (16 HRS)",
+    "jobs": 14,
+    "example": "Customer Host Supervisor (10 HRS)",
     "company": "White stuff",
     "auto": true
    },
    {
     "phrase": "supervisor",
-    "jobs": 9,
+    "jobs": 10,
     "example": "Supervisor",
     "company": "Aramark",
     "auto": true
@@ -127,24 +127,24 @@
     "auto": true
    },
    {
-    "phrase": "account payable assistant",
-    "jobs": 2,
-    "example": "Accounts Payable Assistant - Property (FTC)",
-    "company": "Mountain Warehouse",
-    "auto": true
-   },
-   {
     "phrase": "engineering supervisor",
     "jobs": 2,
     "example": "Engineering Supervisor",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": true
    },
    {
     "phrase": "ap exception management assistant",
     "jobs": 2,
     "example": "AP Exception Management Assistant (6-month FTC)",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
+    "auto": true
+   },
+   {
+    "phrase": "account payable assistant",
+    "jobs": 2,
+    "example": "Accounts Payable Assistant - Property (FTC)",
+    "company": "Mountain Warehouse",
     "auto": true
    },
    {
@@ -180,6 +180,27 @@
     "jobs": 1,
     "example": "Coffee Shop Supervisor",
     "company": "Aramark",
+    "auto": true
+   },
+   {
+    "phrase": "f and b supervisor",
+    "jobs": 1,
+    "example": "F&B Supervisor, The Club",
+    "company": "Bamford Collection",
+    "auto": true
+   },
+   {
+    "phrase": "f and b assistant",
+    "jobs": 1,
+    "example": "F&B Assistant, The Bell",
+    "company": "Bamford Collection",
+    "auto": true
+   },
+   {
+    "phrase": "maintenance assistant",
+    "jobs": 1,
+    "example": "Maintenance Assistant (Painter & Decorator)",
+    "company": "Bamford Collection",
     "auto": true
    },
    {
@@ -232,6 +253,13 @@
     "auto": true
    },
    {
+    "phrase": "stock room assistant",
+    "jobs": 1,
+    "example": "Stock Room Assistant",
+    "company": "Reiss",
+    "auto": true
+   },
+   {
     "phrase": "stockroom supervisor",
     "jobs": 1,
     "example": "Stockroom Supervisor",
@@ -250,27 +278,6 @@
     "jobs": 1,
     "example": "Luxury Skincare Advisor",
     "company": "Space NK",
-    "auto": true
-   },
-   {
-    "phrase": "f and b supervisor",
-    "jobs": 1,
-    "example": "F&B Supervisor, The Club",
-    "company": "Bamford Collection",
-    "auto": true
-   },
-   {
-    "phrase": "f and b assistant",
-    "jobs": 1,
-    "example": "F&B Assistant, The Bell",
-    "company": "Bamford Collection",
-    "auto": true
-   },
-   {
-    "phrase": "maintenance assistant",
-    "jobs": 1,
-    "example": "Maintenance Assistant (Painter & Decorator)",
-    "company": "Bamford Collection",
     "auto": true
    },
    {
@@ -309,17 +316,10 @@
     "auto": false
    },
    {
-    "phrase": "assistant general manager",
-    "jobs": 9,
-    "example": "Assistant General Manager | Cambridge",
-    "company": "Blank Street",
-    "auto": false
-   },
-   {
     "phrase": "production scheduler",
     "jobs": 9,
     "example": "Production Scheduler",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
@@ -330,17 +330,24 @@
     "auto": false
    },
    {
-    "phrase": "maintenance technician",
-    "jobs": 7,
-    "example": "Maintenance Technician",
-    "company": "Hitachi Vantara",
-    "auto": false
-   },
-   {
     "phrase": "uk team leader",
     "jobs": 7,
     "example": "UK Team Leader (Chain 2 & 3)",
     "company": "Mountain Warehouse",
+    "auto": false
+   },
+   {
+    "phrase": "maintenance technician",
+    "jobs": 7,
+    "example": "Maintenance Technician",
+    "company": "Hitachi Energy",
+    "auto": false
+   },
+   {
+    "phrase": "assistant general manager",
+    "jobs": 6,
+    "example": "Assistant General Manager",
+    "company": "Bamford Collection",
     "auto": false
    },
    {
@@ -351,24 +358,24 @@
     "auto": false
    },
    {
+    "phrase": "retail service manager",
+    "jobs": 6,
+    "example": "Retail Service Managers- Bournemouth",
+    "company": "Arriva",
+    "auto": false
+   },
+   {
     "phrase": "senior field service engineer",
     "jobs": 6,
     "example": "Senior Field Service Engineer (Grid Automation)",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "senior sale associate",
-    "jobs": 6,
+    "jobs": 5,
     "example": "Senior Sales Associate",
     "company": "Reiss",
-    "auto": false
-   },
-   {
-    "phrase": "retail service manager",
-    "jobs": 6,
-    "example": "Retail Service Managers- Bournemouth",
-    "company": "Arriva UK Bus",
     "auto": false
    },
    {
@@ -393,6 +400,13 @@
     "auto": false
    },
    {
+    "phrase": "shift fitter",
+    "jobs": 4,
+    "example": "Shift Fitter",
+    "company": "Arriva",
+    "auto": false
+   },
+   {
     "phrase": "human resource business partner",
     "jobs": 4,
     "example": "HR Business Partner - Aintree",
@@ -404,13 +418,6 @@
     "jobs": 4,
     "example": "Lead Customer Experience Manager",
     "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "shift fitter",
-    "jobs": 4,
-    "example": "Shift Fitter",
-    "company": "Arriva UK Bus",
     "auto": false
    },
    {
@@ -449,103 +456,117 @@
     "auto": false
    },
    {
-    "phrase": "global component standardisation and r and d engineer",
+    "phrase": "hmax integrator",
     "jobs": 3,
-    "example": "Global Component Standardisation and R&D Engineer",
-    "company": "Hitachi Vantara",
+    "example": "HMAX Integrator",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "warranty and repair team leader",
     "jobs": 3,
     "example": "Warranty & Repair Team Leader",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "strategy lead",
     "jobs": 3,
     "example": "Strategy Lead - EMEA",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "head of operation",
     "jobs": 3,
     "example": "Head of Operations - Midlands",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "site manager hvdc",
     "jobs": 3,
     "example": "Site Manager HVDC",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "inside sale representative",
     "jobs": 3,
     "example": "Inside Sales Representative - English speaker",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "material controller",
     "jobs": 3,
     "example": "Material Controller",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "fleet operation manager",
     "jobs": 3,
     "example": "Fleet Operations Manager",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "train maintenance centre manager",
     "jobs": 3,
     "example": "Train Maintenance Centre (TMC) Manager",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "facility management team leader",
     "jobs": 3,
     "example": "Facilities Management (Non-Manufacturing) Team Leader (Professionals)",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
     "auto": false
    },
    {
     "phrase": "senior technical trainer",
     "jobs": 3,
     "example": "Senior Technical Trainer",
-    "company": "Hitachi Vantara",
+    "company": "Hitachi Energy",
+    "auto": false
+   },
+   {
+    "phrase": "senior endpoint management engineer",
+    "jobs": 3,
+    "example": "Senior Endpoint Management Engineer",
+    "company": "Hitachi Energy",
+    "auto": false
+   },
+   {
+    "phrase": "lead technician",
+    "jobs": 3,
+    "example": "Lead Technician",
+    "company": "Hitachi Energy",
     "auto": false
    }
   ]
  },
  "eligibility": {
-  "eligible": 3102,
-  "shortage_list": 250,
-  "unlikely": 1711,
-  "unlabelled": 8959
+  "eligible": 3167,
+  "shortage_list": 264,
+  "unlikely": 1708,
+  "unlabelled": 9177
  },
  "sources": {
-  "Ashby": 1756,
-  "BambooHR": 459,
-  "Breezy": 253,
-  "Greenhouse": 4037,
-  "Lever": 526,
-  "Oracle": 935,
-  "Personio": 96,
-  "Pinpoint": 1206,
-  "Recruitee": 121,
-  "SmartRecruiters": 1192,
-  "Teamtailor": 1296,
-  "Workday": 2145
+  "Ashby": 1769,
+  "BambooHR": 477,
+  "Breezy": 252,
+  "Greenhouse": 4095,
+  "Lever": 559,
+  "Oracle": 921,
+  "Personio": 97,
+  "Pinpoint": 1225,
+  "Recruitee": 125,
+  "SmartRecruiters": 1194,
+  "Teamtailor": 1335,
+  "Workday": 2267
  },
  "suggestions_unmatched": [
   "SLB",
@@ -581,7 +602,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 131
+   "jobs": 134
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -596,7 +617,7 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 350
+   "jobs": 336
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
@@ -631,7 +652,7 @@
   "Spotify": {
    "sponsor": "Spotify Limited",
    "boards": 1,
-   "jobs": 41
+   "jobs": 42
   },
   "Synthesia": {
    "sponsor": "Synthesia Limited",
