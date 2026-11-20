@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-19T21:48:10.136988+00:00",
+ "generated": "2026-11-20T14:04:13.611916+00:00",
  "sponsors": 120255,
- "sponsors_checked": 57531,
- "boards": 2561,
- "jobs": 14316,
- "companies": 1608,
+ "sponsors_checked": 60638,
+ "boards": 2617,
+ "jobs": 14580,
+ "companies": 1635,
  "quality": {
-  "hidden_by_pay": 54,
-  "hidden_by_employer_profile": 51,
+  "hidden_by_pay": 58,
+  "hidden_by_employer_profile": 49,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -114,7 +114,7 @@
    },
    {
     "phrase": "supervisor",
-    "jobs": 10,
+    "jobs": 9,
     "example": "Supervisor",
     "company": "Aramark",
     "auto": true
@@ -204,13 +204,6 @@
     "auto": true
    },
    {
-    "phrase": "depot operation assistant",
-    "jobs": 1,
-    "example": "Depot Operations Assistant",
-    "company": "InPost",
-    "auto": true
-   },
-   {
     "phrase": "night transport supervisor",
     "jobs": 1,
     "example": "Nights Transport Supervisor",
@@ -290,13 +283,13 @@
    {
     "phrase": "multifunctional sale associate",
     "jobs": 21,
-    "example": "MULTIFUNCTIONAL SALES ASSOCIATE (20 Hours, Chester)",
+    "example": "MULTIFUNCTIONAL SALES ASSOCIATE (15 hours, Fix Term, Bristol Cribbs)",
     "company": "Mango Fly",
     "auto": false
    },
    {
     "phrase": "customer experience manager",
-    "jobs": 15,
+    "jobs": 16,
     "example": "Customer Experience Manager",
     "company": "J Sainsbury",
     "auto": false
@@ -310,16 +303,9 @@
    },
    {
     "phrase": "sale manager",
-    "jobs": 11,
+    "jobs": 10,
     "example": "Sales Manager | Vigo Street Central London",
     "company": "Reiss",
-    "auto": false
-   },
-   {
-    "phrase": "production scheduler",
-    "jobs": 9,
-    "example": "Production Scheduler",
-    "company": "Hitachi Energy",
     "auto": false
    },
    {
@@ -327,20 +313,6 @@
     "jobs": 7,
     "example": "Field Service Engineer (Oxford)",
     "company": "InPost",
-    "auto": false
-   },
-   {
-    "phrase": "uk team leader",
-    "jobs": 7,
-    "example": "UK Team Leader (Chain 2 & 3)",
-    "company": "Mountain Warehouse",
-    "auto": false
-   },
-   {
-    "phrase": "maintenance technician",
-    "jobs": 7,
-    "example": "Maintenance Technician",
-    "company": "Hitachi Energy",
     "auto": false
    },
    {
@@ -358,17 +330,10 @@
     "auto": false
    },
    {
-    "phrase": "retail service manager",
+    "phrase": "uk team leader",
     "jobs": 6,
-    "example": "Retail Service Managers- Bournemouth",
-    "company": "Arriva",
-    "auto": false
-   },
-   {
-    "phrase": "senior field service engineer",
-    "jobs": 6,
-    "example": "Senior Field Service Engineer (Grid Automation)",
-    "company": "Hitachi Energy",
+    "example": "UK Team Leader (Chain 2 & 3)",
+    "company": "Mountain Warehouse",
     "auto": false
    },
    {
@@ -393,6 +358,13 @@
     "auto": false
    },
    {
+    "phrase": "lead customer experience manager",
+    "jobs": 5,
+    "example": "Lead Customer Experience Manager",
+    "company": "J Sainsbury",
+    "auto": false
+   },
+   {
     "phrase": "travelling hca",
     "jobs": 4,
     "example": "Travelling HCAs - Multiple Locations",
@@ -407,6 +379,13 @@
     "auto": false
    },
    {
+    "phrase": "retail service manager",
+    "jobs": 4,
+    "example": "Retail Service Managers- Bournemouth",
+    "company": "Arriva",
+    "auto": false
+   },
+   {
     "phrase": "human resource business partner",
     "jobs": 4,
     "example": "HR Business Partner - Aintree",
@@ -414,24 +393,10 @@
     "auto": false
    },
    {
-    "phrase": "lead customer experience manager",
-    "jobs": 4,
-    "example": "Lead Customer Experience Manager",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
     "phrase": "kitchen assistant care home",
     "jobs": 3,
     "example": "Kitchen Assistant Care Home",
     "company": "Advantage Angels",
-    "auto": false
-   },
-   {
-    "phrase": "administrator",
-    "jobs": 3,
-    "example": "Administrator",
-    "company": "Aramark",
     "auto": false
    },
    {
@@ -456,117 +421,145 @@
     "auto": false
    },
    {
-    "phrase": "hmax integrator",
+    "phrase": "nursery lunchtime practitioner",
     "jobs": 3,
-    "example": "HMAX Integrator",
-    "company": "Hitachi Energy",
+    "example": "Nursery Lunchtime Practitioner",
+    "company": "Storal Learning",
     "auto": false
    },
    {
-    "phrase": "warranty and repair team leader",
+    "phrase": "analyst",
     "jobs": 3,
-    "example": "Warranty & Repair Team Leader",
-    "company": "Hitachi Energy",
+    "example": "Analyst",
+    "company": "J Sainsbury",
     "auto": false
    },
    {
-    "phrase": "strategy lead",
-    "jobs": 3,
-    "example": "Strategy Lead - EMEA",
-    "company": "Hitachi Energy",
+    "phrase": "retail operator",
+    "jobs": 2,
+    "example": "Retail Operator",
+    "company": "Aramark",
     "auto": false
    },
    {
-    "phrase": "head of operation",
-    "jobs": 3,
-    "example": "Head of Operations - Midlands",
-    "company": "Hitachi Energy",
+    "phrase": "training manager",
+    "jobs": 2,
+    "example": "Training Manager",
+    "company": "Aramark",
     "auto": false
    },
    {
-    "phrase": "site manager hvdc",
-    "jobs": 3,
-    "example": "Site Manager HVDC",
-    "company": "Hitachi Energy",
+    "phrase": "administrator",
+    "jobs": 2,
+    "example": "Administrator",
+    "company": "Aramark",
     "auto": false
    },
    {
-    "phrase": "inside sale representative",
-    "jobs": 3,
-    "example": "Inside Sales Representative - English speaker",
-    "company": "Hitachi Energy",
+    "phrase": "oracle fusion technical service manager",
+    "jobs": 2,
+    "example": "Oracle Fusion Technical Service Manager",
+    "company": "Arriva",
     "auto": false
    },
    {
-    "phrase": "material controller",
-    "jobs": 3,
-    "example": "Material Controller",
-    "company": "Hitachi Energy",
+    "phrase": "network and cyber engineer",
+    "jobs": 2,
+    "example": "Network & Cyber Engineer",
+    "company": "Arriva",
     "auto": false
    },
    {
-    "phrase": "fleet operation manager",
-    "jobs": 3,
-    "example": "Fleet Operations Manager",
-    "company": "Hitachi Energy",
+    "phrase": "bi developer",
+    "jobs": 2,
+    "example": "BI Developer",
+    "company": "Arriva",
     "auto": false
    },
    {
-    "phrase": "train maintenance centre manager",
-    "jobs": 3,
-    "example": "Train Maintenance Centre (TMC) Manager",
-    "company": "Hitachi Energy",
+    "phrase": "senior conductor talent pool",
+    "jobs": 2,
+    "example": "Senior Conductor-Talent Pool",
+    "company": "Arriva",
     "auto": false
    },
    {
-    "phrase": "facility management team leader",
-    "jobs": 3,
-    "example": "Facilities Management (Non-Manufacturing) Team Leader (Professionals)",
-    "company": "Hitachi Energy",
+    "phrase": "psv night engineer",
+    "jobs": 2,
+    "example": "PSV Night Engineer",
+    "company": "Arriva",
     "auto": false
    },
    {
-    "phrase": "senior technical trainer",
-    "jobs": 3,
-    "example": "Senior Technical Trainer",
-    "company": "Hitachi Energy",
+    "phrase": "shift engineer",
+    "jobs": 2,
+    "example": "Shift Engineer",
+    "company": "Arriva",
     "auto": false
    },
    {
-    "phrase": "senior endpoint management engineer",
-    "jobs": 3,
-    "example": "Senior Endpoint Management Engineer",
-    "company": "Hitachi Energy",
+    "phrase": "qualified train driver cambridge",
+    "jobs": 2,
+    "example": "Qualified Train Driver Cambridge",
+    "company": "Arriva",
     "auto": false
    },
    {
-    "phrase": "lead technician",
-    "jobs": 3,
-    "example": "Lead Technician",
-    "company": "Hitachi Energy",
+    "phrase": "assistant property manager",
+    "jobs": 2,
+    "example": "Assistant Property Manager",
+    "company": "Arriva",
+    "auto": false
+   },
+   {
+    "phrase": "business development graduate",
+    "jobs": 2,
+    "example": "Business Development Graduate",
+    "company": "Arriva",
+    "auto": false
+   },
+   {
+    "phrase": "business development administrator",
+    "jobs": 2,
+    "example": "Business Development Administrator",
+    "company": "Arriva",
+    "auto": false
+   },
+   {
+    "phrase": "people administrator",
+    "jobs": 2,
+    "example": "People Administrator  (6 Month FTC)",
+    "company": "Arriva",
+    "auto": false
+   },
+   {
+    "phrase": "engineer",
+    "jobs": 2,
+    "example": "Engineer",
+    "company": "Arriva",
     "auto": false
    }
   ]
  },
  "eligibility": {
-  "eligible": 3167,
-  "shortage_list": 264,
-  "unlikely": 1708,
-  "unlabelled": 9177
+  "eligible": 3207,
+  "shortage_list": 293,
+  "unlikely": 1743,
+  "unlabelled": 9337
  },
  "sources": {
-  "Ashby": 1769,
-  "BambooHR": 477,
-  "Breezy": 252,
-  "Greenhouse": 4095,
-  "Lever": 559,
-  "Oracle": 921,
+  "Ashby": 1764,
+  "BambooHR": 488,
+  "Breezy": 249,
+  "Greenhouse": 4122,
+  "Lever": 551,
+  "Oracle": 966,
   "Personio": 97,
-  "Pinpoint": 1225,
+  "Pinpoint": 1371,
   "Recruitee": 125,
-  "SmartRecruiters": 1194,
-  "Teamtailor": 1335,
-  "Workday": 2267
+  "SmartRecruiters": 1207,
+  "Teamtailor": 1374,
+  "Workday": 2266
  },
  "suggestions_unmatched": [
   "SLB",
@@ -602,12 +595,12 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 134
+   "jobs": 137
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
    "boards": 2,
-   "jobs": 21
+   "jobs": 22
   },
   "GoCardless": {
    "sponsor": "GoCardless Limited",
@@ -617,7 +610,7 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 336
+   "jobs": 381
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
@@ -627,7 +620,7 @@
   "Kpler": {
    "sponsor": "Kpler Limited",
    "boards": 1,
-   "jobs": 42
+   "jobs": 41
   },
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
@@ -652,7 +645,7 @@
   "Spotify": {
    "sponsor": "Spotify Limited",
    "boards": 1,
-   "jobs": 42
+   "jobs": 38
   },
   "Synthesia": {
    "sponsor": "Synthesia Limited",
@@ -667,7 +660,7 @@
   "Teya Services": {
    "sponsor": "Teya Europe Ltd",
    "boards": 2,
-   "jobs": 57
+   "jobs": 56
   },
   "Trainline": {
    "sponsor": "Trainline.com Ltd",
