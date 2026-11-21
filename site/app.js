@@ -115,6 +115,7 @@
   function passes(j, skip) {
     const lterms = norm(state.loc || parsed.place).split(/[\s,]+/).filter(Boolean);
     const cutoff = state.age ? Date.now() - state.age * 864e5 : 0;
+    if (j.el === "x") return false;  // hidden by the owner (reported, or a warning sign set to Always hide): never shown
     if (!state.all && j.el === "u") return false;  // below the Skilled Worker skill level, see scripts/eligibility.py
     if (state.lv === "entry" && j.lv !== "Entry") return false;
     if (state.lv === "exp" && !j.lv) return false;  // "exp" = any role with a level (Senior/Lead/Director)
@@ -490,12 +491,12 @@
         jobs.forEach((j) => j.l.split(/\s*[\/;|]\s*/).forEach((x) => { const c = x.split(",")[0].trim(); if (c) cities[c] = (cities[c] || 0) + 1; }));
         $("#locList").innerHTML = Object.entries(cities).sort((a, b) => b[1] - a[1]).slice(0, 60).map(([c]) => `<option value="${c.replace(/"/g, "&quot;")}">`).join("");
         const upd = d.generated ? new Date(d.generated).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" }) : "pending";
-        $("#stats").textContent = `${jobs.filter((j) => j.el !== "u").length.toLocaleString("en-GB")} live roles · ${(d.companies || 0).toLocaleString("en-GB")} licensed sponsors · updated ${upd}`;
+        $("#stats").textContent = `${jobs.filter((j) => j.el !== "u" && j.el !== "x").length.toLocaleString("en-GB")} live roles · ${(d.companies || 0).toLocaleString("en-GB")} licensed sponsors · updated ${upd}`;
         if (btn) { btn.hidden = false; btn.disabled = false; }
         // --- ticker: companies that posted in the last 24h
         const day = Date.now() - 864e5;
         const recent = {};
-        jobs.forEach((j) => { if (j._t >= day && j.el !== "u") recent[j.c] = (recent[j.c] || 0) + 1; });
+        jobs.forEach((j) => { if (j._t >= day && j.el !== "u" && j.el !== "x") recent[j.c] = (recent[j.c] || 0) + 1; });
         const tk = $("#ticker"), tt = $("#tickerText");
         if (tk && tt && Object.keys(recent).length) {
           const items = Object.entries(recent).sort((a, b) => b[1] - a[1]).slice(0, 15);

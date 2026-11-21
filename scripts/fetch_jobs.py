@@ -1293,7 +1293,7 @@ def run():
         for code in j.get("f", []):
             signal_counts[code] = signal_counts.get(code, 0) + 1
         if (reported and apply_rules.is_reported(j, reported)) or apply_rules.auto_hidden(j, auto):
-            j["el"] = "u"
+            j["el"] = "x"  # removed by the owner: never shown, even with "Include roles unlikely to qualify"
 
     # Quality checks: employer profile rule and the review queue for the control centre
     auto_hidden, review = eligibility.quality_pass(jobs, reports=load_reports())
@@ -1323,7 +1323,7 @@ def run():
         "quality": {"hidden_by_pay": pay_hidden[0], "hidden_by_employer_profile": auto_hidden,
                     "review": review, "signals": signal_counts},
         "eligibility": {k: sum(1 for j in jobs if j.get("el") == v)
-                        for k, v in (("eligible", "e"), ("shortage_list", "s"), ("unlikely", "u"), ("unlabelled", None))},
+                        for k, v in (("eligible", "e"), ("shortage_list", "s"), ("unlikely", "u"), ("removed_by_owner", "x"), ("unlabelled", None))},
         "sources": dict(sorted({src: sum(1 for j in jobs if j["src"] == src) for src in {j["src"] for j in jobs}}.items())),
         "suggestions_unmatched": sorted(set(unmatched))[:200],
         "suggestions_closest": {n: closest_sponsors(n, sponsors) for n in sorted(set(unmatched))[:50]},

@@ -523,7 +523,7 @@ def quality_pass(jobs: list, min_labelled: int = 10, share: float = 0.6, reports
     example = {}
     for emp, js in by_emp.items():
         # internships say nothing about the employer, so leave them out
-        lab = [j for j in js if j.get("el") and not ANYWHERE_U.search(j["t"])]
+        lab = [j for j in js if j.get("el") in ("e", "s", "u") and not ANYWHERE_U.search(j["t"])]
         if len(lab) < min_labelled:
             continue
         u_share = sum(j["el"] == "u" for j in lab) / len(lab)

@@ -74,10 +74,12 @@ def main() -> int:
     auto = load_auto_hide()
     changed = 0
     for j in data.get("jobs", []):
-        if j.get("el") == "u":
-            continue
-        el, _ = eligibility.classify(j.get("t", ""), index)
-        if el == "u" or is_reported(j, reported) or auto_hidden(j, auto):
+        # "x": removed by the owner, never shown, not even with "Include roles unlikely to qualify"
+        if j.get("el") != "x" and (is_reported(j, reported) or auto_hidden(j, auto)):
+            j["el"] = "x"
+            changed += 1
+        # "u": unlikely to qualify (title rules), shown only when visitors tick that box
+        elif not j.get("el") in ("u", "x") and eligibility.classify(j.get("t", ""), index)[0] == "u":
             j["el"] = "u"
             changed += 1
     if changed:

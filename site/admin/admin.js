@@ -183,7 +183,7 @@
     d.auto_hide = d.auto_hide || [];
     jobsCache = (await (await fetch("../data/jobs.json", { cache: "no-store" })).json()).jobs || [];
     const groups = Object.fromEntries(SIGNALS.map((s) => [s.code, { live: [], hidden: 0 }]));
-    for (const j of jobsCache) for (const c of titleFlags(j)) if (groups[c]) j.el === "u" ? groups[c].hidden++ : groups[c].live.push(j);
+    for (const j of jobsCache) for (const c of titleFlags(j)) if (groups[c]) j.el === "u" || j.el === "x" ? groups[c].hidden++ : groups[c].live.push(j);
     box.replaceChildren();
     let total = 0;
     for (const s of SIGNALS) {
@@ -218,7 +218,7 @@
             const key = "manual|" + j.u;
             if (!r.hide_jobs.some((o) => o.key === key)) r.hide_jobs.push({ u: j.u, t: j.t, c: j.c, key });
             await writeRules(`Hide role "${j.t}" at ${j.c}`);
-            j.el = "u"; tr.remove(); toast("Saved. This job leaves the site in about 2 minutes.");
+            j.el = "x"; tr.remove(); toast("Saved. This job leaves the site in about 2 minutes.");
           }, "small"));
           body.append(tr);
         });
@@ -287,10 +287,10 @@
     const hits = jobsCache.filter((j) => j.u === q || j.t.toLowerCase().includes(ql) || (/^https?:/.test(q) && j.u.startsWith(q)));
     $("qSearchMsg").textContent = hits.length ? `${fmt(hits.length)} live ${hits.length === 1 ? "job matches" : "jobs match"}${hits.length > 50 ? ", showing the first 50" : ""}.` : "No live job matches that. It may have closed, or the title is worded differently.";
     for (const j of hits.slice(0, 50)) {
-      const now = j.el === "u" ? tag("Hidden", "bad") : j.el === "s" ? tag("Shown, shortage list", "ok") : tag("Shown", "ok");
+      const now = j.el === "x" ? tag("Removed by you", "bad") : j.el === "u" ? tag("Hidden (unlikely to qualify)", "bad") : j.el === "s" ? tag("Shown, shortage list", "ok") : tag("Shown", "ok");
       const pending = ruleState(d, j.t);
       const st = el("span"); st.append(now);
-      if (pending === "hide" && j.el !== "u") st.append(" ", tag("Hidden from next refresh", "warn"));
+      if (pending === "hide" && j.el !== "u" && j.el !== "x") st.append(" ", tag("Hidden from next refresh", "warn"));
       if (pending === "show" && j.el === "u") st.append(" ", tag("Shown from next refresh", "warn"));
       const inp = phraseInput(titlePhrase(j.t, j.c));
       const act = el("span");
