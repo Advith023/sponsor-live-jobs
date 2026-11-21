@@ -3,7 +3,7 @@
   const cfg = window.SPONSORLIVE_CONFIG || {};
   const $ = (s) => document.querySelector(s);
   const PAGE = 40;
-  const state = { q: "", loc: "", age: 0, remote: false, all: false, lv: "", cats: new Set(), rg: new Set(), src: new Set(), sort: "new", shown: PAGE };
+  const state = { q: "", loc: "", age: 0, remote: false, all: false, why: new Set(), lv: "", cats: new Set(), rg: new Set(), src: new Set(), sort: "new", shown: PAGE };
   let cv = null; // in-memory only, never stored
   let jobs = [], filtered = [];
 
@@ -93,6 +93,7 @@
     state.cats = new Set((p.get("cat") || "").split("|").filter(Boolean));
     state.rg = new Set((p.get("rg") || "").split("|").filter(Boolean));
     state.src = new Set((p.get("src") || "").split("|").filter(Boolean));
+    state.why = new Set(state.all ? (p.get("why") || "").split("|").filter(Boolean) : []);
     if (state.sort === "match") state.sort = "new";
   }
   function writeUrl() {
@@ -107,16 +108,23 @@
     if (state.cats.size) p.set("cat", [...state.cats].join("|"));
     if (state.rg.size) p.set("rg", [...state.rg].join("|"));
     if (state.src.size) p.set("src", [...state.src].join("|"));
+    if (state.why.size) p.set("why", [...state.why].join("|"));
     history.replaceState(null, "", p.toString() ? `?${p}` : location.pathname);
   }
+
+  // Why a role is under "Include roles unlikely to qualify" (codes from scripts/signals.py)
+  const WHY = { skill: "Below skill level", pt: "Part-time", tmp: "Seasonal, casual or freelance", ns: "Says it can't sponsor", hr: "Low hourly pay" };
+  const WHY_ORDER = Object.values(WHY);
+  const reasons = (j) => (j.el === "u" ? (j.uw && j.uw.length ? j.uw : ["skill"]).map((c) => WHY[c] || c) : []);
 
   // ---------- filtering
   // skip: name of one filter to ignore (used for the counts shown on that filter's chips)
   function passes(j, skip) {
     const lterms = norm(state.loc || parsed.place).split(/[\s,]+/).filter(Boolean);
     const cutoff = state.age ? Date.now() - state.age * 864e5 : 0;
-    if (j.el === "x") return false;  // hidden by the owner (reported, or a warning sign set to Always hide): never shown
-    if (!state.all && j.el === "u") return false;  // below the Skilled Worker skill level, see scripts/eligibility.py
+    if (j.el === "x") return false;  // reported or hidden one by one by the owner: never shown
+    if (!state.all && j.el === "u") return false;  // unlikely to qualify, see reasons() above
+    if (skip !== "why" && state.why.size && !reasons(j).some((r) => state.why.has(r))) return false;
     if (state.lv === "entry" && j.lv !== "Entry") return false;
     if (state.lv === "exp" && !j.lv) return false;  // "exp" = any role with a level (Senior/Lead/Director)
     if (state.lv === "exp" && j.lv === "Entry") return false;
@@ -156,6 +164,8 @@
     renderChips("#cats", "cat", (j) => [j.cat], state.cats);
     renderChips("#regions", "rg", (j) => j._rg, state.rg, REGION_ORDER);
     renderChips("#srcs", "src", (j) => [j.src], state.src);
+    $("#why").hidden = !state.all;
+    if (state.all) renderChips("#why", "why", reasons, state.why, WHY_ORDER);
   }
   const REGION_ORDER = ["London", "South East", "East of England", "South West", "Midlands", "North West",
     "Yorkshire & North East", "Scotland", "Wales", "Northern Ireland", "Remote", "UK (other / unspecified)"];
@@ -196,7 +206,7 @@
     if (j.lv === "Entry") add("Entry level", "tag");
     else if (j.lv) add(j.lv + " level", "tag");
     if (j.el === "s") add("Shortage list role", "tag info");
-    if (j.el === "u") add("Unlikely to qualify", "tag warn");
+    if (j.el === "u") add(`${reasons(j).join(", ")}: unlikely to qualify`, "tag warn");
     add("via " + j.src);
     const tr = new URLSearchParams({ add: "1", employer: j.c, title: j.t, location: j.l, url: j.u });
     if (j._m) tr.set("fit", j._m.pct);
@@ -441,7 +451,7 @@
   $("#q").addEventListener("input", (e) => { state.q = e.target.value; debounce(apply); });
   $("#loc").addEventListener("input", (e) => { state.loc = e.target.value; debounce(apply); });
   $("#remote").addEventListener("change", (e) => { state.remote = e.target.checked; apply(); });
-  $("#showAll").addEventListener("change", (e) => { state.all = e.target.checked; apply(); });
+  $("#showAll").addEventListener("change", (e) => { state.all = e.target.checked; if (!state.all) state.why.clear(); apply(); });
   $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; apply(); });
   $("#age").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;

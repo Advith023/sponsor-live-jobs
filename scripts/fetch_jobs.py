@@ -1285,18 +1285,19 @@ def run():
             if (b["ats"], b["token"]) not in dead_keys:
                 b.pop("empty", None)
 
-    # Roles visitors reported and the owner hid: that exact job only, matched by apply link
+    # Quality checks: employer profile rule and the review queue for the control centre
+    auto_hidden, review = eligibility.quality_pass(jobs, reports=load_reports())
+
+    # Owner decisions, after the quality pass so they don't skew its employer shares:
+    # reported or individually hidden roles are removed ("x", never shown); warning signs set to
+    # Always hide go under "Include roles unlikely to qualify" ("u") with the reason in "uw".
     reported = apply_rules.load_reported()
     auto = apply_rules.load_auto_hide()
     signal_counts = {}
     for j in jobs:
         for code in j.get("f", []):
             signal_counts[code] = signal_counts.get(code, 0) + 1
-        if (reported and apply_rules.is_reported(j, reported)) or apply_rules.auto_hidden(j, auto):
-            j["el"] = "x"  # removed by the owner: never shown, even with "Include roles unlikely to qualify"
-
-    # Quality checks: employer profile rule and the review queue for the control centre
-    auto_hidden, review = eligibility.quality_pass(jobs, reports=load_reports())
+        apply_rules.decide(j, reported, auto)
     for j in jobs:
         j.pop("_kept", None)
 

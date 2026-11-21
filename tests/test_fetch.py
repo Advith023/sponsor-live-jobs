@@ -219,3 +219,16 @@ def test_signals():
     assert "tmp" in flags("Christmas Temp - Cloakroom") and "tmp" in flags("Bank Nurse - Leeds")
     assert "tmp" not in flags("Private Bank, Relationship Partner") and "tmp" not in flags("Analyst - 12 month FTC")
     assert "hr" in flags("Barista", "", "Pay: £12.50 per hour") and "hr" not in flags("Locum", "", "£45 per hour")
+
+
+def test_owner_decisions():
+    from apply_rules import decide
+    rep = [{"u": "https://a/1", "t": "Bar Staff", "c": "Pub"}]
+    j = {"u": "https://a/1", "t": "Bar Staff", "ty": "Part-time"}
+    decide(j, rep, {"pt"}); assert j["el"] == "x"           # reported: removed fully
+    j = {"u": "https://a/2", "t": "Bar Staff", "ty": "Part-time"}
+    decide(j, rep, {"pt"}); assert j["el"] == "u" and j["uw"] == ["pt"]   # Always hide: under the box
+    j = {"u": "https://a/3", "t": "Cleaner", "ty": "Part-time", "el": "u"}
+    decide(j, rep, {"pt"}); assert j["uw"] == ["pt", "skill"]
+    j = {"u": "https://a/4", "t": "Analyst", "ty": "Full-time"}
+    decide(j, rep, {"pt"}); assert "el" not in j

@@ -198,7 +198,7 @@
         const r = await readRules(); r.auto_hide = (r.auto_hide || []).filter((x) => x !== s.code);
         if (!on) r.auto_hide.push(s.code);
         await writeRules(`${on ? "Stop always hiding" : "Always hide"} roles: ${s.label}`);
-        toast(on ? "Saved. These come back at the next refresh." : `Saved. ${fmt(g.live.length)} jobs leave the site in about 2 minutes.`);
+        toast(on ? "Saved. These are back on the main list in about 2 minutes." : `Saved. In about 2 minutes ${fmt(g.live.length)} jobs move off the main list. Visitors can still see them by ticking "Include roles unlikely to qualify".`);
         loadSignals();
       }, on ? "small" : "small primary");
       head.append(h, toggle);

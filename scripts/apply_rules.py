@@ -9,7 +9,8 @@ Three kinds of hide, both from data/title_rules.json:
 
 The full refresh applies both too, but it only runs twice a day. This runs in
 seconds whenever the rules change, so a Hide shows on the site within a couple
-of minutes. It only hides; Keep and Undo take effect on the next full refresh.
+of minutes. Undo of a report and turning Always hide off apply here too; Keep takes
+effect on the next full refresh.
 """
 from __future__ import annotations
 
@@ -44,12 +45,31 @@ def load_auto_hide(path: Path = RULES) -> set[str]:
         return set()
 
 
-def auto_hidden(job: dict, auto: set[str]) -> bool:
+def auto_codes(job: dict, auto: set[str]) -> list[str]:
+    """Warning signs on this job that the owner set to Always hide."""
     if not auto:
-        return False
+        return []
     # Signs found in the description at the last refresh, plus any visible in the title or job type now
     found = set(job.get("f") or []) | set(signals.flags(job.get("t", ""), job.get("ty") or ""))
-    return bool(auto & found)
+    return sorted(auto & found)
+
+
+def decide(job: dict, reported: list[dict], auto: set[str]) -> None:
+    """Apply the owner's decisions to one job, in place.
+    Reported or individually hidden: "x", never shown on the site.
+    Warning sign set to Always hide: "u", shown only under "Include roles unlikely to
+    qualify", with the reasons in "uw" (a job with no "uw" is below the skill level)."""
+    if is_reported(job, reported):
+        job["el"] = "x"
+        job.pop("uw", None)
+        return
+    codes = auto_codes(job, auto)
+    if not codes:
+        return
+    if job.get("el") == "u":
+        job["uw"] = sorted(set(job.get("uw") or ["skill"]) | set(codes))
+    else:
+        job["el"], job["uw"] = "u", codes
 
 
 def is_reported(job: dict, reported: list[dict]) -> bool:
@@ -74,17 +94,21 @@ def main() -> int:
     auto = load_auto_hide()
     changed = 0
     for j in data.get("jobs", []):
-        # "x": removed by the owner, never shown, not even with "Include roles unlikely to qualify"
-        if j.get("el") != "x" and (is_reported(j, reported) or auto_hidden(j, auto)):
-            j["el"] = "x"
-            changed += 1
-        # "u": unlikely to qualify (title rules), shown only when visitors tick that box
-        elif not j.get("el") in ("u", "x") and eligibility.classify(j.get("t", ""), index)[0] == "u":
+        before = (j.get("el"), j.get("uw"))
+        if j.get("el") == "x" and not is_reported(j, reported):
+            j.pop("el")  # an Undo: back on the site (its visa-fit label returns at the next refresh)
+        if j.get("uw"):  # start from the visa-fit result, so turning Always hide off works straight away
+            if "skill" not in j["uw"]:
+                j.pop("el", None)
+            j.pop("uw")
+        decide(j, reported, auto)
+        if j.get("el") not in ("u", "x") and eligibility.classify(j.get("t", ""), index)[0] == "u":
             j["el"] = "u"
+        if (j.get("el"), j.get("uw")) != before:
             changed += 1
     if changed:
         JOBS.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
-    print(f"Hidden by owner rules: {changed} more jobs")
+    print(f"Jobs changed by owner rules: {changed}")
     return 0
 
 
