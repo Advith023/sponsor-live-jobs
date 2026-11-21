@@ -129,6 +129,9 @@
   },
   "11/17/2026 23:39:59|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Orpington---Walnuts-Centre-Orpington-Greater-London-BR6-0TW/Back-of-House-Nandoca_R0000054418": {
    "action": "hide"
+  },
+  "11/18/2026 15:44:45|Report role: Data and Strategy Analyst | Plentific | https://jobs.ashbyhq.com/plentific/4076892f-627c-4899-b6ba-e0c9ae7cb9b1": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -377,6 +380,12 @@
    "t": "Back of House Nandoca",
    "c": "Nando's",
    "key": "11/17/2026 23:39:59|Report role: Back of House Nandoca | Nando's | https://nandos.wd3.myworkdayjobs.com/Nandos/job/Orpington---Walnuts-Centre-Orpington-Greater-London-BR6-0TW/Back-of-House-Nandoca_R0000054418"
+  },
+  {
+   "u": "https://jobs.ashbyhq.com/plentific/4076892f-627c-4899-b6ba-e0c9ae7cb9b1",
+   "t": "Data and Strategy Analyst",
+   "c": "Plentific",
+   "key": "11/18/2026 15:44:45|Report role: Data and Strategy Analyst | Plentific | https://jobs.ashbyhq.com/plentific/4076892f-627c-4899-b6ba-e0c9ae7cb9b1"
   }
  ]
 }
