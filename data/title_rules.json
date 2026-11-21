@@ -405,6 +405,7 @@
  ],
  "auto_hide": [
   "pt",
-  "tmp"
+  "tmp",
+  "ns"
  ]
 }
