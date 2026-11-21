@@ -123,3 +123,4 @@ select{width:100%;padding:8px;border-radius:10px;border:1px solid var(--line);ba
 .nudge .nstars:hover button{color:#f2b01e}.nudge .nstars button:hover~button{color:#c9c9c9}
 .nudge .nclose{background:none;border:0;font-size:1.2rem;color:var(--muted,#777);cursor:pointer}
 .qhint{margin:8px 0 0;font-size:14px;color:#fff;opacity:.9}
+#why{margin:8px 0 4px}
