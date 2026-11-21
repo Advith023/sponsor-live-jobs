@@ -43,7 +43,7 @@
 
   <div id="app" hidden>
     <p id="who" class="muted"></p>
-    <nav class="jump"><a href="#sec-overview">Overview</a><a href="#sec-popular">Popular jobs</a><a href="#sec-refresh">Refresh</a><a href="#sec-suggestions">Suggestions</a><a href="#sec-feedback">Feedback</a><a href="#sec-settings">Site settings</a><a href="#sec-companies">Companies</a></nav>
+    <nav class="jump"><a href="#sec-overview">Overview</a><a href="#sec-popular">Popular jobs</a><a href="#sec-refresh">Refresh</a><a href="#sec-signals">Needs a look</a><a href="#sec-quality">Quality check</a><a href="#sec-suggestions">Suggestions</a><a href="#sec-feedback">Feedback</a><a href="#sec-settings">Site settings</a><a href="#sec-companies">Companies</a></nav>
 
     <!-- overview -->
     <section class="card" id="sec-overview">
@@ -106,6 +106,13 @@
       <table class="tbl"><thead><tr><th>Company</th><th>Link</th><th>Platform</th><th>Status</th><th></th></tr></thead><tbody id="sugs"></tbody></table>
     </section>
 
+    <!-- needs a look -->
+    <section class="card" id="sec-signals">
+      <div class="bar"><h2>Needs a look</h2><span id="sigCount" class="muted"></span></div>
+      <p class="muted">Live roles showing signs they probably can't be sponsored, with what to do about each. Nothing here is hidden until you choose. <b>Hide</b> removes one job. <b>Always hide</b> removes every job with that sign now and after every refresh, and can be turned off.</p>
+      <div id="sigCards"></div>
+    </section>
+
     <!-- quality -->
     <section class="card" id="sec-quality">
       <div class="bar"><h2>Quality check</h2></div>
@@ -119,7 +126,7 @@
       <table class="tbl"><tbody id="qSearchRows"></tbody></table>
 
       <h3>Reported by visitors <span id="qReportCount" class="muted small"></span></h3>
-      <p class="muted">Each "Report this role" tap from the site. <b>Hide</b> hides every job ending in the title in the box (edit it first if needed). <b>Ignore</b> marks the report as checked and leaves the role on the site. <b>Undo</b> reverses either.</p>
+      <p class="muted">Each "Report this role" tap from the site. <b>Hide</b> removes that one job only, never other jobs with a similar title. <b>Ignore</b> marks the report as checked and leaves the role on the site. <b>Undo</b> reverses either.</p>
       <table class="tbl"><thead><tr><th>Status</th><th>Role</th><th>Company</th><th>Sent</th><th></th></tr></thead><tbody id="qReports"></tbody></table>
 
       <h3>Titles the checks weren't sure about</h3>

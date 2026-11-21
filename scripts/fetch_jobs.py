@@ -38,6 +38,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import apply_rules  # noqa: E402
+import signals  # noqa: E402
 import skills  # noqa: E402
 import eligibility  # noqa: E402
 
@@ -1257,6 +1258,9 @@ def run():
                     "y": skills.min_years(j.get("desc") or ""),
                     "lv": skills.level(j["title"]),
                 })
+                f = signals.flags(j["title"], jobs[-1]["ty"] or "", j.get("desc") or "", j.get("salary") or "")
+                if f:
+                    jobs[-1]["f"] = f  # warning signs for the control centre, see scripts/signals.py
                 el, why = eligibility.classify(j["title"], elig_index)
                 if why == "kept by owner":
                     jobs[-1]["_kept"] = True
@@ -1283,8 +1287,12 @@ def run():
 
     # Roles visitors reported and the owner hid: that exact job only, matched by apply link
     reported = apply_rules.load_reported()
+    auto = apply_rules.load_auto_hide()
+    signal_counts = {}
     for j in jobs:
-        if reported and apply_rules.is_reported(j, reported):
+        for code in j.get("f", []):
+            signal_counts[code] = signal_counts.get(code, 0) + 1
+        if (reported and apply_rules.is_reported(j, reported)) or apply_rules.auto_hidden(j, auto):
             j["el"] = "u"
 
     # Quality checks: employer profile rule and the review queue for the control centre
@@ -1313,7 +1321,7 @@ def run():
         "generated": NOW.isoformat(), "sponsors": len(sponsors), "sponsors_checked": checked,
         "boards": len(boards), "jobs": len(jobs), "companies": payload["companies"],
         "quality": {"hidden_by_pay": pay_hidden[0], "hidden_by_employer_profile": auto_hidden,
-                    "review": review},
+                    "review": review, "signals": signal_counts},
         "eligibility": {k: sum(1 for j in jobs if j.get("el") == v)
                         for k, v in (("eligible", "e"), ("shortage_list", "s"), ("unlikely", "u"), ("unlabelled", None))},
         "sources": dict(sorted({src: sum(1 for j in jobs if j["src"] == src) for src in {j["src"] for j in jobs}}.items())),

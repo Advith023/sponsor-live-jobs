@@ -1,10 +1,11 @@
 # Sponsor Scout by Advith Ashok (github.com/Advith023/sponsor-live-jobs). Copyright (c) 2026 Advith Ashok. All rights reserved. Not licensed for reuse; see LICENSE.
 """Apply the control centre's Hide decisions to the published jobs straight away.
 
-Two kinds of hide, both from data/title_rules.json:
+Three kinds of hide, both from data/title_rules.json:
 - "hide_jobs": roles visitors reported. Only that exact job is hidden (matched by
   its apply link), never other jobs with a similar title.
 - "hide": title wording hidden from the Quality check panel.
+- "auto_hide": warning signs (scripts/signals.py) the owner chose to always hide.
 
 The full refresh applies both too, but it only runs twice a day. This runs in
 seconds whenever the rules change, so a Hide shows on the site within a couple
@@ -17,6 +18,7 @@ import sys
 from pathlib import Path
 
 import eligibility
+import signals
 
 ROOT = Path(__file__).resolve().parent.parent
 JOBS = ROOT / "site" / "data" / "jobs.json"
@@ -32,6 +34,22 @@ def load_reported(path: Path = RULES) -> list[dict]:
         return json.loads(path.read_text()).get("hide_jobs", []) or []
     except Exception:
         return []
+
+
+def load_auto_hide(path: Path = RULES) -> set[str]:
+    """Warning signs (scripts/signals.py codes) the owner chose to always hide."""
+    try:
+        return set(json.loads(path.read_text()).get("auto_hide", []) or [])
+    except Exception:
+        return set()
+
+
+def auto_hidden(job: dict, auto: set[str]) -> bool:
+    if not auto:
+        return False
+    # Signs found in the description at the last refresh, plus any visible in the title or job type now
+    found = set(job.get("f") or []) | set(signals.flags(job.get("t", ""), job.get("ty") or ""))
+    return bool(auto & found)
 
 
 def is_reported(job: dict, reported: list[dict]) -> bool:
@@ -53,12 +71,13 @@ def main() -> int:
     data = json.loads(JOBS.read_text())
     index = eligibility.apply_rules({}, eligibility.load_rules())
     reported = load_reported()
+    auto = load_auto_hide()
     changed = 0
     for j in data.get("jobs", []):
         if j.get("el") == "u":
             continue
         el, _ = eligibility.classify(j.get("t", ""), index)
-        if el == "u" or is_reported(j, reported):
+        if el == "u" or is_reported(j, reported) or auto_hidden(j, auto):
             j["el"] = "u"
             changed += 1
     if changed:

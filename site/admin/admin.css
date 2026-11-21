@@ -49,3 +49,7 @@ input.phrase{width:12em;max-width:100%;padding:3px 6px;font-size:.85rem}
 #popularPeriod select{padding:6px 10px;border-radius:8px;border:1px solid #c3d2cb}
 
 #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); max-width: 90vw; padding: 10px 16px; border-radius: 8px; background: #1f2937; color: #fff; font-size: 14px; box-shadow: 0 4px 16px rgba(0,0,0,.2); z-index: 1000; }
+.sig{border-top:1px solid #e5e7eb;padding:12px 0}
+.sig:first-child{border-top:0}
+.sig h3{margin:0;font-size:16px}
+.sig p{margin:6px 0}

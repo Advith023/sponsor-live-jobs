@@ -205,3 +205,17 @@ def test_report_hides_only_that_job():
     no_link = [{"u": "", "t": "Product Owner (12 month FTC)", "c": "Hiscox"}]
     assert apply_rules.is_reported({"u": "a", "t": "Product Owner (12 month FTC)", "c": "Hiscox Underwriting"}, no_link)
     assert not apply_rules.is_reported({"u": "b", "t": "Product Owner", "c": "Apadmi"}, no_link)
+
+
+def test_signals():
+    from signals import flags
+    assert "ns" in flags("Analyst", "", "Unfortunately we are unable to offer visa sponsorship for this role.")
+    assert "ns" in flags("Analyst", "", "Applicants must have the right to work in the UK without sponsorship.")
+    assert "ns" in flags("Analyst", "", "Candidates must not require sponsorship now or in future.")
+    assert "ns" not in flags("Analyst", "", "We can offer visa sponsorship for the right candidate.")
+    assert "ns" not in flags("Analyst", "", "We do not discriminate. Our sponsor programme is great.")
+    assert "pt" in flags("Bar Staff (Part-time)") and "pt" in flags("Bar Staff", "Part-time")
+    assert "pt" not in flags("Seasonal Full Time Sales Associate", "")
+    assert "tmp" in flags("Christmas Temp - Cloakroom") and "tmp" in flags("Bank Nurse - Leeds")
+    assert "tmp" not in flags("Private Bank, Relationship Partner") and "tmp" not in flags("Analyst - 12 month FTC")
+    assert "hr" in flags("Barista", "", "Pay: £12.50 per hour") and "hr" not in flags("Locum", "", "£45 per hour")

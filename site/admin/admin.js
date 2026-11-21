@@ -152,6 +152,85 @@
     return null;
   };
 
+  // ---------- needs a look: warning signs that a role can't be sponsored (codes from scripts/signals.py)
+  const SIGNALS = [
+    { code: "ns", label: "Says it can't sponsor", rec: true,
+      why: "The advert itself says the company can't sponsor this role, or wants people who can already work in the UK without sponsorship.",
+      fix: "Turn on Always hide. These go against what the site promises.",
+      note: "Read from job descriptions, so these appear after each refresh." },
+    { code: "tmp", label: "Seasonal, casual or freelance", rec: true,
+      why: "Christmas temps, casual and bank shifts, zero-hours and freelance work. Sponsorship needs a proper job with an employer, so these almost never qualify.",
+      fix: "Turn on Always hide." },
+    { code: "pt", label: "Part-time",
+      why: "A part-time role can be sponsored, but the yearly pay must still reach £41,700 even for fewer hours, so very few qualify.",
+      fix: "Hide the bar, shop and café ones below. If most look like that, turn on Always hide." },
+    { code: "hr", label: "Hourly pay too low for full-time",
+      why: "The advert quotes pay per hour that comes to less than £41,700 a year at 37.5 hours a week.",
+      fix: "Check the hours. Hide it if it's shift work.",
+      note: "Read from job descriptions, so these appear after each refresh." },
+  ];
+  // Same title checks as scripts/signals.py, so the panel works before the next refresh
+  const titleFlags = (j) => {
+    const t = j.t || "", ty = j.ty || "", f = new Set(j.f || []);
+    if ((/\bpart[- ]?time\b|\bp\/t\b|\b\d{1,2}\s*(?:hrs?|hours)\b/i.test(t) || /part/i.test(ty)) && !/full[- ]?time/i.test(t)) f.add("pt");
+    if (/\bfreelance\b|\bseasonal\b|\bchristmas\b|\bfestive\b|\bxmas\b|\btemp\b|\bzero[- ]hours?\b|\bcasual\b|\bbank\s+(?:staff|nurse|worker|shifts?|colleague|support)\b|\bholiday\s+(?:cover|season)\b/i.test(t)
+      || /seasonal|casual|freelance/i.test(ty)) f.add("tmp");
+    return f;
+  };
+  async function loadSignals() {
+    const box = $("sigCards"); box.replaceChildren(el("p", "Loading…", "muted"));
+    const d = await readRules();
+    d.auto_hide = d.auto_hide || [];
+    jobsCache = (await (await fetch("../data/jobs.json", { cache: "no-store" })).json()).jobs || [];
+    const groups = Object.fromEntries(SIGNALS.map((s) => [s.code, { live: [], hidden: 0 }]));
+    for (const j of jobsCache) for (const c of titleFlags(j)) if (groups[c]) j.el === "u" ? groups[c].hidden++ : groups[c].live.push(j);
+    box.replaceChildren();
+    let total = 0;
+    for (const s of SIGNALS) {
+      const g = groups[s.code], on = d.auto_hide.includes(s.code);
+      total += g.live.length;
+      const card = el("div", null, "sig");
+      const head = el("div", null, "bar");
+      const h = el("h3", `${s.label} `);
+      h.append(on ? tag("Always hidden", "bad") : g.live.length ? tag(`${fmt(g.live.length)} live`, "warn") : tag("None live", "ok"));
+      if (s.rec && !on) h.append(" ", tag("Recommended: Always hide", "run"));
+      const toggle = btn(on ? "Stop always hiding" : "Always hide", async () => {
+        const r = await readRules(); r.auto_hide = (r.auto_hide || []).filter((x) => x !== s.code);
+        if (!on) r.auto_hide.push(s.code);
+        await writeRules(`${on ? "Stop always hiding" : "Always hide"} roles: ${s.label}`);
+        toast(on ? "Saved. These come back at the next refresh." : `Saved. ${fmt(g.live.length)} jobs leave the site in about 2 minutes.`);
+        loadSignals();
+      }, on ? "small" : "small primary");
+      head.append(h, toggle);
+      card.append(head, el("p", s.why), el("p", "Suggested: " + s.fix, "small"));
+      if (s.note) card.append(el("p", s.note, "muted small"));
+      if (on || g.hidden) card.append(el("p", `${fmt(g.hidden)} already hidden.`, "muted small"));
+      if (g.live.length) {
+        const by = {}; g.live.forEach((j) => (by[j.c] = (by[j.c] || 0) + 1));
+        card.append(el("p", "Most from: " + Object.entries(by).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([c, n]) => `${c} (${n})`).join(", "), "muted small"));
+        const tbl = el("table"); tbl.className = "tbl"; tbl.hidden = true;
+        const body = el("tbody"); tbl.append(body);
+        g.live.slice().sort((a, b) => a.c.localeCompare(b.c) || a.t.localeCompare(b.t)).slice(0, 150).forEach((j) => {
+          const link = Object.assign(el("a", j.t), { href: j.u, target: "_blank", rel: "noopener" });
+          const tr = row([link, j.c, j.ty || "", null]);
+          tr.lastChild.append(btn("Hide", async () => {
+            const r = await readRules(); r.hide_jobs = r.hide_jobs || [];
+            const key = "manual|" + j.u;
+            if (!r.hide_jobs.some((o) => o.key === key)) r.hide_jobs.push({ u: j.u, t: j.t, c: j.c, key });
+            await writeRules(`Hide role "${j.t}" at ${j.c}`);
+            j.el = "u"; tr.remove(); toast("Saved. This job leaves the site in about 2 minutes.");
+          }, "small"));
+          body.append(tr);
+        });
+        const more = g.live.length > 150 ? ` (first 150 of ${fmt(g.live.length)})` : "";
+        const show = btn(`Show jobs${more}`, () => { tbl.hidden = !tbl.hidden; show.textContent = tbl.hidden ? `Show jobs${more}` : "Hide list"; }, "small");
+        card.append(show, tbl);
+      }
+      box.append(card);
+    }
+    $("sigCount").textContent = total ? `${fmt(total)} live roles to look at` : "Nothing to look at";
+  }
+
   // Visitor reports ("Report this role" on the site), read straight from the form's sheet
   async function renderReports(sheet) {
     const body = $("qReports"); body.replaceChildren();
@@ -600,7 +679,7 @@
       const me = await gh("https://api.github.com/user").catch(() => null);
       $("who").textContent = me ? `Signed in as ${me.login}` : "Signed in";
       await loadStats();
-      await Promise.all([loadRuns(), loadSeeds(), loadSettings(), loadQuality(), loadPopular()]);
+      await Promise.all([loadRuns(), loadSeeds(), loadSettings(), loadQuality(), loadPopular(), loadSignals().catch((e) => ($("sigCards").textContent = "Couldn't load: " + e.message))]);
       await loadSuggestions();
     } catch (err) { if (token) $("who").textContent = "Something went wrong: " + err.message; }
   }
