@@ -132,6 +132,9 @@
   },
   "11/18/2026 15:44:45|Report role: Data and Strategy Analyst | Plentific | https://jobs.ashbyhq.com/plentific/4076892f-627c-4899-b6ba-e0c9ae7cb9b1": {
    "action": "hide"
+  },
+  "11/18/2026 15:50:35|Report role: Strategy Analyst | Hargreaves Lansdown | https://hargreaveslansdown.wd3.myworkdayjobs.com/HargreavesLansdown/job/Bristol---Welcome-Building/Strategy-Analyst_R10070": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -386,6 +389,12 @@
    "t": "Data and Strategy Analyst",
    "c": "Plentific",
    "key": "11/18/2026 15:44:45|Report role: Data and Strategy Analyst | Plentific | https://jobs.ashbyhq.com/plentific/4076892f-627c-4899-b6ba-e0c9ae7cb9b1"
+  },
+  {
+   "u": "https://hargreaveslansdown.wd3.myworkdayjobs.com/HargreavesLansdown/job/Bristol---Welcome-Building/Strategy-Analyst_R10070",
+   "t": "Strategy Analyst",
+   "c": "Hargreaves Lansdown",
+   "key": "11/18/2026 15:50:35|Report role: Strategy Analyst | Hargreaves Lansdown | https://hargreaveslansdown.wd3.myworkdayjobs.com/HargreavesLansdown/job/Bristol---Welcome-Building/Strategy-Analyst_R10070"
   }
  ]
 }
