@@ -135,6 +135,9 @@
   },
   "11/18/2026 15:50:35|Report role: Strategy Analyst | Hargreaves Lansdown | https://hargreaveslansdown.wd3.myworkdayjobs.com/HargreavesLansdown/job/Bristol---Welcome-Building/Strategy-Analyst_R10070": {
    "action": "hide"
+  },
+  "11/18/2026 16:41:59|Report role: Data Analyst, Revenue Protection (Investigations) | Sportradar | https://jobs.smartrecruiters.com/sportradar/744000160238119": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -395,6 +398,12 @@
    "t": "Strategy Analyst",
    "c": "Hargreaves Lansdown",
    "key": "11/18/2026 15:50:35|Report role: Strategy Analyst | Hargreaves Lansdown | https://hargreaveslansdown.wd3.myworkdayjobs.com/HargreavesLansdown/job/Bristol---Welcome-Building/Strategy-Analyst_R10070"
+  },
+  {
+   "u": "https://jobs.smartrecruiters.com/sportradar/744000160238119",
+   "t": "Data Analyst, Revenue Protection (Investigations)",
+   "c": "Sportradar",
+   "key": "11/18/2026 16:41:59|Report role: Data Analyst, Revenue Protection (Investigations) | Sportradar | https://jobs.smartrecruiters.com/sportradar/744000160238119"
   }
  ]
 }
