@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-20T21:31:45.213670+00:00",
+ "generated": "2026-11-21T13:30:33.538998+00:00",
  "sponsors": 120255,
- "sponsors_checked": 63968,
- "boards": 2687,
- "jobs": 15046,
- "companies": 1687,
+ "sponsors_checked": 67079,
+ "boards": 2752,
+ "jobs": 16188,
+ "companies": 1719,
  "quality": {
-  "hidden_by_pay": 59,
-  "hidden_by_employer_profile": 51,
+  "hidden_by_pay": 56,
+  "hidden_by_employer_profile": 52,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -204,6 +204,13 @@
     "auto": true
    },
    {
+    "phrase": "early year education advisor",
+    "jobs": 1,
+    "example": "Early Years Education Advisor",
+    "company": "Fennies Day Nurseries",
+    "auto": true
+   },
+   {
     "phrase": "night transport supervisor",
     "jobs": 1,
     "example": "Nights Transport Supervisor",
@@ -274,24 +281,59 @@
     "auto": true
    },
    {
-    "phrase": "early year education advisor",
+    "phrase": "executive assistant",
     "jobs": 1,
-    "example": "Early Years Education Advisor",
-    "company": "Fennies Day Nurseries",
+    "example": "Executive Assistant",
+    "company": "Greene King",
     "auto": true
    },
    {
-    "phrase": "online assistant",
+    "phrase": "ceo executive assistant",
     "jobs": 1,
-    "example": "Online Assistant",
-    "company": "J Sainsbury",
+    "example": "CEO Executive Assistant",
+    "company": "Greene King",
     "auto": true
+   },
+   {
+    "phrase": "bar and waiting staff",
+    "jobs": 344,
+    "example": "Bar & Waiting Staff",
+    "company": "Greene King",
+    "auto": false
+   },
+   {
+    "phrase": "team leader",
+    "jobs": 131,
+    "example": "Team Leader",
+    "company": "Mountain Warehouse",
+    "auto": false
+   },
+   {
+    "phrase": "kitchen team leader",
+    "jobs": 53,
+    "example": "Kitchen Team Leader",
+    "company": "Greene King",
+    "auto": false
+   },
+   {
+    "phrase": "assistant manager",
+    "jobs": 43,
+    "example": "Assistant Manager",
+    "company": "Aramark",
+    "auto": false
    },
    {
     "phrase": "register your interest",
     "jobs": 31,
     "example": "Register Your Interest",
     "company": "Reiss",
+    "auto": false
+   },
+   {
+    "phrase": "general manager",
+    "jobs": 23,
+    "example": "General Manager | Birmingham",
+    "company": "Blank Street",
     "auto": false
    },
    {
@@ -303,16 +345,9 @@
    },
    {
     "phrase": "customer experience manager",
-    "jobs": 15,
+    "jobs": 14,
     "example": "Customer Experience Manager",
     "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "assistant manager",
-    "jobs": 14,
-    "example": "Assistant Manager",
-    "company": "Aramark",
     "auto": false
    },
    {
@@ -334,27 +369,6 @@
     "jobs": 6,
     "example": "Assistant General Manager",
     "company": "Bamford Collection",
-    "auto": false
-   },
-   {
-    "phrase": "general manager",
-    "jobs": 6,
-    "example": "General Manager | Birmingham",
-    "company": "Blank Street",
-    "auto": false
-   },
-   {
-    "phrase": "uk team leader",
-    "jobs": 6,
-    "example": "UK Team Leader (Chain 2 & 3)",
-    "company": "Mountain Warehouse",
-    "auto": false
-   },
-   {
-    "phrase": "senior sale associate",
-    "jobs": 5,
-    "example": "Senior Sales Associate",
-    "company": "Reiss",
     "auto": false
    },
    {
@@ -400,10 +414,31 @@
     "auto": false
    },
    {
+    "phrase": "uk team leader",
+    "jobs": 4,
+    "example": "UK Team Leader (Chain 1 & 5)",
+    "company": "Mountain Warehouse",
+    "auto": false
+   },
+   {
+    "phrase": "senior sale associate",
+    "jobs": 4,
+    "example": "Senior Sales Associate (FT & PT) | Bicester Village",
+    "company": "Reiss",
+    "auto": false
+   },
+   {
     "phrase": "human resource business partner",
     "jobs": 4,
     "example": "HR Business Partner - Aintree",
     "company": "Pladis (UK)",
+    "auto": false
+   },
+   {
+    "phrase": "hotel staff",
+    "jobs": 4,
+    "example": "Hotel Staff",
+    "company": "Greene King",
     "auto": false
    },
    {
@@ -414,10 +449,24 @@
     "auto": false
    },
    {
+    "phrase": "administrator",
+    "jobs": 3,
+    "example": "Administrator",
+    "company": "Aramark",
+    "auto": false
+   },
+   {
     "phrase": "area manager",
     "jobs": 3,
     "example": "Area Manager",
     "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "nursery room leader",
+    "jobs": 3,
+    "example": "Nursery Room Leader",
+    "company": "Fennies Day Nurseries",
     "auto": false
    },
    {
@@ -442,13 +491,6 @@
     "auto": false
    },
    {
-    "phrase": "nursery room leader",
-    "jobs": 3,
-    "example": "Nursery Room Leader",
-    "company": "Fennies Day Nurseries",
-    "auto": false
-   },
-   {
     "phrase": "analyst",
     "jobs": 3,
     "example": "Analyst",
@@ -466,13 +508,6 @@
     "phrase": "training manager",
     "jobs": 2,
     "example": "Training Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "administrator",
-    "jobs": 2,
-    "example": "Administrator",
     "company": "Aramark",
     "auto": false
    },
@@ -524,56 +559,28 @@
     "example": "Qualified Train Driver Cambridge",
     "company": "Arriva",
     "auto": false
-   },
-   {
-    "phrase": "assistant property manager",
-    "jobs": 2,
-    "example": "Assistant Property Manager",
-    "company": "Arriva",
-    "auto": false
-   },
-   {
-    "phrase": "business development graduate",
-    "jobs": 2,
-    "example": "Business Development Graduate",
-    "company": "Arriva",
-    "auto": false
-   },
-   {
-    "phrase": "business development administrator",
-    "jobs": 2,
-    "example": "Business Development Administrator",
-    "company": "Arriva",
-    "auto": false
-   },
-   {
-    "phrase": "people administrator",
-    "jobs": 2,
-    "example": "People Administrator  (6 Month FTC)",
-    "company": "Arriva",
-    "auto": false
    }
   ]
  },
  "eligibility": {
-  "eligible": 3303,
-  "shortage_list": 305,
-  "unlikely": 1841,
-  "unlabelled": 9597
+  "eligible": 3322,
+  "shortage_list": 310,
+  "unlikely": 2270,
+  "unlabelled": 10286
  },
  "sources": {
-  "Ashby": 1788,
-  "BambooHR": 496,
-  "Breezy": 249,
-  "Greenhouse": 4175,
-  "Lever": 556,
-  "Oracle": 966,
-  "Personio": 101,
-  "Pinpoint": 1443,
-  "Recruitee": 128,
-  "SmartRecruiters": 1253,
-  "Teamtailor": 1480,
-  "Workday": 2411
+  "Ashby": 1792,
+  "BambooHR": 515,
+  "Breezy": 247,
+  "Greenhouse": 4232,
+  "Lever": 576,
+  "Oracle": 939,
+  "Personio": 105,
+  "Pinpoint": 1459,
+  "Recruitee": 131,
+  "SmartRecruiters": 2264,
+  "Teamtailor": 1473,
+  "Workday": 2455
  },
  "suggestions_unmatched": [
   "SLB",
@@ -624,7 +631,7 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 380
+   "jobs": 353
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
