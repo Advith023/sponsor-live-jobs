@@ -150,6 +150,9 @@
   },
   "11/21/2026 15:27:38|Report role: General Capabilities - Member of Technical Staff | Callosum | https://jobs.ashbyhq.com/callosum/13f515fd-21f6-4e5b-a0a8-a69407ef3262": {
    "action": "hide"
+  },
+  "11/21/2026 15:27:27|Report role: Bar & Waiting Staff | Greene King | https://jobs.smartrecruiters.com/greeneking/744000162959059": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -428,6 +431,12 @@
    "t": "General Capabilities - Member of Technical Staff",
    "c": "Callosum",
    "key": "11/21/2026 15:27:38|Report role: General Capabilities - Member of Technical Staff | Callosum | https://jobs.ashbyhq.com/callosum/13f515fd-21f6-4e5b-a0a8-a69407ef3262"
+  },
+  {
+   "u": "https://jobs.smartrecruiters.com/greeneking/744000162959059",
+   "t": "Bar & Waiting Staff",
+   "c": "Greene King",
+   "key": "11/21/2026 15:27:27|Report role: Bar & Waiting Staff | Greene King | https://jobs.smartrecruiters.com/greeneking/744000162959059"
   }
  ],
  "auto_hide": [
