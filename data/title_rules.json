@@ -153,6 +153,9 @@
   },
   "11/21/2026 15:27:27|Report role: Bar & Waiting Staff | Greene King | https://jobs.smartrecruiters.com/greeneking/744000162959059": {
    "action": "hide"
+  },
+  "11/21/2026 15:27:26|Report role: Team Leader | Greene King | https://jobs.smartrecruiters.com/greeneking/744000162959829": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -437,6 +440,12 @@
    "t": "Bar & Waiting Staff",
    "c": "Greene King",
    "key": "11/21/2026 15:27:27|Report role: Bar & Waiting Staff | Greene King | https://jobs.smartrecruiters.com/greeneking/744000162959059"
+  },
+  {
+   "u": "https://jobs.smartrecruiters.com/greeneking/744000162959829",
+   "t": "Team Leader",
+   "c": "Greene King",
+   "key": "11/21/2026 15:27:26|Report role: Team Leader | Greene King | https://jobs.smartrecruiters.com/greeneking/744000162959829"
   }
  ],
  "auto_hide": [
