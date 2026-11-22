@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-21T20:15:03.812711+00:00",
+ "generated": "2026-11-22T13:24:39.839436+00:00",
  "sponsors": 120255,
- "sponsors_checked": 70031,
- "boards": 2820,
- "jobs": 16434,
- "companies": 1756,
+ "sponsors_checked": 72194,
+ "boards": 2853,
+ "jobs": 16660,
+ "companies": 1777,
  "quality": {
   "hidden_by_pay": 56,
   "hidden_by_employer_profile": 59,
@@ -154,14 +154,14 @@
     "phrase": "engineering supervisor",
     "jobs": 2,
     "example": "Engineering Supervisor",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": true
    },
    {
     "phrase": "ap exception management assistant",
     "jobs": 2,
     "example": "AP Exception Management Assistant (6-month FTC)",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": true
    },
    {
@@ -341,7 +341,7 @@
    },
    {
     "phrase": "kitchen team leader",
-    "jobs": 53,
+    "jobs": 54,
     "example": "Kitchen Team Leader",
     "company": "Greene King",
     "auto": false
@@ -369,14 +369,14 @@
    },
    {
     "phrase": "customer experience manager",
-    "jobs": 15,
+    "jobs": 16,
     "example": "Customer Experience Manager",
     "company": "J Sainsbury",
     "auto": false
    },
    {
     "phrase": "assistant general manager",
-    "jobs": 12,
+    "jobs": 11,
     "example": "Assistant General Manager",
     "company": "Bamford Collection",
     "auto": false
@@ -396,13 +396,6 @@
     "auto": false
    },
    {
-    "phrase": "lead customer experience manager",
-    "jobs": 6,
-    "example": "Lead Customer Experience Manager",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
     "phrase": "floor manager",
     "jobs": 5,
     "example": "FLOOR MANAGER ( 40 hours, Belfast)",
@@ -414,6 +407,13 @@
     "jobs": 5,
     "example": "Supply Nursery Educator",
     "company": "Storal Learning",
+    "auto": false
+   },
+   {
+    "phrase": "lead customer experience manager",
+    "jobs": 5,
+    "example": "Lead Customer Experience Manager",
+    "company": "J Sainsbury",
     "auto": false
    },
    {
@@ -434,14 +434,7 @@
     "phrase": "shift fitter",
     "jobs": 4,
     "example": "Shift Fitter",
-    "company": "Arriva",
-    "auto": false
-   },
-   {
-    "phrase": "retail service manager",
-    "jobs": 4,
-    "example": "Retail Service Managers- Bournemouth",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
@@ -508,6 +501,13 @@
     "auto": false
    },
    {
+    "phrase": "site administrator",
+    "jobs": 3,
+    "example": "Site Administrator - PART TIME",
+    "company": "Joseph gallagher",
+    "auto": false
+   },
+   {
     "phrase": "assistant store leader",
     "jobs": 3,
     "example": "Assistant Store Leader",
@@ -546,93 +546,93 @@
     "phrase": "oracle fusion technical service manager",
     "jobs": 2,
     "example": "Oracle Fusion Technical Service Manager",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "network and cyber engineer",
     "jobs": 2,
     "example": "Network & Cyber Engineer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "bi developer",
     "jobs": 2,
     "example": "BI Developer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "senior conductor talent pool",
     "jobs": 2,
     "example": "Senior Conductor-Talent Pool",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "psv night engineer",
     "jobs": 2,
     "example": "PSV Night Engineer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "shift engineer",
     "jobs": 2,
     "example": "Shift Engineer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
+    "auto": false
+   },
+   {
+    "phrase": "retail service manager",
+    "jobs": 2,
+    "example": "Retail Service Managers- Bournemouth",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "qualified train driver cambridge",
     "jobs": 2,
     "example": "Qualified Train Driver Cambridge",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "assistant property manager",
     "jobs": 2,
     "example": "Assistant Property Manager",
-    "company": "Arriva",
-    "auto": false
-   },
-   {
-    "phrase": "business development graduate",
-    "jobs": 2,
-    "example": "Business Development Graduate",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    }
   ],
   "signals": {
-   "ns": 324,
-   "pt": 1195,
+   "ns": 330,
+   "pt": 1198,
    "hr": 232,
-   "tmp": 131
+   "tmp": 128
   }
  },
  "eligibility": {
-  "eligible": 3210,
-  "shortage_list": 308,
-  "unlikely": 3415,
-  "removed_by_owner": 6,
-  "unlabelled": 9495
+  "eligible": 3233,
+  "shortage_list": 318,
+  "unlikely": 3444,
+  "removed_by_owner": 7,
+  "unlabelled": 9658
  },
  "sources": {
-  "Ashby": 1792,
-  "BambooHR": 541,
-  "Breezy": 252,
-  "Greenhouse": 4265,
-  "Lever": 576,
-  "Oracle": 954,
+  "Ashby": 1800,
+  "BambooHR": 564,
+  "Breezy": 258,
+  "Greenhouse": 4272,
+  "Lever": 587,
+  "Oracle": 952,
   "Personio": 108,
-  "Pinpoint": 1484,
-  "Recruitee": 141,
-  "SmartRecruiters": 2268,
-  "Teamtailor": 1555,
-  "Workday": 2498
+  "Pinpoint": 1498,
+  "Recruitee": 159,
+  "SmartRecruiters": 2326,
+  "Teamtailor": 1603,
+  "Workday": 2533
  },
  "suggestions_unmatched": [
   "SLB",
@@ -683,7 +683,7 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 368
+   "jobs": 366
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
@@ -698,7 +698,7 @@
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 51
+   "jobs": 50
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
