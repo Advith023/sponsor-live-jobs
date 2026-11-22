@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-22T13:24:39.839436+00:00",
+ "generated": "2026-11-22T20:28:09.527046+00:00",
  "sponsors": 120255,
- "sponsors_checked": 72194,
- "boards": 2853,
- "jobs": 16660,
- "companies": 1777,
+ "sponsors_checked": 75234,
+ "boards": 2900,
+ "jobs": 16813,
+ "companies": 1807,
  "quality": {
-  "hidden_by_pay": 56,
+  "hidden_by_pay": 60,
   "hidden_by_employer_profile": 59,
   "review": [
    {
@@ -130,6 +130,22 @@
     "reported": 1
    },
    {
+    "phrase": "team leader single live",
+    "jobs": 1,
+    "example": "Team Leader Single Live in Option",
+    "company": "Greene King",
+    "auto": false,
+    "reported": 1
+   },
+   {
+    "phrase": "duty manager live",
+    "jobs": 1,
+    "example": "Duty Manager Live in",
+    "company": "Greene King",
+    "auto": false,
+    "reported": 1
+   },
+   {
     "phrase": "customer host supervisor",
     "jobs": 14,
     "example": "Customer Host Supervisor (10 HRS)",
@@ -154,14 +170,14 @@
     "phrase": "engineering supervisor",
     "jobs": 2,
     "example": "Engineering Supervisor",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": true
    },
    {
     "phrase": "ap exception management assistant",
     "jobs": 2,
     "example": "AP Exception Management Assistant (6-month FTC)",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": true
    },
    {
@@ -242,6 +258,20 @@
     "auto": true
    },
    {
+    "phrase": "executive assistant",
+    "jobs": 1,
+    "example": "Executive Assistant",
+    "company": "Greene King",
+    "auto": true
+   },
+   {
+    "phrase": "ceo executive assistant",
+    "jobs": 1,
+    "example": "CEO Executive Assistant",
+    "company": "Greene King",
+    "auto": true
+   },
+   {
     "phrase": "night transport supervisor",
     "jobs": 1,
     "example": "Nights Transport Supervisor",
@@ -260,20 +290,6 @@
     "jobs": 1,
     "example": "Service Desk Supervisor",
     "company": "InPost",
-    "auto": true
-   },
-   {
-    "phrase": "executive assistant",
-    "jobs": 1,
-    "example": "Executive Assistant",
-    "company": "Greene King",
-    "auto": true
-   },
-   {
-    "phrase": "ceo executive assistant",
-    "jobs": 1,
-    "example": "CEO Executive Assistant",
-    "company": "Greene King",
     "auto": true
    },
    {
@@ -341,7 +357,7 @@
    },
    {
     "phrase": "kitchen team leader",
-    "jobs": 54,
+    "jobs": 55,
     "example": "Kitchen Team Leader",
     "company": "Greene King",
     "auto": false
@@ -389,17 +405,17 @@
     "auto": false
    },
    {
+    "phrase": "floor manager",
+    "jobs": 10,
+    "example": "FLOOR MANAGER ( 40 hours, Belfast)",
+    "company": "Mango Fly",
+    "auto": false
+   },
+   {
     "phrase": "field service engineer",
     "jobs": 7,
     "example": "Field Service Engineer (Oxford)",
     "company": "InPost",
-    "auto": false
-   },
-   {
-    "phrase": "floor manager",
-    "jobs": 5,
-    "example": "FLOOR MANAGER ( 40 hours, Belfast)",
-    "company": "Mango Fly",
     "auto": false
    },
    {
@@ -434,7 +450,7 @@
     "phrase": "shift fitter",
     "jobs": 4,
     "example": "Shift Fitter",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
@@ -494,17 +510,17 @@
     "auto": false
    },
    {
-    "phrase": "nursery lunchtime practitioner",
-    "jobs": 3,
-    "example": "Nursery Lunchtime Practitioner",
-    "company": "Storal Learning",
-    "auto": false
-   },
-   {
     "phrase": "site administrator",
     "jobs": 3,
     "example": "Site Administrator - PART TIME",
     "company": "Joseph gallagher",
+    "auto": false
+   },
+   {
+    "phrase": "nursery lunchtime practitioner",
+    "jobs": 3,
+    "example": "Nursery Lunchtime Practitioner",
+    "company": "Storal Learning",
     "auto": false
    },
    {
@@ -546,93 +562,93 @@
     "phrase": "oracle fusion technical service manager",
     "jobs": 2,
     "example": "Oracle Fusion Technical Service Manager",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
     "phrase": "network and cyber engineer",
     "jobs": 2,
     "example": "Network & Cyber Engineer",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
     "phrase": "bi developer",
     "jobs": 2,
     "example": "BI Developer",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
     "phrase": "senior conductor talent pool",
     "jobs": 2,
     "example": "Senior Conductor-Talent Pool",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
     "phrase": "psv night engineer",
     "jobs": 2,
     "example": "PSV Night Engineer",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
     "phrase": "shift engineer",
     "jobs": 2,
     "example": "Shift Engineer",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
     "phrase": "retail service manager",
     "jobs": 2,
     "example": "Retail Service Managers- Bournemouth",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
     "phrase": "qualified train driver cambridge",
     "jobs": 2,
     "example": "Qualified Train Driver Cambridge",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
     "phrase": "assistant property manager",
     "jobs": 2,
     "example": "Assistant Property Manager",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    }
   ],
   "signals": {
-   "ns": 330,
-   "pt": 1198,
-   "hr": 232,
-   "tmp": 128
+   "ns": 347,
+   "pt": 1249,
+   "hr": 236,
+   "tmp": 129
   }
  },
  "eligibility": {
-  "eligible": 3233,
-  "shortage_list": 318,
-  "unlikely": 3444,
-  "removed_by_owner": 7,
-  "unlabelled": 9658
+  "eligible": 3274,
+  "shortage_list": 319,
+  "unlikely": 3486,
+  "removed_by_owner": 14,
+  "unlabelled": 9720
  },
  "sources": {
-  "Ashby": 1800,
-  "BambooHR": 564,
-  "Breezy": 258,
-  "Greenhouse": 4272,
-  "Lever": 587,
-  "Oracle": 952,
-  "Personio": 108,
-  "Pinpoint": 1498,
+  "Ashby": 1815,
+  "BambooHR": 586,
+  "Breezy": 260,
+  "Greenhouse": 4284,
+  "Lever": 600,
+  "Oracle": 944,
+  "Personio": 110,
+  "Pinpoint": 1534,
   "Recruitee": 159,
-  "SmartRecruiters": 2326,
-  "Teamtailor": 1603,
-  "Workday": 2533
+  "SmartRecruiters": 2325,
+  "Teamtailor": 1631,
+  "Workday": 2565
  },
  "suggestions_unmatched": [
   "SLB",
@@ -683,12 +699,12 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 366
+   "jobs": 359
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 586
+   "jobs": 585
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
