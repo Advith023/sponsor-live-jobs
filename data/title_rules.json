@@ -162,6 +162,9 @@
   },
   "11/21/2026 15:27:21|Report role: Bar & Waiting Staff | Greene King | https://jobs.smartrecruiters.com/greeneking/744000162960249": {
    "action": "hide"
+  },
+  "11/22/2026 18:45:14|Report role: Team Leader Single Live in Option | Greene King | https://jobs.smartrecruiters.com/greeneking/744000163093739": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -464,6 +467,12 @@
    "t": "Bar & Waiting Staff",
    "c": "Greene King",
    "key": "11/21/2026 15:27:21|Report role: Bar & Waiting Staff | Greene King | https://jobs.smartrecruiters.com/greeneking/744000162960249"
+  },
+  {
+   "u": "https://jobs.smartrecruiters.com/greeneking/744000163093739",
+   "t": "Team Leader Single Live in Option",
+   "c": "Greene King",
+   "key": "11/22/2026 18:45:14|Report role: Team Leader Single Live in Option | Greene King | https://jobs.smartrecruiters.com/greeneking/744000163093739"
   }
  ],
  "auto_hide": [
