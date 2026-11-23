@@ -165,6 +165,9 @@
   },
   "11/22/2026 18:45:14|Report role: Team Leader Single Live in Option | Greene King | https://jobs.smartrecruiters.com/greeneking/744000163093739": {
    "action": "hide"
+  },
+  "11/22/2026 18:45:15|Report role: Duty Manager Live in | Greene King | https://jobs.smartrecruiters.com/greeneking/744000163094279": {
+   "action": "hide"
   }
  },
  "hide_jobs": [
@@ -473,6 +476,12 @@
    "t": "Team Leader Single Live in Option",
    "c": "Greene King",
    "key": "11/22/2026 18:45:14|Report role: Team Leader Single Live in Option | Greene King | https://jobs.smartrecruiters.com/greeneking/744000163093739"
+  },
+  {
+   "u": "https://jobs.smartrecruiters.com/greeneking/744000163094279",
+   "t": "Duty Manager Live in",
+   "c": "Greene King",
+   "key": "11/22/2026 18:45:15|Report role: Duty Manager Live in | Greene King | https://jobs.smartrecruiters.com/greeneking/744000163094279"
   }
  ],
  "auto_hide": [
