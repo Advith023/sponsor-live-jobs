@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-22T20:28:09.527046+00:00",
- "sponsors": 120255,
- "sponsors_checked": 75234,
- "boards": 2900,
- "jobs": 16813,
- "companies": 1807,
+ "generated": "2026-11-23T16:02:45.863641+00:00",
+ "sponsors": 120196,
+ "sponsors_checked": 77772,
+ "boards": 2944,
+ "jobs": 16858,
+ "companies": 1787,
  "quality": {
   "hidden_by_pay": 60,
-  "hidden_by_employer_profile": 59,
+  "hidden_by_employer_profile": 70,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -146,17 +146,17 @@
     "reported": 1
    },
    {
+    "phrase": "supervisor",
+    "jobs": 23,
+    "example": "Supervisor",
+    "company": "Aramark",
+    "auto": true
+   },
+   {
     "phrase": "customer host supervisor",
     "jobs": 14,
     "example": "Customer Host Supervisor (10 HRS)",
     "company": "White stuff",
-    "auto": true
-   },
-   {
-    "phrase": "supervisor",
-    "jobs": 13,
-    "example": "Supervisor",
-    "company": "Aramark",
     "auto": true
    },
    {
@@ -167,17 +167,24 @@
     "auto": true
    },
    {
+    "phrase": "front of house assistant",
+    "jobs": 2,
+    "example": "Front of House Assistant",
+    "company": "Aramark",
+    "auto": true
+   },
+   {
     "phrase": "engineering supervisor",
     "jobs": 2,
     "example": "Engineering Supervisor",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": true
    },
    {
     "phrase": "ap exception management assistant",
     "jobs": 2,
     "example": "AP Exception Management Assistant (6-month FTC)",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": true
    },
    {
@@ -191,13 +198,6 @@
     "phrase": "front of house service assistant",
     "jobs": 1,
     "example": "Front of House Service Assistant",
-    "company": "Aramark",
-    "auto": true
-   },
-   {
-    "phrase": "front of house assistant",
-    "jobs": 1,
-    "example": "Front of House Assistant",
     "company": "Aramark",
     "auto": true
    },
@@ -248,13 +248,6 @@
     "jobs": 1,
     "example": "Early Years Education Advisor",
     "company": "Fennies Day Nurseries",
-    "auto": true
-   },
-   {
-    "phrase": "tour assistant",
-    "jobs": 1,
-    "example": "Tour Assistant - Bars",
-    "company": "Diageo",
     "auto": true
    },
    {
@@ -356,15 +349,22 @@
     "auto": true
    },
    {
+    "phrase": "purchasing assistant",
+    "jobs": 1,
+    "example": "Purchasing Assistant",
+    "company": "Mulberry Co (Design)",
+    "auto": true
+   },
+   {
     "phrase": "kitchen team leader",
-    "jobs": 55,
+    "jobs": 52,
     "example": "Kitchen Team Leader",
     "company": "Greene King",
     "auto": false
    },
    {
     "phrase": "assistant manager",
-    "jobs": 45,
+    "jobs": 48,
     "example": "Assistant Manager",
     "company": "Aramark",
     "auto": false
@@ -378,23 +378,16 @@
    },
    {
     "phrase": "general manager",
-    "jobs": 27,
+    "jobs": 25,
     "example": "General Manager | Birmingham",
     "company": "Blank Street",
     "auto": false
    },
    {
     "phrase": "customer experience manager",
-    "jobs": 16,
+    "jobs": 14,
     "example": "Customer Experience Manager",
     "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "assistant general manager",
-    "jobs": 11,
-    "example": "Assistant General Manager",
-    "company": "Bamford Collection",
     "auto": false
    },
    {
@@ -405,17 +398,31 @@
     "auto": false
    },
    {
+    "phrase": "assistant general manager",
+    "jobs": 9,
+    "example": "Assistant General Manager",
+    "company": "Bamford Collection",
+    "auto": false
+   },
+   {
     "phrase": "floor manager",
-    "jobs": 10,
+    "jobs": 8,
     "example": "FLOOR MANAGER ( 40 hours, Belfast)",
     "company": "Mango Fly",
     "auto": false
    },
    {
     "phrase": "field service engineer",
-    "jobs": 7,
+    "jobs": 6,
     "example": "Field Service Engineer (Oxford)",
     "company": "InPost",
+    "auto": false
+   },
+   {
+    "phrase": "uk team leader",
+    "jobs": 5,
+    "example": "UK Team Leader (Chain 1 & 5)",
+    "company": "Mountain Warehouse",
     "auto": false
    },
    {
@@ -450,7 +457,7 @@
     "phrase": "shift fitter",
     "jobs": 4,
     "example": "Shift Fitter",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
@@ -461,10 +468,10 @@
     "auto": false
    },
    {
-    "phrase": "uk team leader",
+    "phrase": "deputy nursery manager",
     "jobs": 4,
-    "example": "UK Team Leader (Chain 1 & 5)",
-    "company": "Mountain Warehouse",
+    "example": "Deputy Nursery Manager",
+    "company": "Storal Learning",
     "auto": false
    },
    {
@@ -493,27 +500,6 @@
     "jobs": 3,
     "example": "Nursery Room Leader",
     "company": "Fennies Day Nurseries",
-    "auto": false
-   },
-   {
-    "phrase": "assistant buyer",
-    "jobs": 3,
-    "example": "Assistant Buyer",
-    "company": "Diageo",
-    "auto": false
-   },
-   {
-    "phrase": "experience specialist",
-    "jobs": 3,
-    "example": "Experience Specialist - Guinness Open Gate Brewery London (Admissions)",
-    "company": "Diageo",
-    "auto": false
-   },
-   {
-    "phrase": "site administrator",
-    "jobs": 3,
-    "example": "Site Administrator - PART TIME",
-    "company": "Joseph gallagher",
     "auto": false
    },
    {
@@ -559,96 +545,109 @@
     "auto": false
    },
    {
+    "phrase": "site operation manager",
+    "jobs": 2,
+    "example": "Site Operations Manager - London East",
+    "company": "Arriva UK Bus",
+    "auto": false
+   },
+   {
     "phrase": "oracle fusion technical service manager",
     "jobs": 2,
     "example": "Oracle Fusion Technical Service Manager",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "network and cyber engineer",
     "jobs": 2,
     "example": "Network & Cyber Engineer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "bi developer",
     "jobs": 2,
     "example": "BI Developer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "senior conductor talent pool",
     "jobs": 2,
     "example": "Senior Conductor-Talent Pool",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "psv night engineer",
     "jobs": 2,
     "example": "PSV Night Engineer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "shift engineer",
     "jobs": 2,
     "example": "Shift Engineer",
-    "company": "Arriva",
-    "auto": false
-   },
-   {
-    "phrase": "retail service manager",
-    "jobs": 2,
-    "example": "Retail Service Managers- Bournemouth",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "qualified train driver cambridge",
     "jobs": 2,
     "example": "Qualified Train Driver Cambridge",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "assistant property manager",
     "jobs": 2,
     "example": "Assistant Property Manager",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
+    "auto": false
+   },
+   {
+    "phrase": "business development graduate",
+    "jobs": 2,
+    "example": "Business Development Graduate",
+    "company": "Arriva UK Bus",
+    "auto": false
+   },
+   {
+    "phrase": "business development administrator",
+    "jobs": 2,
+    "example": "Business Development Administrator",
+    "company": "Arriva UK Bus",
     "auto": false
    }
   ],
   "signals": {
-   "ns": 347,
-   "pt": 1249,
-   "hr": 236,
-   "tmp": 129
+   "ns": 350,
+   "pt": 1227,
+   "hr": 274,
+   "tmp": 119
   }
  },
  "eligibility": {
-  "eligible": 3274,
-  "shortage_list": 319,
-  "unlikely": 3486,
+  "eligible": 3257,
+  "shortage_list": 324,
+  "unlikely": 3519,
   "removed_by_owner": 14,
-  "unlabelled": 9720
+  "unlabelled": 9744
  },
  "sources": {
-  "Ashby": 1815,
-  "BambooHR": 586,
-  "Breezy": 260,
-  "Greenhouse": 4284,
-  "Lever": 600,
-  "Oracle": 944,
-  "Personio": 110,
-  "Pinpoint": 1534,
-  "Recruitee": 159,
+  "Ashby": 1826,
+  "BambooHR": 587,
+  "Breezy": 253,
+  "Greenhouse": 4278,
+  "Lever": 635,
+  "Oracle": 956,
+  "Pinpoint": 1582,
+  "Recruitee": 163,
   "SmartRecruiters": 2325,
-  "Teamtailor": 1631,
-  "Workday": 2565
+  "Teamtailor": 1662,
+  "Workday": 2591
  },
  "suggestions_unmatched": [
   "SLB",
@@ -684,27 +683,27 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 136
+   "jobs": 135
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
    "boards": 2,
-   "jobs": 22
+   "jobs": 23
   },
   "GoCardless": {
    "sponsor": "GoCardless Limited",
    "boards": 1,
-   "jobs": 8
+   "jobs": 7
   },
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 359
+   "jobs": 374
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 585
+   "jobs": 582
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
@@ -714,7 +713,7 @@
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 50
+   "jobs": 44
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
@@ -734,12 +733,12 @@
   "Spotify": {
    "sponsor": "Spotify Limited",
    "boards": 1,
-   "jobs": 38
+   "jobs": 37
   },
   "Synthesia": {
    "sponsor": "Synthesia Limited",
    "boards": 2,
-   "jobs": 20
+   "jobs": 19
   },
   "TEST please ignore": {
    "sponsor": null,
