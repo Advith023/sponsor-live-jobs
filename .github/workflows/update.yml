@@ -50,8 +50,12 @@ jobs:
           git add data site/data
           git diff --cached --quiet || git commit -m "Daily job refresh"
           # main may have moved while this ran (e.g. admin page edits); replay our data on top, keeping our data on conflict
-          git pull --rebase -X theirs origin main
-          git push
+          # Retry if main moved underneath us (e.g. several control centre clicks in a row)
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            echo "Push attempt $i failed, retrying"; sleep $((i * 5 + RANDOM % 5))
+          done
+          exit 1
 
   rules:
     # A Hide in the control centre: apply it to the published jobs now, not at the next refresh
@@ -75,8 +79,12 @@ jobs:
           git config user.email "180869546+Advith023@users.noreply.github.com"
           git add site/data/jobs.json
           git diff --cached --quiet || git commit -m "Apply hide rules"
-          git pull --rebase -X theirs origin main
-          git push
+          # Retry if main moved underneath us (e.g. several control centre clicks in a row)
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            echo "Push attempt $i failed, retrying"; sleep $((i * 5 + RANDOM % 5))
+          done
+          exit 1
 
   deploy:
     needs: [refresh, rules]
@@ -87,7 +95,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy1.outputs.page_url || steps.deploy2.outputs.page_url || steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -96,5 +104,18 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+      # GitHub Pages sometimes fails to find a just-uploaded artifact; wait and try again before giving up
+      - id: deploy1
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - if: steps.deploy1.outcome == 'failure'
+        run: sleep 60
+      - id: deploy2
+        if: steps.deploy1.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        run: sleep 180
       - id: deployment
+        if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
         uses: actions/deploy-pages@v4
