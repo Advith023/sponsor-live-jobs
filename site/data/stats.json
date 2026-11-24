@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-23T16:02:45.863641+00:00",
+ "generated": "2026-11-24T01:12:09.403796+00:00",
  "sponsors": 120196,
- "sponsors_checked": 77772,
- "boards": 2944,
- "jobs": 16858,
- "companies": 1787,
+ "sponsors_checked": 79967,
+ "boards": 2985,
+ "jobs": 16939,
+ "companies": 1807,
  "quality": {
-  "hidden_by_pay": 60,
-  "hidden_by_employer_profile": 70,
+  "hidden_by_pay": 64,
+  "hidden_by_employer_profile": 69,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -177,14 +177,14 @@
     "phrase": "engineering supervisor",
     "jobs": 2,
     "example": "Engineering Supervisor",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": true
    },
    {
     "phrase": "ap exception management assistant",
     "jobs": 2,
     "example": "AP Exception Management Assistant (6-month FTC)",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": true
    },
    {
@@ -349,20 +349,6 @@
     "auto": true
    },
    {
-    "phrase": "purchasing assistant",
-    "jobs": 1,
-    "example": "Purchasing Assistant",
-    "company": "Mulberry Co (Design)",
-    "auto": true
-   },
-   {
-    "phrase": "kitchen team leader",
-    "jobs": 52,
-    "example": "Kitchen Team Leader",
-    "company": "Greene King",
-    "auto": false
-   },
-   {
     "phrase": "assistant manager",
     "jobs": 48,
     "example": "Assistant Manager",
@@ -391,6 +377,13 @@
     "auto": false
    },
    {
+    "phrase": "production scheduler",
+    "jobs": 12,
+    "example": "Production Scheduler",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
     "phrase": "sale manager",
     "jobs": 11,
     "example": "Sales Manager | Vigo Street Central London",
@@ -405,6 +398,27 @@
     "auto": false
    },
    {
+    "phrase": "maintenance technician",
+    "jobs": 9,
+    "example": "Maintenance Technician",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "lead technician",
+    "jobs": 8,
+    "example": "Lead Technician",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "senior field service engineer",
+    "jobs": 8,
+    "example": "Senior Field Service Engineer (Grid Automation)",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
     "phrase": "floor manager",
     "jobs": 8,
     "example": "FLOOR MANAGER ( 40 hours, Belfast)",
@@ -416,13 +430,6 @@
     "jobs": 6,
     "example": "Field Service Engineer (Oxford)",
     "company": "InPost",
-    "auto": false
-   },
-   {
-    "phrase": "uk team leader",
-    "jobs": 5,
-    "example": "UK Team Leader (Chain 1 & 5)",
-    "company": "Mountain Warehouse",
     "auto": false
    },
    {
@@ -457,7 +464,7 @@
     "phrase": "shift fitter",
     "jobs": 4,
     "example": "Shift Fitter",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
@@ -468,10 +475,143 @@
     "auto": false
    },
    {
-    "phrase": "deputy nursery manager",
+    "phrase": "health and safety co ordinator",
     "jobs": 4,
-    "example": "Deputy Nursery Manager",
-    "company": "Storal Learning",
+    "example": "Health and Safety Co-ordinator",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "site quality specialist",
+    "jobs": 4,
+    "example": "Site Quality Specialist",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "hmax integrator",
+    "jobs": 4,
+    "example": "HMAX Integrator",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "strategy lead",
+    "jobs": 4,
+    "example": "Strategy Lead - EMEA",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "head of operation",
+    "jobs": 4,
+    "example": "Head of Operations - Midlands",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "site manager hvdc",
+    "jobs": 4,
+    "example": "Site Manager HVDC",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "inside sale representative",
+    "jobs": 4,
+    "example": "Inside Sales Representative - English speaker",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "material controller",
+    "jobs": 4,
+    "example": "Material Controller",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "fleet operation manager",
+    "jobs": 4,
+    "example": "Fleet Operations Manager",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "train maintenance centre manager",
+    "jobs": 4,
+    "example": "Train Maintenance Centre (TMC) Manager",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "senior technical trainer",
+    "jobs": 4,
+    "example": "Senior Technical Trainer",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "senior endpoint management engineer",
+    "jobs": 4,
+    "example": "Senior Endpoint Management Engineer",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "large project office hse manager",
+    "jobs": 4,
+    "example": "Large Project Office HSE Manager (F/M/D)",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "strategic planner",
+    "jobs": 4,
+    "example": "Strategic Planner",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "support engineer",
+    "jobs": 4,
+    "example": "Support Engineer",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "facility technician",
+    "jobs": 4,
+    "example": "Facilities Technician",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "global marketing and sale manager",
+    "jobs": 4,
+    "example": "Global Marketing and Sales Manager (Power Consulting)",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "commissioning control and protection engineer",
+    "jobs": 4,
+    "example": "Commissioning Control and Protection Engineer",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "payroll lead",
+    "jobs": 4,
+    "example": "Payroll Lead",
+    "company": "Hitachi Europe",
+    "auto": false
+   },
+   {
+    "phrase": "senior it infrastructure azure engineer",
+    "jobs": 4,
+    "example": "Senior IT Infrastructure Azure Engineer",
+    "company": "Hitachi Europe",
     "auto": false
    },
    {
@@ -482,172 +622,39 @@
     "auto": false
    },
    {
-    "phrase": "kitchen assistant care home",
-    "jobs": 3,
-    "example": "Kitchen Assistant Care Home",
-    "company": "Advantage Angels",
-    "auto": false
-   },
-   {
-    "phrase": "administrator",
-    "jobs": 3,
-    "example": "Administrator",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "nursery room leader",
-    "jobs": 3,
-    "example": "Nursery Room Leader",
-    "company": "Fennies Day Nurseries",
-    "auto": false
-   },
-   {
-    "phrase": "nursery lunchtime practitioner",
-    "jobs": 3,
-    "example": "Nursery Lunchtime Practitioner",
+    "phrase": "deputy nursery manager",
+    "jobs": 4,
+    "example": "Deputy Nursery Manager",
     "company": "Storal Learning",
-    "auto": false
-   },
-   {
-    "phrase": "assistant store leader",
-    "jobs": 3,
-    "example": "Assistant Store Leader",
-    "company": "Tapestry (Partners)",
-    "auto": false
-   },
-   {
-    "phrase": "analyst",
-    "jobs": 3,
-    "example": "Analyst",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "business development consultant",
-    "jobs": 2,
-    "example": "Business Development Consultant",
-    "company": "Amoria Bond",
-    "auto": false
-   },
-   {
-    "phrase": "retail operator",
-    "jobs": 2,
-    "example": "Retail Operator",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "training manager",
-    "jobs": 2,
-    "example": "Training Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "site operation manager",
-    "jobs": 2,
-    "example": "Site Operations Manager - London East",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "oracle fusion technical service manager",
-    "jobs": 2,
-    "example": "Oracle Fusion Technical Service Manager",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "network and cyber engineer",
-    "jobs": 2,
-    "example": "Network & Cyber Engineer",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "bi developer",
-    "jobs": 2,
-    "example": "BI Developer",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "senior conductor talent pool",
-    "jobs": 2,
-    "example": "Senior Conductor-Talent Pool",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "psv night engineer",
-    "jobs": 2,
-    "example": "PSV Night Engineer",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "shift engineer",
-    "jobs": 2,
-    "example": "Shift Engineer",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "qualified train driver cambridge",
-    "jobs": 2,
-    "example": "Qualified Train Driver Cambridge",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "assistant property manager",
-    "jobs": 2,
-    "example": "Assistant Property Manager",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "business development graduate",
-    "jobs": 2,
-    "example": "Business Development Graduate",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "business development administrator",
-    "jobs": 2,
-    "example": "Business Development Administrator",
-    "company": "Arriva UK Bus",
     "auto": false
    }
   ],
   "signals": {
-   "ns": 350,
-   "pt": 1227,
-   "hr": 274,
-   "tmp": 119
+   "ns": 363,
+   "pt": 1232,
+   "hr": 268,
+   "tmp": 120
   }
  },
  "eligibility": {
-  "eligible": 3257,
-  "shortage_list": 324,
-  "unlikely": 3519,
-  "removed_by_owner": 14,
-  "unlabelled": 9744
+  "eligible": 3297,
+  "shortage_list": 326,
+  "unlikely": 3620,
+  "removed_by_owner": 15,
+  "unlabelled": 9681
  },
  "sources": {
-  "Ashby": 1826,
+  "Ashby": 1823,
   "BambooHR": 587,
   "Breezy": 253,
-  "Greenhouse": 4278,
-  "Lever": 635,
-  "Oracle": 956,
-  "Pinpoint": 1582,
-  "Recruitee": 163,
-  "SmartRecruiters": 2325,
-  "Teamtailor": 1662,
-  "Workday": 2591
+  "Greenhouse": 4338,
+  "Lever": 634,
+  "Oracle": 912,
+  "Pinpoint": 1585,
+  "Recruitee": 170,
+  "SmartRecruiters": 2327,
+  "Teamtailor": 1694,
+  "Workday": 2616
  },
  "suggestions_unmatched": [
   "SLB",
@@ -683,7 +690,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 135
+   "jobs": 136
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -698,12 +705,12 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 374
+   "jobs": 329
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 582
+   "jobs": 583
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
