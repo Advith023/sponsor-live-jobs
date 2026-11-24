@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-24T15:56:07.873709+00:00",
+ "generated": "2026-11-24T20:10:50.698156+00:00",
  "sponsors": 120184,
- "sponsors_checked": 83200,
- "boards": 3046,
- "jobs": 17186,
+ "sponsors_checked": 85349,
+ "boards": 3086,
+ "jobs": 17327,
  "companies": 1878,
  "quality": {
   "hidden_by_pay": 61,
@@ -177,14 +177,14 @@
     "phrase": "engineering supervisor",
     "jobs": 2,
     "example": "Engineering Supervisor",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": true
    },
    {
     "phrase": "ap exception management assistant",
     "jobs": 2,
     "example": "AP Exception Management Assistant (6-month FTC)",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": true
    },
    {
@@ -443,7 +443,7 @@
     "phrase": "shift fitter",
     "jobs": 4,
     "example": "Shift Fitter",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
@@ -534,135 +534,135 @@
     "phrase": "site operation manager",
     "jobs": 2,
     "example": "Site Operations Manager - London East",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "oracle fusion technical service manager",
     "jobs": 2,
     "example": "Oracle Fusion Technical Service Manager",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "network and cyber engineer",
     "jobs": 2,
     "example": "Network & Cyber Engineer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "bi developer",
     "jobs": 2,
     "example": "BI Developer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "senior conductor talent pool",
     "jobs": 2,
     "example": "Senior Conductor-Talent Pool",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "psv night engineer",
     "jobs": 2,
     "example": "PSV Night Engineer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "shift engineer",
     "jobs": 2,
     "example": "Shift Engineer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "qualified train driver cambridge",
     "jobs": 2,
     "example": "Qualified Train Driver Cambridge",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "assistant property manager",
     "jobs": 2,
     "example": "Assistant Property Manager",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "business development administrator",
     "jobs": 2,
     "example": "Business Development Administrator",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "people administrator",
     "jobs": 2,
     "example": "People Administrator  (6 Month FTC)",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "engineer",
     "jobs": 2,
     "example": "Engineer",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "day electrician",
     "jobs": 2,
     "example": "Day Electrician",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "psv mechanic",
     "jobs": 2,
     "example": "PSV Mechanic",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "bid manager",
     "jobs": 2,
     "example": "Bid Manager",
-    "company": "Arriva",
+    "company": "Arriva UK Bus",
     "auto": false
    }
   ],
   "signals": {
-   "ns": 368,
-   "pt": 1270,
-   "hr": 250,
-   "tmp": 108
+   "ns": 382,
+   "pt": 1249,
+   "hr": 249,
+   "tmp": 105
   }
  },
  "eligibility": {
-  "eligible": 3393,
-  "shortage_list": 333,
-  "unlikely": 3703,
+  "eligible": 3405,
+  "shortage_list": 339,
+  "unlikely": 3705,
   "removed_by_owner": 13,
-  "unlabelled": 9744
+  "unlabelled": 9865
  },
  "sources": {
-  "Ashby": 1826,
-  "BambooHR": 618,
-  "Breezy": 254,
-  "Greenhouse": 4246,
-  "Lever": 664,
-  "Oracle": 934,
-  "Personio": 123,
-  "Pinpoint": 1620,
+  "Ashby": 1852,
+  "BambooHR": 642,
+  "Breezy": 253,
+  "Greenhouse": 4249,
+  "Lever": 666,
+  "Oracle": 941,
+  "Personio": 56,
+  "Pinpoint": 1643,
   "Recruitee": 183,
-  "SmartRecruiters": 2366,
-  "Teamtailor": 1704,
-  "Workday": 2648
+  "SmartRecruiters": 2376,
+  "Teamtailor": 1699,
+  "Workday": 2767
  },
  "suggestions_unmatched": [
   "SLB",
@@ -713,7 +713,7 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 351
+   "jobs": 358
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
@@ -748,7 +748,7 @@
   "Spotify": {
    "sponsor": "Spotify Limited",
    "boards": 1,
-   "jobs": 38
+   "jobs": 39
   },
   "Synthesia": {
    "sponsor": "Synthesia Limited",
