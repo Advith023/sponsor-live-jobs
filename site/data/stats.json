@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-24T20:10:50.698156+00:00",
+ "generated": "2026-11-24T23:15:44.760302+00:00",
  "sponsors": 120184,
- "sponsors_checked": 85349,
- "boards": 3086,
- "jobs": 17327,
- "companies": 1878,
+ "sponsors_checked": 88419,
+ "boards": 3150,
+ "jobs": 17763,
+ "companies": 1942,
  "quality": {
-  "hidden_by_pay": 61,
-  "hidden_by_employer_profile": 72,
+  "hidden_by_pay": 59,
+  "hidden_by_employer_profile": 80,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -357,7 +357,7 @@
    },
    {
     "phrase": "assistant manager",
-    "jobs": 43,
+    "jobs": 45,
     "example": "Assistant Manager",
     "company": "Aramark",
     "auto": false
@@ -371,7 +371,7 @@
    },
    {
     "phrase": "general manager",
-    "jobs": 23,
+    "jobs": 24,
     "example": "General Manager | Birmingham",
     "company": "Blank Street",
     "auto": false
@@ -401,7 +401,7 @@
     "phrase": "floor manager",
     "jobs": 8,
     "example": "FLOOR MANAGER ( 40 hours, Belfast)",
-    "company": "Mango-t",
+    "company": "Mango Fly",
     "auto": false
    },
    {
@@ -409,6 +409,13 @@
     "jobs": 6,
     "example": "Field Service Engineer (Oxford)",
     "company": "InPost",
+    "auto": false
+   },
+   {
+    "phrase": "mobile patrol officer",
+    "jobs": 6,
+    "example": "Mobile Patrol Officer",
+    "company": "Securitas",
     "auto": false
    },
    {
@@ -475,10 +482,24 @@
     "auto": false
    },
    {
+    "phrase": "cctv controller",
+    "jobs": 4,
+    "example": "CCTV Controller",
+    "company": "Securitas",
+    "auto": false
+   },
+   {
     "phrase": "kitchen assistant care home",
     "jobs": 3,
     "example": "Kitchen Assistant Care Home",
     "company": "Advantage Angels",
+    "auto": false
+   },
+   {
+    "phrase": "administrator",
+    "jobs": 3,
+    "example": "Administrator",
+    "company": "Aramark",
     "auto": false
    },
    {
@@ -510,6 +531,13 @@
     "auto": false
    },
    {
+    "phrase": "commissioning engineer",
+    "jobs": 3,
+    "example": "Commissioning Engineer",
+    "company": "Securitas",
+    "auto": false
+   },
+   {
     "phrase": "business development consultant",
     "jobs": 2,
     "example": "Business Development Consultant",
@@ -520,13 +548,6 @@
     "phrase": "training manager",
     "jobs": 2,
     "example": "Training Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "administrator",
-    "jobs": 2,
-    "example": "Administrator",
     "company": "Aramark",
     "auto": false
    },
@@ -613,56 +634,35 @@
     "example": "Engineer",
     "company": "Arriva UK Bus",
     "auto": false
-   },
-   {
-    "phrase": "day electrician",
-    "jobs": 2,
-    "example": "Day Electrician",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "psv mechanic",
-    "jobs": 2,
-    "example": "PSV Mechanic",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "bid manager",
-    "jobs": 2,
-    "example": "Bid Manager",
-    "company": "Arriva UK Bus",
-    "auto": false
    }
   ],
   "signals": {
-   "ns": 382,
-   "pt": 1249,
-   "hr": 249,
-   "tmp": 105
+   "ns": 380,
+   "pt": 1311,
+   "hr": 250,
+   "tmp": 112
   }
  },
  "eligibility": {
-  "eligible": 3405,
-  "shortage_list": 339,
-  "unlikely": 3705,
+  "eligible": 3460,
+  "shortage_list": 346,
+  "unlikely": 3867,
   "removed_by_owner": 13,
-  "unlabelled": 9865
+  "unlabelled": 10077
  },
  "sources": {
-  "Ashby": 1852,
-  "BambooHR": 642,
+  "Ashby": 1884,
+  "BambooHR": 651,
   "Breezy": 253,
-  "Greenhouse": 4249,
-  "Lever": 666,
-  "Oracle": 941,
-  "Personio": 56,
-  "Pinpoint": 1643,
-  "Recruitee": 183,
-  "SmartRecruiters": 2376,
-  "Teamtailor": 1699,
-  "Workday": 2767
+  "Greenhouse": 4248,
+  "Lever": 703,
+  "Oracle": 912,
+  "Personio": 125,
+  "Pinpoint": 1689,
+  "Recruitee": 194,
+  "SmartRecruiters": 2551,
+  "Teamtailor": 1706,
+  "Workday": 2847
  },
  "suggestions_unmatched": [
   "SLB",
@@ -713,7 +713,7 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 358
+   "jobs": 329
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
