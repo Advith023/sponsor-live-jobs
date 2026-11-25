@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-24T23:15:44.760302+00:00",
+ "generated": "2026-11-25T15:40:13.016497+00:00",
  "sponsors": 120184,
- "sponsors_checked": 88419,
- "boards": 3150,
- "jobs": 17763,
- "companies": 1942,
+ "sponsors_checked": 91369,
+ "boards": 3204,
+ "jobs": 18221,
+ "companies": 1962,
  "quality": {
-  "hidden_by_pay": 59,
-  "hidden_by_employer_profile": 80,
+  "hidden_by_pay": 64,
+  "hidden_by_employer_profile": 82,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -174,6 +174,13 @@
     "auto": true
    },
    {
+    "phrase": "f and b assistant",
+    "jobs": 2,
+    "example": "F&B Assistant, The Bell",
+    "company": "Bamford Collection",
+    "auto": true
+   },
+   {
     "phrase": "engineering supervisor",
     "jobs": 2,
     "example": "Engineering Supervisor",
@@ -188,23 +195,16 @@
     "auto": true
    },
    {
-    "phrase": "account payable assistant",
-    "jobs": 2,
-    "example": "Accounts Payable Assistant - Property (FTC)",
-    "company": "Mountain Warehouse",
+    "phrase": "chef assistant",
+    "jobs": 1,
+    "example": "Chef Assistant",
+    "company": "Aramark",
     "auto": true
    },
    {
     "phrase": "front of house service assistant",
     "jobs": 1,
     "example": "Front of House Service Assistant",
-    "company": "Aramark",
-    "auto": true
-   },
-   {
-    "phrase": "recruitment and training assistant",
-    "jobs": 1,
-    "example": "Recruitment & Training Assistant",
     "company": "Aramark",
     "auto": true
    },
@@ -230,13 +230,6 @@
     "auto": true
    },
    {
-    "phrase": "f and b assistant",
-    "jobs": 1,
-    "example": "F&B Assistant, The Bell",
-    "company": "Bamford Collection",
-    "auto": true
-   },
-   {
     "phrase": "maintenance assistant",
     "jobs": 1,
     "example": "Maintenance Assistant (Painter & Decorator)",
@@ -248,20 +241,6 @@
     "jobs": 1,
     "example": "Early Years Education Advisor",
     "company": "Fennies Day Nurseries",
-    "auto": true
-   },
-   {
-    "phrase": "executive assistant",
-    "jobs": 1,
-    "example": "Executive Assistant",
-    "company": "Greene King",
-    "auto": true
-   },
-   {
-    "phrase": "ceo executive assistant",
-    "jobs": 1,
-    "example": "CEO Executive Assistant",
-    "company": "Greene King",
     "auto": true
    },
    {
@@ -283,6 +262,27 @@
     "jobs": 1,
     "example": "Service Desk Supervisor",
     "company": "InPost",
+    "auto": true
+   },
+   {
+    "phrase": "executive assistant",
+    "jobs": 1,
+    "example": "Executive Assistant",
+    "company": "Greene King",
+    "auto": true
+   },
+   {
+    "phrase": "ceo executive assistant",
+    "jobs": 1,
+    "example": "CEO Executive Assistant",
+    "company": "Greene King",
+    "auto": true
+   },
+   {
+    "phrase": "account payable assistant",
+    "jobs": 1,
+    "example": "Accounts Payable Assistant - Property (FTC)",
+    "company": "Mountain Warehouse",
     "auto": true
    },
    {
@@ -321,43 +321,43 @@
     "auto": true
    },
    {
-    "phrase": "operation supervisor",
+    "phrase": "port security support assistant",
     "jobs": 1,
-    "example": "Operations Supervisor",
-    "company": "Space NK",
+    "example": "Port Security Support Assistant",
+    "company": "Securitas",
     "auto": true
    },
    {
-    "phrase": "luxury skincare advisor",
+    "phrase": "procurement assistant",
     "jobs": 1,
-    "example": "Luxury Skincare Advisor",
-    "company": "Space NK",
+    "example": "Procurement Assistant",
+    "company": "Securitas",
     "auto": true
    },
    {
-    "phrase": "acting supervisor",
+    "phrase": "site supervisor",
     "jobs": 1,
-    "example": "Acting Supervisor",
-    "company": "Tapestry (Partners)",
+    "example": "Site Supervisor",
+    "company": "Securitas",
     "auto": true
    },
    {
-    "phrase": "temporary supervisor",
+    "phrase": "health and safety advisor",
     "jobs": 1,
-    "example": "Temporary Supervisor",
-    "company": "Tapestry (Partners)",
+    "example": "Health & Safety Advisor",
+    "company": "Securitas",
     "auto": true
    },
    {
-    "phrase": "acting lead supervisor",
+    "phrase": "fire resilience crew",
     "jobs": 1,
-    "example": "Acting Lead Supervisor",
-    "company": "Tapestry (Partners)",
+    "example": "Fire Resilience Crew",
+    "company": "Securitas",
     "auto": true
    },
    {
     "phrase": "assistant manager",
-    "jobs": 45,
+    "jobs": 41,
     "example": "Assistant Manager",
     "company": "Aramark",
     "auto": false
@@ -371,7 +371,7 @@
    },
    {
     "phrase": "general manager",
-    "jobs": 24,
+    "jobs": 22,
     "example": "General Manager | Birmingham",
     "company": "Blank Street",
     "auto": false
@@ -385,28 +385,35 @@
    },
    {
     "phrase": "sale manager",
-    "jobs": 11,
+    "jobs": 10,
     "example": "Sales Manager | Vigo Street Central London",
     "company": "Reiss",
     "auto": false
    },
    {
-    "phrase": "assistant general manager",
+    "phrase": "shift fitter",
     "jobs": 8,
-    "example": "Assistant General Manager",
-    "company": "Bamford Collection",
+    "example": "Shift Fitter",
+    "company": "Arriva UK Bus",
     "auto": false
    },
    {
     "phrase": "floor manager",
     "jobs": 8,
     "example": "FLOOR MANAGER ( 40 hours, Belfast)",
-    "company": "Mango Fly",
+    "company": "Mango-t",
+    "auto": false
+   },
+   {
+    "phrase": "nursery room leader",
+    "jobs": 7,
+    "example": "Nursery Room Leader",
+    "company": "Fennies Day Nurseries",
     "auto": false
    },
    {
     "phrase": "field service engineer",
-    "jobs": 6,
+    "jobs": 7,
     "example": "Field Service Engineer (Oxford)",
     "company": "InPost",
     "auto": false
@@ -419,6 +426,13 @@
     "auto": false
    },
    {
+    "phrase": "room leader",
+    "jobs": 6,
+    "example": "Room Leader",
+    "company": "St Georges Nursery",
+    "auto": false
+   },
+   {
     "phrase": "supply nursery educator",
     "jobs": 5,
     "example": "Supply Nursery Educator",
@@ -426,10 +440,10 @@
     "auto": false
    },
    {
-    "phrase": "lead customer experience manager",
+    "phrase": "nursery manager",
     "jobs": 5,
-    "example": "Lead Customer Experience Manager",
-    "company": "J Sainsbury",
+    "example": "Nursery Manager",
+    "company": "St Georges Nursery",
     "auto": false
    },
    {
@@ -447,10 +461,10 @@
     "auto": false
    },
    {
-    "phrase": "shift fitter",
+    "phrase": "nursery deputy manager",
     "jobs": 4,
-    "example": "Shift Fitter",
-    "company": "Arriva UK Bus",
+    "example": "Nursery Deputy Manager",
+    "company": "Fennies Day Nurseries",
     "auto": false
    },
    {
@@ -468,10 +482,10 @@
     "auto": false
    },
    {
-    "phrase": "deputy nursery manager",
+    "phrase": "cctv controller",
     "jobs": 4,
-    "example": "Deputy Nursery Manager",
-    "company": "Storal Learning",
+    "example": "CCTV Controller",
+    "company": "Securitas",
     "auto": false
    },
    {
@@ -482,10 +496,24 @@
     "auto": false
    },
    {
-    "phrase": "cctv controller",
+    "phrase": "deputy nursery manager",
     "jobs": 4,
-    "example": "CCTV Controller",
-    "company": "Securitas",
+    "example": "Deputy Nursery Manager",
+    "company": "Storal Learning",
+    "auto": false
+   },
+   {
+    "phrase": "deputy manager",
+    "jobs": 4,
+    "example": "Deputy Manager",
+    "company": "White stuff",
+    "auto": false
+   },
+   {
+    "phrase": "lead customer experience manager",
+    "jobs": 4,
+    "example": "Lead Customer Experience Manager",
+    "company": "J Sainsbury",
     "auto": false
    },
    {
@@ -503,9 +531,16 @@
     "auto": false
    },
    {
-    "phrase": "nursery room leader",
+    "phrase": "assistant general manager",
     "jobs": 3,
-    "example": "Nursery Room Leader",
+    "example": "Assistant General Manager | Durham",
+    "company": "Blank Street",
+    "auto": false
+   },
+   {
+    "phrase": "third",
+    "jobs": 3,
+    "example": "Third in Charge",
     "company": "Fennies Day Nurseries",
     "auto": false
    },
@@ -524,6 +559,13 @@
     "auto": false
    },
    {
+    "phrase": "commissioning engineer",
+    "jobs": 3,
+    "example": "Commissioning Engineer",
+    "company": "Securitas",
+    "auto": false
+   },
+   {
     "phrase": "nursery lunchtime practitioner",
     "jobs": 3,
     "example": "Nursery Lunchtime Practitioner",
@@ -531,10 +573,17 @@
     "auto": false
    },
    {
-    "phrase": "commissioning engineer",
+    "phrase": "workshop manager",
     "jobs": 3,
-    "example": "Commissioning Engineer",
-    "company": "Securitas",
+    "example": "Workshop Manager",
+    "company": "Stagecoach Holdings",
+    "auto": false
+   },
+   {
+    "phrase": "lead online manager",
+    "jobs": 3,
+    "example": "Lead Online Manager",
+    "company": "J Sainsbury",
     "auto": false
    },
    {
@@ -552,6 +601,27 @@
     "auto": false
    },
    {
+    "phrase": "group brand lead",
+    "jobs": 2,
+    "example": "Group Brand Lead (FTC - 12 months)",
+    "company": "Arriva UK Bus",
+    "auto": false
+   },
+   {
+    "phrase": "driver manager",
+    "jobs": 2,
+    "example": "Driver Manager",
+    "company": "Arriva UK Bus",
+    "auto": false
+   },
+   {
+    "phrase": "station coordinator",
+    "jobs": 2,
+    "example": "Station Coordinator",
+    "company": "Arriva UK Bus",
+    "auto": false
+   },
+   {
     "phrase": "site operation manager",
     "jobs": 2,
     "example": "Site Operations Manager - London East",
@@ -564,105 +634,35 @@
     "example": "Oracle Fusion Technical Service Manager",
     "company": "Arriva UK Bus",
     "auto": false
-   },
-   {
-    "phrase": "network and cyber engineer",
-    "jobs": 2,
-    "example": "Network & Cyber Engineer",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "bi developer",
-    "jobs": 2,
-    "example": "BI Developer",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "senior conductor talent pool",
-    "jobs": 2,
-    "example": "Senior Conductor-Talent Pool",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "psv night engineer",
-    "jobs": 2,
-    "example": "PSV Night Engineer",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "shift engineer",
-    "jobs": 2,
-    "example": "Shift Engineer",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "qualified train driver cambridge",
-    "jobs": 2,
-    "example": "Qualified Train Driver Cambridge",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "assistant property manager",
-    "jobs": 2,
-    "example": "Assistant Property Manager",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "business development administrator",
-    "jobs": 2,
-    "example": "Business Development Administrator",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "people administrator",
-    "jobs": 2,
-    "example": "People Administrator  (6 Month FTC)",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "engineer",
-    "jobs": 2,
-    "example": "Engineer",
-    "company": "Arriva UK Bus",
-    "auto": false
    }
   ],
   "signals": {
-   "ns": 380,
-   "pt": 1311,
-   "hr": 250,
-   "tmp": 112
+   "ns": 377,
+   "pt": 1319,
+   "hr": 304,
+   "tmp": 106
   }
  },
  "eligibility": {
-  "eligible": 3460,
-  "shortage_list": 346,
-  "unlikely": 3867,
+  "eligible": 3553,
+  "shortage_list": 352,
+  "unlikely": 4014,
   "removed_by_owner": 13,
-  "unlabelled": 10077
+  "unlabelled": 10289
  },
  "sources": {
-  "Ashby": 1884,
-  "BambooHR": 651,
-  "Breezy": 253,
-  "Greenhouse": 4248,
-  "Lever": 703,
-  "Oracle": 912,
-  "Personio": 125,
-  "Pinpoint": 1689,
-  "Recruitee": 194,
-  "SmartRecruiters": 2551,
-  "Teamtailor": 1706,
-  "Workday": 2847
+  "Ashby": 1885,
+  "BambooHR": 658,
+  "Breezy": 250,
+  "Greenhouse": 4168,
+  "Lever": 713,
+  "Oracle": 932,
+  "Personio": 129,
+  "Pinpoint": 1723,
+  "Recruitee": 196,
+  "SmartRecruiters": 2762,
+  "Teamtailor": 1779,
+  "Workday": 3026
  },
  "suggestions_unmatched": [
   "SLB",
@@ -698,12 +698,12 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 141
+   "jobs": 140
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
    "boards": 2,
-   "jobs": 22
+   "jobs": 21
   },
   "GoCardless": {
    "sponsor": "GoCardless Limited",
@@ -713,17 +713,17 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 329
+   "jobs": 353
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 583
+   "jobs": 579
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
    "boards": 1,
-   "jobs": 39
+   "jobs": 40
   },
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
@@ -748,12 +748,12 @@
   "Spotify": {
    "sponsor": "Spotify Limited",
    "boards": 1,
-   "jobs": 39
+   "jobs": 40
   },
   "Synthesia": {
    "sponsor": "Synthesia Limited",
    "boards": 2,
-   "jobs": 19
+   "jobs": 17
   },
   "TEST please ignore": {
    "sponsor": null,
@@ -763,7 +763,7 @@
   "Teya Services": {
    "sponsor": "Teya Europe Ltd",
    "boards": 2,
-   "jobs": 56
+   "jobs": 58
   },
   "Trainline": {
    "sponsor": "Trainline.com Ltd",
