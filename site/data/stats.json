@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-25T15:40:13.016497+00:00",
+ "generated": "2026-11-25T22:44:32.311384+00:00",
  "sponsors": 120184,
- "sponsors_checked": 91369,
- "boards": 3204,
- "jobs": 18221,
- "companies": 1962,
+ "sponsors_checked": 94467,
+ "boards": 3273,
+ "jobs": 18964,
+ "companies": 2002,
  "quality": {
-  "hidden_by_pay": 64,
-  "hidden_by_employer_profile": 82,
+  "hidden_by_pay": 65,
+  "hidden_by_employer_profile": 92,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -184,14 +184,35 @@
     "phrase": "engineering supervisor",
     "jobs": 2,
     "example": "Engineering Supervisor",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": true
    },
    {
     "phrase": "ap exception management assistant",
     "jobs": 2,
     "example": "AP Exception Management Assistant (6-month FTC)",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
+    "auto": true
+   },
+   {
+    "phrase": "cargo supervisor",
+    "jobs": 2,
+    "example": "Cargo Supervisor (Offshore) for Floating Production Storage & Offloading Facility",
+    "company": "vGroup International",
+    "auto": true
+   },
+   {
+    "phrase": "production supervisor",
+    "jobs": 2,
+    "example": "Production Supervisor (Offshore) for Floating Production Storage & Offloading Facility",
+    "company": "vGroup International",
+    "auto": true
+   },
+   {
+    "phrase": "assistant maintenance supervisor",
+    "jobs": 2,
+    "example": "Assistant Maintenance Supervisor (Offshore)-Floating Production Storage & Offloading Facility",
+    "company": "vGroup International",
     "auto": true
    },
    {
@@ -279,13 +300,6 @@
     "auto": true
    },
    {
-    "phrase": "account payable assistant",
-    "jobs": 1,
-    "example": "Accounts Payable Assistant - Property (FTC)",
-    "company": "Mountain Warehouse",
-    "auto": true
-   },
-   {
     "phrase": "seasonal supervisor",
     "jobs": 1,
     "example": "Seasonal Supervisor",
@@ -293,23 +307,16 @@
     "auto": true
    },
    {
+    "phrase": "account payable assistant",
+    "jobs": 1,
+    "example": "Accounts Payable Assistant - Property (FTC)",
+    "company": "Mountain Warehouse",
+    "auto": true
+   },
+   {
     "phrase": "account assistant",
     "jobs": 1,
     "example": "Accounts Assistant (3 month fixed term contract)",
-    "company": "Reiss",
-    "auto": true
-   },
-   {
-    "phrase": "sale advisor",
-    "jobs": 1,
-    "example": "Sales Advisor",
-    "company": "Reiss",
-    "auto": true
-   },
-   {
-    "phrase": "stock room assistant",
-    "jobs": 1,
-    "example": "Stock Room Assistant",
     "company": "Reiss",
     "auto": true
    },
@@ -349,17 +356,17 @@
     "auto": true
    },
    {
-    "phrase": "fire resilience crew",
-    "jobs": 1,
-    "example": "Fire Resilience Crew",
-    "company": "Securitas",
-    "auto": true
-   },
-   {
     "phrase": "assistant manager",
     "jobs": 41,
     "example": "Assistant Manager",
     "company": "Aramark",
+    "auto": false
+   },
+   {
+    "phrase": "chief officer",
+    "jobs": 33,
+    "example": "Chief Officer for LNG Carrier \u2013 beg March (Hiring Office: India)",
+    "company": "vGroup International",
     "auto": false
    },
    {
@@ -371,16 +378,58 @@
    },
    {
     "phrase": "general manager",
-    "jobs": 22,
+    "jobs": 23,
     "example": "General Manager | Birmingham",
     "company": "Blank Street",
     "auto": false
    },
    {
+    "phrase": "chief engineer",
+    "jobs": 19,
+    "example": "Chief Engineer",
+    "company": "Stagecoach Holdings",
+    "auto": false
+   },
+   {
+    "phrase": "master",
+    "jobs": 18,
+    "example": "Master for LNG \u2013 beg March (Hiring Office: India)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
+    "phrase": "able seaman",
+    "jobs": 16,
+    "example": "Able Seaman for LNG Carrier (Hiring Office: India)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
+    "phrase": "electro technical officer",
+    "jobs": 15,
+    "example": "Electro-Technical Officer for  Floating Storage and Offloading (Hiring Office: EU / Manila)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
+    "phrase": "2nd engineer",
+    "jobs": 15,
+    "example": "2nd Engineer for Dredger",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
     "phrase": "customer experience manager",
-    "jobs": 14,
+    "jobs": 13,
     "example": "Customer Experience Manager",
     "company": "J Sainsbury",
+    "auto": false
+   },
+   {
+    "phrase": "3rd engineer",
+    "jobs": 11,
+    "example": "3rd Engineer for Crude Oil Tanker with V.MS experience (Hiring Offices: Georgia / Europe / Manila / India)",
+    "company": "vGroup International",
     "auto": false
    },
    {
@@ -391,10 +440,24 @@
     "auto": false
    },
    {
+    "phrase": "oiler",
+    "jobs": 10,
+    "example": "Oiler for LPG Carrier - beg February (Hiring Office: India)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
+    "phrase": "bosun",
+    "jobs": 9,
+    "example": "Bosun for Bulk Carrier \u2013 end February (Hiring Office: India)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
     "phrase": "shift fitter",
     "jobs": 8,
     "example": "Shift Fitter",
-    "company": "Arriva UK Bus",
+    "company": "Arriva",
     "auto": false
    },
    {
@@ -402,6 +465,27 @@
     "jobs": 8,
     "example": "FLOOR MANAGER ( 40 hours, Belfast)",
     "company": "Mango-t",
+    "auto": false
+   },
+   {
+    "phrase": "fitter",
+    "jobs": 8,
+    "example": "Fitter for LNG Carrier \u2013 beg May (Hiring Office: India)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
+    "phrase": "2nd officer",
+    "jobs": 8,
+    "example": "2nd Officer (DPO) - AHTS DP 2",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
+    "phrase": "3rd officer",
+    "jobs": 8,
+    "example": "3rd Officer for Chemical Tanker (Hiring Office: Brazil)",
+    "company": "vGroup International",
     "auto": false
    },
    {
@@ -433,10 +517,17 @@
     "auto": false
    },
    {
-    "phrase": "supply nursery educator",
-    "jobs": 5,
-    "example": "Supply Nursery Educator",
-    "company": "Storal Learning",
+    "phrase": "eto",
+    "jobs": 6,
+    "example": "ETO for LNG Carrier (Hiring Office: India / Manila)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
+    "phrase": "ordinary seaman",
+    "jobs": 6,
+    "example": "Ordinary Seaman for Chemical Tanker \u2013 beg March (Hiring Office: India)",
+    "company": "vGroup International",
     "auto": false
    },
    {
@@ -444,6 +535,27 @@
     "jobs": 5,
     "example": "Nursery Manager",
     "company": "St Georges Nursery",
+    "auto": false
+   },
+   {
+    "phrase": "supply nursery educator",
+    "jobs": 5,
+    "example": "Supply Nursery Educator",
+    "company": "Storal Learning",
+    "auto": false
+   },
+   {
+    "phrase": "wiper",
+    "jobs": 5,
+    "example": "Wiper for Crude Oil Tanker \u2013 end February (Hiring Office: India)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
+    "phrase": "4th engineer",
+    "jobs": 5,
+    "example": "4th Engineer for Chemical Tanker (Hiring Office: Brazil)",
+    "company": "vGroup International",
     "auto": false
    },
    {
@@ -489,6 +601,13 @@
     "auto": false
    },
    {
+    "phrase": "deputy manager",
+    "jobs": 4,
+    "example": "Deputy Manager",
+    "company": "St Georges Nursery",
+    "auto": false
+   },
+   {
     "phrase": "human resource business partner",
     "jobs": 4,
     "example": "HR Business Partner - Aintree",
@@ -503,13 +622,6 @@
     "auto": false
    },
    {
-    "phrase": "deputy manager",
-    "jobs": 4,
-    "example": "Deputy Manager",
-    "company": "White stuff",
-    "auto": false
-   },
-   {
     "phrase": "lead customer experience manager",
     "jobs": 4,
     "example": "Lead Customer Experience Manager",
@@ -517,152 +629,40 @@
     "auto": false
    },
    {
-    "phrase": "kitchen assistant care home",
-    "jobs": 3,
-    "example": "Kitchen Assistant Care Home",
-    "company": "Advantage Angels",
-    "auto": false
-   },
-   {
-    "phrase": "administrator",
-    "jobs": 3,
-    "example": "Administrator",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "assistant general manager",
-    "jobs": 3,
-    "example": "Assistant General Manager | Durham",
-    "company": "Blank Street",
-    "auto": false
-   },
-   {
-    "phrase": "third",
-    "jobs": 3,
-    "example": "Third in Charge",
-    "company": "Fennies Day Nurseries",
-    "auto": false
-   },
-   {
-    "phrase": "production scheduler",
-    "jobs": 3,
-    "example": "Production Scheduler",
-    "company": "Hitachi Solutions Europe",
-    "auto": false
-   },
-   {
-    "phrase": "senior manager",
-    "jobs": 3,
-    "example": "Senior Manager, Public Sector",
-    "company": "InPost",
-    "auto": false
-   },
-   {
-    "phrase": "commissioning engineer",
-    "jobs": 3,
-    "example": "Commissioning Engineer",
-    "company": "Securitas",
-    "auto": false
-   },
-   {
-    "phrase": "nursery lunchtime practitioner",
-    "jobs": 3,
-    "example": "Nursery Lunchtime Practitioner",
-    "company": "Storal Learning",
-    "auto": false
-   },
-   {
-    "phrase": "workshop manager",
-    "jobs": 3,
-    "example": "Workshop Manager",
-    "company": "Stagecoach Holdings",
-    "auto": false
-   },
-   {
-    "phrase": "lead online manager",
-    "jobs": 3,
-    "example": "Lead Online Manager",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
-    "phrase": "business development consultant",
-    "jobs": 2,
-    "example": "Business Development Consultant",
-    "company": "Amoria Bond",
-    "auto": false
-   },
-   {
-    "phrase": "training manager",
-    "jobs": 2,
-    "example": "Training Manager",
-    "company": "Aramark",
-    "auto": false
-   },
-   {
-    "phrase": "group brand lead",
-    "jobs": 2,
-    "example": "Group Brand Lead (FTC - 12 months)",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "driver manager",
-    "jobs": 2,
-    "example": "Driver Manager",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "station coordinator",
-    "jobs": 2,
-    "example": "Station Coordinator",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "site operation manager",
-    "jobs": 2,
-    "example": "Site Operations Manager - London East",
-    "company": "Arriva UK Bus",
-    "auto": false
-   },
-   {
-    "phrase": "oracle fusion technical service manager",
-    "jobs": 2,
-    "example": "Oracle Fusion Technical Service Manager",
-    "company": "Arriva UK Bus",
+    "phrase": "instrument technician",
+    "jobs": 4,
+    "example": "Instrument Technician for Floating Production Storage & Offloading Facility",
+    "company": "vGroup International",
     "auto": false
    }
   ],
   "signals": {
-   "ns": 377,
-   "pt": 1319,
-   "hr": 304,
-   "tmp": 106
+   "ns": 387,
+   "pt": 1321,
+   "hr": 301,
+   "tmp": 108
   }
  },
  "eligibility": {
-  "eligible": 3553,
-  "shortage_list": 352,
-  "unlikely": 4014,
+  "eligible": 3682,
+  "shortage_list": 378,
+  "unlikely": 4039,
   "removed_by_owner": 13,
-  "unlabelled": 10289
+  "unlabelled": 10852
  },
  "sources": {
-  "Ashby": 1885,
-  "BambooHR": 658,
-  "Breezy": 250,
-  "Greenhouse": 4168,
-  "Lever": 713,
-  "Oracle": 932,
-  "Personio": 129,
-  "Pinpoint": 1723,
+  "Ashby": 1905,
+  "BambooHR": 665,
+  "Breezy": 248,
+  "Greenhouse": 4228,
+  "Lever": 715,
+  "Oracle": 889,
+  "Personio": 133,
+  "Pinpoint": 2091,
   "Recruitee": 196,
-  "SmartRecruiters": 2762,
-  "Teamtailor": 1779,
-  "Workday": 3026
+  "SmartRecruiters": 2948,
+  "Teamtailor": 1787,
+  "Workday": 3159
  },
  "suggestions_unmatched": [
   "SLB",
@@ -713,7 +713,7 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 353
+   "jobs": 310
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
@@ -728,7 +728,7 @@
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 44
+   "jobs": 45
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
@@ -748,7 +748,7 @@
   "Spotify": {
    "sponsor": "Spotify Limited",
    "boards": 1,
-   "jobs": 40
+   "jobs": 41
   },
   "Synthesia": {
    "sponsor": "Synthesia Limited",
