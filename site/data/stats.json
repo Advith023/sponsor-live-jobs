@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-25T22:44:32.311384+00:00",
- "sponsors": 120184,
- "sponsors_checked": 94467,
- "boards": 3273,
- "jobs": 18964,
- "companies": 2002,
+ "generated": "2026-11-26T15:21:49.937848+00:00",
+ "sponsors": 120174,
+ "sponsors_checked": 97549,
+ "boards": 3310,
+ "jobs": 19103,
+ "companies": 2017,
  "quality": {
-  "hidden_by_pay": 65,
-  "hidden_by_employer_profile": 92,
+  "hidden_by_pay": 66,
+  "hidden_by_employer_profile": 99,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -160,6 +160,20 @@
     "auto": true
    },
    {
+    "phrase": "general operative",
+    "jobs": 5,
+    "example": "General Operative",
+    "company": "Holcim",
+    "auto": true
+   },
+   {
+    "phrase": "assistant maintenance supervisor",
+    "jobs": 3,
+    "example": "Assistant Maintenance Supervisor (Offshore)-Floating Production Storage & Offloading Facility",
+    "company": "vGroup International",
+    "auto": true
+   },
+   {
     "phrase": "domestic assistant",
     "jobs": 2,
     "example": "Domestic Assistant",
@@ -181,20 +195,6 @@
     "auto": true
    },
    {
-    "phrase": "engineering supervisor",
-    "jobs": 2,
-    "example": "Engineering Supervisor",
-    "company": "Arriva",
-    "auto": true
-   },
-   {
-    "phrase": "ap exception management assistant",
-    "jobs": 2,
-    "example": "AP Exception Management Assistant (6-month FTC)",
-    "company": "Arriva",
-    "auto": true
-   },
-   {
     "phrase": "cargo supervisor",
     "jobs": 2,
     "example": "Cargo Supervisor (Offshore) for Floating Production Storage & Offloading Facility",
@@ -205,13 +205,6 @@
     "phrase": "production supervisor",
     "jobs": 2,
     "example": "Production Supervisor (Offshore) for Floating Production Storage & Offloading Facility",
-    "company": "vGroup International",
-    "auto": true
-   },
-   {
-    "phrase": "assistant maintenance supervisor",
-    "jobs": 2,
-    "example": "Assistant Maintenance Supervisor (Offshore)-Floating Production Storage & Offloading Facility",
     "company": "vGroup International",
     "auto": true
    },
@@ -265,6 +258,62 @@
     "auto": true
    },
    {
+    "phrase": "drilling operative",
+    "jobs": 1,
+    "example": "Drilling Operative",
+    "company": "Holcim",
+    "auto": true
+   },
+   {
+    "phrase": "plant supervisor",
+    "jobs": 1,
+    "example": "Plant Supervisor",
+    "company": "Holcim",
+    "auto": true
+   },
+   {
+    "phrase": "trainee wash plant supervisor",
+    "jobs": 1,
+    "example": "Trainee Wash Plant Supervisor",
+    "company": "Holcim",
+    "auto": true
+   },
+   {
+    "phrase": "multi skilled operative",
+    "jobs": 1,
+    "example": "Multi-skilled Operative",
+    "company": "Holcim",
+    "auto": true
+   },
+   {
+    "phrase": "plant operative",
+    "jobs": 1,
+    "example": "Plant Operative (Customer Service)",
+    "company": "Holcim",
+    "auto": true
+   },
+   {
+    "phrase": "factory operative",
+    "jobs": 1,
+    "example": "Factory Operative",
+    "company": "Holcim",
+    "auto": true
+   },
+   {
+    "phrase": "executive assistant",
+    "jobs": 1,
+    "example": "Executive Assistant",
+    "company": "Greene King",
+    "auto": true
+   },
+   {
+    "phrase": "ceo executive assistant",
+    "jobs": 1,
+    "example": "CEO Executive Assistant",
+    "company": "Greene King",
+    "auto": true
+   },
+   {
     "phrase": "night transport supervisor",
     "jobs": 1,
     "example": "Nights Transport Supervisor",
@@ -286,17 +335,10 @@
     "auto": true
    },
    {
-    "phrase": "executive assistant",
+    "phrase": "account payable assistant",
     "jobs": 1,
-    "example": "Executive Assistant",
-    "company": "Greene King",
-    "auto": true
-   },
-   {
-    "phrase": "ceo executive assistant",
-    "jobs": 1,
-    "example": "CEO Executive Assistant",
-    "company": "Greene King",
+    "example": "Accounts Payable Assistant - Property (FTC)",
+    "company": "Mountain Warehouse",
     "auto": true
    },
    {
@@ -307,13 +349,6 @@
     "auto": true
    },
    {
-    "phrase": "account payable assistant",
-    "jobs": 1,
-    "example": "Accounts Payable Assistant - Property (FTC)",
-    "company": "Mountain Warehouse",
-    "auto": true
-   },
-   {
     "phrase": "account assistant",
     "jobs": 1,
     "example": "Accounts Assistant (3 month fixed term contract)",
@@ -321,43 +356,8 @@
     "auto": true
    },
    {
-    "phrase": "stockroom supervisor",
-    "jobs": 1,
-    "example": "Stockroom Supervisor",
-    "company": "Reiss",
-    "auto": true
-   },
-   {
-    "phrase": "port security support assistant",
-    "jobs": 1,
-    "example": "Port Security Support Assistant",
-    "company": "Securitas",
-    "auto": true
-   },
-   {
-    "phrase": "procurement assistant",
-    "jobs": 1,
-    "example": "Procurement Assistant",
-    "company": "Securitas",
-    "auto": true
-   },
-   {
-    "phrase": "site supervisor",
-    "jobs": 1,
-    "example": "Site Supervisor",
-    "company": "Securitas",
-    "auto": true
-   },
-   {
-    "phrase": "health and safety advisor",
-    "jobs": 1,
-    "example": "Health & Safety Advisor",
-    "company": "Securitas",
-    "auto": true
-   },
-   {
     "phrase": "assistant manager",
-    "jobs": 41,
+    "jobs": 40,
     "example": "Assistant Manager",
     "company": "Aramark",
     "auto": false
@@ -371,21 +371,21 @@
    },
    {
     "phrase": "register your interest",
-    "jobs": 31,
+    "jobs": 30,
     "example": "Register Your Interest",
     "company": "Reiss",
     "auto": false
    },
    {
     "phrase": "general manager",
-    "jobs": 23,
+    "jobs": 24,
     "example": "General Manager | Birmingham",
     "company": "Blank Street",
     "auto": false
    },
    {
     "phrase": "chief engineer",
-    "jobs": 19,
+    "jobs": 18,
     "example": "Chief Engineer",
     "company": "Stagecoach Holdings",
     "auto": false
@@ -405,6 +405,13 @@
     "auto": false
    },
    {
+    "phrase": "2nd engineer",
+    "jobs": 16,
+    "example": "2nd Engineer for Dredger",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
     "phrase": "electro technical officer",
     "jobs": 15,
     "example": "Electro-Technical Officer for  Floating Storage and Offloading (Hiring Office: EU / Manila)",
@@ -412,10 +419,10 @@
     "auto": false
    },
    {
-    "phrase": "2nd engineer",
-    "jobs": 15,
-    "example": "2nd Engineer for Dredger",
-    "company": "vGroup International",
+    "phrase": "maintenance technician",
+    "jobs": 13,
+    "example": "MAINTENANCE TECHNICIAN",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
@@ -426,10 +433,10 @@
     "auto": false
    },
    {
-    "phrase": "3rd engineer",
-    "jobs": 11,
-    "example": "3rd Engineer for Crude Oil Tanker with V.MS experience (Hiring Offices: Georgia / Europe / Manila / India)",
-    "company": "vGroup International",
+    "phrase": "production scheduler",
+    "jobs": 12,
+    "example": "Production Scheduler",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
@@ -447,9 +454,23 @@
     "auto": false
    },
    {
+    "phrase": "3rd engineer",
+    "jobs": 9,
+    "example": "3rd Engineer for Crude Oil Tanker with V.MS experience (Hiring Offices: Georgia / Europe / Manila / India)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
     "phrase": "bosun",
     "jobs": 9,
     "example": "Bosun for Bulk Carrier \u2013 end February (Hiring Office: India)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
+    "phrase": "3rd officer",
+    "jobs": 9,
+    "example": "3rd Officer for Chemical Tanker (Hiring Office: Brazil)",
     "company": "vGroup International",
     "auto": false
    },
@@ -458,6 +479,20 @@
     "jobs": 8,
     "example": "Shift Fitter",
     "company": "Arriva",
+    "auto": false
+   },
+   {
+    "phrase": "lead technician",
+    "jobs": 8,
+    "example": "Lead Technician",
+    "company": "Hitachi Vantara",
+    "auto": false
+   },
+   {
+    "phrase": "senior field service engineer",
+    "jobs": 8,
+    "example": "Senior Field Service Engineer (Grid Automation)",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
@@ -475,27 +510,6 @@
     "auto": false
    },
    {
-    "phrase": "2nd officer",
-    "jobs": 8,
-    "example": "2nd Officer (DPO) - AHTS DP 2",
-    "company": "vGroup International",
-    "auto": false
-   },
-   {
-    "phrase": "3rd officer",
-    "jobs": 8,
-    "example": "3rd Officer for Chemical Tanker (Hiring Office: Brazil)",
-    "company": "vGroup International",
-    "auto": false
-   },
-   {
-    "phrase": "nursery room leader",
-    "jobs": 7,
-    "example": "Nursery Room Leader",
-    "company": "Fennies Day Nurseries",
-    "auto": false
-   },
-   {
     "phrase": "field service engineer",
     "jobs": 7,
     "example": "Field Service Engineer (Oxford)",
@@ -507,13 +521,6 @@
     "jobs": 6,
     "example": "Mobile Patrol Officer",
     "company": "Securitas",
-    "auto": false
-   },
-   {
-    "phrase": "room leader",
-    "jobs": 6,
-    "example": "Room Leader",
-    "company": "St Georges Nursery",
     "auto": false
    },
    {
@@ -531,30 +538,23 @@
     "auto": false
    },
    {
-    "phrase": "nursery manager",
-    "jobs": 5,
-    "example": "Nursery Manager",
-    "company": "St Georges Nursery",
+    "phrase": "2nd officer",
+    "jobs": 6,
+    "example": "2nd Officer (DPO) - AHTS DP 2",
+    "company": "vGroup International",
     "auto": false
    },
    {
-    "phrase": "supply nursery educator",
+    "phrase": "area manager",
     "jobs": 5,
-    "example": "Supply Nursery Educator",
-    "company": "Storal Learning",
+    "example": "Area Manager",
+    "company": "Aramark",
     "auto": false
    },
    {
     "phrase": "wiper",
     "jobs": 5,
     "example": "Wiper for Crude Oil Tanker \u2013 end February (Hiring Office: India)",
-    "company": "vGroup International",
-    "auto": false
-   },
-   {
-    "phrase": "4th engineer",
-    "jobs": 5,
-    "example": "4th Engineer for Chemical Tanker (Hiring Office: Brazil)",
     "company": "vGroup International",
     "auto": false
    },
@@ -566,103 +566,103 @@
     "auto": false
    },
    {
-    "phrase": "area manager",
+    "phrase": "site operation manager",
     "jobs": 4,
-    "example": "Area Manager",
-    "company": "Aramark",
+    "example": "Site Operations Manager - London South",
+    "company": "Arriva",
     "auto": false
    },
    {
-    "phrase": "nursery deputy manager",
+    "phrase": "head of dei",
     "jobs": 4,
-    "example": "Nursery Deputy Manager",
-    "company": "Fennies Day Nurseries",
+    "example": "Head of DEI - Belfast",
+    "company": "Holcim",
     "auto": false
    },
    {
-    "phrase": "maintenance technician",
+    "phrase": "senior category manager",
     "jobs": 4,
-    "example": "MAINTENANCE TECHNICIAN",
-    "company": "Hitachi Solutions Europe",
+    "example": "Senior Category Manager - Global Engineering Services",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "hotel staff",
+    "phrase": "mechanical integration engineer",
     "jobs": 4,
-    "example": "Hotel Staff",
-    "company": "Greene King",
+    "example": "Mechanical Integration Engineer",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "cctv controller",
+    "phrase": "tendering engineer",
     "jobs": 4,
-    "example": "CCTV Controller",
-    "company": "Securitas",
+    "example": "Tendering Engineer",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "deputy manager",
+    "phrase": "technical specialist",
     "jobs": 4,
-    "example": "Deputy Manager",
-    "company": "St Georges Nursery",
+    "example": "Technical Specialist",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "human resource business partner",
+    "phrase": "senior site manager",
     "jobs": 4,
-    "example": "HR Business Partner - Aintree",
-    "company": "Pladis (UK)",
+    "example": "Senior Site Manager",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "deputy nursery manager",
+    "phrase": "hse specialist",
     "jobs": 4,
-    "example": "Deputy Nursery Manager",
-    "company": "Storal Learning",
+    "example": "HSE Specialist (East Angelia, Site-Based )",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "lead customer experience manager",
+    "phrase": "health and safety co ordinator",
     "jobs": 4,
-    "example": "Lead Customer Experience Manager",
-    "company": "J Sainsbury",
+    "example": "Health and Safety Co-ordinator",
+    "company": "Hitachi Vantara",
     "auto": false
    },
    {
-    "phrase": "instrument technician",
+    "phrase": "site quality specialist",
     "jobs": 4,
-    "example": "Instrument Technician for Floating Production Storage & Offloading Facility",
-    "company": "vGroup International",
+    "example": "Site Quality Specialist",
+    "company": "Hitachi Vantara",
     "auto": false
    }
   ],
   "signals": {
-   "ns": 387,
-   "pt": 1321,
-   "hr": 301,
-   "tmp": 108
+   "ns": 393,
+   "pt": 1330,
+   "hr": 290,
+   "tmp": 107
   }
  },
  "eligibility": {
-  "eligible": 3682,
-  "shortage_list": 378,
-  "unlikely": 4039,
+  "eligible": 3707,
+  "shortage_list": 385,
+  "unlikely": 4074,
   "removed_by_owner": 13,
-  "unlabelled": 10852
+  "unlabelled": 10924
  },
  "sources": {
-  "Ashby": 1905,
-  "BambooHR": 665,
-  "Breezy": 248,
-  "Greenhouse": 4228,
-  "Lever": 715,
-  "Oracle": 889,
+  "Ashby": 1923,
+  "BambooHR": 673,
+  "Breezy": 241,
+  "Greenhouse": 4223,
+  "Lever": 724,
+  "Oracle": 898,
   "Personio": 133,
-  "Pinpoint": 2091,
-  "Recruitee": 196,
-  "SmartRecruiters": 2948,
-  "Teamtailor": 1787,
-  "Workday": 3159
+  "Pinpoint": 2135,
+  "Recruitee": 210,
+  "SmartRecruiters": 2997,
+  "Teamtailor": 1761,
+  "Workday": 3185
  },
  "suggestions_unmatched": [
   "SLB",
@@ -698,7 +698,7 @@
   "Deliveroo": {
    "sponsor": "Roofoods Ltd t/a Deliveroo",
    "boards": 2,
-   "jobs": 140
+   "jobs": 142
   },
   "Funding Circle": {
    "sponsor": "FUNDING CIRCLE LTD",
@@ -708,27 +708,27 @@
   "GoCardless": {
    "sponsor": "GoCardless Limited",
    "boards": 1,
-   "jobs": 6
+   "jobs": 3
   },
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 310
+   "jobs": 329
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 579
+   "jobs": 569
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
    "boards": 1,
-   "jobs": 40
+   "jobs": 41
   },
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 45
+   "jobs": 48
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
@@ -753,7 +753,7 @@
   "Synthesia": {
    "sponsor": "Synthesia Limited",
    "boards": 2,
-   "jobs": 17
+   "jobs": 15
   },
   "TEST please ignore": {
    "sponsor": null,
@@ -763,7 +763,7 @@
   "Teya Services": {
    "sponsor": "Teya Europe Ltd",
    "boards": 2,
-   "jobs": 58
+   "jobs": 59
   },
   "Trainline": {
    "sponsor": "Trainline.com Ltd",
