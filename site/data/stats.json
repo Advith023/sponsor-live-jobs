@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-26T15:21:49.937848+00:00",
+ "generated": "2026-11-26T22:34:51.924807+00:00",
  "sponsors": 120174,
- "sponsors_checked": 97549,
- "boards": 3310,
- "jobs": 19103,
- "companies": 2017,
+ "sponsors_checked": 99956,
+ "boards": 3333,
+ "jobs": 19848,
+ "companies": 2029,
  "quality": {
-  "hidden_by_pay": 66,
-  "hidden_by_employer_profile": 99,
+  "hidden_by_pay": 65,
+  "hidden_by_employer_profile": 97,
   "review": [
    {
     "phrase": "back of house nandoca",
@@ -147,7 +147,7 @@
    },
    {
     "phrase": "supervisor",
-    "jobs": 25,
+    "jobs": 24,
     "example": "Supervisor",
     "company": "Aramark",
     "auto": true
@@ -164,13 +164,6 @@
     "jobs": 5,
     "example": "General Operative",
     "company": "Holcim",
-    "auto": true
-   },
-   {
-    "phrase": "assistant maintenance supervisor",
-    "jobs": 3,
-    "example": "Assistant Maintenance Supervisor (Offshore)-Floating Production Storage & Offloading Facility",
-    "company": "vGroup International",
     "auto": true
    },
    {
@@ -205,6 +198,13 @@
     "phrase": "production supervisor",
     "jobs": 2,
     "example": "Production Supervisor (Offshore) for Floating Production Storage & Offloading Facility",
+    "company": "vGroup International",
+    "auto": true
+   },
+   {
+    "phrase": "assistant maintenance supervisor",
+    "jobs": 2,
+    "example": "Assistant Maintenance Supervisor (Offshore) - Floating Production Storage & Offloading Facility",
     "company": "vGroup International",
     "auto": true
    },
@@ -426,17 +426,17 @@
     "auto": false
    },
    {
-    "phrase": "customer experience manager",
-    "jobs": 13,
-    "example": "Customer Experience Manager",
-    "company": "J Sainsbury",
-    "auto": false
-   },
-   {
     "phrase": "production scheduler",
     "jobs": 12,
     "example": "Production Scheduler",
     "company": "Hitachi Vantara",
+    "auto": false
+   },
+   {
+    "phrase": "customer experience manager",
+    "jobs": 12,
+    "example": "Customer Experience Manager",
+    "company": "J Sainsbury",
     "auto": false
    },
    {
@@ -475,13 +475,6 @@
     "auto": false
    },
    {
-    "phrase": "shift fitter",
-    "jobs": 8,
-    "example": "Shift Fitter",
-    "company": "Arriva",
-    "auto": false
-   },
-   {
     "phrase": "lead technician",
     "jobs": 8,
     "example": "Lead Technician",
@@ -499,7 +492,7 @@
     "phrase": "floor manager",
     "jobs": 8,
     "example": "FLOOR MANAGER ( 40 hours, Belfast)",
-    "company": "Mango-t",
+    "company": "Mango Fly",
     "auto": false
    },
    {
@@ -517,6 +510,20 @@
     "auto": false
    },
    {
+    "phrase": "ordinary seaman",
+    "jobs": 7,
+    "example": "Ordinary Seaman for Chemical Tanker \u2013 beg March (Hiring Office: India)",
+    "company": "vGroup International",
+    "auto": false
+   },
+   {
+    "phrase": "shift fitter",
+    "jobs": 6,
+    "example": "Shift Fitter",
+    "company": "Arriva",
+    "auto": false
+   },
+   {
     "phrase": "mobile patrol officer",
     "jobs": 6,
     "example": "Mobile Patrol Officer",
@@ -527,13 +534,6 @@
     "phrase": "eto",
     "jobs": 6,
     "example": "ETO for LNG Carrier (Hiring Office: India / Manila)",
-    "company": "vGroup International",
-    "auto": false
-   },
-   {
-    "phrase": "ordinary seaman",
-    "jobs": 6,
-    "example": "Ordinary Seaman for Chemical Tanker \u2013 beg March (Hiring Office: India)",
     "company": "vGroup International",
     "auto": false
    },
@@ -563,6 +563,13 @@
     "jobs": 4,
     "example": "Travelling HCAs - Multiple Locations",
     "company": "Advantage Angels",
+    "auto": false
+   },
+   {
+    "phrase": "assistant general manager",
+    "jobs": 4,
+    "example": "Assistant General Manager | Durham",
+    "company": "Blank Street",
     "auto": false
    },
    {
@@ -627,42 +634,35 @@
     "example": "Health and Safety Co-ordinator",
     "company": "Hitachi Vantara",
     "auto": false
-   },
-   {
-    "phrase": "site quality specialist",
-    "jobs": 4,
-    "example": "Site Quality Specialist",
-    "company": "Hitachi Vantara",
-    "auto": false
    }
   ],
   "signals": {
-   "ns": 393,
-   "pt": 1330,
-   "hr": 290,
-   "tmp": 107
+   "ns": 384,
+   "pt": 1306,
+   "hr": 313,
+   "tmp": 105
   }
  },
  "eligibility": {
-  "eligible": 3707,
-  "shortage_list": 385,
-  "unlikely": 4074,
+  "eligible": 3698,
+  "shortage_list": 390,
+  "unlikely": 4785,
   "removed_by_owner": 13,
-  "unlabelled": 10924
+  "unlabelled": 10962
  },
  "sources": {
-  "Ashby": 1923,
-  "BambooHR": 673,
-  "Breezy": 241,
-  "Greenhouse": 4223,
+  "Ashby": 1924,
+  "BambooHR": 679,
+  "Breezy": 280,
+  "Greenhouse": 4221,
   "Lever": 724,
-  "Oracle": 898,
-  "Personio": 133,
-  "Pinpoint": 2135,
-  "Recruitee": 210,
-  "SmartRecruiters": 2997,
-  "Teamtailor": 1761,
-  "Workday": 3185
+  "Oracle": 847,
+  "Personio": 131,
+  "Pinpoint": 2179,
+  "Recruitee": 220,
+  "SmartRecruiters": 3765,
+  "Teamtailor": 1777,
+  "Workday": 3101
  },
  "suggestions_unmatched": [
   "SLB",
@@ -713,12 +713,12 @@
   "J Sainsbury Plc": {
    "sponsor": "J Sainsbury Plc",
    "boards": 1,
-   "jobs": 329
+   "jobs": 277
   },
   "JPMorgan Chase Bank": {
    "sponsor": "JPMorgan Chase Bank, National Association",
    "boards": 1,
-   "jobs": 569
+   "jobs": 570
   },
   "Kpler": {
    "sponsor": "Kpler Limited",
@@ -728,7 +728,7 @@
   "Monzo Bank": {
    "sponsor": "Monzo Bank Ltd",
    "boards": 1,
-   "jobs": 48
+   "jobs": 49
   },
   "Octopus Energy": {
    "sponsor": "Octopus Energy Limited",
